@@ -5,7 +5,8 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Xml;
-
+using Formatting = Newtonsoft.Json.Formatting;
+using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
 namespace Team_2
 {
@@ -33,7 +34,7 @@ namespace Team_2
         public Account()
         {
             // Start van path vinden //
-            this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Test\Accounts.json"));
+            this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Accounts.json"));
             this.json_path = File.ReadAllText(this.path);
             // End van path vinden //
         }
