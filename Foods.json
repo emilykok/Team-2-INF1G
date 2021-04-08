@@ -26,7 +26,7 @@
      },
      {
         "naam":"M&M pinda",
-        "inhoud":"250g",
+        "inhoud":["250g"],
         "prijs": [3.99],
         "voedingswaarde":"Per 100gr:\nEnergie: 2154kj(515kcal)\nVet: 26g\nWaarvan verzadigd: 11g\nKoolhydraten: 59g\nWaarvan suikers: 53g\nVoedingsvezel: 0g\nEiwitten: 9,9g\nZout: 0.09g",
         "allergenen":["lactose","melk", "pinda", "soja", "amandel", "hazelnoot", "noten"],
@@ -34,7 +34,7 @@
      },
      {
         "naam":"M&M melkchocolade",
-        "inhoud":"275g",
+        "inhoud":["275g"],
         "prijs": [4.49],
         "voedingswaarde":"Per 100gr:\nEnergie: 2019kj(481kcal)\nVet: 19g\nWaarvan verzadigd: 12g\nKoolhydraten: 71g\nWaarvan suikers: 67g\nVoedingsvezel: 5g\nEiwitten: 0,13g\nZout: 0.63g",
         "allergenen":["lactose", "melk", "soja"],
@@ -42,23 +42,23 @@
      },
      {
         "naam":"Naturel chips",
-        "inhoud":"120g",
-        "prijs": [2.99],
+        "inhoud":["120g", "225g"],
+        "prijs": [2.99, 3.99],
         "voedingswaarde":"Per 100gr:\nEnergie: 2019kj(481kcal)\nVet: 30g\nWaarvan verzadigd: 3.2g\nKoolhydraten: 53g\nWaarvan suikers: 0,5g\nVoedingsvezel: 4,3g\nEiwitten: 6,1g\nZout: 1,1g",
         "allergenen":["lactose", "melk", "soja"],
         "tags": ["hartig"]
      },
      {
         "naam":"Paprika chips",
-        "inhoud":"120g",
-        "prijs": [2.99],
+        "inhoud":["120g", "225g"],
+        "prijs": [2.99, 3.99],
         "voedingswaarde":"Per 100gr:\nEnergie: 2019kj(481kcal)\nVet: 30g\nWaarvan verzadigd: 3.2g\nKoolhydraten: 53g\nWaarvan suikers: 0,5g\nVoedingsvezel: 4,8g\nEiwitten: 6,1g\nZout: 1,1g",
         "allergenen":["melk", "soja", "gluten", "tarwe"],
         "tags": ["hartig"]
      },
      {
         "naam":"Doritos nacho cheese",
-        "inhoud":"185g",
+        "inhoud":["185g"],
         "prijs": [3.99],
         "voedingswaarde":"Per 100gr:\nEnergie: 2092kj(501kcal)\nVet: 26g\nWaarvan verzadigd: 3,4g\nKoolhydraten: 58g\nWaarvan suikers: 2,7g\nVoedingsvezel: 5,6g\nEiwitten: 6,5g\nZout: 1,2g",
         "allergenen":["melk", "gluten", "tarwe"],
@@ -66,7 +66,7 @@
      },
      {
         "naam":"Haribo goudberen",
-        "inhoud":"250g",
+        "inhoud":["250g"],
         "prijs": [3.49],
         "voedingswaarde":"Per 100gr:\nEnergie: 1459kj(343kcal)\nVet: 0.5g\nWaarvan verzadigd: 0.1g\nKoolhydraten: 77g\nWaarvan suikers: 46g\nVoedingsvezel: 0g\nEiwitten: 6,5g\nZout: 1,2g",
         "allergenen":[],
@@ -74,7 +74,7 @@
      },
      {
         "naam":"Skittles fruits",
-        "inhoud":"174g",
+        "inhoud":["174g"],
         "prijs": [3.99],
         "voedingswaarde":"Per 100gr:\nEnergie: 1683kj(397kcal)\nVet: 4,2g\nWaarvan verzadigd: 2,3g\nKoolhydraten: 89g\nWaarvan suikers: 73g\nVoedingsvezel: 0g\nEiwitten: 0g\nZout: 0,2g",
         "allergenen":[],
