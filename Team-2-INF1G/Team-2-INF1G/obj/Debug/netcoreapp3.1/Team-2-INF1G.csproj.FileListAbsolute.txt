@@ -1,0 +1,4 @@
+C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.csprojAssemblyReference.cache
+C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.AssemblyInfoInputs.cache
+C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.AssemblyInfo.cs
+C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.csproj.CoreCompileInputs.cache
