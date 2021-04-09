@@ -54,11 +54,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+      "projectUniqueName": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
       "projectName": "Team-2-INF1G",
-      "projectPath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+      "projectPath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
       "packagesPath": "C:\\Users\\dvdg1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
+      "outputPath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

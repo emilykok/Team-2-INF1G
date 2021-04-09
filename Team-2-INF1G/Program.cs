@@ -8,44 +8,51 @@ using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
-namespace Team_2
+namespace CinaMatrix
 {
-
-    public class Account
+    public class MovieDetail
     {
+        // film informatie uit de json file halen(WIP) //
         public string Titel { get; set; }
         public double rating { get; set; }
-        public Tuple<int, string[]> kijkwijzer;
-        public string[] genre;
-        public string regisseur;
-        public int speeltijd;
-        public string[] acteurs;
-        public string samenvatting;
-
+        public Tuple<int, string[]> kijkwijzer { get; set; }
+        public string[] genre { get; set; }
+        public string regisseur { get; set; }
+        public int speeltijd { get; set; }
+        public string[] acteurs { get; set; }
+        public string samenvatting { get; set; }
 
         [JsonIgnore] // Dit ignored de value voor als je naar JSON ombouwt
         public string path;
         [JsonIgnore]
         public string json_path;
 
-        public string ToJSON()
+        public MovieDetail()
         {
-           return JsonConvert.SerializeObject(this, Formatting.Indented);
+            this.Titel = "The Broken Hearts Gallery";
+            this.rating = 6.2;
+            this.kijkwijzer = Tuple.Create(12, new string[] { "seks", "grof taalgebruik" });
+            this.genre = new string[] { "romantiek", "komedie" };
+            this.regisseur = "Natalie Krinsky";
+            this.speeltijd = 108;
+            this.acteurs = new string[] { "Geraldine Viswanathan", "Dacre Montgomery", "Utkarsh Ambudkar" };
+            this.samenvatting = "De twintiger Lucy werkt in een kunstgalerie en is op persoonlijk vlak een grote verzamelaar.\nAls ze door haar vriendje gedumpt wordt, krijgt ze het idee om het project The Broken Heart Gallery op te zetten,\neen verzamelplek voor alle objecten die te maken hebben met haar vroegere liefdes. De expositie wordt een succes en\nkrijgt navolging.";
         }
 
         public Account FromJSON(string json_path) // FromJSON returned een Account format, dus de field
         {
-            return JsonConvert.DeserializeObject<Account>(json_path); ; 
+            return JsonConvert.DeserializeObject<Account>(json_path); ;
         }
 
         public Account()
         {
             // Start van path vinden //
-            this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Catalog.json"));
+            this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Accounts.json"));
             this.json_path = File.ReadAllText(this.path);
             // End van path vinden //
         }
     }
+
     class Program
     {
         public static string arrToString(string[] before)
@@ -70,8 +77,7 @@ namespace Team_2
             Console.WriteLine($"samenvatting: {a.samenvatting}\n");
             Console.WriteLine($"Rating: {a.rating}\nSpeeltijd: {a.speeltijd} minuten");
         }
-
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
             displayMovie();
             Console.WriteLine("type a number");
