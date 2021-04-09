@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {}
+    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {}
   },
   "projects": {
-    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
+    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+        "projectUniqueName": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
         "projectName": "Team-2-INF1G",
-        "projectPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+        "projectPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
         "packagesPath": "C:\\Users\\melis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
+        "outputPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
