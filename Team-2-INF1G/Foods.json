@@ -1,5 +1,5 @@
-{
-    "food":[
+
+   [
        {
           "naam":"Popcorn zoet",
           "inhoud":["85g", "180g", "325g"],
@@ -81,4 +81,3 @@
         "tags": ["zoet"]
      }
    ]
-}
