@@ -10,73 +10,96 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
 namespace Team_2
 {
-
     public class Account
     {
-        public string User_Name { get; set; }
-        public string Password { get; set; }
+        //// struct is a data type used for the serialization and deserialization of the JSON file.
+        // It will be put in a list, that can be index with []
+        // To call the value's in it, use the name and then the value name (accountDataList[0].Age)
+        // It is the same as a Tuple, but it works like a class as reference (acc.accountDataList[0].Age)
+        public struct AccountData
+        {
+            public string Name;
+            public string Password;
+            public int Age;
+        }
 
-        [JsonIgnore] // Dit ignored de value voor als je naar JSON ombouwt
-        public string path;
+        //// Field
+        // Creates a list, a data type that can be added upon, with the "AccountData" type
+        public List<AccountData> accountDataList = new List<AccountData>();
+
         [JsonIgnore]
-        public string json_path;
+        public string jsonPath;
+        [JsonIgnore]
+        public string path; 
 
-        public string ToJSON()
-        {
-           return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
-
-        public Account FromJSON(string json_path) // FromJSON returned een Account format, dus de field
-        {
-            return JsonConvert.DeserializeObject<Account>(json_path); ; 
-        }
-
+        // Constructor
         public Account()
         {
-            // Start van path vinden //
+            // this.path is used in serializing the json data.
             this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Accounts.json"));
-            this.json_path = File.ReadAllText(this.path);
-            // End van path vinden //
+            // this.jsonPath is used in deserializing the json data.
+            this.jsonPath = File.ReadAllText(path);
+            // the constructor loads the json file first, so it can be modified later in the file.
+            this.accountDataList = JsonConvert.DeserializeObject<List<AccountData>>(jsonPath);
+
         }
 
-
-        public void Create()
+        // Method that is used to write data to the JSON file.
+        public string ToJSON()
         {
-            bool retry = true;
-
-            // User input username and password, retry while statement if user wants to retry //
-            while (retry == true)
-            {
-                Console.WriteLine("\nVoer een gebruikersnaam in: ");
-                this.User_Name = Console.ReadLine();
-                Console.WriteLine("\nVoer een wachtwoord in: ");
-                this.Password = Console.ReadLine();
-                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm te confirmeren toets ENTER, anders toets 'X'");
-
-                // Checked if user wants to retry or confirm username //
-                string confirm = Console.ReadLine();
-                if (confirm == "X" || confirm == "x" || confirm == "'X'" || confirm == "'x'")
-                {
-                    retry = true;
-                }
-                else
-                {
-                    retry = false;
-                }
-            }
-            // Write naar JSON file
-            System.IO.File.WriteAllText(this.path, ToJSON()); 
-            Console.WriteLine($"Account gecreeerd | Gebruikersnaam: {User_Name} | Wachtwoord: {Password}");
+            return JsonConvert.SerializeObject(this.accountDataList, Formatting.Indented);
         }
+
+        // Method that can be called to create a user.
+        public void CreateUser(string name, string password, int age)
+        {
+            
+            AccountData newAccountData = new AccountData();
+            newAccountData.Name        = name;
+            newAccountData.Password    = password;
+            newAccountData.Age         = age;
+
+            // add to the list with the added data
+            accountDataList.Add(newAccountData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
     }
     class Program
     {
-        
-       
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
+            // Create account
+            //   Input name
+            //   Input password
+            Account acc = new Account();
 
-            new Account().Create();
+            acc.CreateUser("Bjorn", "abcd", 12);
+            acc.CreateUser("koos", "broer", 16);
+            acc.CreateUser("boos", "ttee", 23);
+
+            //foreach (var accountData in a.accountDataList)
+            //{
+            //Console.WriteLine("--------------------");
+            //Console.WriteLine(accountData.Age);
+            //Console.WriteLine(accountData.Name);
+            //Console.WriteLine(accountData.Password);
+            //}
+
+
+            Console.WriteLine(acc.accountDataList[0].Age);
+            Console.WriteLine(acc.accountDataList[0].Name);
+            Console.WriteLine(acc.accountDataList[0].Password);
+
+            // Update account
+            //   Input name
+            //   Input password
+
+            // Remove account
+
+
 
         }
     }
