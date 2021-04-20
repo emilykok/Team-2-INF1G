@@ -28,3 +28,9 @@ C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\
 C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.dll
 C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.pdb
 C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.genruntimeconfig.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.csprojAssemblyReference.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.AssemblyInfoInputs.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.AssemblyInfo.cs
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.csproj.CoreCompileInputs.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.dll
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\Team-2-INF1G\obj\Debug\netcoreapp3.1\Team-2-INF1G.pdb
