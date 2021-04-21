@@ -16,11 +16,22 @@ namespace Team_2
         // It will be put in a list, that can be index with []
         // To call the value's in it, use the name and then the value name (accountDataList[0].Age)
         // It is the same as a Tuple, but it works like a class as reference (acc.accountDataList[0].Age)
+        // You can also use a foreach to loop through all the items in the list.
+            //foreach (var accountData in accountDataList)
+            //{
+            //Console.WriteLine(accountData.Password);
+            //}
+
         public struct AccountData
         {
             public string Name;
             public string Password;
+            
             public int Age;
+            public string Gender;
+            public string Email;
+            public string bankingDetails;
+            public string[] Allergies;
         }
 
         //// Field
@@ -50,48 +61,113 @@ namespace Team_2
             return JsonConvert.SerializeObject(this.accountDataList, Formatting.Indented);
         }
 
+        // Method to check if username is already taken, returns bool (true if taken, false if not taken)
+        public bool UsernameCheck(string username)
+        {
+            foreach (var accountData in accountDataList)
+            {
+                if(username == accountData.Name)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Method to login, returns int (the index of the list which corresponds to user selected) if user is found, else returns -1
+        public int Login(string name, string password)
+        {
+            for (int i = 0; i < accountDataList.Count; i++)
+            {
+                if (name == accountDataList[i].Name && password == accountDataList[i].Password)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         // Method that can be called to create a user.
-        public void CreateUser(string name, string password, int age)
+        public void CreateUser(string name, string password)
         {
             
             AccountData newAccountData = new AccountData();
             newAccountData.Name        = name;
             newAccountData.Password    = password;
-            newAccountData.Age         = age;
-
+            
+            // placeHolders
+            newAccountData.Age              = -1;
+            newAccountData.Gender           = null;
+            newAccountData.Email            = null;
+            newAccountData.bankingDetails   = null;
+            newAccountData.Allergies        = null;
             // add to the list with the added data
             accountDataList.Add(newAccountData);
 
             // write to the JSON file (updates the file)
             System.IO.File.WriteAllText(this.path, ToJSON());
         }
+        
+        // Method that creates user, based on input => calls CreateUser method.
+        public void TextCreateUser()
+        {
+            // retry bool for if the user wants to try again
+            bool retry = true;
+            
+            while (retry == true){
+                // Clears the console for typing;
+                Console.Clear();
+
+                // Ask for user input
+                Console.WriteLine("*---------------*");
+                Console.WriteLine("Voer een gebruikersnaam in: ");
+                string User_Name = Console.ReadLine();
+
+                bool recheck = true;
+                if (UsernameCheck(User_Name) == true && recheck == true)
+                {
+                    Console.WriteLine("\nDeze gebruikersnaam bestaat al, probeer opnieuw: ");
+                    User_Name = Console.ReadLine();
+                    recheck = UsernameCheck(User_Name);
+                }
+
+                Console.WriteLine("\nVoer een wachtwoord in: ");
+                string Password = Console.ReadLine();
+                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm te confirmeren toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                
+                // Checked if user wants to retry or confirm username //
+                string confirm = Console.ReadLine();
+                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
+                {
+                    retry = true;
+                }
+                else if (confirm == "X" || confirm == "x" || confirm == "'X'" || confirm == "'x'")
+                {
+                    retry = false;
+                }
+                else
+                {
+                    retry = false;
+                    this.CreateUser(User_Name, Password);
+                }
+            }
+        }
+
+
 
     }
     class Program
     {
         static void Main(string[] args)
         {
-            // Create account
-            //   Input name
-            //   Input password
+            
             Account acc = new Account();
 
-            acc.CreateUser("Bjorn", "abcd", 12);
-            acc.CreateUser("koos", "broer", 16);
-            acc.CreateUser("boos", "ttee", 23);
+            // For creating user!
+            //acc.TextCreateUser();
+            int print_this = acc.Login("boos", "ttee");
+            Console.WriteLine(print_this);
 
-            //foreach (var accountData in a.accountDataList)
-            //{
-            //Console.WriteLine("--------------------");
-            //Console.WriteLine(accountData.Age);
-            //Console.WriteLine(accountData.Name);
-            //Console.WriteLine(accountData.Password);
-            //}
-
-
-            Console.WriteLine(acc.accountDataList[0].Age);
-            Console.WriteLine(acc.accountDataList[0].Name);
-            Console.WriteLine(acc.accountDataList[0].Password);
 
             // Update account
             //   Input name

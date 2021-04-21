@@ -2,26 +2,73 @@
   {
     "Name": "myName1",
     "Password": "myPassword1",
-    "Age": 10
+    "Age": 10,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
   },
   {
     "Name": "boos",
     "Password": "ttee",
-    "Age": 23
+    "Age": 23,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
   },
   {
     "Name": "Bjorn",
     "Password": "abcd",
-    "Age": 12
+    "Age": 12,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
   },
   {
     "Name": "koos",
     "Password": "broer",
-    "Age": 16
+    "Age": 16,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
   },
   {
     "Name": "boos",
     "Password": "ttee",
-    "Age": 23
+    "Age": 23,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
+  },
+  {
+    "Name": "Bjorn",
+    "Password": "12345",
+    "Age": 0,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
+  },
+  {
+    "Name": "niewe",
+    "Password": "wowie",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
+  },
+  {
+    "Name": "Bj_orn",
+    "Password": "HoiHoi",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
   }
 ]
