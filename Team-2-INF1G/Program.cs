@@ -48,6 +48,7 @@ namespace Project
         // fooddisplay
         public void EtenMenu()
         {
+            
             Console.WriteLine("Eten Menu:\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
@@ -58,18 +59,18 @@ namespace Project
             try // in t geval dat de input te hoog is of niet convertible is tot int
             {
                 int num = Convert.ToInt32(input);
-                // print naam item
+            // print naam item
                 Console.WriteLine($"{etenDataList[num - 1].naam}\n");
 
-                // print inhoud item
+            // print inhoud item
                 string inh = "";
                 for (int i = 0; i < (etenDataList[num - 1].inhoud).Length; i++)
                 {
                     inh += etenDataList[num - 1].inhoud[i] + ", ";
                 }
-
                 Console.WriteLine("inhoud: " + inh);
-                // print prijs item
+
+             // print prijs item
                 string pri = "";
                 for (int i = 0; i < (etenDataList[num - 1].prijs).Length; i++)
                 {
@@ -77,10 +78,10 @@ namespace Project
                 }
                 Console.WriteLine("prijs: " + pri + "\n");
 
-                // print voedingswaarde
+            // print voedingswaarde
                 Console.WriteLine($"{etenDataList[num - 1].voedingswaarde}\n");
 
-                // print allergenen
+            // print allergenen
                 string al = "";
                 for (int i = 0; i < (etenDataList[num - 1].allergenen).Length; i++)
                 {
@@ -88,7 +89,7 @@ namespace Project
                 }
                 Console.WriteLine("allergenen: " + al);
 
-                // input na de display
+            // input na de display
                 bool goodInput = false;
                 while (!goodInput)
                 {
@@ -122,12 +123,107 @@ namespace Project
          }*/
     }
 
-    class Program
+    public class Drinken
     {
-        static void Main(string[] args)
+        // declaring struct for json data
+        public struct DrinkenData
         {
-            Eten eten = new Eten();
-            eten.EtenMenu();
+            public string naam;
+            public string inhoud;
+            public double prijs;
+            public string voedingswaarde;
+            public string[] allergenen;
+            public string[] tags;
+            public int clicks;
+        }
+
+        // creates a list of type DrinkenData
+        public List<DrinkenData> drinkenDataList = new List<DrinkenData>();
+
+        [JsonIgnore]
+        public string jsonPath;
+        [JsonIgnore]
+        public string path;
+
+        // Constructor
+        public Drinken()
+        {
+            this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Drinks.json"));
+            this.jsonPath = File.ReadAllText(path);
+            this.drinkenDataList = JsonConvert.DeserializeObject<List<DrinkenData>>(jsonPath);
+        }
+
+        public string ToJSON()
+        {
+            return JsonConvert.SerializeObject(this.drinkenDataList, Formatting.Indented);
+        }
+
+        // drinkendisplay
+        public void DrinkenMenu()
+        {
+            Console.WriteLine("Drinken Menu:\n1. Cola - \t\tva 2,99\n2. Pepsi - \t\tva 3,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99");
+            Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
+
+            // leest input command van de console
+            string input = Console.ReadLine();
+            Console.Clear();
+
+            try // in t geval dat de input te hoog is of niet convertible is tot int
+            {
+                int num = Convert.ToInt32(input);
+                // print naam item
+                Console.WriteLine($"{drinkenDataList[num - 1].naam}\n");
+
+                // print inhoud item
+                Console.WriteLine(drinkenDataList[num - 1].inhoud);
+
+                // print prijs item
+                Console.WriteLine(drinkenDataList[num - 1].prijs);
+
+                // print voedingswaarde
+                Console.WriteLine($"{drinkenDataList[num - 1].voedingswaarde}\n");
+
+                // print allergenen
+                string al = "";
+                for (int i = 0; i < (drinkenDataList[num - 1].allergenen).Length; i++)
+                {
+                    al += drinkenDataList[num - 1].allergenen[i] + ", ";
+                }
+                Console.WriteLine("allergenen: " + al);
+
+                // input na de display
+                bool goodInput = false;
+                while (!goodInput)
+                {
+                    Console.WriteLine("\nTyp 'x' om terug te gaan of '>' om een andere item te selecteren.");
+                    input = Console.ReadLine();
+                    Console.Clear();
+                    if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; break; }
+                    else if (input == ">" || input == "'>'") { DrinkenMenu(); goodInput = true; break; }
+                    else Console.WriteLine("Er is een onjuist command ingevuld, probeer het nog eens.");
+                }
+            }
+
+            catch (Exception e)
+            { // input is niet convertible naar int of input is te hoog nummer
+                Console.Clear();
+                Console.WriteLine("De input is niet juist, probeer het nogeens\n");
+                DrinkenMenu();
+            }
+            Console.Clear();
+
+        }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Eten eten = new Eten();
+                eten.EtenMenu();
+                Drinken drinken = new Drinken();
+                drinken.DrinkenMenu();
+
+            }
         }
     }
 }    
