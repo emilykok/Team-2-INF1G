@@ -74,6 +74,7 @@ namespace Team_2
             return false;
         }
 
+
         // Method to login, returns int (the index of the list which corresponds to user selected) if user is found, else returns -1
         public int Login(string name, string password)
         {
@@ -86,6 +87,60 @@ namespace Team_2
             }
             return -1;
         }
+
+        // Method that returns user account index, based on input => calls login method.
+        public int TextLogin()
+        {
+            // retry bool for if the user wants to try again
+            bool retry = true;
+            bool failed = false;
+
+            while (retry == true)
+            {
+                // Clears the console for typing;
+                Console.Clear();
+
+                // Ask for user input
+                Console.WriteLine("*---------------*");
+                if (failed == true)
+                {
+                    Console.WriteLine("Gebruikersnaam of wachtwoord was incorrect, probeer het opnieuw\n");
+                }
+                Console.WriteLine("Voer een gebruikersnaam in: ");
+                string User_Name = Console.ReadLine();
+                Console.WriteLine("\nVoer een wachtwoord in: ");
+                string Password = Console.ReadLine();
+                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+
+                // Checked if user wants to retry or confirm username //
+                string confirm = Console.ReadLine();
+                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
+                {
+                    retry = true;
+                }
+
+                else if (confirm == "X" || confirm == "x" || confirm == "'X'" || confirm == "'x'")
+                {
+                    retry = false;
+                }
+                else
+                {
+                    retry = false;
+                    int login_Result = this.Login(User_Name, Password);
+                    if (login_Result == -1)
+                    {
+                        failed = true;
+                        retry = true;
+                    }
+                    else
+                    {
+                        return login_Result;
+                    }
+                }
+            }
+            return -1;
+        }
+
 
         // Method that can be called to create a user.
         public void CreateUser(string name, string password)
@@ -154,8 +209,14 @@ namespace Team_2
         }
 
 
-
+        // Method that updates selective user, requires to be logged in before or index!
+        // Also requires an int for the item. The following ints represent (1 == )
+        public void UpdateUser(int item, int index)
+        {
+            //placeholder
+        }
     }
+
     class Program
     {
         static void Main(string[] args)
@@ -163,15 +224,11 @@ namespace Team_2
             
             Account acc = new Account();
 
-            // For creating user!
-            //acc.TextCreateUser();
-            int print_this = acc.Login("boos", "ttee");
+            int print_this = acc.TextLogin();
             Console.WriteLine(print_this);
 
-
-            // Update account
-            //   Input name
-            //   Input password
+            //// Update account
+            // inlog index value
 
             // Remove account
 
