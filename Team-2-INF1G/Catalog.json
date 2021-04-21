@@ -1,504 +1,502 @@
-{
-    "movies":[
-        {
-            "titel":"The Broken Hearts Gallery",
-            "rating":6.2,
-            "kijkwijzer":[12, "seks", "grof taalgebruik"],
-            "genre":["romantiek", "komedie"],
-            "regisseur":"Natalie Krinsky",
-            "speeltijd":108,
-            "acteurs":["Geraldine Viswanathan", "Dacre Montgomery", "Utkarsh Ambudkar"],
-            "samenvatting":"De twintiger Lucy werkt in een kunstgalerie en is op persoonlijk vlak een grote verzamelaar. Als ze door haar vriendje gedumpt wordt, krijgt ze het idee om het project The Broken Heart Gallery op te zetten, een verzamelplek voor alle objecten die te maken hebben met haar vroegere liefdes. De expositie wordt een succes en krijgt navolging."
-        },
-        {
-            "titel":"Words On The Bathroom Walls",
-            "rating":7.0,
-            "kijkwijzer":[12, "angst", "grof taalgebruik"],
-            "genre":["romantiek", "drama"],
-            "regisseur":"Thor Freudenthal",
-            "speeltijd":110,
-            "acteurs":["Charlie Plummer", "Molly Parker", "Walton Goggins"],
-            "samenvatting":"Adam is een tiener op de middelbare school die last heeft van paranoïde schizofrenie. Gelukkig belooft een experimenteel medicijn een einde te maken aan zijn bijzondere hallucinaties, zodat hij zijn ziekte kan verbergen voor zijn leeftijdsgenoten en vooral voor Maya, een intelligent meisje waar hij verliefd op werd op zijn nieuwe school."
-        },
-        {
-            "titel":"Valley Girl",
-            "rating":5.4,
-            "kijkwijzer":[12, "seks", "grof taalgebruik"],
-            "genre":["romantiek", "komedie", "muziek"],
-            "regisseur":"Rachel Lee Goldenberg",
-            "speeltijd":102,
-            "acteurs":["Jessica Rothe", "Jessie Ennis", "Ashleigh Murray"],
-            "samenvatting":"Julie is de ultieme Valley Girl uit de jaren 80. Een creatieve vrije geest. Ze brengt haar tijd door met haar beste vriendinnen die winkelen in het Galleria-winkelcentrum en plannen maken voor het seniorenbal. Dat wil zeggen, totdat ze verlieft wordt op Randy, een Sunset Strip-punkrocker. Ondanks de terughoudendheid van vrienden en familie moet Julie de veiligheid van haar wereld doorbreken en haar hart volgen."
-        },
-        {
-            "titel":"The Half of It",
-            "rating":6.9,
-            "kijkwijzer":[12, "discriminatie"],
-            "genre":["romantiek", "komedie"],
-            "regisseur":"Alice Wu",
-            "speeltijd":104,
-            "acteurs":["Leah Lewis", "Daniel Diemer", "Alexxis Lemire"],
-            "samenvatting":"De verlegen introverte Ellie is een studiebol met Chinese roots. Wanneer ze te horen krijgt dat de charmante Paul verliefd is op Aster, besluit ze hem te helpen haar hart te veroveren. Paul is echter niet op de hoogte van Ellie's eigen gevoelens voor het meisje."
-        },
-        {
-            "titel":"The Lovebirds",
-            "rating":6.1,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik"],
-            "genre":["romantiek", "komedie", "misdaad"],
-            "regisseur":"Michael Showalter",
-            "speeltijd":86,
-            "acteurs":["Issa Rae", "Kumail Nanjiani", "Paul Sparks"],
-            "samenvatting":"Jibran en Leilani staan op het punt een einde aan hun relatie te maken. Op weg naar een etentje bij vrienden raken ze onbedoeld betrokken bij een bizar moordmysterie. Gaandeweg proberen ze hun namen te zuiveren en de zaak op te lossen, terwijl ze erachter moeten zien te komen hoe ze hun relatie en avond gaan redden."
-        },
-        {
-            "titel":"Happiest Season",
-            "rating":6.6,
-            "kijkwijzer":[6, "geweld"],
-            "genre":["romantiek", "komedie"],
-            "regisseur":"Clea DuVall",
-            "speeltijd":110,
-            "acteurs":["Kristen Stewart", "Mackenzie Davis", "Alison Brie"],
-            "samenvatting":"Abby vat het plan op om gedurende de feestdagen haar vriendin Harper ten huwelijk te vragen bij de familie van haar geliefde. Ze ontdekt echter dat de conservatieve ouders van Harper niet op de hoogte zijn van hun relatie. Harper is zelfs nog niet uit de kast gekomen."
-        },
-        {
-            "titel":"Titanic",
-            "rating":7.8,
-            "kijkwijzer":[12, "geweld", "angst"],
-            "genre":["romantiek", "drama"],
-            "regisseur":"James Cameron",
-            "speeltijd":194,
-            "acteurs":["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"],
-            "samenvatting":"De 17-jarige rijke Rose DeWitt Bukater wordt door haar familie gedwongen om zich met Cal Hockley te verloven en binnenkort te gaan trouwen. Tijdens de eerste tocht over de Atlantische zee van de Titanic, een gigantisch passagiersschip dat onzinkbaar wordt geacht, besluit ze zelfmoord te plegen. Ze wordt echter gered door Jack Dawson, een derde klasse-passagier. Ondanks hun totaal verschillende afkomst worden ze vrienden en al snel groeit de liefde tussen hen allebei."
-        },
-        {
-            "titel":"Dirty Dancing",
-            "rating":7.0,
-            "kijkwijzer":[6, "geweld", "angst"],
-            "genre":["romantiek", "muziek"],
-            "regisseur":"Emile Ardolino",
-            "speeltijd":100,
-            "acteurs":["Jennifer Grey", "Patrick Swayze", "Jerry Orbach"],
-            "samenvatting":"Zomer 1963. De 17-jarige naïeve Frances 'Baby' Houseman brengt met haar ouders en haar oudere zus Marjorie de vakantie door op het resort van het hotel Catshill. Baby ontmoet daar de verveelde dansleraar van het hotel Johnny Castle. Johnny brengt Baby 'dirty dancing' bij, ze wordt zijn pupil en ze zet haar eerste schreden in de liefde."
-        },
-        {
-            "titel":"The Kissing Booth 2",
-            "rating":5.8,
-            "kijkwijzer":[0, "grof taalgebruik"],
-            "genre":["romantiek", "komedie"],
-            "regisseur":"Vince Marcello",
-            "speeltijd":130,
-            "acteurs":["Joey King", "Jacob Elordi", "Joel Courtney"],
-            "samenvatting":"Elle Evans, een zestienjarig meisje, is populair en feest graag maar is nog nooit gekust. De zaken nemen een wending die Elle nooit had verwacht wanneer ze tijdens carnaval terechtkomt bij een attractie genaamd 'kissing booth'. Daar staat ze plots oog in oog met de jongen waar ze al lang verliefd op is - de broer van haar beste vriend, Noah. Elle wordt vervolgens meegesleept in een romance met de coolste jongen op school."
-        },
-        {
-            "titel":"Deadpool",
-            "rating":8.0,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["romantiek", "komedie", "actie"],
-            "regisseur":"Tim Miller",
-            "speeltijd":108,
-            "acteurs":["Ryan Reynolds", "Karan Soni", "Ed Skrein"],
-            "samenvatting":"Wade Wilson is een speciale agent van de overheid die, nadat hij onderworpen is aan een behandeling die hem bovenmenselijke genezende krachten heeft gegeven, een alter ego in de vorm van 'Deadpool' aanneemt. Gewapend met zijn nieuwe vaardigheden en een verwrongen gevoel voor humor jaagt hij op de man die bijna zijn hele leven verwoest heeft."
-        },
-        {
-            "titel":"Men in Black: International",
-            "rating":5.6,
-            "kijkwijzer":[12, "geweld", "angst"],
-            "genre":["actie", "sci-fi"],
-            "regisseur":"F. Gary Gray",
-            "speeltijd":115,
-            "acteurs":["Chris Hemsworth", "Tessa Thompson", "Rebecca Ferguson"],
-            "samenvatting":"'Men in Black: International' volgt de agenten M en H, twee leden van een geheime, internationale organisatie. Ze hebben al jaren de wereld moeten behoeden voor bedreigingen van het uitschot van het heelal. Maar nu stuiten ze mogelijk op hun grootste, globale bedreiging ooit; er bevindt zich een mol binnen hun organisatie."
-        },
-        {
-            "titel":"Godzilla: King of the Monsters",
-            "rating":6.0,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik"],
-            "genre":["actie", "sci-fi"],
-            "regisseur":"Michael Dougherty",
-            "speeltijd":131,
-            "acteurs":["Kyle Chandler", "Vera Farmiga", "Millie Bobby Brown"],
-            "samenvatting":"'Godzilla: King of Monsters' volgt de heldhaftige pogingen van het crypto-zoölogische agentschap, Monarch genaamd, dat het opneemt tegen een reeks reusachtige monsters. Onder hen bevinden zich de machtige Godzilla, Mothra, Rodan en de aartsvijand, de driekoppige King Ghidorah. Terwijl de wezens allemaal strijden voor suprematie, hangt het voortbestaan van de mensheid aan een zijden draadje."
-        },
-        {
-            "titel":"Captain Marvel",
-            "rating":6.9,
-            "kijkwijzer":[12, "geweld"],
-            "genre":["sci-fi", "fantasy"],
-            "regisseur":"Ryan Fleck",
-            "speeltijd":124,
-            "acteurs":["Brie Larson", "Samuel L. Jackson", "Ben Mendelsohn"],
-            "samenvatting":"Het jaar 1990. Er is een galactische oorlog gaande tussen twee buitenaardse rassen. Carol Danvers, beter bekend als Captain Marvel, is een vrouw met superkrachten die na lange tijd terugkeert naar de aarde. Daar herinnert ze zich zaken uit haar verleden die bij haar vragen oproepen. Intussen neemt ze het samen met haar bondgenoten op tegen de Skrulls, die de gave hebben om van gedaante te veranderen en die onder leiding staan van Talos. Weet één van de meest krachtige superhelden van het universum de vijand te stoppen?"
-        },
-        {
-            "titel":"X-Men: Dark Phoenix",
-            "rating":5.7,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik"],
-            "genre":["actie", "sci-fi"],
-            "regisseur":"Simon Kinberg",
-            "speeltijd":114,
-            "acteurs":["sophie Turner", "James McAvoy", "Nicholas Hoult"],
-            "samenvatting":"Sinds Jean Grey tijdens een levensgevaarlijke reddingsmissie letterlijk als een feniks uit de as is herrezen, draagt ze de bijnaam 'The Phoenix'. Maar vanaf dat moment beschikt ze over grotere krachten dan ooit en wordt ze geconfronteerd met een ernstig jeugdtrauma. De X-Men proberen te voorkomen dat ze een gevaar wordt voor de wereld."
-        },
-        {
-            "titel":"Star Wars: The Rise of Skywalker",
-            "rating":6.6,
-            "kijkwijzer":[12, "geweld", "angst"],
-            "genre":["sci-fi", "fantasy"],
-            "regisseur":"J.J. Abrams",
-            "speeltijd":141,
-            "acteurs":["Carrrie Fisher", "Mark Hamill", "Daisy Ridley"],
-            "samenvatting":"Een jaar na de gebeurtenissen uit 'The Last Jedi' vindt voor een laatste keer de confrontatie tussen het verzet en de First Order plaats. Wie komt er als overwinnaar uit de bus? Naast de strijd moeten Rey en consorten ook hun persoonlijke demonen en verleden onder ogen zien. Terwijl het conflict tussen de Jedi en de Sith zijn hoogtepunt bereikt, mengen ook oude bekenden zich in de strijd."
-        },
-        {
-            "titel":"Io",
-            "rating":4.7,
-            "kijkwijzer":[12, "angst", "grof taalgebruik"],
-            "genre":["sci-fi", "drama"],
-            "regisseur":"Jonathan Helpert",
-            "speeltijd":96,
-            "acteurs":["Margaret Qualley", "Anthony Mackie", "Danny Huston"],
-            "samenvatting":"De tiener Sam is één van de laatste overlevenden die zich op de aarde bevindt. Er rest nog een laatste shuttle die de planeet zal verlaten en Sam staat voor een moeilijke beslissing. Ze wil graag de enige, weliswaar giftige, planeet die ze haar thuis kan noemen genezen, maar daarvoor moet ze snel zijn. Als de shuttle vertrekt blijft ze immers alleen achter."
-        },
-        {
-            "titel":"Avengers: Endgame",
-            "rating":8.4,
-            "kijkwijzer":[16, "geweld", "angst"],
-            "genre":["sci-fi", "fantasy"],
-            "regisseur":"Anthony Russo",
-            "speeltijd":182,
-            "acteurs":["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"],
-            "samenvatting":"Na de gebeurtenissen in 'Infinity War' hebben de superhelden een grote tik gekregen. Hun gezamenlijke vijand Thanos is erin geslaagd om alle Infinity Stones te bemachtigen en heeft daarbij de helft van al het leven uitgewist. De overlevende helden, en met name de Avengers, hebben echter weinig tijd om te rouwen om hun vrienden en familie. Ze krijgen namelijk hulp aangeboden van onder meer Ant-Man en Captain Marvel. Allen slaan ze de handen in elkaar om Thanos alsnog te kunnen verslaan en om de miljarden doden die hij veroorzaakte weer tot leven te wekken."
-        },
-        {
-            "titel":"Code 8",
-            "rating":6.1,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["sci-fi"],
-            "regisseur":"Jeff Chan",
-            "speeltijd":98,
-            "acteurs":["Stephen Amell", "Robbie Amell", "Kari Matchett"],
-            "samenvatting":"In de toekomst heeft vier procent van de wereldbevolking bovennatuurlijke krachten. Deze personen worden echter niet als helden gezien, maar leven in armoede en worden zorgvuldig bewaakt door de overheid. Connor Reed is één van hen, en kan nauwelijks de medische kosten voor zijn moeder betalen. Hij wordt door ene Garrett aangesproken om een centje bij te verdienen in de criminele onderwereld."
-        },
-        {
-            "titel":"I Am Mother",
-            "rating":6.7,
-            "kijkwijzer":[12, "angst"],
-            "genre":["sci-fi", "thriller"],
-            "regisseur":"Grant Sputore",
-            "speeltijd":115,
-            "acteurs":["Clara Rugaard", "Hilary Swank", "Rose Byrne"],
-            "samenvatting":"Een tienermeisje wordt ondergronds opgevoed door een robot, Mother, die ontworpen werd om de aarde na vernietiging weer van mensen te voorzien. Hun unieke band wordt onder druk gezet wanneer een vreemde vrouw aangetroffen en opgenomen wordt door de tiener. De vrouw doet twijfel veroorzaken bij het meisje die voorheen alles aannam van Mother over de buitenwereld. Met geen idee wie ze kan vertrouwen poogt het meisje de waarheid te achterhalen."
-        },
-        {
-            "titel":"Ad Astra",
-            "rating":6.5,
-            "kijkwijzer":[12, "geweld"],
-            "genre":["sci-fi", "thriller"],
-            "regisseur":"James Gray",
-            "speeltijd":124,
-            "acteurs":["Brad Pitt", "Tommy Lee Jones", "Ruth Negga"],
-            "samenvatting":"'Ad Astra' volgt de ruimteavonturen van een licht autistische ingenieur, Roy McBride genaamd. Het is jaren geleden dat zijn vader naar Neptunus afreisde om buitenaardse intelligentie op te sporen. Roy besluit nu de Melkweg door te reizen, op zoek naar zijn vader en om antwoord te krijgen op de vraag waarom hij niets van zich heeft laten horen."
-        },
-        {
-            "titel":"The Witches",
-            "rating":5.3,
-            "kijkwijzer":[9, "angst"],
-            "genre":["fantasy", "komedie"],
-            "regisseur":"Robert Zemeckis",
-            "speeltijd":106,
-            "acteurs":["Anne Hathaway", "Octavia Spencer", "Stanley Tucci"],
-            "samenvatting":"Eind 1967. Een jonge weesjongen, Bruno genaamd, gaat bij zijn liefhebbende oma wonen in het plattelandsstadje Demopolis in Alabama. Nadat de jongen en zijn grootmoeder enkele ogenschijnlijk charmante, maar duivelse heksen ontmoeten, nemen ze hun toevlucht in een luxe hotel aan de kust. Helaas komen ze net op het moment dat de Opperheks haar handlangers undercover van over de hele wereld heeft laten komen om daar haar demonische plannen uit te voeren."
-        },
-        {
-            "titel":"Bad Boys For Life",
-            "rating":6.6,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["actie", "komedie"],
-            "regisseur":"Adil El Arbi",
-            "speeltijd":0,
-            "acteurs":["Will Smith", "Martin Lawrence", "Paolo Nunez"],
-            "samenvatting":"Mike Lowrey en Marcus Burnett zijn nog steeds werkzaam bij de politie van Miami. Terwijl Marcus al denkt aan pensioen, om eindelijk van zijn gezin en nieuwe kleinkind te genieten, is zijn partner Mike van plan tot zijn honderdste achter de boeven aan te zitten. Ongewild moeten ze allebei in actie komen als een gewelddadige seriemoordenaar Mike bovenaan zijn dodenlijst zet. Ze krijgen hulp van een nieuw opgerichte politie-eenheid vol jonge honden, die zich bedienen van de modernste technische snufjes."
-        },
-        {
-            "titel":"Borat Subsequent Movie Film",
-            "rating":6.7,
-            "kijkwijzer":[12, "seks", "drugs- en alcoholmisbruik", "grof taalgebruik"],
-            "genre":["komedie"],
-            "regisseur":"Jason Woliner",
-            "speeltijd":95,
-            "acteurs":["Sacha Baron Cohen", "Maria Bakalova", "Tom Hanks"],
-            "samenvatting":"14 jaar later wordt de bekende Kazachse tv-reporter Borat Sagdiyev opnieuw naar de Verenigde Staten gestuurd om verslag te doen van het beste land van de wereld. Hij probeert om zich anoniem onder de mensen te begeven, maar hij denkt dat hij simpelweg te bekend is geworden na zijn vorige verslag over Amerika. Hij probeert verslag te doen van president Trump, de beschermer van vrouwen, de oorlogsheld en degene met een slechte adem. Trump, die de Amerikanen weet te beschermen tijdens de Corona-pandemie. Tevens heeft hij een gift voor vicepresident Mike Pence, in de hoop dat zijn vaderland er beter van wordt."
-        },
-        {
-            "titel":"Dolittle",
-            "rating":5.6,
-            "kijkwijzer":[6, "geweld", "angst"],
-            "genre":["komedie", "familie"],
-            "regisseur":"Stephen Gaghan",
-            "speeltijd":101,
-            "acteurs":["Robert Downey Jr.", "Antonio Banderas", "Michael Sheen"],
-            "samenvatting":"Na het verliezen van zijn vrouw zondert John Dolittle, een dokter uit het Victoriaanse tijdperk, zich af van de wereld met enkel zijn exotische dieren als gezelschap. Wanneer de jonge koningin Victoria echter ernstig ziek is, wordt John gedwongen af te reizen naar een mythisch eiland op zoek naar een remedie. Tijdens zijn zoektocht wordt hij vergezeld door een jonge leerling en een gezelschap aan dieren, waaronder een angstige gorilla, een enthousiaste eend, een cynische struisvogel, een vrolijke ijsbeer en een eigenzinnige papegaai."
-        },
-        {
-            "titel":"Onward",
-            "rating":7.4,
-            "kijkwijzer":[6, "geweld", "angst"],
-            "genre":["animatie", "avontuur", "komedie"],
-            "regisseur":"Dan Scanion",
-            "speeltijd":102,
-            "acteurs":["Tom Holland", "Chris Pratt", "Julia Louis-Dreyfus"],
-            "samenvatting":"’Onward’ vertelt het verhaal van twee elfen broers uit een magische buitenwijk. Na de dood van hun vader besluiten de jongens op een ontdekkingsreis te gaan. Daarbij gaan ze op zoek naar de vraag of er nog enige vorm van magie over is in de buitenwereld."
-        },
-        {
-            "titel":"Jumanji: The Next Level",
-            "rating":6.6,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik"],
-            "genre":["actie", "avontuur", "komedie"],
-            "regisseur":"Jake Kasdan",
-            "speeltijd":123,
-            "acteurs":["Dwayne Johnson", "Kevin Hart", "Jack Black"],
-            "samenvatting":"In 'Jumanji: The Next Level' keert het groepje terug, maar is het spel veranderd. Wanneer ze terugkeren naar Jumanji om iemand van hen te redden, ontdekken ze dat niets is wat ze vooraf hadden verwacht. De spelers zullen onbekende delen moeten trotseren, van dorre woestijnen tot besneeuwde bergen, om te ontsnappen aan 's werelds meest gevaarlijke spel."
-        },
-        {
-            "titel":"Dora and the Lost City of Gold",
-            "rating":6.1,
-            "kijkwijzer":[9, "angst"],
-            "genre":["avontuur", "familie", "komedie"],
-            "regisseur":"James Bobin",
-            "speeltijd":102,
-            "acteurs":["Isabela Merced", "Jeffrey Wahlberg", "Madeleine Madden"],
-            "samenvatting":"Dora heeft samen met haar ouders het grootste deel van haar leven de wildernis verkend. Haar meest uitdagende avontuur staat haar echter nog op te wachten: de middelbare school. Wanneer haar ouders in gevaar zijn schiet Dora meteen in actie en neemt ze Boots, Diego en een groep tieners mee op sleeptouw. Naast de reddingsactie hopen ze het mysterie rond een verloren Inca Stad op te lossen."
-        },
-        {
-            "titel":"Knives Out",
-            "rating":7.9,
-            "kijkwijzer":[12, "angst", "grof taalgebruik"],
-            "genre":["misdaad", "mysterie", "komedie"],
-            "regisseur":"Rian Johnson",
-            "speeltijd":130,
-            "acteurs":["Daniel Craig", "Chris Evans", "Ana de Armas"],
-            "samenvatting":"Schrijver Harlan Trombey wordt dood aangetroffen in zijn huis, vlak na zijn 85e verjaardag. Detective Benoit Blanc wordt ingeschakeld om het mysterie op te lossen, wat een behoorlijke opgave blijkt. Harlan heeft namelijk nogal vreemde en achterdochtige familieleden en ook nog eens een aantal stafleden die hem op zijn wenken bediend toen hij nog leefde."
-        },
-        {
-            "titel":"Coming to America 2",
-            "rating":0.0,
-            "kijkwijzer":[],
-            "genre":["komedie"],
-            "regisseur":"Craig Brewer",
-            "speeltijd":116,
-            "acteurs":["Eddie Murphy", "Arsenio Hall", "Jermaine Fowler"],
-            "samenvatting":"Men beweert dat de Prins van Zamunda een zoon heeft in Amerika. Akeem keert samen met Semmi terug naar de VS om op onderzoek uit te gaan. Hij wil natuurlijk graag weten of deze kroonprins wel écht tot de koninklijke familie van Zamunda behoort. Maar helaas loopt alles niet zoals gepland."
-        },
-        {
-            "titel":"Gisaengchung(Parasite)",
-            "rating":8.6,
-            "kijkwijzer":[16, "angst", "grof taalgebruik"],
-            "genre":["drama", "komedie"],
-            "regisseur":"Bong Joon-ho",
-            "speeltijd":132,
-            "acteurs":["Song Kang-ho", "Lee Sun-Kyun", "Cho Yeo-jeong"],
-            "samenvatting":"Ki-taek en zijn werkloze familie verkeren in geldnood. Ze leven in een krappe en duistere woning zonder toegang tot wifi. Zijn kinderen besluiten op een dag om een diploma te vervalsen zodat zoon Ki-woo de privé leraar van Da-hye, dochter van de rijke familie Park, kan vervangen. Wanneer Ki-woo in de wereld van de rijke familie belandt, maakt hij van zijn nieuwe positie misbruik om ook zijn gezinsleden aan een baan te helpen. Wanneer het plan lijkt te slagen, volgt een verrassing."
-        },
-        {
-            "titel":"The Beast",
-            "rating":5.2,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik", "drugs- en alcoholmisbruik"],
-            "genre":["actie", "misdaad", "drama"],
-            "regisseur":"Ludovico Di Martino",
-            "speeltijd":97,
-            "acteurs":["Fabrizio Gifuni", "Lino Musella", "Monica Piseddu"],
-            "samenvatting":"Leonida Riva is a gloomy, solitary war veteran, once Captain of the Army's special forces. Life and work have driven Riva apart from his family. His eldest son, Mattia, has never forgiven him while his daughter, Teresa, loves him unconditionally. However, a tragic event will force Leonida to transform into something he thought he had long buried in the past."
-        },
-        {
-            "titel":"Honest Thief",
-            "rating":6.0,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik"],
-            "genre":["actie", "misdaad"],
-            "regisseur":"Mark Williams",
-            "speeltijd":99,
-            "acteurs":["Liam Neeson", "Kate Walsh", "Jai Courtney"],
-            "samenvatting":"Tom Carter heeft door middel van zijn loopbaan als bankrover carrière gemaakt. Hier komt verandering in wanneer hij de liefde van zijn leven ontmoet: Annie. Zij werkt als receptioniste bij de opslagfaciliteit waar Tom gestolen geld heeft opgeborgen. Al snel vallen ze voor elkaar, maar dat is niet genoeg voor Tom die zijn naam wil zuiveren. Hij besluit zichzelf aan te geven en het geld in te leveren. Maar dan wordt de zaak aan een corrupte FBI-agent overgedragen. Opeens valt Toms plan in duigen."
-        },
-        {
-            "titel":"Survive the Night",
-            "rating":4.7,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["actie", "thriller"],
-            "regisseur":"Matt Eskandari",
-            "speeltijd":90,
-            "acteurs":["Bruce Willis", "Chad Michael Murray", "Lydia Hull"],
-            "samenvatting":"Nadat zijn broer Mathias levensgevaarlijk gewond is geraakt bij een mislukte overval, zit Jamie met zijn handen in het haar. Hij besluit de trauma dokter Rich te volgen naar zijn huis en gijzelt daar zijn vrouw en dochter en beveelt Rich zijn broer snel te opereren. Rich besluit daarop om samen met zijn vervreemde vader Frank zijn gezin in veiligheid te brengen."
-        },
-        {
-            "titel":"Extraction",
-            "rating":6.7,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["actie", "drama"],
-            "regisseur":"Sam Hargrave",
-            "speeltijd":116,
-            "acteurs":["Chris Hemsworth", "Rudhraksh Jaiswal", "Randeep Hooda"],
-            "samenvatting":"Een Indiaas jongetje, de zoon van een internationale crimineel die vastzit, wordt ontvoerd in de hoofdstad van Bangladesh en vastgehouden in één van de meest ondoordringbare steden van de wereld. Een bedreven huurmoordenaar, Tyler Rake genaamd, wordt vervolgens ingehuurd om het jongetje te bevrijden en terug te brengen naar zijn familie. Tijdens zijn reddingsmissie is Tyler ook op zoek naar verlossing."
-        },
-        {
-            "titel":"Bloodshot",
-            "rating":5.7,
-            "kijkwijzer":[12, "geweld"],
-            "genre":["actie", "sci-fi"],
-            "regisseur":"Dave Wilson",
-            "speeltijd":109,
-            "acteurs":["Vin Diesel", "Eiza Gonzalez", "Sam Heughan"],
-            "samenvatting":"Beveiligingsbedrijf Rising Spirit Technologies weet met nanotechnologie een overleden soldaat, Ray Garrison genaamd, terug tot leven te wekken. De transfusie heeft van hem een moordmachine gemaakt die niet te stuiten is, uitgerust met verbeterde vermogens, zoals genezing, snelheid en verdraagzaamheid. Ray probeert vervolgens te achterhalen wie hem dit aangedaan heeft en zint op wraak. Maar alles blijkt anders te zitten dan het lijkt."
-        },
-        {
-            "titel":"Force of Nature",
-            "rating":4.5,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik", "angst"],
-            "genre":["actie", "drama"],
-            "regisseur":"Michael Polish",
-            "speeltijd":91,
-            "acteurs":["Mel Gibson", "Emile Hirsch", "Kate Bosworth"],
-            "samenvatting":"Vanwege een naderende storm moet de jonge agent Cardillo, samen met zijn collega Jess, een appartementencomplex zien te evacueren. Daar stuiten ze op Troy en haar koppige vader Ray, die weigert te vertrekken. Zij weten echter niet dat een groep dieven van plan is het gebouw in te nemen in hun zoektocht naar een verborgen schat van 55 miljoen dollar. Gelukkig blijkt Ray een gepensioneerde inspecteur die bekend is met de bende. En hij is niet van plan op te geven zonder een gevecht."
-        },
-        {
-            "titel":"Underwater",
-            "rating":5.8,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["actie", "drama"],
-            "regisseur":"William Eubank",
-            "speeltijd":95,
-            "acteurs":["Kristen Stewart", "Vincent Cassel", "Mamoudou Athie"],
-            "samenvatting":"Een team bestaande uit diepzee-onderzoekers krijgt te maken met een aardbeving die het ondergrondse laboratorium volledig verwoest. Nu moeten de leden alles op alles zetten om te kunnen overleven. Onder hen bevindt zich de moedige, maar geharde Norah. Het team bestaat uit mensen die elkaar nauwelijks kennen en zo ontstaan er bizarre en soms existentiële conversaties, alsook vreemde relaties."
-        },
-        {
-            "titel":"Vanguard",
-            "rating":4.7,
-            "kijkwijzer":[16, "geweld", "grof taalgebruik"],
-            "genre":["actie"],
-            "regisseur":"Stanley Tong",
-            "speeltijd":108,
-            "acteurs":["Jackie Chan", "Yang Yang", "Allen Ai Lun"],
-            "samenvatting":"Een belangrijke Chinese zakenman en zijn dochter worden bedreigd door de dodelijkste huurlingenorganisatie ter wereld. Het geheime beveiligingskantoor Vanguard en diens elite-agenten zijn hun enige kans om in leven te blijven."
-        },
-        {
-            "titel":"Alita: Battle Angel",
-            "rating":7.3,
-            "kijkwijzer":[12, "geweld", "grof taalgebruik"],
-            "genre":["actie", "avontuur"],
-            "regisseur":"Robert Rodriguez",
-            "speeltijd":122,
-            "acteurs":["Rosa Salazar", "Cristoph Waltz", "Jennifer Connelly"],
-            "samenvatting":"'Alita: Battle Angel' draait om de lotgevallen van een schijnbaar afgeschreven vrouwelijke cyborg die gered wordt door een dokter en een tweede leven krijgt. Van haar eerste herinnert ze zich niets, hoewel haar aanzienlijke vaardigheden in de martial arts een dodelijk beroep suggereren. Ze begint een nieuw bestaan als premiejager en stort zich op het opjagen van de gevaarlijkste criminelen."
-        },
-        {
-            "titel":"Spider-Man: Far from Home",
-            "rating":7.5,
-            "kijkwijzer":[12, "geweld"],
-            "genre":["actie", "avontuur"],
-            "regisseur":"Jon Watts",
-            "speeltijd":129,
-            "acteurs":["Tom Holland", "Samuel L. Jackson", "Jake Gyllenhaal"],
-            "samenvatting":"'Spider-Man: Far from Home' speelt zich af na de gebeurtenissen van 'Avengers: Endgame'. Peter Parker gaat met zijn vrienden op zomervakantie door Europa. Tijdens deze vakantie wordt hij benaderd door Nick Fury in een missie om het mysterie rondom verschillende aanvallen van elementaire wezens te ontrafelen. Hierbij ontmoet hij mede-superheld Mysterio."
-        },
-        {
-            "titel":"Initiation",
-            "rating":8.6,
-            "kijkwijzer":[16, "angst"],
-            "genre":["horror", "thriller"],
-            "regisseur":"John Borado",
-            "speeltijd":96,
-            "acteurs":["Jon Huertas", "Isabella Gomez", "Lindsay LaVanchy"],
-            "samenvatting":"Whiton University komt in de problemen wanneer een online spelletje voor een schandaal zorgt. Een atleet wordt op de campus vermoord teruggevonden, waarna zijn zus Ellery op zoek gaat naar wat er gebeurd is. Intussen wordt de ene na de andere student op gruwelijke wijze vermoord…"
-        },
-        {
-            "titel":"A Quiet Place Part II",
-            "rating":7.3,
-            "kijkwijzer":[16, "geweld", "angst"],
-            "genre":["horror", "thriller"],
-            "regisseur":"John Krasinski",
-            "speeltijd":97,
-            "acteurs":["Emily Blunt", "Cillian Murphy", "Millicent Simmonds"],
-            "samenvatting":"Na de gebeurtenissen thuis, wordt de familie Abbott nu geconfronteerd met de verschrikkingen van de buitenwereld. Gedwongen om zich in het onbekende te wagen, realiseren ze zich dat de wezens die op geluid jagen niet de enige bedreiging is die op de loer ligt buiten het zandpad.."
-        },
-        {
-            "titel":"Rose: A Love Story",
-            "rating":7.2,
-            "kijkwijzer":[16, "angst"],
-            "genre":["horror"],
-            "regisseur":"Jennifer Sheridan",
-            "speeltijd":86,
-            "acteurs":["Sophie Rundle", "Matt Stokoe", "Olive Gray"],
-            "samenvatting":"Rose woont met haar echtgenoot Sam een afgezonderd en sober bestaan. Rose kampt met een mysterieuze, ernstige ziekte. Wanneer ze op een dag een vreemde binnenlaten, komt zowel hun veilig onderkomen als de gezondheid van Rose in gevaar."
-        },
-        {
-            "titel":"The Invisible Man",
-            "rating":7.1,
-            "kijkwijzer":[16, "angst", "geweld"],
-            "genre":["horror", "sci-fi"],
-            "regisseur":"Leigh Whannell",
-            "speeltijd":124,
-            "acteurs":["Elisabeth Moss", "Oliver Jackson-Cohen", "Aldis Hodge"],
-            "samenvatting":"Als de gewelddadige ex van Cecilia Kass (Elisabeth Moss) zelfmoord pleegt en haar een groot deel van zijn vermogen nalaat, vermoedt zij dat hij zijn dood in scène heeft gezet. Na enkele bizarre toevalligheden met dodelijke afloop, realiseert Cecilia zich dat de levens van haar vrienden en familie in gevaar zijn. Langzaam begint Cecilia door te draaien, terwijl zij wanhopig probeert te bewijzen dat zij achterna gezeten wordt door iemand die door niemand gezien kan worden..."
-        },
-        {
-            "titel":"The Call",
-            "rating":7.1,
-            "kijkwijzer":[16, "angst", "geweld"],
-            "genre":["horror", "mysterie"],
-            "regisseur":"Chung-Hyun Lee",
-            "speeltijd":112,
-            "acteurs":["Park Shin-Hye", "Jong-seo Jun", "Kim Sung-Ryung"],
-            "samenvatting":"Een vrouw keert terug naar haar oude huis en vindt een oude telefoon waarmee ze met iemand kan spreken die 20 jaar geleden in hetzelfde huis woonde."
-        },
-        {
-            "titel":"Come True",
-            "rating":6.8,
-            "kijkwijzer":[16],
-            "genre":["horror"],
-            "regisseur":"Anthony Scott Burns",
-            "speeltijd":105,
-            "acteurs":["Julia Sarah Stone", "Landon Liboiron", "Carlee Ryski"],
-            "samenvatting":"Op zoek naar een oplossing voor haar constante nachtmerries, schrijft de 18-jarige Sarah zich in voor een slaapstudie op de universiteit. Al snel komt ze erachter dat haar dromen realiteit worden. Haar visioenen verergeren en alvorens de wetenschappers kunnen ingrijpen is Sarah het medium geworden van een angstaanjagende entiteit."
-        },
-        {
-            "titel":"The Night House",
-            "rating":6.7,
-            "kijkwijzer":[16],
-            "genre":["horror", "thriller"],
-            "regisseur":"David Bruckner",
-            "speeltijd":108,
-            "acteurs":["Rebecca Hall", "Sarah Goldberg", "Stacy Martin"],
-            "samenvatting":"Een weduwe begint de verontrustende geheimen van haar overleden echtgenoot te ontdekken"
-        },
-        {
-            "titel":"Host",
-            "rating":6.6,
-            "kijkwijzer":[16],
-            "genre":["horror"],
-            "regisseur":"Rob Savage",
-            "speeltijd":63,
-            "acteurs":["Haley Bishop", "Jemma Moore", "Emma Louise Webb"],
-            "samenvatting":"Zes vrienden huren een medium in om een seance te houden via Zoom tijdens de lockdown. De vrienden krijgen echter te maken met een boze geest die hun huizen binnendringt. Ze realiseren zich dat ze er alles aan moeten doen om de nacht te overleven."
-        },
-        {
-            "titel":"Possessor",
-            "rating":6.5,
-            "kijkwijzer":[16],
-            "genre":["horror", "sci-fi"],
-            "regisseur":"Brandon Cronenberg",
-            "speeltijd":102,
-            "acteurs":["Andrea Riseborough",  "Christopher Abbott", "Sean Bean"],
-            "samenvatting":"Vos is een agente werkzaam voor een geheime organisatie die met behulp van hersenimplantatietechnologie het lichaam van andere mensen binnen kan dringen en hen aanzet tot het plegen van moorden ten voordele van de organisatie waar hij voor werkt. Maar als er tijdens een routineklus iets misgaat, zit ze gevangen in een man die zijn eigen identiteit dreigt uit te wissen."
-        },
-        {
-            "titel":"Hunter Hunter",
-            "rating":6.4,
-            "kijkwijzer":[16],
-            "genre":["horror", "thriller"],
-            "regisseur":"Shawn Linden",
-            "speeltijd":93,
-            "acteurs":["Camille Sullivan", "Devon Sawa", "Summer H. Howell"],
-            "samenvatting":"Joseph woont met zijn vrouw Anne en dochter Renée in de wildernis waar ze hun kost verdienen als pelsjagers. Ze kunnen de eindjes maar moeilijk aan elkaar knopen doordat hun werk, volgens hun, door een wolf gehinderd wordt. Terwijl Joseph eropuit trekt om het roofdier op te sporen, worstelen Anne en Renée met zijn langdurige afwezigheid. Op een dag staat de gewonde Lou die voor dood achtergelaten werd bij hen voor de deur."
-        }
-    ]
-}
+[
+      {
+          "titel":"The Broken Hearts Gallery",
+          "rating":6.2,
+          "kijkwijzer":[12, "seks", "grof taalgebruik"],
+          "genre":["romantiek", "komedie"],
+          "regisseur":"Natalie Krinsky",
+          "speeltijd":108,
+          "acteurs":["Geraldine Viswanathan", "Dacre Montgomery", "Utkarsh Ambudkar"],
+          "samenvatting":"De twintiger Lucy werkt in een kunstgalerie en is op persoonlijk vlak een grote verzamelaar. Als ze door haar vriendje gedumpt wordt, krijgt ze het idee om het project The Broken Heart Gallery op te zetten, een verzamelplek voor alle objecten die te maken hebben met haar vroegere liefdes. De expositie wordt een succes en krijgt navolging."
+      },
+      {
+          "titel":"Words On The Bathroom Walls",
+          "rating":7.0,
+          "kijkwijzer":[12, "angst", "grof taalgebruik"],
+          "genre":["romantiek", "drama"],
+          "regisseur":"Thor Freudenthal",
+          "speeltijd":110,
+          "acteurs":["Charlie Plummer", "Molly Parker", "Walton Goggins"],
+          "samenvatting":"Adam is een tiener op de middelbare school die last heeft van paranoïde schizofrenie. Gelukkig belooft een experimenteel medicijn een einde te maken aan zijn bijzondere hallucinaties, zodat hij zijn ziekte kan verbergen voor zijn leeftijdsgenoten en vooral voor Maya, een intelligent meisje waar hij verliefd op werd op zijn nieuwe school."
+      },
+      {
+          "titel":"Valley Girl",
+          "rating":5.4,
+          "kijkwijzer":[12, "seks", "grof taalgebruik"],
+          "genre":["romantiek", "komedie", "muziek"],
+          "regisseur":"Rachel Lee Goldenberg",
+          "speeltijd":102,
+          "acteurs":["Jessica Rothe", "Jessie Ennis", "Ashleigh Murray"],
+          "samenvatting":"Julie is de ultieme Valley Girl uit de jaren 80. Een creatieve vrije geest. Ze brengt haar tijd door met haar beste vriendinnen die winkelen in het Galleria-winkelcentrum en plannen maken voor het seniorenbal. Dat wil zeggen, totdat ze verlieft wordt op Randy, een Sunset Strip-punkrocker. Ondanks de terughoudendheid van vrienden en familie moet Julie de veiligheid van haar wereld doorbreken en haar hart volgen."
+      },
+      {
+          "titel":"The Half of It",
+          "rating":6.9,
+          "kijkwijzer":[12, "discriminatie"],
+          "genre":["romantiek", "komedie"],
+          "regisseur":"Alice Wu",
+          "speeltijd":104,
+          "acteurs":["Leah Lewis", "Daniel Diemer", "Alexxis Lemire"],
+          "samenvatting":"De verlegen introverte Ellie is een studiebol met Chinese roots. Wanneer ze te horen krijgt dat de charmante Paul verliefd is op Aster, besluit ze hem te helpen haar hart te veroveren. Paul is echter niet op de hoogte van Ellie's eigen gevoelens voor het meisje."
+      },
+      {
+          "titel":"The Lovebirds",
+          "rating":6.1,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik"],
+          "genre":["romantiek", "komedie", "misdaad"],
+          "regisseur":"Michael Showalter",
+          "speeltijd":86,
+          "acteurs":["Issa Rae", "Kumail Nanjiani", "Paul Sparks"],
+          "samenvatting":"Jibran en Leilani staan op het punt een einde aan hun relatie te maken. Op weg naar een etentje bij vrienden raken ze onbedoeld betrokken bij een bizar moordmysterie. Gaandeweg proberen ze hun namen te zuiveren en de zaak op te lossen, terwijl ze erachter moeten zien te komen hoe ze hun relatie en avond gaan redden."
+      },
+      {
+          "titel":"Happiest Season",
+          "rating":6.6,
+          "kijkwijzer":[6, "geweld"],
+          "genre":["romantiek", "komedie"],
+          "regisseur":"Clea DuVall",
+          "speeltijd":110,
+          "acteurs":["Kristen Stewart", "Mackenzie Davis", "Alison Brie"],
+          "samenvatting":"Abby vat het plan op om gedurende de feestdagen haar vriendin Harper ten huwelijk te vragen bij de familie van haar geliefde. Ze ontdekt echter dat de conservatieve ouders van Harper niet op de hoogte zijn van hun relatie. Harper is zelfs nog niet uit de kast gekomen."
+      },
+      {
+          "titel":"Titanic",
+          "rating":7.8,
+          "kijkwijzer":[12, "geweld", "angst"],
+          "genre":["romantiek", "drama"],
+          "regisseur":"James Cameron",
+          "speeltijd":194,
+          "acteurs":["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"],
+          "samenvatting":"De 17-jarige rijke Rose DeWitt Bukater wordt door haar familie gedwongen om zich met Cal Hockley te verloven en binnenkort te gaan trouwen. Tijdens de eerste tocht over de Atlantische zee van de Titanic, een gigantisch passagiersschip dat onzinkbaar wordt geacht, besluit ze zelfmoord te plegen. Ze wordt echter gered door Jack Dawson, een derde klasse-passagier. Ondanks hun totaal verschillende afkomst worden ze vrienden en al snel groeit de liefde tussen hen allebei."
+      },
+      {
+          "titel":"Dirty Dancing",
+          "rating":7.0,
+          "kijkwijzer":[6, "geweld", "angst"],
+          "genre":["romantiek", "muziek"],
+          "regisseur":"Emile Ardolino",
+          "speeltijd":100,
+          "acteurs":["Jennifer Grey", "Patrick Swayze", "Jerry Orbach"],
+          "samenvatting":"Zomer 1963. De 17-jarige naïeve Frances 'Baby' Houseman brengt met haar ouders en haar oudere zus Marjorie de vakantie door op het resort van het hotel Catshill. Baby ontmoet daar de verveelde dansleraar van het hotel Johnny Castle. Johnny brengt Baby 'dirty dancing' bij, ze wordt zijn pupil en ze zet haar eerste schreden in de liefde."
+      },
+      {
+          "titel":"The Kissing Booth 2",
+          "rating":5.8,
+          "kijkwijzer":[0, "grof taalgebruik"],
+          "genre":["romantiek", "komedie"],
+          "regisseur":"Vince Marcello",
+          "speeltijd":130,
+          "acteurs":["Joey King", "Jacob Elordi", "Joel Courtney"],
+          "samenvatting":"Elle Evans, een zestienjarig meisje, is populair en feest graag maar is nog nooit gekust. De zaken nemen een wending die Elle nooit had verwacht wanneer ze tijdens carnaval terechtkomt bij een attractie genaamd 'kissing booth'. Daar staat ze plots oog in oog met de jongen waar ze al lang verliefd op is - de broer van haar beste vriend, Noah. Elle wordt vervolgens meegesleept in een romance met de coolste jongen op school."
+      },
+      {
+          "titel":"Deadpool",
+          "rating":8.0,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["romantiek", "komedie", "actie"],
+          "regisseur":"Tim Miller",
+          "speeltijd":108,
+          "acteurs":["Ryan Reynolds", "Karan Soni", "Ed Skrein"],
+          "samenvatting":"Wade Wilson is een speciale agent van de overheid die, nadat hij onderworpen is aan een behandeling die hem bovenmenselijke genezende krachten heeft gegeven, een alter ego in de vorm van 'Deadpool' aanneemt. Gewapend met zijn nieuwe vaardigheden en een verwrongen gevoel voor humor jaagt hij op de man die bijna zijn hele leven verwoest heeft."
+      },
+      {
+          "titel":"Men in Black: International",
+          "rating":5.6,
+          "kijkwijzer":[12, "geweld", "angst"],
+          "genre":["actie", "sci-fi"],
+          "regisseur":"F. Gary Gray",
+          "speeltijd":115,
+          "acteurs":["Chris Hemsworth", "Tessa Thompson", "Rebecca Ferguson"],
+          "samenvatting":"'Men in Black: International' volgt de agenten M en H, twee leden van een geheime, internationale organisatie. Ze hebben al jaren de wereld moeten behoeden voor bedreigingen van het uitschot van het heelal. Maar nu stuiten ze mogelijk op hun grootste, globale bedreiging ooit; er bevindt zich een mol binnen hun organisatie."
+      },
+      {
+          "titel":"Godzilla: King of the Monsters",
+          "rating":6.0,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik"],
+          "genre":["actie", "sci-fi"],
+          "regisseur":"Michael Dougherty",
+          "speeltijd":131,
+          "acteurs":["Kyle Chandler", "Vera Farmiga", "Millie Bobby Brown"],
+          "samenvatting":"'Godzilla: King of Monsters' volgt de heldhaftige pogingen van het crypto-zoölogische agentschap, Monarch genaamd, dat het opneemt tegen een reeks reusachtige monsters. Onder hen bevinden zich de machtige Godzilla, Mothra, Rodan en de aartsvijand, de driekoppige King Ghidorah. Terwijl de wezens allemaal strijden voor suprematie, hangt het voortbestaan van de mensheid aan een zijden draadje."
+      },
+      {
+          "titel":"Captain Marvel",
+          "rating":6.9,
+          "kijkwijzer":[12, "geweld"],
+          "genre":["sci-fi", "fantasy"],
+          "regisseur":"Ryan Fleck",
+          "speeltijd":124,
+          "acteurs":["Brie Larson", "Samuel L. Jackson", "Ben Mendelsohn"],
+          "samenvatting":"Het jaar 1990. Er is een galactische oorlog gaande tussen twee buitenaardse rassen. Carol Danvers, beter bekend als Captain Marvel, is een vrouw met superkrachten die na lange tijd terugkeert naar de aarde. Daar herinnert ze zich zaken uit haar verleden die bij haar vragen oproepen. Intussen neemt ze het samen met haar bondgenoten op tegen de Skrulls, die de gave hebben om van gedaante te veranderen en die onder leiding staan van Talos. Weet één van de meest krachtige superhelden van het universum de vijand te stoppen?"
+      },
+      {
+          "titel":"X-Men: Dark Phoenix",
+          "rating":5.7,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik"],
+          "genre":["actie", "sci-fi"],
+          "regisseur":"Simon Kinberg",
+          "speeltijd":114,
+          "acteurs":["sophie Turner", "James McAvoy", "Nicholas Hoult"],
+          "samenvatting":"Sinds Jean Grey tijdens een levensgevaarlijke reddingsmissie letterlijk als een feniks uit de as is herrezen, draagt ze de bijnaam 'The Phoenix'. Maar vanaf dat moment beschikt ze over grotere krachten dan ooit en wordt ze geconfronteerd met een ernstig jeugdtrauma. De X-Men proberen te voorkomen dat ze een gevaar wordt voor de wereld."
+      },
+      {
+          "titel":"Star Wars: The Rise of Skywalker",
+          "rating":6.6,
+          "kijkwijzer":[12, "geweld", "angst"],
+          "genre":["sci-fi", "fantasy"],
+          "regisseur":"J.J. Abrams",
+          "speeltijd":141,
+          "acteurs":["Carrrie Fisher", "Mark Hamill", "Daisy Ridley"],
+          "samenvatting":"Een jaar na de gebeurtenissen uit 'The Last Jedi' vindt voor een laatste keer de confrontatie tussen het verzet en de First Order plaats. Wie komt er als overwinnaar uit de bus? Naast de strijd moeten Rey en consorten ook hun persoonlijke demonen en verleden onder ogen zien. Terwijl het conflict tussen de Jedi en de Sith zijn hoogtepunt bereikt, mengen ook oude bekenden zich in de strijd."
+      },
+      {
+          "titel":"Io",
+          "rating":4.7,
+          "kijkwijzer":[12, "angst", "grof taalgebruik"],
+          "genre":["sci-fi", "drama"],
+          "regisseur":"Jonathan Helpert",
+          "speeltijd":96,
+          "acteurs":["Margaret Qualley", "Anthony Mackie", "Danny Huston"],
+          "samenvatting":"De tiener Sam is één van de laatste overlevenden die zich op de aarde bevindt. Er rest nog een laatste shuttle die de planeet zal verlaten en Sam staat voor een moeilijke beslissing. Ze wil graag de enige, weliswaar giftige, planeet die ze haar thuis kan noemen genezen, maar daarvoor moet ze snel zijn. Als de shuttle vertrekt blijft ze immers alleen achter."
+      },
+      {
+          "titel":"Avengers: Endgame",
+          "rating":8.4,
+          "kijkwijzer":[16, "geweld", "angst"],
+          "genre":["sci-fi", "fantasy"],
+          "regisseur":"Anthony Russo",
+          "speeltijd":182,
+          "acteurs":["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"],
+          "samenvatting":"Na de gebeurtenissen in 'Infinity War' hebben de superhelden een grote tik gekregen. Hun gezamenlijke vijand Thanos is erin geslaagd om alle Infinity Stones te bemachtigen en heeft daarbij de helft van al het leven uitgewist. De overlevende helden, en met name de Avengers, hebben echter weinig tijd om te rouwen om hun vrienden en familie. Ze krijgen namelijk hulp aangeboden van onder meer Ant-Man en Captain Marvel. Allen slaan ze de handen in elkaar om Thanos alsnog te kunnen verslaan en om de miljarden doden die hij veroorzaakte weer tot leven te wekken."
+      },
+      {
+          "titel":"Code 8",
+          "rating":6.1,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["sci-fi"],
+          "regisseur":"Jeff Chan",
+          "speeltijd":98,
+          "acteurs":["Stephen Amell", "Robbie Amell", "Kari Matchett"],
+          "samenvatting":"In de toekomst heeft vier procent van de wereldbevolking bovennatuurlijke krachten. Deze personen worden echter niet als helden gezien, maar leven in armoede en worden zorgvuldig bewaakt door de overheid. Connor Reed is één van hen, en kan nauwelijks de medische kosten voor zijn moeder betalen. Hij wordt door ene Garrett aangesproken om een centje bij te verdienen in de criminele onderwereld."
+      },
+      {
+          "titel":"I Am Mother",
+          "rating":6.7,
+          "kijkwijzer":[12, "angst"],
+          "genre":["sci-fi", "thriller"],
+          "regisseur":"Grant Sputore",
+          "speeltijd":115,
+          "acteurs":["Clara Rugaard", "Hilary Swank", "Rose Byrne"],
+          "samenvatting":"Een tienermeisje wordt ondergronds opgevoed door een robot, Mother, die ontworpen werd om de aarde na vernietiging weer van mensen te voorzien. Hun unieke band wordt onder druk gezet wanneer een vreemde vrouw aangetroffen en opgenomen wordt door de tiener. De vrouw doet twijfel veroorzaken bij het meisje die voorheen alles aannam van Mother over de buitenwereld. Met geen idee wie ze kan vertrouwen poogt het meisje de waarheid te achterhalen."
+      },
+      {
+          "titel":"Ad Astra",
+          "rating":6.5,
+          "kijkwijzer":[12, "geweld"],
+          "genre":["sci-fi", "thriller"],
+          "regisseur":"James Gray",
+          "speeltijd":124,
+          "acteurs":["Brad Pitt", "Tommy Lee Jones", "Ruth Negga"],
+          "samenvatting":"'Ad Astra' volgt de ruimteavonturen van een licht autistische ingenieur, Roy McBride genaamd. Het is jaren geleden dat zijn vader naar Neptunus afreisde om buitenaardse intelligentie op te sporen. Roy besluit nu de Melkweg door te reizen, op zoek naar zijn vader en om antwoord te krijgen op de vraag waarom hij niets van zich heeft laten horen."
+      },
+      {
+          "titel":"The Witches",
+          "rating":5.3,
+          "kijkwijzer":[9, "angst"],
+          "genre":["fantasy", "komedie"],
+          "regisseur":"Robert Zemeckis",
+          "speeltijd":106,
+          "acteurs":["Anne Hathaway", "Octavia Spencer", "Stanley Tucci"],
+          "samenvatting":"Eind 1967. Een jonge weesjongen, Bruno genaamd, gaat bij zijn liefhebbende oma wonen in het plattelandsstadje Demopolis in Alabama. Nadat de jongen en zijn grootmoeder enkele ogenschijnlijk charmante, maar duivelse heksen ontmoeten, nemen ze hun toevlucht in een luxe hotel aan de kust. Helaas komen ze net op het moment dat de Opperheks haar handlangers undercover van over de hele wereld heeft laten komen om daar haar demonische plannen uit te voeren."
+      },
+      {
+          "titel":"Bad Boys For Life",
+          "rating":6.6,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["actie", "komedie"],
+          "regisseur":"Adil El Arbi",
+          "speeltijd":0,
+          "acteurs":["Will Smith", "Martin Lawrence", "Paolo Nunez"],
+          "samenvatting":"Mike Lowrey en Marcus Burnett zijn nog steeds werkzaam bij de politie van Miami. Terwijl Marcus al denkt aan pensioen, om eindelijk van zijn gezin en nieuwe kleinkind te genieten, is zijn partner Mike van plan tot zijn honderdste achter de boeven aan te zitten. Ongewild moeten ze allebei in actie komen als een gewelddadige seriemoordenaar Mike bovenaan zijn dodenlijst zet. Ze krijgen hulp van een nieuw opgerichte politie-eenheid vol jonge honden, die zich bedienen van de modernste technische snufjes."
+      },
+      {
+          "titel":"Borat Subsequent Movie Film",
+          "rating":6.7,
+          "kijkwijzer":[12, "seks", "drugs- en alcoholmisbruik", "grof taalgebruik"],
+          "genre":["komedie"],
+          "regisseur":"Jason Woliner",
+          "speeltijd":95,
+          "acteurs":["Sacha Baron Cohen", "Maria Bakalova", "Tom Hanks"],
+          "samenvatting":"14 jaar later wordt de bekende Kazachse tv-reporter Borat Sagdiyev opnieuw naar de Verenigde Staten gestuurd om verslag te doen van het beste land van de wereld. Hij probeert om zich anoniem onder de mensen te begeven, maar hij denkt dat hij simpelweg te bekend is geworden na zijn vorige verslag over Amerika. Hij probeert verslag te doen van president Trump, de beschermer van vrouwen, de oorlogsheld en degene met een slechte adem. Trump, die de Amerikanen weet te beschermen tijdens de Corona-pandemie. Tevens heeft hij een gift voor vicepresident Mike Pence, in de hoop dat zijn vaderland er beter van wordt."
+      },
+      {
+          "titel":"Dolittle",
+          "rating":5.6,
+          "kijkwijzer":[6, "geweld", "angst"],
+          "genre":["komedie", "familie"],
+          "regisseur":"Stephen Gaghan",
+          "speeltijd":101,
+          "acteurs":["Robert Downey Jr.", "Antonio Banderas", "Michael Sheen"],
+          "samenvatting":"Na het verliezen van zijn vrouw zondert John Dolittle, een dokter uit het Victoriaanse tijdperk, zich af van de wereld met enkel zijn exotische dieren als gezelschap. Wanneer de jonge koningin Victoria echter ernstig ziek is, wordt John gedwongen af te reizen naar een mythisch eiland op zoek naar een remedie. Tijdens zijn zoektocht wordt hij vergezeld door een jonge leerling en een gezelschap aan dieren, waaronder een angstige gorilla, een enthousiaste eend, een cynische struisvogel, een vrolijke ijsbeer en een eigenzinnige papegaai."
+      },
+      {
+          "titel":"Onward",
+          "rating":7.4,
+          "kijkwijzer":[6, "geweld", "angst"],
+          "genre":["animatie", "avontuur", "komedie"],
+          "regisseur":"Dan Scanion",
+          "speeltijd":102,
+          "acteurs":["Tom Holland", "Chris Pratt", "Julia Louis-Dreyfus"],
+          "samenvatting":"’Onward’ vertelt het verhaal van twee elfen broers uit een magische buitenwijk. Na de dood van hun vader besluiten de jongens op een ontdekkingsreis te gaan. Daarbij gaan ze op zoek naar de vraag of er nog enige vorm van magie over is in de buitenwereld."
+      },
+      {
+          "titel":"Jumanji: The Next Level",
+          "rating":6.6,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik"],
+          "genre":["actie", "avontuur", "komedie"],
+          "regisseur":"Jake Kasdan",
+          "speeltijd":123,
+          "acteurs":["Dwayne Johnson", "Kevin Hart", "Jack Black"],
+          "samenvatting":"In 'Jumanji: The Next Level' keert het groepje terug, maar is het spel veranderd. Wanneer ze terugkeren naar Jumanji om iemand van hen te redden, ontdekken ze dat niets is wat ze vooraf hadden verwacht. De spelers zullen onbekende delen moeten trotseren, van dorre woestijnen tot besneeuwde bergen, om te ontsnappen aan 's werelds meest gevaarlijke spel."
+      },
+      {
+          "titel":"Dora and the Lost City of Gold",
+          "rating":6.1,
+          "kijkwijzer":[9, "angst"],
+          "genre":["avontuur", "familie", "komedie"],
+          "regisseur":"James Bobin",
+          "speeltijd":102,
+          "acteurs":["Isabela Merced", "Jeffrey Wahlberg", "Madeleine Madden"],
+          "samenvatting":"Dora heeft samen met haar ouders het grootste deel van haar leven de wildernis verkend. Haar meest uitdagende avontuur staat haar echter nog op te wachten: de middelbare school. Wanneer haar ouders in gevaar zijn schiet Dora meteen in actie en neemt ze Boots, Diego en een groep tieners mee op sleeptouw. Naast de reddingsactie hopen ze het mysterie rond een verloren Inca Stad op te lossen."
+      },
+      {
+          "titel":"Knives Out",
+          "rating":7.9,
+          "kijkwijzer":[12, "angst", "grof taalgebruik"],
+          "genre":["misdaad", "mysterie", "komedie"],
+          "regisseur":"Rian Johnson",
+          "speeltijd":130,
+          "acteurs":["Daniel Craig", "Chris Evans", "Ana de Armas"],
+          "samenvatting":"Schrijver Harlan Trombey wordt dood aangetroffen in zijn huis, vlak na zijn 85e verjaardag. Detective Benoit Blanc wordt ingeschakeld om het mysterie op te lossen, wat een behoorlijke opgave blijkt. Harlan heeft namelijk nogal vreemde en achterdochtige familieleden en ook nog eens een aantal stafleden die hem op zijn wenken bediend toen hij nog leefde."
+      },
+      {
+          "titel":"Coming to America 2",
+          "rating":0.0,
+          "kijkwijzer":[],
+          "genre":["komedie"],
+          "regisseur":"Craig Brewer",
+          "speeltijd":116,
+          "acteurs":["Eddie Murphy", "Arsenio Hall", "Jermaine Fowler"],
+          "samenvatting":"Men beweert dat de Prins van Zamunda een zoon heeft in Amerika. Akeem keert samen met Semmi terug naar de VS om op onderzoek uit te gaan. Hij wil natuurlijk graag weten of deze kroonprins wel écht tot de koninklijke familie van Zamunda behoort. Maar helaas loopt alles niet zoals gepland."
+      },
+      {
+          "titel":"Gisaengchung(Parasite)",
+          "rating":8.6,
+          "kijkwijzer":[16, "angst", "grof taalgebruik"],
+          "genre":["drama", "komedie"],
+          "regisseur":"Bong Joon-ho",
+          "speeltijd":132,
+          "acteurs":["Song Kang-ho", "Lee Sun-Kyun", "Cho Yeo-jeong"],
+          "samenvatting":"Ki-taek en zijn werkloze familie verkeren in geldnood. Ze leven in een krappe en duistere woning zonder toegang tot wifi. Zijn kinderen besluiten op een dag om een diploma te vervalsen zodat zoon Ki-woo de privé leraar van Da-hye, dochter van de rijke familie Park, kan vervangen. Wanneer Ki-woo in de wereld van de rijke familie belandt, maakt hij van zijn nieuwe positie misbruik om ook zijn gezinsleden aan een baan te helpen. Wanneer het plan lijkt te slagen, volgt een verrassing."
+      },
+      {
+          "titel":"The Beast",
+          "rating":5.2,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik", "drugs- en alcoholmisbruik"],
+          "genre":["actie", "misdaad", "drama"],
+          "regisseur":"Ludovico Di Martino",
+          "speeltijd":97,
+          "acteurs":["Fabrizio Gifuni", "Lino Musella", "Monica Piseddu"],
+          "samenvatting":"Leonida Riva is a gloomy, solitary war veteran, once Captain of the Army's special forces. Life and work have driven Riva apart from his family. His eldest son, Mattia, has never forgiven him while his daughter, Teresa, loves him unconditionally. However, a tragic event will force Leonida to transform into something he thought he had long buried in the past."
+      },
+      {
+          "titel":"Honest Thief",
+          "rating":6.0,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik"],
+          "genre":["actie", "misdaad"],
+          "regisseur":"Mark Williams",
+          "speeltijd":99,
+          "acteurs":["Liam Neeson", "Kate Walsh", "Jai Courtney"],
+          "samenvatting":"Tom Carter heeft door middel van zijn loopbaan als bankrover carrière gemaakt. Hier komt verandering in wanneer hij de liefde van zijn leven ontmoet: Annie. Zij werkt als receptioniste bij de opslagfaciliteit waar Tom gestolen geld heeft opgeborgen. Al snel vallen ze voor elkaar, maar dat is niet genoeg voor Tom die zijn naam wil zuiveren. Hij besluit zichzelf aan te geven en het geld in te leveren. Maar dan wordt de zaak aan een corrupte FBI-agent overgedragen. Opeens valt Toms plan in duigen."
+      },
+      {
+          "titel":"Survive the Night",
+          "rating":4.7,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["actie", "thriller"],
+          "regisseur":"Matt Eskandari",
+          "speeltijd":90,
+          "acteurs":["Bruce Willis", "Chad Michael Murray", "Lydia Hull"],
+          "samenvatting":"Nadat zijn broer Mathias levensgevaarlijk gewond is geraakt bij een mislukte overval, zit Jamie met zijn handen in het haar. Hij besluit de trauma dokter Rich te volgen naar zijn huis en gijzelt daar zijn vrouw en dochter en beveelt Rich zijn broer snel te opereren. Rich besluit daarop om samen met zijn vervreemde vader Frank zijn gezin in veiligheid te brengen."
+      },
+      {
+          "titel":"Extraction",
+          "rating":6.7,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["actie", "drama"],
+          "regisseur":"Sam Hargrave",
+          "speeltijd":116,
+          "acteurs":["Chris Hemsworth", "Rudhraksh Jaiswal", "Randeep Hooda"],
+          "samenvatting":"Een Indiaas jongetje, de zoon van een internationale crimineel die vastzit, wordt ontvoerd in de hoofdstad van Bangladesh en vastgehouden in één van de meest ondoordringbare steden van de wereld. Een bedreven huurmoordenaar, Tyler Rake genaamd, wordt vervolgens ingehuurd om het jongetje te bevrijden en terug te brengen naar zijn familie. Tijdens zijn reddingsmissie is Tyler ook op zoek naar verlossing."
+      },
+      {
+          "titel":"Bloodshot",
+          "rating":5.7,
+          "kijkwijzer":[12, "geweld"],
+          "genre":["actie", "sci-fi"],
+          "regisseur":"Dave Wilson",
+          "speeltijd":109,
+          "acteurs":["Vin Diesel", "Eiza Gonzalez", "Sam Heughan"],
+          "samenvatting":"Beveiligingsbedrijf Rising Spirit Technologies weet met nanotechnologie een overleden soldaat, Ray Garrison genaamd, terug tot leven te wekken. De transfusie heeft van hem een moordmachine gemaakt die niet te stuiten is, uitgerust met verbeterde vermogens, zoals genezing, snelheid en verdraagzaamheid. Ray probeert vervolgens te achterhalen wie hem dit aangedaan heeft en zint op wraak. Maar alles blijkt anders te zitten dan het lijkt."
+      },
+      {
+          "titel":"Force of Nature",
+          "rating":4.5,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik", "angst"],
+          "genre":["actie", "drama"],
+          "regisseur":"Michael Polish",
+          "speeltijd":91,
+          "acteurs":["Mel Gibson", "Emile Hirsch", "Kate Bosworth"],
+          "samenvatting":"Vanwege een naderende storm moet de jonge agent Cardillo, samen met zijn collega Jess, een appartementencomplex zien te evacueren. Daar stuiten ze op Troy en haar koppige vader Ray, die weigert te vertrekken. Zij weten echter niet dat een groep dieven van plan is het gebouw in te nemen in hun zoektocht naar een verborgen schat van 55 miljoen dollar. Gelukkig blijkt Ray een gepensioneerde inspecteur die bekend is met de bende. En hij is niet van plan op te geven zonder een gevecht."
+      },
+      {
+          "titel":"Underwater",
+          "rating":5.8,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["actie", "drama"],
+          "regisseur":"William Eubank",
+          "speeltijd":95,
+          "acteurs":["Kristen Stewart", "Vincent Cassel", "Mamoudou Athie"],
+          "samenvatting":"Een team bestaande uit diepzee-onderzoekers krijgt te maken met een aardbeving die het ondergrondse laboratorium volledig verwoest. Nu moeten de leden alles op alles zetten om te kunnen overleven. Onder hen bevindt zich de moedige, maar geharde Norah. Het team bestaat uit mensen die elkaar nauwelijks kennen en zo ontstaan er bizarre en soms existentiële conversaties, alsook vreemde relaties."
+      },
+      {
+          "titel":"Vanguard",
+          "rating":4.7,
+          "kijkwijzer":[16, "geweld", "grof taalgebruik"],
+          "genre":["actie"],
+          "regisseur":"Stanley Tong",
+          "speeltijd":108,
+          "acteurs":["Jackie Chan", "Yang Yang", "Allen Ai Lun"],
+          "samenvatting":"Een belangrijke Chinese zakenman en zijn dochter worden bedreigd door de dodelijkste huurlingenorganisatie ter wereld. Het geheime beveiligingskantoor Vanguard en diens elite-agenten zijn hun enige kans om in leven te blijven."
+      },
+      {
+          "titel":"Alita: Battle Angel",
+          "rating":7.3,
+          "kijkwijzer":[12, "geweld", "grof taalgebruik"],
+          "genre":["actie", "avontuur"],
+          "regisseur":"Robert Rodriguez",
+          "speeltijd":122,
+          "acteurs":["Rosa Salazar", "Cristoph Waltz", "Jennifer Connelly"],
+          "samenvatting":"'Alita: Battle Angel' draait om de lotgevallen van een schijnbaar afgeschreven vrouwelijke cyborg die gered wordt door een dokter en een tweede leven krijgt. Van haar eerste herinnert ze zich niets, hoewel haar aanzienlijke vaardigheden in de martial arts een dodelijk beroep suggereren. Ze begint een nieuw bestaan als premiejager en stort zich op het opjagen van de gevaarlijkste criminelen."
+      },
+      {
+          "titel":"Spider-Man: Far from Home",
+          "rating":7.5,
+          "kijkwijzer":[12, "geweld"],
+          "genre":["actie", "avontuur"],
+          "regisseur":"Jon Watts",
+          "speeltijd":129,
+          "acteurs":["Tom Holland", "Samuel L. Jackson", "Jake Gyllenhaal"],
+          "samenvatting":"'Spider-Man: Far from Home' speelt zich af na de gebeurtenissen van 'Avengers: Endgame'. Peter Parker gaat met zijn vrienden op zomervakantie door Europa. Tijdens deze vakantie wordt hij benaderd door Nick Fury in een missie om het mysterie rondom verschillende aanvallen van elementaire wezens te ontrafelen. Hierbij ontmoet hij mede-superheld Mysterio."
+      },
+      {
+          "titel":"Initiation",
+          "rating":8.6,
+          "kijkwijzer":[16, "angst"],
+          "genre":["horror", "thriller"],
+          "regisseur":"John Borado",
+          "speeltijd":96,
+          "acteurs":["Jon Huertas", "Isabella Gomez", "Lindsay LaVanchy"],
+          "samenvatting":"Whiton University komt in de problemen wanneer een online spelletje voor een schandaal zorgt. Een atleet wordt op de campus vermoord teruggevonden, waarna zijn zus Ellery op zoek gaat naar wat er gebeurd is. Intussen wordt de ene na de andere student op gruwelijke wijze vermoord…"
+      },
+      {
+          "titel":"A Quiet Place Part II",
+          "rating":7.3,
+          "kijkwijzer":[16, "geweld", "angst"],
+          "genre":["horror", "thriller"],
+          "regisseur":"John Krasinski",
+          "speeltijd":97,
+          "acteurs":["Emily Blunt", "Cillian Murphy", "Millicent Simmonds"],
+          "samenvatting":"Na de gebeurtenissen thuis, wordt de familie Abbott nu geconfronteerd met de verschrikkingen van de buitenwereld. Gedwongen om zich in het onbekende te wagen, realiseren ze zich dat de wezens die op geluid jagen niet de enige bedreiging is die op de loer ligt buiten het zandpad.."
+      },
+      {
+          "titel":"Rose: A Love Story",
+          "rating":7.2,
+          "kijkwijzer":[16, "angst"],
+          "genre":["horror"],
+          "regisseur":"Jennifer Sheridan",
+          "speeltijd":86,
+          "acteurs":["Sophie Rundle", "Matt Stokoe", "Olive Gray"],
+          "samenvatting":"Rose woont met haar echtgenoot Sam een afgezonderd en sober bestaan. Rose kampt met een mysterieuze, ernstige ziekte. Wanneer ze op een dag een vreemde binnenlaten, komt zowel hun veilig onderkomen als de gezondheid van Rose in gevaar."
+      },
+      {
+          "titel":"The Invisible Man",
+          "rating":7.1,
+          "kijkwijzer":[16, "angst", "geweld"],
+          "genre":["horror", "sci-fi"],
+          "regisseur":"Leigh Whannell",
+          "speeltijd":124,
+          "acteurs":["Elisabeth Moss", "Oliver Jackson-Cohen", "Aldis Hodge"],
+          "samenvatting":"Als de gewelddadige ex van Cecilia Kass (Elisabeth Moss) zelfmoord pleegt en haar een groot deel van zijn vermogen nalaat, vermoedt zij dat hij zijn dood in scène heeft gezet. Na enkele bizarre toevalligheden met dodelijke afloop, realiseert Cecilia zich dat de levens van haar vrienden en familie in gevaar zijn. Langzaam begint Cecilia door te draaien, terwijl zij wanhopig probeert te bewijzen dat zij achterna gezeten wordt door iemand die door niemand gezien kan worden..."
+      },
+      {
+          "titel":"The Call",
+          "rating":7.1,
+          "kijkwijzer":[16, "angst", "geweld"],
+          "genre":["horror", "mysterie"],
+          "regisseur":"Chung-Hyun Lee",
+          "speeltijd":112,
+          "acteurs":["Park Shin-Hye", "Jong-seo Jun", "Kim Sung-Ryung"],
+          "samenvatting":"Een vrouw keert terug naar haar oude huis en vindt een oude telefoon waarmee ze met iemand kan spreken die 20 jaar geleden in hetzelfde huis woonde."
+      },
+      {
+          "titel":"Come True",
+          "rating":6.8,
+          "kijkwijzer":[16],
+          "genre":["horror"],
+          "regisseur":"Anthony Scott Burns",
+          "speeltijd":105,
+          "acteurs":["Julia Sarah Stone", "Landon Liboiron", "Carlee Ryski"],
+          "samenvatting":"Op zoek naar een oplossing voor haar constante nachtmerries, schrijft de 18-jarige Sarah zich in voor een slaapstudie op de universiteit. Al snel komt ze erachter dat haar dromen realiteit worden. Haar visioenen verergeren en alvorens de wetenschappers kunnen ingrijpen is Sarah het medium geworden van een angstaanjagende entiteit."
+      },
+      {
+          "titel":"The Night House",
+          "rating":6.7,
+          "kijkwijzer":[16],
+          "genre":["horror", "thriller"],
+          "regisseur":"David Bruckner",
+          "speeltijd":108,
+          "acteurs":["Rebecca Hall", "Sarah Goldberg", "Stacy Martin"],
+          "samenvatting":"Een weduwe begint de verontrustende geheimen van haar overleden echtgenoot te ontdekken"
+      },
+      {
+          "titel":"Host",
+          "rating":6.6,
+          "kijkwijzer":[16],
+          "genre":["horror"],
+          "regisseur":"Rob Savage",
+          "speeltijd":63,
+          "acteurs":["Haley Bishop", "Jemma Moore", "Emma Louise Webb"],
+          "samenvatting":"Zes vrienden huren een medium in om een seance te houden via Zoom tijdens de lockdown. De vrienden krijgen echter te maken met een boze geest die hun huizen binnendringt. Ze realiseren zich dat ze er alles aan moeten doen om de nacht te overleven."
+      },
+      {
+          "titel":"Possessor",
+          "rating":6.5,
+          "kijkwijzer":[16],
+          "genre":["horror", "sci-fi"],
+          "regisseur":"Brandon Cronenberg",
+          "speeltijd":102,
+          "acteurs":["Andrea Riseborough",  "Christopher Abbott", "Sean Bean"],
+          "samenvatting":"Vos is een agente werkzaam voor een geheime organisatie die met behulp van hersenimplantatietechnologie het lichaam van andere mensen binnen kan dringen en hen aanzet tot het plegen van moorden ten voordele van de organisatie waar hij voor werkt. Maar als er tijdens een routineklus iets misgaat, zit ze gevangen in een man die zijn eigen identiteit dreigt uit te wissen."
+      },
+      {
+          "titel":"Hunter Hunter",
+          "rating":6.4,
+          "kijkwijzer":[16],
+          "genre":["horror", "thriller"],
+          "regisseur":"Shawn Linden",
+          "speeltijd":93,
+          "acteurs":["Camille Sullivan", "Devon Sawa", "Summer H. Howell"],
+          "samenvatting":"Joseph woont met zijn vrouw Anne en dochter Renée in de wildernis waar ze hun kost verdienen als pelsjagers. Ze kunnen de eindjes maar moeilijk aan elkaar knopen doordat hun werk, volgens hun, door een wolf gehinderd wordt. Terwijl Joseph eropuit trekt om het roofdier op te sporen, worstelen Anne en Renée met zijn langdurige afwezigheid. Op een dag staat de gewonde Lou die voor dood achtergelaten werd bij hen voor de deur."
+      }
+  ]
