@@ -2,11 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
+using System.Security.Cryptography;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+using Hashing_Class;
 
 namespace Account_Class
 {
@@ -80,7 +79,9 @@ namespace Account_Class
         {
             for (int i = 0; i < accountDataList.Count; i++)
             {
-                if (name == accountDataList[i].Name && password == accountDataList[i].Password)
+                // compares hashes
+                using (SHA256 sha256Hash = SHA256.Create())
+                    if (name == accountDataList[i].Name && Hashing.VerifyHash(sha256Hash, password, accountDataList[i].Password))
                 {
                     return i;
                 }
@@ -112,7 +113,7 @@ namespace Account_Class
                 Console.WriteLine("\nVoer een wachtwoord in: ");
                 string Password = Console.ReadLine();
                 Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
-
+                
                 // Checked if user wants to retry or confirm username //
                 string confirm = Console.ReadLine();
                 if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
@@ -146,7 +147,12 @@ namespace Account_Class
         // Method that can be called to create a user.
         public void CreateUser(string name, string password)
         {
-            
+            // Hash the password
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                password = Hashing.GetHash(sha256Hash, password);
+            }
+
             AccountData newAccountData = new AccountData();
             newAccountData.Name        = name;
             newAccountData.Password    = password;
