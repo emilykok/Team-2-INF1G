@@ -60,6 +60,19 @@ namespace Account_Class
             return JsonConvert.SerializeObject(this.accountDataList, Formatting.Indented);
         }
 
+        // Method that checks if someone has entered anything
+        public bool TextCheck(string[] textArr)
+        {
+            for (int i = 0; i < textArr.Length; i++)
+            {
+                if (textArr[i] == "")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Method to check if username is already taken, returns bool (true if taken, false if not taken)
         public bool UsernameCheck(string username)
         {
@@ -101,22 +114,38 @@ namespace Account_Class
                 // Clears the console for typing;
                 Console.Clear();
 
-                // Ask for user input
+                // Header
                 Console.WriteLine("*---------------*");
                 Console.WriteLine("*Login Page*");
+
+                // Checks if there was a previous fail
                 if (failed == true)
                 {
                     Console.WriteLine("Gebruikersnaam of wachtwoord was incorrect, probeer het opnieuw\n");
                 }
+
+                // Ask for user input
                 Console.WriteLine("Voer een gebruikersnaam in: ");
                 string User_Name = Console.ReadLine();
                 Console.WriteLine("\nVoer een wachtwoord in: ");
                 string Password = Console.ReadLine();
-                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
-                
+
+                // Check if there was input
+                string[] callValue = new string[]{ User_Name, Password };
+                bool inputCheck = TextCheck(callValue);
+
+                if (inputCheck == true)
+                {
+                    Console.WriteLine("\nBeide velden moeten een input hebben.\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+                else
+                {
+                    Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+
                 // Checked if user wants to retry or confirm username //
                 string confirm = Console.ReadLine();
-                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
+                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'" && inputCheck == false)
                 {
                     retry = true;
                 }
@@ -142,6 +171,7 @@ namespace Account_Class
             }
             return -1;
         }
+
 
 
         // Method that can be called to create a user.
@@ -196,8 +226,20 @@ namespace Account_Class
 
                 Console.WriteLine("\nVoer een wachtwoord in: ");
                 string Password = Console.ReadLine();
-                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm te confirmeren toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
-                
+
+                // Check if there was input
+                string[] callValue = new string[] { User_Name, Password };
+                bool inputCheck = TextCheck(callValue);
+
+                if (inputCheck == true)
+                {
+                    Console.WriteLine("\nBeide velden moeten een input hebben.\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+                else
+                {
+                    Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+             
                 // Checked if user wants to retry or confirm username //
                 string confirm = Console.ReadLine();
                 if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
@@ -210,8 +252,16 @@ namespace Account_Class
                 }
                 else
                 {
-                    retry = false;
-                    this.CreateUser(User_Name, Password);
+                    if (inputCheck == true)
+                    {
+                        retry = true;
+                    }
+                    else
+                    {
+                        retry = false;
+                        this.CreateUser(User_Name, Password);
+                    }
+                    
                 }
             }
         }
