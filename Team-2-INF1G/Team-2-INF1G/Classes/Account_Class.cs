@@ -31,6 +31,7 @@ namespace Account_Class
             public string Email;
             public string bankingDetails;
             public string[] Allergies;
+            public bool Permission;
         }
 
         //// Field
@@ -85,6 +86,23 @@ namespace Account_Class
             }
             return false;
         }
+
+        // Method that prints items with start and stop
+        public void PrintItem(int start, int stop)
+        {
+            for (int i = 0; i < accountDataList.Count; i++)
+            {
+                try
+                {
+                    Console.WriteLine($"[{i + 1}] {accountDataList[i].Name}");
+                }
+                catch
+                {
+                    break;
+                }
+            }
+        }
+
 
 
         // Method to login, returns int (the index of the list which corresponds to user selected) if user is found, else returns -1
@@ -192,7 +210,9 @@ namespace Account_Class
             newAccountData.Gender           = null;
             newAccountData.Email            = null;
             newAccountData.bankingDetails   = null;
-            newAccountData.Allergies        = null;
+            newAccountData.Allergies        = new string[] { };
+            newAccountData.Permission       = false;
+
             // add to the list with the added data
             accountDataList.Add(newAccountData);
 
@@ -217,7 +237,7 @@ namespace Account_Class
                 string User_Name = Console.ReadLine();
 
                 bool recheck = true;
-                if (UsernameCheck(User_Name) == true && recheck == true)
+                while (UsernameCheck(User_Name) == true && recheck == true)
                 {
                     Console.WriteLine("\nDeze gebruikersnaam bestaat al, probeer opnieuw: ");
                     User_Name = Console.ReadLine();
@@ -271,12 +291,129 @@ namespace Account_Class
         public void DeleteUser(int index)
         {
             accountDataList.RemoveAt(index);
+
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
+        // Prints all the users based on user input given in method
+        public void printUsers()
+        {
+            string state = " ";
+            int start = 0;
+            int stop = 0;
+            bool loop = true;
+
+            while (loop == true)
+            {
+                bool executeRun = true;
+
+                // runs code when page is at 0, no increase in value
+                if (start == 0 && (state != ">" && state != "<"))
+                {
+                    if (start + 40 > accountDataList.Count)
+                    {
+                        if (start == accountDataList.Count)
+                        {
+                            executeRun = false;
+                        }
+                        stop = accountDataList.Count;
+                    }
+                    else
+                    {
+                        stop = start + 20;
+                    }
+                }
+
+                // runs code when page is NOT at 0, no increase in value
+                else if (start != 0 && (state != ">" && state != "<"))
+                {
+                    if (start + 40 > accountDataList.Count)
+                    {
+                        if (start == accountDataList.Count)
+                        {
+                            executeRun = false;
+                        }
+                        stop = accountDataList.Count;
+                    }
+                    else
+                    {
+                        stop = start + 20;
+                    }
+                }
+                // runs code with 20 increment, stores value
+                else if (state == ">")
+                {
+                    if ((start + 20) >= accountDataList.Count)
+                    {
+                        executeRun = false;
+                    }
+                    else
+                    {
+                        start += 20;
+                        stop = start + 20;
+                    }
+                }
+
+                // Runs code with 20 decrement, stores value
+                else if (state == "<")
+                {
+                    if ((start - 20) < accountDataList.Count)
+                    {
+                        executeRun = false;
+                    }
+                    else
+                    {
+                        start -= 20;
+                        stop = start + 20;
+                    }
+                }
+
+                // Runs the code
+                if (executeRun == true)
+                {
+                    // Header
+                    Console.Clear();
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de user te gaan\nOm te stoppen toets X.\n");
+
+                    // Print the users
+                    PrintItem(start, stop);
+
+                    // current page indicator
+                    int pageCounterCurrent = (start / 20) + 1;
+                    int pageCounterAll = (accountDataList.Count / 20) + 1;
+                    Console.WriteLine($"\nPage {pageCounterCurrent}/{pageCounterAll}");
+                }
+
+                // Process user input
+                string userInput = Console.ReadLine();
+                try
+                {
+                    int convert = Convert.ToInt32(userInput);
+                }
+                catch
+                {
+                    if (userInput == ">" || userInput == "<")
+                    {
+                        state = userInput;
+                    }
+                    else if (userInput == "x" || userInput == "X")
+                    {
+                        loop = false;
+                        break;
+                    }
+                    else
+                    {
+                        state = " ";
+                    }
+                }
+            }   
         }
 
 
         // Method that updates selective user, requires to be logged in before or index!
-        // Also requires an int for the item. The following ints represent (1 == )
-        public void UpdateUser(int item, int index)
+        // Also requires string (name of the variable being changed) and the value in string
+        public bool UpdateUser(string item, string value, int index)
         {
             // unloading the struct item at given index
             string name             = accountDataList[index].Name;
@@ -286,9 +423,156 @@ namespace Account_Class
             string email            = accountDataList[index].Email;
             string bankingdetails   = accountDataList[index].bankingDetails;
             string[] allergies      = accountDataList[index].Allergies;
+            bool permission         = accountDataList[index].Permission;
 
-            // Insert code to change stuff //
-            
+            // Checks what needs to be changed, and assigns the value
+            bool returnValue = true;
+
+            if (item == "name")
+            {
+                try
+                {
+                    name = value;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if (item == "password")
+            {
+                try
+                {
+                    // Hash the password
+                    using (SHA256 sha256Hash = SHA256.Create())
+                    {
+                        password = Hashing.GetHash(sha256Hash, value);
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "age")
+            {
+                try
+                {
+                    int temp = Convert.ToInt32(value);
+                    age = temp;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "gender")
+            {
+                try
+                {
+                    gender = value;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "email")
+            {
+                try
+                {
+                    email = value;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "bankingdetails")
+            {
+                try
+                {
+                    bankingdetails = value;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "allergiesAdd")
+            {
+                try
+                {
+                    bool check = false;
+                    for (int i = 0; i < allergies.Length; i++)
+                    {
+                        if (value == allergies[i])
+                        {
+                            check = true;
+                            break;
+                        }
+                    }
+                    if (check == false)
+                    {
+                        string[] temp = new string[allergies.Length + 1];
+                        for (int i = 0; i < allergies.Length; i++)
+                        {
+                            temp[i] = allergies[i];
+                        }
+                        temp[allergies.Length] = value;
+                        allergies = temp;
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if (item == "allergiesRemove")
+            {
+                try
+                {
+                    string[] temp = new string[allergies.Length - 1];
+                    int count = 0;
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        if (value == allergies[count])
+                        {
+                            count += 1;
+                        }
+                        temp[i] = allergies[count];
+                        count += 1;
+                    }
+                    allergies = temp;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if (item == "permission")
+            {
+                try
+                {
+                    if (value == "true" || value == "True")
+                    {
+                        permission = true;
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+
             // Creating the struct item
             AccountData newAccountData = new AccountData();
 
@@ -299,6 +583,7 @@ namespace Account_Class
             newAccountData.Email            = email;
             newAccountData.bankingDetails   = bankingdetails;
             newAccountData.Allergies        = allergies;
+            newAccountData.Permission       = permission;
 
             // deletes entry (as struct is immutable)
             DeleteUser(index);
@@ -308,6 +593,8 @@ namespace Account_Class
 
             // write to the JSON file (updates the file)
             System.IO.File.WriteAllText(this.path, ToJSON());
+
+            return returnValue;
         }
     }
 }

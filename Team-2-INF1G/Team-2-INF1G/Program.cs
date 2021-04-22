@@ -25,26 +25,28 @@ namespace Team_2
             Account acc = new Account();
 
             // Creates user in JSON
-            acc.TextCreateUser();
+            // acc.TextCreateUser();
 
             // Login with username and password
-            int print_this = acc.TextLogin();
-            Console.WriteLine(print_this);
+            //int print_this = acc.TextLogin();
+            //Console.WriteLine(print_this);
+
+            acc.printUsers();
 
             // MELISSA GEDEELTE //
-            Eten eten = new Eten();
-            eten.EtenMenu();
+            //Eten eten = new Eten();
+            //eten.EtenMenu();
 
             // DAVID GEDEELTE //
-            MovieDetail.CodeActivate();
+            //MovieDetail.CodeActivate();
 
             // NOAH GEDEELTE //
-            reservering resv = new reservering();
-            resv.RunTickets();
+            //reservering resv = new reservering();
+            //resv.RunTickets();
 
             // JAMIE GEDEELTE //
-            Applicatie myApllicatie = new Applicatie();
-            myApllicatie.Start();
+            //Applicatie myApllicatie = new Applicatie();
+            //myApllicatie.Start();
         }
     }
 }
