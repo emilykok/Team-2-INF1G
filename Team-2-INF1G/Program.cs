@@ -10,6 +10,7 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
 using Account_Class;
 using Eten_Class;
+using Drinken_Class;
 using MovieDetail_Class;
 using Ticket_Class;
 using Hoofdmenu;
