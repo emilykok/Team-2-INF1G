@@ -108,7 +108,7 @@ namespace MovieDetail_Class
             if (page != 1) x = (10 * (page - 1));
             for (int i = x; i < (x + 10); i++)
             {
-                Console.WriteLine($"{i + 1}.     {movie.movieDataList[i].titel}");
+                Console.WriteLine($"{i + 1}.\t{movie.movieDataList[i].titel}");
             }
         }
 
@@ -146,10 +146,18 @@ namespace MovieDetail_Class
                 }
                 else
                 {
-                    int selection = Convert.ToInt32(navigation);
-                    Console.Clear();
-                    MovieDetail movie = new MovieDetail();
-                    DisplayMovie(selection);
+                    try
+                    {
+                        int selection = Convert.ToInt32(navigation);
+                        Console.Clear();
+                        MovieDetail movie = new MovieDetail();
+                        DisplayMovie(selection);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("dit is geen geldige invoerwaarde.");
+                    }
+                    
                 }
             }
         }
