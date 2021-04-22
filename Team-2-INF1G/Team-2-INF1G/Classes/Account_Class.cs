@@ -267,11 +267,47 @@ namespace Account_Class
         }
 
 
+        // Method that deletes entry at certain index
+        public void DeleteUser(int index)
+        {
+            accountDataList.RemoveAt(index);
+        }
+
+
         // Method that updates selective user, requires to be logged in before or index!
         // Also requires an int for the item. The following ints represent (1 == )
         public void UpdateUser(int item, int index)
         {
-            //placeholder
+            // unloading the struct item at given index
+            string name             = accountDataList[index].Name;
+            string password         = accountDataList[index].Password;
+            int age                 = accountDataList[index].Age;
+            string gender           = accountDataList[index].Gender;
+            string email            = accountDataList[index].Email;
+            string bankingdetails   = accountDataList[index].bankingDetails;
+            string[] allergies      = accountDataList[index].Allergies;
+
+            // Insert code to change stuff //
+            
+            // Creating the struct item
+            AccountData newAccountData = new AccountData();
+
+            newAccountData.Name             = name;
+            newAccountData.Password         = password;
+            newAccountData.Age              = age;
+            newAccountData.Gender           = gender;
+            newAccountData.Email            = email;
+            newAccountData.bankingDetails   = bankingdetails;
+            newAccountData.Allergies        = allergies;
+
+            // deletes entry (as struct is immutable)
+            DeleteUser(index);
+
+            // add to the list with the added data [indexed]!
+            accountDataList.Insert(index, newAccountData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
         }
     }
 }
