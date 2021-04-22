@@ -88,6 +88,7 @@ namespace Eten_Class
                     al += etenDataList[num - 1].allergenen[i] + ", ";
                 }
                 Console.WriteLine("allergenen: " + al);
+                UpdateClicks(num);
 
                 // input na de display
                 bool goodInput = false;
@@ -112,16 +113,100 @@ namespace Eten_Class
 
         }
 
-        /*public void UpdateClick(int n)
-         {
-             
-             int currClick = etenDataList[n - 1].clicks;
-             currClick++;
-             etenDataList[n-1].clicks = currClick;
+        // Method that deletes entry at certain index
+        public void DeleteEten(int index)
+        {
+            etenDataList.RemoveAt(index);
+        }
 
-             // write to the JSON file (updates the file)
-             System.IO.File.WriteAllText(this.path, ToJSON());
-        }*/
+        // method to view clicks of certain index
+        public void ViewClicks(int num)
+        {
+            Console.Clear();
+            Console.WriteLine(etenDataList[num - 1].clicks);
+        }
+
+        //method to update clicks
+        public void UpdateClicks(int n)
+        {
+            int index = n - 1;
+            // unloading the struct item at given index
+            string Naam = etenDataList[index].naam;
+            string[] Inhoud = etenDataList[index].inhoud;
+            double[] Prijs = etenDataList[index].prijs;
+            string Voedingswaarde = etenDataList[index].voedingswaarde;
+            string[] Allergenen = etenDataList[index].allergenen;
+            string[] Tags = etenDataList[index].tags;
+            int Clicks = etenDataList[index].clicks;
+
+            // increment clicks
+            Clicks++;
+
+            // Creating the struct item
+            EtenData newEtenData = new EtenData();
+
+            newEtenData.naam = Naam;
+            newEtenData.inhoud = Inhoud;
+            newEtenData.prijs = Prijs;
+            newEtenData.voedingswaarde = Voedingswaarde;
+            newEtenData.allergenen = Allergenen;
+            newEtenData.tags = Tags;
+            newEtenData.clicks = Clicks;
+
+            // deletes entry (as struct is immutable)
+            DeleteEten(index);
+
+            // add to the list with the added data [indexed]!
+            etenDataList.Insert(index, newEtenData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
+        //clears all stored clicks
+        public void ClearAllClicks()
+        {
+            for (int i = 0; i < etenDataList.Count; i++)
+            {
+                ClearClicks(i + 1);
+            }
+        }
+        
+        // clears click at certain index
+        public void ClearClicks(int n) {
+            int index = n - 1;
+            // unloading the struct item at given index
+            string Naam = etenDataList[index].naam;
+            string[] Inhoud = etenDataList[index].inhoud;
+            double[] Prijs = etenDataList[index].prijs;
+            string Voedingswaarde = etenDataList[index].voedingswaarde;
+            string[] Allergenen = etenDataList[index].allergenen;
+            string[] Tags = etenDataList[index].tags;
+            int Clicks = etenDataList[index].clicks;
+
+            // Insert code to change stuff //
+            Clicks=0;
+
+            // Creating the struct item
+            EtenData newEtenData = new EtenData();
+
+            newEtenData.naam = Naam;
+            newEtenData.inhoud = Inhoud;
+            newEtenData.prijs = Prijs;
+            newEtenData.voedingswaarde = Voedingswaarde;
+            newEtenData.allergenen = Allergenen;
+            newEtenData.tags = Tags;
+            newEtenData.clicks = Clicks;
+
+            // deletes entry (as struct is immutable)
+            DeleteEten(index);
+
+            // add to the list with the added data [indexed]!
+            etenDataList.Insert(index, newEtenData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
     }
 }
 

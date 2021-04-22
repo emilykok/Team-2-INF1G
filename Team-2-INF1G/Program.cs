@@ -34,9 +34,9 @@ namespace Team_2
 
             // MELISSA GEDEELTE //
             Eten eten = new Eten();
-            //eten.EtenMenu();
+            eten.EtenMenu();
             Drinken drinken = new Drinken();
-            drinken.DrinkenMenu();
+            //drinken.DrinkenMenu();
 
             // DAVID GEDEELTE //
             //MovieDetail.CodeActivate();

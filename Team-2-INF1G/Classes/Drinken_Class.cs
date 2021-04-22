@@ -100,5 +100,100 @@ namespace Drinken_Class
             Console.Clear();
 
         }
+
+        // Method that deletes entry at certain index
+        public void DeleteDrinken(int index)
+        {
+            drinkenDataList.RemoveAt(index);
+        }
+
+        // method to view clicks of certain index
+        public void ViewClicks(int num) {
+            Console.Clear();
+            Console.WriteLine(drinkenDataList[num-1].clicks);
+        }
+
+        //method to update clicks
+        public void UpdateClicks(int n)
+        {
+            int index = n - 1;
+            // unloading the struct item at given index
+            string Naam = drinkenDataList[index].naam;
+            string Inhoud = drinkenDataList[index].inhoud;
+            double Prijs = drinkenDataList[index].prijs;
+            string Voedingswaarde = drinkenDataList[index].voedingswaarde;
+            string[] Allergenen = drinkenDataList[index].allergenen;
+            string[] Tags = drinkenDataList[index].tags;
+            int Clicks = drinkenDataList[index].clicks;
+
+            // increment clicks
+            Clicks++;
+
+            // Creating the struct item
+            DrinkenData newDrinkenData = new DrinkenData();
+
+            newDrinkenData.naam = Naam;
+            newDrinkenData.inhoud = Inhoud;
+            newDrinkenData.prijs = Prijs;
+            newDrinkenData.voedingswaarde = Voedingswaarde;
+            newDrinkenData.allergenen = Allergenen;
+            newDrinkenData.tags = Tags;
+            newDrinkenData.clicks = Clicks;
+
+            // deletes entry (as struct is immutable)
+            DeleteDrinken(index);
+
+            // add to the list with the added data [indexed]!
+            drinkenDataList.Insert(index, newDrinkenData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
+        //clears all stored clicks
+        public void ClearAllClicks()
+        {
+            for (int i = 0; i < drinkenDataList.Count; i++)
+            {
+                ClearClicks(i + 1);
+            }
+        }
+
+        // clears click at certain index
+        public void ClearClicks(int n)
+        {
+            int index = n - 1;
+            // unloading the struct item at given index
+            string Naam = drinkenDataList[index].naam;
+            string Inhoud = drinkenDataList[index].inhoud;
+            double Prijs = drinkenDataList[index].prijs;
+            string Voedingswaarde = drinkenDataList[index].voedingswaarde;
+            string[] Allergenen = drinkenDataList[index].allergenen;
+            string[] Tags = drinkenDataList[index].tags;
+            int Clicks = drinkenDataList[index].clicks;
+
+            // Insert code to change stuff //
+            Clicks = 0;
+
+            // Creating the struct item
+            DrinkenData newDrinkenData = new DrinkenData();
+
+            newDrinkenData.naam = Naam;
+            newDrinkenData.inhoud = Inhoud;
+            newDrinkenData.prijs = Prijs;
+            newDrinkenData.voedingswaarde = Voedingswaarde;
+            newDrinkenData.allergenen = Allergenen;
+            newDrinkenData.tags = Tags;
+            newDrinkenData.clicks = Clicks;
+
+            // deletes entry (as struct is immutable)
+            DeleteDrinken(index);
+
+            // add to the list with the added data [indexed]!
+            drinkenDataList.Insert(index, newDrinkenData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
     }
 }
