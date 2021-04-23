@@ -11,6 +11,7 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Account_Class;
 using Eten_Class;
 using MovieDetail_Class;
+using Kalender_Class;
 using Ticket_Class;
 using Hoofdmenu;
 
@@ -37,6 +38,8 @@ namespace Team_2
             */
             // DAVID GEDEELTE //
             MovieDetail.CodeActivate();
+            Console.Clear();
+            Kalender.Navigation();
             /*
             // NOAH GEDEELTE //
             reservering resv = new reservering();
