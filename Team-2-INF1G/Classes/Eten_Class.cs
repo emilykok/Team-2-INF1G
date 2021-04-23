@@ -94,11 +94,11 @@ namespace Eten_Class
                 bool goodInput = false;
                 while (!goodInput)
                 {
-                    Console.WriteLine("\nTyp 'x' om terug te gaan of '>' om een andere item te selecteren.");
+                    Console.WriteLine("\nTyp 'x' om terug te gaan of 'r' om een andere item te selecteren.");
                     input = Console.ReadLine();
                     Console.Clear();
                     if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; break; }
-                    else if (input == ">" || input == "'>'") { EtenMenu(); goodInput = true; break; }
+                    else if (input == "r" || input == "'r'") { EtenMenu(); goodInput = true; break; }
                     else Console.WriteLine("Er is een onjuist command ingevuld, probeer het nog eens.");
                 }
             }
@@ -184,8 +184,8 @@ namespace Eten_Class
             string[] Tags = etenDataList[index].tags;
             int Clicks = etenDataList[index].clicks;
 
-            // Insert code to change stuff //
-            Clicks=0;
+            // resets count to zero
+            Clicks = 0;
 
             // Creating the struct item
             EtenData newEtenData = new EtenData();

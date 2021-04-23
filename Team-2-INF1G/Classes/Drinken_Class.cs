@@ -82,11 +82,11 @@ namespace Drinken_Class
                 bool goodInput = false;
                 while (!goodInput)
                 {
-                    Console.WriteLine("\nTyp 'x' om terug te gaan of '>' om een andere item te selecteren.");
+                    Console.WriteLine("\nTyp 'x' om terug te gaan of 'r' om een andere item te selecteren.");
                     input = Console.ReadLine();
                     Console.Clear();
                     if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; break; }
-                    else if (input == ">" || input == "'>'") { DrinkenMenu(); goodInput = true; break; }
+                    else if (input == "r" || input == "'r'") { DrinkenMenu(); goodInput = true; break; }
                     else Console.WriteLine("Er is een onjuist command ingevuld, probeer het nog eens.");
                 }
             }
@@ -172,10 +172,10 @@ namespace Drinken_Class
             string[] Tags = drinkenDataList[index].tags;
             int Clicks = drinkenDataList[index].clicks;
 
-            // Insert code to change stuff //
+            // resets count to zero
             Clicks = 0;
 
-            // Creating the struct item
+            // Creating the struct item again
             DrinkenData newDrinkenData = new DrinkenData();
 
             newDrinkenData.naam = Naam;
