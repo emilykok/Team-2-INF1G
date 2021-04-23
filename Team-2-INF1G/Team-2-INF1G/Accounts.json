@@ -44,11 +44,11 @@
     "Permission": false
   },
   {
-    "Name": "de",
+    "Name": "Bjorn",
     "Password": "f00a787f7492a95e165b470702f4fe9373583fbdc025b2c8bdf0262cc48fcff4",
-    "Age": -1,
-    "Gender": null,
-    "Email": null,
+    "Age": 19,
+    "Gender": "man",
+    "Email": "bjornkok@outlook.com",
     "bankingDetails": null,
     "Allergies": [],
     "Permission": false

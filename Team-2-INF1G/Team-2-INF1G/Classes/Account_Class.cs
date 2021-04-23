@@ -390,6 +390,8 @@ namespace Account_Class
                 try
                 {
                     int convert = Convert.ToInt32(userInput);
+                    convert -= 1;
+                    AccountView(convert, true);
                 }
                 catch
                 {
@@ -432,13 +434,22 @@ namespace Account_Class
             {
                 try
                 {
-                    name = value;
+                    bool check = UsernameCheck(value);
+                    if (check == false)
+                    {
+                        name = value;
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
                 }
                 catch
                 {
                     returnValue = false;
                 }
             }
+
             else if (item == "password")
             {
                 try
@@ -470,7 +481,18 @@ namespace Account_Class
             {
                 try
                 {
-                    gender = value;
+                    if (value == "Male" || value == "male" || value == "Man" || value == "man")
+                    {
+                        gender = "man";
+                    }
+                    else if (value == "Female" || value == "female" || value == "Vrouw" || value == "vrouw")
+                    {
+                        gender = "female";
+                    }
+                    else
+                    {
+                        gender = "other";
+                    }
                 }
                 catch
                 {
@@ -572,7 +594,7 @@ namespace Account_Class
                     returnValue = false;
                 }
             }
-
+            
             // Creating the struct item
             AccountData newAccountData = new AccountData();
 
@@ -595,6 +617,153 @@ namespace Account_Class
             System.IO.File.WriteAllText(this.path, ToJSON());
 
             return returnValue;
+        }
+
+        // Method that display's account of specific person
+        public void AccountView(int index, bool perm = false)
+        {
+
+            bool retry = true;
+            bool returnValue = true;
+
+            while (retry == true)
+            {
+                Console.Clear();
+
+                if(returnValue == false)
+                {
+                    Console.WriteLine("Gegeven waarde kan niet aangepast worden of toegevoegd, probeer het opnieuw\n");
+                }
+
+                string name = accountDataList[index].Name;
+                string password = accountDataList[index].Password;
+                int age = accountDataList[index].Age;
+                string gender = accountDataList[index].Gender;
+                string email = accountDataList[index].Email;
+                string bankingdetails = accountDataList[index].bankingDetails;
+                string[] allergies = accountDataList[index].Allergies;
+                bool permission = accountDataList[index].Permission;
+
+                string userInputPrint = "";
+
+                Console.WriteLine($"\n[1] Naam: {name}");
+                Console.WriteLine($"\n[2] Wachtwoord: ********");
+                Console.WriteLine($"\n[3] Leeftijd: {age}");
+                Console.WriteLine($"\n[4] Geslacht: {gender}");
+                Console.WriteLine($"\n[5] Email: {email}");
+                Console.WriteLine($"\n[6] Bank gegevens: {bankingdetails}");
+                Console.WriteLine($"\n[7] Allergien: ");
+
+                for (int i = 0; i < allergies.Length; i++)
+                {
+                    if (i < allergies.Length - 1)
+                    {
+                        Console.WriteLine($"{allergies[i]}, ");
+                    }
+                    Console.WriteLine($"{allergies[i]}");
+                }
+
+                if (perm == true)
+                {
+                    Console.WriteLine($"\n[8] Permission: {permission}");
+                }
+       
+                Console.WriteLine($"\nVoer nummer in om geselecteerde veld te wijzigen of toe te voegen, of druk X in om terug te gaan: ");
+
+                string userInputItem = Console.ReadLine();
+
+                if (userInputItem == "X" || userInputItem == "x")
+                {
+                    retry = false;
+                    break;
+                }
+
+                Console.WriteLine($"\nVoer hier waarde in om mee te geven: ");
+                string userInputValue = Console.ReadLine();
+
+                // Check if there was input and sort input
+                string[] callValue = new string[] { userInputItem, userInputValue };
+                bool inputCheck = TextCheck(callValue);
+
+
+                // Convert Item input to use in update method
+                if (userInputItem == "1")
+                {
+                    userInputItem = "name";
+                    userInputPrint = "Naam";
+                }
+                else if (userInputItem == "2")
+                {
+                    userInputItem = "password";
+                    userInputPrint = "Wachtwoord";
+                }
+                else if (userInputItem == "3")
+                {
+                    userInputItem = "age";
+                    userInputPrint = "Leeftijd";
+                }
+                else if (userInputItem == "4")
+                {
+                    userInputItem = "gender";
+                    userInputPrint = "Geslacht";
+                }
+                else if (userInputItem == "5")
+                {
+                    userInputItem = "email";
+                    userInputPrint = "Email";
+                }
+                else if (userInputItem == "6")
+                {
+                    userInputItem = "bankingdetails";
+                    userInputPrint = "Bank gegevens";
+                }
+                else if (userInputItem == "7")
+                {
+                    userInputItem = "allergiesAdd";
+                    userInputPrint = "Allergien";
+                }
+                else  if (userInputItem == "8" && perm == true)
+                {
+                    userInputItem = "permission";
+                    userInputPrint = "Rechten";
+                }
+                else
+                {
+                    returnValue = false;
+                }
+
+                if (inputCheck == true)
+                {
+                    Console.WriteLine("\nBeide velden moeten een input hebben.\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+                else
+                {
+                    Console.WriteLine($"\nGeselecteerde Veld: {userInputPrint} | Gegeven Waarde: {userInputValue} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+
+                // Checked if user wants to retry or confirm //
+                string confirm = Console.ReadLine();
+                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
+                {
+                    retry = true;
+                }
+                else if (confirm == "X" || confirm == "x" || confirm == "'X'" || confirm == "'x'")
+                {
+                    retry = false;
+                }
+                else
+                {
+                    if (inputCheck == true)
+                    {
+                        retry = true;
+                    }
+                    else
+                    {
+                        returnValue = UpdateUser(userInputItem ,userInputValue, index);
+                    }
+
+                }
+            }
         }
     }
 }
