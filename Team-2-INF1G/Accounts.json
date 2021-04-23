@@ -1,4 +1,29 @@
-{
-  "User_Name": "de",
-  "Password": "de"
-}
+[
+  {
+    "Name": "Harry",
+    "Password": "2034984",
+    "Age": 10,
+    "Gender": "Man",
+    "Email": "HarryvSunweb@gmail.com",
+    "bankingDetails": "NL30INGB343487347",
+    "Allergies": "Chocolade"
+  },
+  {
+    "Name": "boos",
+    "Password": "ttee",
+    "Age": 23,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
+  },
+  {
+    "Name": "Bjorn",
+    "Password": "abcd",
+    "Age": 12,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": null
+  }
+]

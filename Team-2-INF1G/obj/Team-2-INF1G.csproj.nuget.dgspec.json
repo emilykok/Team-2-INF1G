@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {}
+    "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
+    "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+        "projectUniqueName": "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
         "projectName": "Team-2-INF1G",
-        "projectPath": "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+        "projectPath": "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
         "packagesPath": "C:\\Users\\Doger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
+        "outputPath": "C:\\Users\\Doger\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

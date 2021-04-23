@@ -1,0 +1,38 @@
+[
+  {
+    "filmnaam": "The Broken Hearts Gallery",
+    "naamaccount": "Harryvsunweb",
+    "kaartnaam": null,
+    "prijs": "10.00",
+    "leeftijd": "10",
+    "tijd": "14:00",
+    "filmduur": "108",
+    "zaal": "3",
+    "rij": "A",
+    "stoel": "4"
+  },
+  {
+    "filmnaam": "",
+    "naampersoon": null,
+    "kaartnaam": null,
+    "prijs": -1,
+    "leeftijd": null,
+    "tijd": null,
+    "filmduur": null,
+    "zaal": null,
+    "rij": null,
+    "stoel": null
+  },
+  {
+    "filmnaam": "",
+    "naampersoon": null,
+    "kaartnaam": null,
+    "prijs": -1,
+    "leeftijd": null,
+    "tijd": null,
+    "filmduur": null,
+    "zaal": null,
+    "rij": null,
+    "stoel": null
+  }
+]
