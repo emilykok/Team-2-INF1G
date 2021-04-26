@@ -34,9 +34,11 @@ namespace Team_2
 
             // MELISSA GEDEELTE //
             Eten eten = new Eten();
-            eten.EtenMenu();
-            Drinken drinken = new Drinken();
+            //eten.EtenMenu();
+            //Drinken drinken = new Drinken();
             //drinken.DrinkenMenu();
+            Console.WriteLine(eten.EtenFilter("popcorn"));
+            //Console.WriteLine(eten.EtenAllergieFilter("lacto"));
 
             // DAVID GEDEELTE //
             //MovieDetail.CodeActivate();
@@ -47,7 +49,7 @@ namespace Team_2
 
             // JAMIE GEDEELTE //
             //Applicatie myApllicatie = new Applicatie();
-           // myApllicatie.Start();
+            // myApllicatie.Start();
         }
     }
 }
