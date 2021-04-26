@@ -2,22 +2,22 @@
   {
     "Name": "deBobbel",
     "Password": "34bd4f994f97fe925a10999e99b239645015180e89343794f830225492277954",
-    "Age": -1,
-    "Gender": null,
+    "Age": 16,
+    "Gender": "man",
     "Email": null,
     "bankingDetails": null,
     "Allergies": [],
     "Permission": false
   },
   {
-    "Name": "Hallo1",
+    "Name": "Hallo2",
     "Password": "02bbae72c3a28f6dab86f60e9f375e4fe210e29c6741f0cb54ff08efe0df11a3",
     "Age": -1,
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
     "Allergies": [],
-    "Permission": false
+    "Permission": true
   },
   {
     "Name": "hallo",

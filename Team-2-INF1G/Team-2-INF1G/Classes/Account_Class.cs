@@ -61,6 +61,7 @@ namespace Account_Class
             return JsonConvert.SerializeObject(this.accountDataList, Formatting.Indented);
         }
 
+        //// Miscellaneous methods
         // Method that checks if someone has entered anything
         public bool TextCheck(string[] textArr)
         {
@@ -103,6 +104,75 @@ namespace Account_Class
             }
         }
 
+        public string[] availableAllergie(string[] userAllergies)
+        {
+
+            string[] allAllergies = {"lactose", "soja", "pinda", "amandel", "hazelnoot", "noten", "gluten", "tarwe"};
+
+            // To get the length of the return array
+            int count = 0;
+            for (int i = 0; i < allAllergies.Length; i++)
+            {
+                for (int j = 0; j < userAllergies.Length; j++)
+                {
+                    if (allAllergies[i] == userAllergies[j])
+                    {
+                        count += 1;
+                    }
+                }
+            }
+
+            string[] remainingAllergies = new string[count];
+            
+            // Fill the array
+            count = 0;
+            for (int i = 0; i < allAllergies.Length; i++)
+            {
+                for (int j = 0; j < userAllergies.Length; j++)
+                {
+                    if (allAllergies[i] != userAllergies[j])
+                    {
+                        remainingAllergies[count] = userAllergies[j];
+                        count += 1;
+                    }
+                }
+            }
+            return remainingAllergies;
+        }
+
+        // Adds an allergie to the string array
+        public string[] addAllergie(string[] userAllergies, string value)
+        {
+            string[] returnAllergies = new string[userAllergies.Length + 1];
+            for (int i = 0; i < returnAllergies.Length; i++)
+            {
+                if (i == userAllergies.Length)
+                {
+                    returnAllergies[i] = value;
+                }
+                else
+                {
+                    returnAllergies[i] = userAllergies[i];
+                }
+            }
+            return returnAllergies;
+        }
+
+        public string[] removeAllergie(string[] userAllergies, string value)
+        {
+            string[] returnAllergies = new string[userAllergies.Length - 1];
+
+            int count = 0;
+            for (int i = 0; i < userAllergies.Length; i++)
+            {
+                if (value != userAllergies[i])
+                {
+                    returnAllergies[count] = userAllergies[i];
+                    count += 1;
+                }
+            }
+            return returnAllergies;
+        }
 
 
         // Method to login, returns int (the index of the list which corresponds to user selected) if user is found, else returns -1
@@ -646,24 +716,30 @@ namespace Account_Class
 
                 string userInputPrint = "";
 
+                // compile a string with all the allergies
+                string allergiesStringPrint = "";
+                for (int i = 0; i < allergies.Length; i++)
+                {
+                    if (i < allergies.Length - 1)
+                    {
+                        allergiesStringPrint += $"{allergies[i]}, ";
+                    }
+                    else
+                    {
+                        allergiesStringPrint += $"{allergies[i]}";
+                    }
+                }
+
+                // prints all the account data
                 Console.WriteLine($"\n[1] Naam: {name}");
                 Console.WriteLine($"\n[2] Wachtwoord: ********");
                 Console.WriteLine($"\n[3] Leeftijd: {age}");
                 Console.WriteLine($"\n[4] Geslacht: {gender}");
                 Console.WriteLine($"\n[5] Email: {email}");
                 Console.WriteLine($"\n[6] Bank gegevens: {bankingdetails}");
-                Console.WriteLine($"\n[7] Allergien: ");
+                Console.WriteLine($"\n[7] Allergien: " + allergiesStringPrint);
 
-                for (int i = 0; i < allergies.Length; i++)
-                {
-                    if (i < allergies.Length - 1)
-                    {
-                        Console.WriteLine($"{allergies[i]}, ");
-                    }
-                    Console.WriteLine($"{allergies[i]}");
-                }
-
-                if (perm == true)
+                if (perm == true) // only gives option to change permission value if permission entered is true, for admin reasons
                 {
                     Console.WriteLine($"\n[8] Permission: {permission}");
                 }
@@ -672,14 +748,71 @@ namespace Account_Class
 
                 string userInputItem = Console.ReadLine();
 
-                if (userInputItem == "X" || userInputItem == "x")
+                string userInputValue = ""; // prepare variable for if statement
+
+                if (userInputItem == "X" || userInputItem == "x") // checks for "x" to stop program
                 {
-                    retry = false;
                     break;
                 }
+                
+                else if (userInputItem == "7") // checks for "allergie" add or remove [array]
+                {
+                    Console.WriteLine("\nKies uit de volgende opties:\n[1] om een allergie toe te voegen\n[2] om een allergie te verwijderen\n'X' om te stoppen");
+                    string choose = Console.ReadLine();
+                    if (choose == "1")
+                    {
+                        userInputItem = "7.1";
+                        bool innerRetry = true;
+                        while (innerRetry == true)
+                        {
 
-                Console.WriteLine($"\nVoer hier waarde in om mee te geven: ");
-                string userInputValue = Console.ReadLine();
+                            string[] availableArr = this.availableAllergie(allergies);
+                            Console.WriteLine("\nKies uit de volgende allergenen: ");
+                            for (int i = 0; i < availableArr.Length; i++)
+                            {
+                                Console.WriteLine($"\n[{i + 1}] {availableArr[i]}");
+                            }
+
+                            Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                            userInputValue = Console.ReadLine();
+
+                            try
+                            {
+                                int convert = Convert.ToInt32(userInputValue);
+                                convert -= 1;
+                                if (convert < availableArr.Length)
+                                {
+                                    string value = availableArr[convert];
+                                    //this.addAllergie(allergies, value);
+                                    innerRetry = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("De input valt buiten de selectie, probeer het opnieuw");
+                                }
+                            }
+                            catch
+                            {
+                                userInputValue = "-1";
+                                innerRetry = false;
+                            }
+                        }
+                    }
+                    else if (choose == "2")
+                    {
+                        userInputItem = "7.2";
+                    }
+                    else
+                    {
+                        userInputItem = "-1"; // to break the update method
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                    userInputValue = Console.ReadLine();
+                }
+                
 
                 // Check if there was input and sort input
                 string[] callValue = new string[] { userInputItem, userInputValue };
@@ -717,10 +850,15 @@ namespace Account_Class
                     userInputItem = "bankingdetails";
                     userInputPrint = "Bank gegevens";
                 }
-                else if (userInputItem == "7")
+                else if (userInputItem == "7.1")
                 {
-                    userInputItem = "allergiesAdd";
-                    userInputPrint = "Allergien";
+                    userInputItem = "allergies";
+                    userInputPrint = "Allergie toevoegen";
+                }
+                else if (userInputItem == "7.2")
+                {
+                    userInputItem = "allergies";
+                    userInputPrint = "Allergie verwijderen";
                 }
                 else  if (userInputItem == "8" && perm == true)
                 {
@@ -761,7 +899,6 @@ namespace Account_Class
                     {
                         returnValue = UpdateUser(userInputItem ,userInputValue, index);
                     }
-
                 }
             }
         }
