@@ -6,7 +6,9 @@
     "Gender": "man",
     "Email": null,
     "bankingDetails": null,
-    "Allergies": [],
+    "Allergies": [
+      "amandel"
+    ],
     "Permission": false
   },
   {
@@ -14,7 +16,7 @@
     "Password": "02bbae72c3a28f6dab86f60e9f375e4fe210e29c6741f0cb54ff08efe0df11a3",
     "Age": -1,
     "Gender": null,
-    "Email": null,
+    "Email": "wat@jaho.com",
     "bankingDetails": null,
     "Allergies": [],
     "Permission": true
@@ -26,11 +28,7 @@
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
-    "Allergies": [
-      "Nuts",
-      "Glutten",
-      "Lactose"
-    ],
+    "Allergies": [],
     "Permission": false
   },
   {
@@ -50,7 +48,9 @@
     "Gender": "man",
     "Email": "bjornkok@outlook.com",
     "bankingDetails": null,
-    "Allergies": [],
+    "Allergies": [
+      "tarwe"
+    ],
     "Permission": false
   }
 ]

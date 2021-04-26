@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Hashing_Class;
+using System.Linq;
 
 namespace Account_Class
 {
@@ -104,40 +105,21 @@ namespace Account_Class
             }
         }
 
-        public string[] availableAllergie(string[] userAllergies)
+        public string[] AvailableAllergie(string[] userAllergies)
         {
 
             string[] allAllergies = {"lactose", "soja", "pinda", "amandel", "hazelnoot", "noten", "gluten", "tarwe"};
 
             // To get the length of the return array
-            int count = 0;
-            for (int i = 0; i < allAllergies.Length; i++)
+            if (userAllergies.Length == 0)
             {
-                for (int j = 0; j < userAllergies.Length; j++)
-                {
-                    if (allAllergies[i] == userAllergies[j])
-                    {
-                        count += 1;
-                    }
-                }
+                return allAllergies;
             }
-
-            string[] remainingAllergies = new string[count];
-            
-            // Fill the array
-            count = 0;
-            for (int i = 0; i < allAllergies.Length; i++)
+            else
             {
-                for (int j = 0; j < userAllergies.Length; j++)
-                {
-                    if (allAllergies[i] != userAllergies[j])
-                    {
-                        remainingAllergies[count] = userAllergies[j];
-                        count += 1;
-                    }
-                }
+                string[] difference = allAllergies.Except(userAllergies).ToArray();
+                return difference;
             }
-            return remainingAllergies;
         }
 
         // Adds an allergie to the string array
@@ -757,6 +739,8 @@ namespace Account_Class
                 
                 else if (userInputItem == "7") // checks for "allergie" add or remove [array]
                 {
+                    Console.Clear();
+
                     Console.WriteLine("\nKies uit de volgende opties:\n[1] om een allergie toe te voegen\n[2] om een allergie te verwijderen\n'X' om te stoppen");
                     string choose = Console.ReadLine();
                     if (choose == "1")
@@ -765,12 +749,13 @@ namespace Account_Class
                         bool innerRetry = true;
                         while (innerRetry == true)
                         {
+                            Console.Clear();
 
-                            string[] availableArr = this.availableAllergie(allergies);
+                            string[] availableArr = this.AvailableAllergie(allergies);
                             Console.WriteLine("\nKies uit de volgende allergenen: ");
                             for (int i = 0; i < availableArr.Length; i++)
                             {
-                                Console.WriteLine($"\n[{i + 1}] {availableArr[i]}");
+                                Console.WriteLine($"[{i + 1}] {availableArr[i]}");
                             }
 
                             Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
@@ -782,8 +767,7 @@ namespace Account_Class
                                 convert -= 1;
                                 if (convert < availableArr.Length)
                                 {
-                                    string value = availableArr[convert];
-                                    //this.addAllergie(allergies, value);
+                                    userInputValue = availableArr[convert];
                                     innerRetry = false;
                                 }
                                 else
@@ -793,7 +777,7 @@ namespace Account_Class
                             }
                             catch
                             {
-                                userInputValue = "-1";
+                                userInputValue = ""; // to return an empty value
                                 innerRetry = false;
                             }
                         }
@@ -801,13 +785,57 @@ namespace Account_Class
                     else if (choose == "2")
                     {
                         userInputItem = "7.2";
+                        bool innerRetry = true;
+
+                        if (allergies.Length == 0) // checks if user has allergies to begin with
+                        {
+                            userInputItem = "";
+                            Console.WriteLine("\nU heeft nog geen allergenen");
+                        }
+                        else
+                        {
+                            while (innerRetry == true) // to make retry possible
+                            {
+                                Console.Clear();
+
+                                Console.WriteLine("\nKies uit de volgende allergenen: "); // prints all the users allergies
+                                for (int i = 0; i < allergies.Length; i++)
+                                {
+                                    Console.WriteLine($"[{i + 1}] {allergies[i]}");
+                                }
+
+                                Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                                userInputValue = Console.ReadLine();
+
+                                try // tries to convert value to be used in update method
+                                {
+                                    int convert = Convert.ToInt32(userInputValue);
+                                    convert -= 1;
+                                    if (convert < allergies.Length)
+                                    {
+                                        userInputValue = allergies[convert];
+                                        innerRetry = false;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("De input valt buiten de selectie, probeer het opnieuw");
+                                    }
+                                }
+                                catch
+                                {
+                                    userInputValue = ""; // to return an empty value
+                                    innerRetry = false;
+                                }
+                            }
+                        }
                     }
                     else
                     {
-                        userInputItem = "-1"; // to break the update method
+                        userInputItem = ""; // to break the update method
                     }
-                }
-                else
+                } // If 7, goes to add allergies section
+                
+                else // for every other input
                 {
                     Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
                     userInputValue = Console.ReadLine();
@@ -852,12 +880,12 @@ namespace Account_Class
                 }
                 else if (userInputItem == "7.1")
                 {
-                    userInputItem = "allergies";
+                    userInputItem = "allergiesAdd";
                     userInputPrint = "Allergie toevoegen";
                 }
                 else if (userInputItem == "7.2")
                 {
-                    userInputItem = "allergies";
+                    userInputItem = "allergiesRemove";
                     userInputPrint = "Allergie verwijderen";
                 }
                 else  if (userInputItem == "8" && perm == true)
