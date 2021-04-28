@@ -195,5 +195,64 @@ namespace Drinken_Class
             // write to the JSON file (updates the file)
             System.IO.File.WriteAllText(this.path, ToJSON());
         }
+
+        // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
+        public string DrinkenFilter(string toFilter)
+        {
+            Console.Clear();
+            string s = "";
+            toFilter = toFilter.ToLower();
+            try
+            {   // loopt door alle items in de json
+                for (int i = 0; i < drinkenDataList.Count; i++)
+                {
+                    // zoekt in titel van item
+                    if (drinkenDataList[i].naam.ToLower().Contains(toFilter)) s += drinkenDataList[i].naam + "\n";
+                    // zoekt in tags
+                    for (int j = 0; j < drinkenDataList[i].tags.Length; j++)
+                    {
+                        if (drinkenDataList[i].tags[j].Contains(toFilter)) s += drinkenDataList[i].naam + "\n";
+                    }
+                    // zoekt in allergenen
+                    for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
+                    {
+                        if (drinkenDataList[i].allergenen[j].Contains(toFilter)) s += drinkenDataList[i].naam + "\n";
+                    }
+                }
+                return $"Gevonden drinken met zoekterm '{toFilter}':\n{s}"; ;
+            }
+
+            catch (Exception)
+            {
+                return "Input is invalid";
+            }
+
+        }
+
+        // functie die weergeeft welke items de gegeven allergeen niet bevatten
+        public string DrinkenAllergieFilter(string toFilter)
+        {
+            Console.Clear();
+            toFilter = toFilter.ToLower();
+            string s = "";
+            bool check = true;
+            try
+            {   // loopt door alle items in drinken json
+                for (int i = 0; i < drinkenDataList.Count; i++)
+                {
+                    // loopt door de allergenen in de item
+                    for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
+                    {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
+                        if (drinkenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
+                    }   // als de item het niet bevat wordt hij toegevoegd aan string
+                    if (check) s += drinkenDataList[i].naam + "\n";
+                }
+                return $"Gevonden drinken zonder zoekterm '{toFilter}':\n{s}";
+            }
+            catch
+            {
+                return "Input is invalid";
+            }
+        }
     }
 }
