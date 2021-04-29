@@ -32,14 +32,16 @@
     "Permission": false
   },
   {
-    "Name": "x",
-    "Password": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
-    "Age": -1,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": [],
-    "Permission": false
+    "Name": "RDe_ADMIN",
+    "Password": "753692ec36adb4c794c973945eb2a99c1649703ea6f76bf259abb4fb838e013e",
+    "Age": 19,
+    "Gender": "man",
+    "Email": "bjornkok@outlook.com",
+    "bankingDetails": "6213845ed",
+    "Allergies": [
+      "lactose"
+    ],
+    "Permission": true
   },
   {
     "Name": "Bjorn",
@@ -52,5 +54,25 @@
       "tarwe"
     ],
     "Permission": false
+  },
+  {
+    "Name": "Nacc",
+    "Password": "e1b7ce275fe0ce879b7f5b8ab26b91efd82fdd5d70289d60f780d4766313b8dd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "Admin1",
+    "Password": "0afb00138d8e73348ec1fe41fd3d3a8fcbd90156b263bfa5791ba0e095f42cfc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": true
   }
 ]

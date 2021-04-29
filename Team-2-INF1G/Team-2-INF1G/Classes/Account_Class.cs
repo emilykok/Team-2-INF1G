@@ -122,41 +122,6 @@ namespace Account_Class
             }
         }
 
-        // Adds an allergie to the string array
-        public string[] addAllergie(string[] userAllergies, string value)
-        {
-            string[] returnAllergies = new string[userAllergies.Length + 1];
-            for (int i = 0; i < returnAllergies.Length; i++)
-            {
-                if (i == userAllergies.Length)
-                {
-                    returnAllergies[i] = value;
-                }
-                else
-                {
-                    returnAllergies[i] = userAllergies[i];
-                }
-            }
-            return returnAllergies;
-        }
-
-        public string[] removeAllergie(string[] userAllergies, string value)
-        {
-            string[] returnAllergies = new string[userAllergies.Length - 1];
-
-            int count = 0;
-            for (int i = 0; i < userAllergies.Length; i++)
-            {
-                if (value != userAllergies[i])
-                {
-                    returnAllergies[count] = userAllergies[i];
-                    count += 1;
-                }
-            }
-            return returnAllergies;
-        }
-
-
         // Method to login, returns int (the index of the list which corresponds to user selected) if user is found, else returns -1
         public int Login(string name, string password)
         {
@@ -348,7 +313,7 @@ namespace Account_Class
         }
 
         // Prints all the users based on user input given in method
-        public void printUsers()
+        public void AdminAccountViewer()
         {
             string state = " ";
             int start = 0;
