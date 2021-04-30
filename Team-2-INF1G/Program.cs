@@ -37,18 +37,18 @@ namespace Team_2
             eten.EtenMenu();
             */
             // DAVID GEDEELTE //
-            MovieDetail.CodeActivate();
+            MovieDetail.Navigation();
             Console.Clear();
             Kalender.Navigation();
             /*
             // NOAH GEDEELTE //
             reservering resv = new reservering();
             resv.RunTickets();
-
+            */
             // JAMIE GEDEELTE //
             Applicatie myApllicatie = new Applicatie();
             myApllicatie.Start();
-            */
+            
         }
     }
 }
