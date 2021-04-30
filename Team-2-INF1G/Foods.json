@@ -12,8 +12,7 @@
       6.99
     ],
     "voedingswaarde": "Per 100gr:\nEnergie: 1794kj(424kcal)\nVet: 5,2g\n   Waarvan verzadigd: 0,7g\nKoolhydraten: 89g\n   Waarvan suikers: 55g\nVoedingsvezel: 3,6g\nEiwitten: 3,5g\nZout: 0g",
-    "allergenen": [
-    ],
+    "allergenen": [],
     "tags": [
       "zoet",
       "veganistisch"
@@ -56,7 +55,7 @@
     "tags": [
       "zoet"
     ],
-    "clicks": 0
+    "clicks": 1
   },
   {
     "naam": "M&M pinda",

@@ -14,6 +14,7 @@ using Drinken_Class;
 using MovieDetail_Class;
 using Ticket_Class;
 using Hoofdmenu;
+using Food_Drink_Run;
 
 namespace Team_2
 {
@@ -21,7 +22,7 @@ namespace Team_2
     {
         static void Main(string[] args)
         {
-            
+
             // BJORN GEDEELTE //
             //Account acc = new Account();
 
@@ -33,11 +34,13 @@ namespace Team_2
             //Console.WriteLine(print_this);
 
             // MELISSA GEDEELTE //
-            Eten eten = new Eten();
+            FoodDrinkRun FDRun = new FoodDrinkRun();
+            FDRun.Run(true);
+            //Eten eten = new Eten();
             //eten.EtenMenu();
             //Drinken drinken = new Drinken();
             //drinken.DrinkenMenu();
-            Console.WriteLine(eten.EtenFilter("popcorn"));
+            //Console.WriteLine(eten.EtenFilter("popcorn"));
             //Console.WriteLine(eten.EtenAllergieFilter("lacto"));
 
             // DAVID GEDEELTE //
