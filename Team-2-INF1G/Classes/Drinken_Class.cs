@@ -8,6 +8,7 @@ using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
+
 namespace Drinken_Class 
 {
     public class Drinken
@@ -85,7 +86,7 @@ namespace Drinken_Class
                     Console.WriteLine("\nTyp 'x' om terug te gaan of 'r' om een andere item te selecteren.");
                     input = Console.ReadLine();
                     Console.Clear();
-                    if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; break; }
+                    if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; /*menu opnieuw laten runnen*/}
                     else if (input == "r" || input == "'r'") { DrinkenMenu(); goodInput = true; break; }
                     else Console.WriteLine("Er is een onjuist command ingevuld, probeer het nog eens.");
                 }
