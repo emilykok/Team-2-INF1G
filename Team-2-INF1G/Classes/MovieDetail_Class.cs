@@ -90,18 +90,20 @@ namespace MovieDetail_Class
             return s;
         }
 
-        public static void DisplayMovie(int index)
+        public static string DisplayMovie(int index)
         {
             // shows all info on the chosen movie //
             MovieDetail movie = new MovieDetail();
-            Console.WriteLine("vul < in om terug te gaan naar de lijst");
-            Console.WriteLine($"Titel: {movie.movieDataList[index - 1].titel}\n");
-            Console.WriteLine($"Genre: {ArrToString(movie.movieDataList[index - 1].genre)}\nKijkwijzer: {ArrToString(movie.movieDataList[index - 1].kijkwijzer)}\n");
-            Console.WriteLine($"Regisseur: {movie.movieDataList[index - 1].regisseur}\nActeurs: {ArrToString(movie.movieDataList[index - 1].acteurs)}\n");
-            Console.WriteLine($"samenvatting: {movie.movieDataList[index - 1].samenvatting}\n");
-            Console.WriteLine($"Rating: {movie.movieDataList[index - 1].rating}\nSpeeltijd: {movie.movieDataList[index - 1].speeltijd} minuten");
-        }
+            string run = "";
+            run += ($"Titel: {movie.movieDataList[index - 1].titel}\n\n");
+            run += ($"Genre: {ArrToString(movie.movieDataList[index - 1].genre)}\nKijkwijzer: {ArrToString(movie.movieDataList[index - 1].kijkwijzer)}\n\n");
+            run += ($"Regisseur: {movie.movieDataList[index - 1].regisseur}\nActeurs: {ArrToString(movie.movieDataList[index - 1].acteurs)}\n\n");
+            run += ($"samenvatting: {movie.movieDataList[index - 1].samenvatting}\n\n");
+            run += ($"Rating: {movie.movieDataList[index - 1].rating}\nSpeeltijd: {movie.movieDataList[index - 1].speeltijd} minuten\n");
 
+            return run;
+        }
+        /*
         public static void MovieList(int page = 1)
         {
             // shows a list of movies(page of movieTitles) //
@@ -116,7 +118,7 @@ namespace MovieDetail_Class
                 Console.WriteLine($"{i + 1}.\t{movie.movieDataList[i].titel}");
             }
         }
-
+        */
         public static string[] GetList(int page)
         {
             // returns a string array of movie titles on that page //
@@ -137,10 +139,9 @@ namespace MovieDetail_Class
         {
             // Navigation of the catalog //
             int page = 1;
-            Menu select = new Menu("press", GetList(page));
+            Menu select = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren", GetList(page));
             select.Run();
 
-            ConsoleKey keyPressed;
             bool retry = true;
             // create a while loop to keep running navigation //
             while (retry)
@@ -191,9 +192,7 @@ namespace MovieDetail_Class
                 {
                     // clear the console and print the movie info //
                     Console.Clear();
-                    DisplayMovie(((page - 1) * 10) + (select.SelectedIndex + 1));// get the right index for the Json file //
-                    ConsoleKeyInfo keyInfo = ReadKey(true);
-                    keyPressed = keyInfo.Key;
+                    select.Prompt = DisplayMovie(((page - 1) * 10) + (select.SelectedIndex + 1));// get the right index for the Json file //
                     // change the selection menu for select //
                     select.Options = new string[] { "terug naar lijst", "exit" };
                     select.SelectedIndex = 0;
@@ -201,6 +200,7 @@ namespace MovieDetail_Class
                     // to go back to the list of movies //
                     if(select.SelectedIndex == 0)
                     {
+                        select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren";
                         select.Options = GetList(page);
                         select.Run();
                     }
