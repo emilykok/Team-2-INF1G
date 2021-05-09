@@ -7,9 +7,9 @@ namespace Hoofdmenu
 {
     class Menu
     {
-        private int SelectedIndex;
-        private string[] Options;
-        private string Prompt;
+        public int SelectedIndex;
+        public string[] Options;
+        public string Prompt;
 
         public Menu(string prompt, string[] options)
         {
@@ -50,6 +50,7 @@ namespace Hoofdmenu
 
         public int Run()
         {
+            bool retry = true;
             ConsoleKey keyPressed;
             do
             {
@@ -75,8 +76,12 @@ namespace Hoofdmenu
                         SelectedIndex = 0;
                     }
                 }
+                else if(keyPressed == ConsoleKey.Enter)
+                {
+                    retry = false;
+                }
 
-            } while (keyPressed != ConsoleKey.Enter);
+            } while (retry);
 
             return SelectedIndex;
         }

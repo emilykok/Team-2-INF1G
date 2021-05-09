@@ -5,12 +5,15 @@ using System.IO;
 using System.Text.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+using static System.Console;
+
+using Hoofdmenu;
 
 namespace MovieDetail_Class
 {
     public class MovieDetail
     {
-        // film informatie uit de json file halen(WIP) //
+        // gets the movie info out of the json //
         public struct MovieData
         {
             public string titel;
@@ -32,16 +35,17 @@ namespace MovieDetail_Class
 
         public MovieDetail()
         {
+            // get path of the json file //
             this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Catalog.json"));
             this.jsonPath = File.ReadAllText(path);
             this.movieDataList = JsonConvert.DeserializeObject<List<MovieData>>(jsonPath);
         }
-
+        /*
         public string ToJSON()
         {
             return JsonConvert.SerializeObject(this.movieDataList, Formatting.Indented);
         }
-        /*
+        
         public static string[] GetList(int page)
         {
             int index;
@@ -76,7 +80,7 @@ namespace MovieDetail_Class
 
         public static string ArrToString(string[] before)
         {
-            // functie om van string array een enkele string te maken //
+            // function to make a singular string out of a string array //
             string s = "";
             for (int i = 0; i < (before.Length - 1); i++)
             {
@@ -86,70 +90,125 @@ namespace MovieDetail_Class
             return s;
         }
 
-        public static void DisplayMovie(int index)
+        public static string DisplayMovie(int index)
         {
-            // laat alle informatie van de gekozen film zien //
+            // shows all info on the chosen movie //
             MovieDetail movie = new MovieDetail();
-            Console.WriteLine("vul < in om terug te gaan naar de lijst");
-            Console.WriteLine($"Titel: {movie.movieDataList[index - 1].titel}\n");
-            Console.WriteLine($"Genre: {ArrToString(movie.movieDataList[index - 1].genre)}\nKijkwijzer: {ArrToString(movie.movieDataList[index - 1].kijkwijzer)}\n");
-            Console.WriteLine($"Regisseur: {movie.movieDataList[index - 1].regisseur}\nActeurs: {ArrToString(movie.movieDataList[index - 1].acteurs)}\n");
-            Console.WriteLine($"samenvatting: {movie.movieDataList[index - 1].samenvatting}\n");
-            Console.WriteLine($"Rating: {movie.movieDataList[index - 1].rating}\nSpeeltijd: {movie.movieDataList[index - 1].speeltijd} minuten");
-        }
+            string run = "";
+            run += ($"Titel: {movie.movieDataList[index - 1].titel}\n\n");
+            run += ($"Genre: {ArrToString(movie.movieDataList[index - 1].genre)}\nKijkwijzer: {ArrToString(movie.movieDataList[index - 1].kijkwijzer)}\n\n");
+            run += ($"Regisseur: {movie.movieDataList[index - 1].regisseur}\nActeurs: {ArrToString(movie.movieDataList[index - 1].acteurs)}\n\n");
+            run += ($"samenvatting: {movie.movieDataList[index - 1].samenvatting}\n\n");
+            run += ($"Rating: {movie.movieDataList[index - 1].rating}\nSpeeltijd: {movie.movieDataList[index - 1].speeltijd} minuten\n");
 
+            return run;
+        }
+        /*
         public static void MovieList(int page = 1)
         {
-            // laat een lijst aan films zien //
+            // shows a list of movies(page of movieTitles) //
             MovieDetail movie = new MovieDetail();
             Console.WriteLine("vul < of > in om te navigeren tussen de bladzijden, druk het corresponderende nummer in om\nde film informatie te zien.");
             Console.WriteLine($"page {page}");
             int x = 0;
+            // calculation to get the right index for the json file //
             if (page != 1) x = (10 * (page - 1));
-            for (int i = x; i < (x + 10); i++)
+            for (int i = x, count = 0; i < (x + 10); i++, count++)
             {
-                Console.WriteLine($"{i + 1}.     {movie.movieDataList[i].titel}");
+                Console.WriteLine($"{i + 1}.\t{movie.movieDataList[i].titel}");
             }
         }
-
-        public static void CodeActivate()
+        */
+        public static string[] GetList(int page)
         {
+            // returns a string array of movie titles on that page //
+            MovieDetail movie = new MovieDetail();
+            int x = 0;
+            string[] moviePage = new string[13];
+            if (page != 1) x = (10 * (page - 1));
+            for (int i = x, count = 0; i < (x + 10); i++, count++)
+            {
+                moviePage[count] = ($"{i + 1}.\t{movie.movieDataList[i].titel}");
+            }
+            moviePage[10] = "vorige pagina";
+            moviePage[11] = "volgende pagina";
+            moviePage[12] = "exit";
+            return moviePage;
+        }
+        public static void Navigation()
+        {
+            // Navigation of the catalog //
             int page = 1;
-            MovieList(page);
+            Menu select = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren", GetList(page));
+            select.Run();
+
             bool retry = true;
+            // create a while loop to keep running navigation //
             while (retry)
             {
-                var navigation = Console.ReadLine();
-                if (navigation == "<" && page == 1)
+                // after index 9 the navigation options are placed //
+                if(select.SelectedIndex >= 10)
                 {
-                    Console.Clear();
-                    MovieList();
-                }
-                else if (navigation == "<" || navigation == ">")
-                {
-                    if (navigation == "<" && page > 1)
+                    // to go back a page //
+                    if(select.SelectedIndex == 10)
                     {
-                        Console.Clear();
-                        page--;
-                        MovieList(page);
+                        if (page <= 1)
+                        {
+                            page = 1;
+                            select.Options = GetList(page);
+                            select.Run();
+                        }
+                        else
+                        {
+                            page--;
+                            select.Options = GetList(page);
+                            select.Run();
+                        }
                     }
-                    else if (navigation == ">" && page < 5)
+                    // to go to the next page //
+                    else if(select.SelectedIndex == 11)
                     {
-                        Console.Clear();
-                        page++;
-                        MovieList(page);
+                        if (page >= 5)
+                        {
+                            page = 5;
+                            select.Options = GetList(page);
+                            select.Run();
+                        }
+                        else
+                        {
+                            page++;
+                            select.Options = GetList(page);
+                            select.Run();
+                        }
+                    }
+                    // to exit //
+                    else if(select.SelectedIndex == 12)
+                    {
+                        retry = false;
                     }
                 }
-                else if (navigation == "x" || navigation == "X")
-                {
-                    retry = false;
-                }
+                // if one of the movies is selected(index 0-9) //
                 else
                 {
-                    int selection = Convert.ToInt32(navigation);
+                    // clear the console and print the movie info //
                     Console.Clear();
-                    MovieDetail movie = new MovieDetail();
-                    DisplayMovie(selection);
+                    select.Prompt = DisplayMovie(((page - 1) * 10) + (select.SelectedIndex + 1));// get the right index for the Json file //
+                    // change the selection menu for select //
+                    select.Options = new string[] { "terug naar lijst", "exit" };
+                    select.SelectedIndex = 0;
+                    select.Run();
+                    // to go back to the list of movies //
+                    if(select.SelectedIndex == 0)
+                    {
+                        select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren";
+                        select.Options = GetList(page);
+                        select.Run();
+                    }
+                    // to exit //
+                    else if(select.SelectedIndex == 1)
+                    {
+                        retry = false;
+                    }
                 }
             }
         }

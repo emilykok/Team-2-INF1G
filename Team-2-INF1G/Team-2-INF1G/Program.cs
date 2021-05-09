@@ -9,7 +9,7 @@ using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
 using Account_Class;
-using Eten_Class;
+using Food_Drink_Run;
 using MovieDetail_Class;
 using Ticket_Class;
 using Hoofdmenu;
@@ -27,10 +27,10 @@ namespace Team_2
             int user = -1;
             while (retry == true)
             {
-                if (user == -1)
+                if (user == -1) // If there is no login (no user selected)
                 {
                     Console.Clear();
-                    Console.WriteLine("Om in te loggen, enter 1.\nOm een account te creeeren, enter 2.\nOm terug te gaan, enter 'X'");
+                    Console.WriteLine("Om in te loggen, enter 1.\nOm een account te creeeren, enter 2.\nOm films te bekijken, enter 3.\nOm ons eten & drinken te bekijken, enter 4.\nOm terug te gaan, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -40,15 +40,23 @@ namespace Team_2
                     {
                         acc.TextCreateUser();
                     }
+                    else if (choose == "3")
+                    {
+                        MovieDetail.Navigation();
+                    }
+                    else if (choose == "4")
+                    {
+                        FoodDrinkRun.Run();
+                    }
                     else
                     {
                         retry = false;
                     }
                 }
-                else if (user > 0 && acc.accountDataList[user].Permission == true)
+                else if (user > 0 && acc.accountDataList[user].Permission == true) // If there is logged in (admin)
                 {
                     Console.Clear();
-                    Console.WriteLine("Om eigen account te zien, enter 1.\nOm admin menu in te gaan, enter 2.\nOm uit te loggen, enter 3.\nOm terug te gaan, enter 'X'");
+                    Console.WriteLine("Om eigen account te zien, enter 1.\nOm admin menu in te gaan, enter 2.\nOm uit te loggen, enter 3.\nOm films te bekijken, enter 4.\nOm ons eten & drinken te bekijken, enter 5.\nOm terug te gaan, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -62,15 +70,23 @@ namespace Team_2
                     {
                         user = -1;
                     }
+                    else if (choose == "4")
+                    {
+                        MovieDetail.Navigation();
+                    }
+                    else if (choose == "5")
+                    {
+                        FoodDrinkRun.Run(true);
+                    }
                     else
                     {
                         retry = false;
                     }
                 }
-                else
+                else // If there is logged in (user)
                 {
                     Console.Clear();
-                    Console.WriteLine("Om eigen account te zien, enter 1.\nOm uit te loggen, enter 2.\nOm terug te gaan, enter 'X'");
+                    Console.WriteLine("Om eigen account te zien, enter 1.\nOm uit te loggen, enter 2.\nOm films te bekijken, enter 3.\nOm ons eten & drinken te bekijken, enter 4.\nOm terug te gaan, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -79,6 +95,14 @@ namespace Team_2
                     else if (choose == "2")
                     {
                         user = -1;
+                    }
+                    else if (choose == "3")
+                    {
+                        MovieDetail.Navigation();
+                    }
+                    else if (choose == "4")
+                    {
+                        FoodDrinkRun.Run();
                     }
                     else
                     {
