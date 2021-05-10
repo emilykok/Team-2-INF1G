@@ -1,9 +1,21 @@
 [
   {
-    "filmnaam": "Valley Girl",
+    "filmnaam": "The Broken Hearts Gallery",
     "naampersoon": null,
     "kaartnaam": null,
-    "prijs": -1,
+    "prijs": "10.00",
+    "leeftijd": "10",
+    "tijd": "14:00",
+    "filmduur": "108",
+    "zaal": "3",
+    "rij": "A",
+    "stoel": "4"
+  },
+  {
+    "filmnaam": "",
+    "naampersoon": null,
+    "kaartnaam": null,
+    "prijs": "-1",
     "leeftijd": null,
     "tijd": null,
     "filmduur": null,
@@ -12,10 +24,10 @@
     "stoel": null
   },
   {
-    "filmnaam": "The Lovebirds",
+    "filmnaam": "",
     "naampersoon": null,
     "kaartnaam": null,
-    "prijs": -1,
+    "prijs": "-1",
     "leeftijd": null,
     "tijd": null,
     "filmduur": null,
@@ -24,10 +36,10 @@
     "stoel": null
   },
   {
-    "filmnaam": "The Lovebirds",
+    "filmnaam": "Honest Thief",
     "naampersoon": null,
     "kaartnaam": null,
-    "prijs": -1,
+    "prijs": null,
     "leeftijd": null,
     "tijd": null,
     "filmduur": null,

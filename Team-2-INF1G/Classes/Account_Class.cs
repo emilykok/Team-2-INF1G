@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
+using System.Security.Cryptography;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+using Hashing_Class;
+using System.Linq;
 
 namespace Account_Class
 {
@@ -32,6 +32,7 @@ namespace Account_Class
             public string Email;
             public string bankingDetails;
             public string[] Allergies;
+            public bool Permission;
         }
 
         //// Field
@@ -61,6 +62,20 @@ namespace Account_Class
             return JsonConvert.SerializeObject(this.accountDataList, Formatting.Indented);
         }
 
+        //// Miscellaneous methods
+        // Method that checks if someone has entered anything
+        public bool TextCheck(string[] textArr)
+        {
+            for (int i = 0; i < textArr.Length; i++)
+            {
+                if (textArr[i] == "")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Method to check if username is already taken, returns bool (true if taken, false if not taken)
         public bool UsernameCheck(string username)
         {
@@ -74,13 +89,47 @@ namespace Account_Class
             return false;
         }
 
+        // Method that prints items with start and stop
+        public void PrintItem(int start, int stop)
+        {
+            for (int i = 0; i < accountDataList.Count; i++)
+            {
+                try
+                {
+                    Console.WriteLine($"[{i + 1}] {accountDataList[i].Name}");
+                }
+                catch
+                {
+                    break;
+                }
+            }
+        }
+
+        public string[] AvailableAllergie(string[] userAllergies)
+        {
+
+            string[] allAllergies = {"lactose", "soja", "pinda", "amandel", "hazelnoot", "noten", "gluten", "tarwe"};
+
+            // To get the length of the return array
+            if (userAllergies.Length == 0)
+            {
+                return allAllergies;
+            }
+            else
+            {
+                string[] difference = allAllergies.Except(userAllergies).ToArray();
+                return difference;
+            }
+        }
 
         // Method to login, returns int (the index of the list which corresponds to user selected) if user is found, else returns -1
         public int Login(string name, string password)
         {
             for (int i = 0; i < accountDataList.Count; i++)
             {
-                if (name == accountDataList[i].Name && password == accountDataList[i].Password)
+                // compares hashes
+                using (SHA256 sha256Hash = SHA256.Create())
+                    if (name == accountDataList[i].Name && Hashing.VerifyHash(sha256Hash, password, accountDataList[i].Password))
                 {
                     return i;
                 }
@@ -100,22 +149,38 @@ namespace Account_Class
                 // Clears the console for typing;
                 Console.Clear();
 
-                // Ask for user input
+                // Header
                 Console.WriteLine("*---------------*");
                 Console.WriteLine("*Login Page*");
+
+                // Checks if there was a previous fail
                 if (failed == true)
                 {
                     Console.WriteLine("Gebruikersnaam of wachtwoord was incorrect, probeer het opnieuw\n");
                 }
+
+                // Ask for user input
                 Console.WriteLine("Voer een gebruikersnaam in: ");
                 string User_Name = Console.ReadLine();
                 Console.WriteLine("\nVoer een wachtwoord in: ");
                 string Password = Console.ReadLine();
-                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+
+                // Check if there was input
+                string[] callValue = new string[]{ User_Name, Password };
+                bool inputCheck = TextCheck(callValue);
+
+                if (inputCheck == true)
+                {
+                    Console.WriteLine("\nBeide velden moeten een input hebben.\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+                else
+                {
+                    Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
 
                 // Checked if user wants to retry or confirm username //
                 string confirm = Console.ReadLine();
-                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
+                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'" && inputCheck == false)
                 {
                     retry = true;
                 }
@@ -143,10 +208,16 @@ namespace Account_Class
         }
 
 
+
         // Method that can be called to create a user.
         public void CreateUser(string name, string password)
         {
-            
+            // Hash the password
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                password = Hashing.GetHash(sha256Hash, password);
+            }
+
             AccountData newAccountData = new AccountData();
             newAccountData.Name        = name;
             newAccountData.Password    = password;
@@ -156,7 +227,9 @@ namespace Account_Class
             newAccountData.Gender           = null;
             newAccountData.Email            = null;
             newAccountData.bankingDetails   = null;
-            newAccountData.Allergies        = null;
+            newAccountData.Allergies        = new string[] { };
+            newAccountData.Permission       = false;
+
             // add to the list with the added data
             accountDataList.Add(newAccountData);
 
@@ -181,7 +254,7 @@ namespace Account_Class
                 string User_Name = Console.ReadLine();
 
                 bool recheck = true;
-                if (UsernameCheck(User_Name) == true && recheck == true)
+                while (UsernameCheck(User_Name) == true && recheck == true)
                 {
                     Console.WriteLine("\nDeze gebruikersnaam bestaat al, probeer opnieuw: ");
                     User_Name = Console.ReadLine();
@@ -190,8 +263,20 @@ namespace Account_Class
 
                 Console.WriteLine("\nVoer een wachtwoord in: ");
                 string Password = Console.ReadLine();
-                Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm te confirmeren toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
-                
+
+                // Check if there was input
+                string[] callValue = new string[] { User_Name, Password };
+                bool inputCheck = TextCheck(callValue);
+
+                if (inputCheck == true)
+                {
+                    Console.WriteLine("\nBeide velden moeten een input hebben.\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+                else
+                {
+                    Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm in te loggen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+             
                 // Checked if user wants to retry or confirm username //
                 string confirm = Console.ReadLine();
                 if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
@@ -204,18 +289,611 @@ namespace Account_Class
                 }
                 else
                 {
-                    retry = false;
-                    this.CreateUser(User_Name, Password);
+                    if (inputCheck == true)
+                    {
+                        retry = true;
+                    }
+                    else
+                    {
+                        retry = false;
+                        this.CreateUser(User_Name, Password);
+                    }
+                    
                 }
             }
         }
 
 
-        // Method that updates selective user, requires to be logged in before or index!
-        // Also requires an int for the item. The following ints represent (1 == )
-        public void UpdateUser(int item, int index)
+        // Method that deletes entry at certain index
+        public void DeleteUser(int index)
         {
-            //placeholder
+            accountDataList.RemoveAt(index);
+
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
+        // Prints all the users based on user input given in method
+        public void AdminAccountViewer()
+        {
+            string state = " ";
+            int start = 0;
+            int stop = 0;
+            bool loop = true;
+
+            while (loop == true)
+            {
+                bool executeRun = true;
+
+                // runs code when page is at 0, no increase in value
+                if (start == 0 && (state != ">" && state != "<"))
+                {
+                    if (start + 40 > accountDataList.Count)
+                    {
+                        if (start == accountDataList.Count)
+                        {
+                            executeRun = false;
+                        }
+                        stop = accountDataList.Count;
+                    }
+                    else
+                    {
+                        stop = start + 20;
+                    }
+                }
+
+                // runs code when page is NOT at 0, no increase in value
+                else if (start != 0 && (state != ">" && state != "<"))
+                {
+                    if (start + 40 > accountDataList.Count)
+                    {
+                        if (start == accountDataList.Count)
+                        {
+                            executeRun = false;
+                        }
+                        stop = accountDataList.Count;
+                    }
+                    else
+                    {
+                        stop = start + 20;
+                    }
+                }
+                // runs code with 20 increment, stores value
+                else if (state == ">")
+                {
+                    if ((start + 20) >= accountDataList.Count)
+                    {
+                        executeRun = false;
+                    }
+                    else
+                    {
+                        start += 20;
+                        stop = start + 20;
+                    }
+                }
+
+                // Runs code with 20 decrement, stores value
+                else if (state == "<")
+                {
+                    if ((start - 20) < accountDataList.Count)
+                    {
+                        executeRun = false;
+                    }
+                    else
+                    {
+                        start -= 20;
+                        stop = start + 20;
+                    }
+                }
+
+                // Runs the code
+                if (executeRun == true)
+                {
+                    // Header
+                    Console.Clear();
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de user te gaan\nOm te stoppen toets X.\n");
+
+                    // Print the users
+                    PrintItem(start, stop);
+
+                    // current page indicator
+                    int pageCounterCurrent = (start / 20) + 1;
+                    int pageCounterAll = (accountDataList.Count / 20) + 1;
+                    Console.WriteLine($"\nPage {pageCounterCurrent}/{pageCounterAll}");
+                }
+
+                // Process user input
+                string userInput = Console.ReadLine();
+                try
+                {
+                    int convert = Convert.ToInt32(userInput);
+                    convert -= 1;
+                    AccountView(convert, true);
+                }
+                catch
+                {
+                    if (userInput == ">" || userInput == "<")
+                    {
+                        state = userInput;
+                    }
+                    else if (userInput == "x" || userInput == "X")
+                    {
+                        loop = false;
+                        break;
+                    }
+                    else
+                    {
+                        state = " ";
+                    }
+                }
+            }   
+        }
+
+
+        // Method that updates selective user, requires to be logged in before or index!
+        // Also requires string (name of the variable being changed) and the value in string
+        public bool UpdateUser(string item, string value, int index)
+        {
+            // unloading the struct item at given index
+            string name             = accountDataList[index].Name;
+            string password         = accountDataList[index].Password;
+            int age                 = accountDataList[index].Age;
+            string gender           = accountDataList[index].Gender;
+            string email            = accountDataList[index].Email;
+            string bankingdetails   = accountDataList[index].bankingDetails;
+            string[] allergies      = accountDataList[index].Allergies;
+            bool permission         = accountDataList[index].Permission;
+
+            // Checks what needs to be changed, and assigns the value
+            bool returnValue = true;
+
+            if (item == "name")
+            {
+                try
+                {
+                    bool check = UsernameCheck(value);
+                    if (check == false)
+                    {
+                        name = value;
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+
+            else if (item == "password")
+            {
+                try
+                {
+                    // Hash the password
+                    using (SHA256 sha256Hash = SHA256.Create())
+                    {
+                        password = Hashing.GetHash(sha256Hash, value);
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "age")
+            {
+                try
+                {
+                    int temp = Convert.ToInt32(value);
+                    age = temp;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "gender")
+            {
+                try
+                {
+                    if (value == "Male" || value == "male" || value == "Man" || value == "man")
+                    {
+                        gender = "man";
+                    }
+                    else if (value == "Female" || value == "female" || value == "Vrouw" || value == "vrouw")
+                    {
+                        gender = "female";
+                    }
+                    else
+                    {
+                        gender = "other";
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "email")
+            {
+                try
+                {
+                    email = value;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "bankingdetails")
+            {
+                try
+                {
+                    bankingdetails = value;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if(item == "allergiesAdd")
+            {
+                try
+                {
+                    bool check = false;
+                    for (int i = 0; i < allergies.Length; i++)
+                    {
+                        if (value == allergies[i])
+                        {
+                            check = true;
+                            break;
+                        }
+                    }
+                    if (check == false)
+                    {
+                        string[] temp = new string[allergies.Length + 1];
+                        for (int i = 0; i < allergies.Length; i++)
+                        {
+                            temp[i] = allergies[i];
+                        }
+                        temp[allergies.Length] = value;
+                        allergies = temp;
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if (item == "allergiesRemove")
+            {
+                try
+                {
+                    string[] temp = new string[allergies.Length - 1];
+                    int count = 0;
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        if (value == allergies[count])
+                        {
+                            count += 1;
+                        }
+                        temp[i] = allergies[count];
+                        count += 1;
+                    }
+                    allergies = temp;
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            else if (item == "permission")
+            {
+                try
+                {
+                    if (value == "true" || value == "True")
+                    {
+                        permission = true;
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
+                }
+                catch
+                {
+                    returnValue = false;
+                }
+            }
+            
+            // Creating the struct item
+            AccountData newAccountData = new AccountData();
+
+            newAccountData.Name             = name;
+            newAccountData.Password         = password;
+            newAccountData.Age              = age;
+            newAccountData.Gender           = gender;
+            newAccountData.Email            = email;
+            newAccountData.bankingDetails   = bankingdetails;
+            newAccountData.Allergies        = allergies;
+            newAccountData.Permission       = permission;
+
+            // deletes entry (as struct is immutable)
+            DeleteUser(index);
+
+            // add to the list with the added data [indexed]!
+            accountDataList.Insert(index, newAccountData);
+
+            // write to the JSON file (updates the file)
+            System.IO.File.WriteAllText(this.path, ToJSON());
+
+            return returnValue;
+        }
+
+        // Method that display's account of specific person
+        public void AccountView(int index, bool perm = false)
+        {
+
+            bool retry = true;
+            bool returnValue = true;
+
+            while (retry == true)
+            {
+                Console.Clear();
+
+                if(returnValue == false)
+                {
+                    Console.WriteLine("Gegeven waarde kan niet aangepast worden of toegevoegd, probeer het opnieuw\n");
+                }
+
+                string name = accountDataList[index].Name;
+                string password = accountDataList[index].Password;
+                int age = accountDataList[index].Age;
+                string gender = accountDataList[index].Gender;
+                string email = accountDataList[index].Email;
+                string bankingdetails = accountDataList[index].bankingDetails;
+                string[] allergies = accountDataList[index].Allergies;
+                bool permission = accountDataList[index].Permission;
+
+                string userInputPrint = "";
+
+                // compile a string with all the allergies
+                string allergiesStringPrint = "";
+                for (int i = 0; i < allergies.Length; i++)
+                {
+                    if (i < allergies.Length - 1)
+                    {
+                        allergiesStringPrint += $"{allergies[i]}, ";
+                    }
+                    else
+                    {
+                        allergiesStringPrint += $"{allergies[i]}";
+                    }
+                }
+
+                // prints all the account data
+                Console.WriteLine($"\n[1] Naam: {name}");
+                Console.WriteLine($"\n[2] Wachtwoord: ********");
+                Console.WriteLine($"\n[3] Leeftijd: {age}");
+                Console.WriteLine($"\n[4] Geslacht: {gender}");
+                Console.WriteLine($"\n[5] Email: {email}");
+                Console.WriteLine($"\n[6] Bank gegevens: {bankingdetails}");
+                Console.WriteLine($"\n[7] Allergien: " + allergiesStringPrint);
+
+                if (perm == true) // only gives option to change permission value if permission entered is true, for admin reasons
+                {
+                    Console.WriteLine($"\n[8] Permission: {permission}");
+                }
+       
+                Console.WriteLine($"\nVoer nummer in om geselecteerde veld te wijzigen of toe te voegen, of druk X in om terug te gaan: ");
+
+                string userInputItem = Console.ReadLine();
+
+                string userInputValue = ""; // prepare variable for if statement
+
+                if (userInputItem == "X" || userInputItem == "x") // checks for "x" to stop program
+                {
+                    break;
+                }
+                
+                else if (userInputItem == "7") // checks for "allergie" add or remove [array]
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("\nKies uit de volgende opties:\n[1] om een allergie toe te voegen\n[2] om een allergie te verwijderen\n'X' om te stoppen");
+                    string choose = Console.ReadLine();
+                    if (choose == "1")
+                    {
+                        userInputItem = "7.1";
+                        bool innerRetry = true;
+                        while (innerRetry == true)
+                        {
+                            Console.Clear();
+
+                            string[] availableArr = this.AvailableAllergie(allergies);
+                            Console.WriteLine("\nKies uit de volgende allergenen: ");
+                            for (int i = 0; i < availableArr.Length; i++)
+                            {
+                                Console.WriteLine($"[{i + 1}] {availableArr[i]}");
+                            }
+
+                            Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                            userInputValue = Console.ReadLine();
+
+                            try
+                            {
+                                int convert = Convert.ToInt32(userInputValue);
+                                convert -= 1;
+                                if (convert < availableArr.Length)
+                                {
+                                    userInputValue = availableArr[convert];
+                                    innerRetry = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("De input valt buiten de selectie, probeer het opnieuw");
+                                }
+                            }
+                            catch
+                            {
+                                userInputValue = ""; // to return an empty value
+                                innerRetry = false;
+                            }
+                        }
+                    }
+                    else if (choose == "2")
+                    {
+                        userInputItem = "7.2";
+                        bool innerRetry = true;
+
+                        if (allergies.Length == 0) // checks if user has allergies to begin with
+                        {
+                            userInputItem = "";
+                            Console.WriteLine("\nU heeft nog geen allergenen");
+                        }
+                        else
+                        {
+                            while (innerRetry == true) // to make retry possible
+                            {
+                                Console.Clear();
+
+                                Console.WriteLine("\nKies uit de volgende allergenen: "); // prints all the users allergies
+                                for (int i = 0; i < allergies.Length; i++)
+                                {
+                                    Console.WriteLine($"[{i + 1}] {allergies[i]}");
+                                }
+
+                                Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                                userInputValue = Console.ReadLine();
+
+                                try // tries to convert value to be used in update method
+                                {
+                                    int convert = Convert.ToInt32(userInputValue);
+                                    convert -= 1;
+                                    if (convert < allergies.Length)
+                                    {
+                                        userInputValue = allergies[convert];
+                                        innerRetry = false;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("De input valt buiten de selectie, probeer het opnieuw");
+                                    }
+                                }
+                                catch
+                                {
+                                    userInputValue = ""; // to return an empty value
+                                    innerRetry = false;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        userInputItem = ""; // to break the update method
+                    }
+                } // If 7, goes to add allergies section
+                
+                else // for every other input
+                {
+                    Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                    userInputValue = Console.ReadLine();
+                }
+                
+
+                // Check if there was input and sort input
+                string[] callValue = new string[] { userInputItem, userInputValue };
+                bool inputCheck = TextCheck(callValue);
+
+
+                // Convert Item input to use in update method
+                if (userInputItem == "1")
+                {
+                    userInputItem = "name";
+                    userInputPrint = "Naam";
+                }
+                else if (userInputItem == "2")
+                {
+                    userInputItem = "password";
+                    userInputPrint = "Wachtwoord";
+                }
+                else if (userInputItem == "3")
+                {
+                    userInputItem = "age";
+                    userInputPrint = "Leeftijd";
+                }
+                else if (userInputItem == "4")
+                {
+                    userInputItem = "gender";
+                    userInputPrint = "Geslacht";
+                }
+                else if (userInputItem == "5")
+                {
+                    userInputItem = "email";
+                    userInputPrint = "Email";
+                }
+                else if (userInputItem == "6")
+                {
+                    userInputItem = "bankingdetails";
+                    userInputPrint = "Bank gegevens";
+                }
+                else if (userInputItem == "7.1")
+                {
+                    userInputItem = "allergiesAdd";
+                    userInputPrint = "Allergie toevoegen";
+                }
+                else if (userInputItem == "7.2")
+                {
+                    userInputItem = "allergiesRemove";
+                    userInputPrint = "Allergie verwijderen";
+                }
+                else  if (userInputItem == "8" && perm == true)
+                {
+                    userInputItem = "permission";
+                    userInputPrint = "Rechten";
+                }
+                else
+                {
+                    returnValue = false;
+                }
+
+                if (inputCheck == true)
+                {
+                    Console.WriteLine("\nBeide velden moeten een input hebben.\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+                else
+                {
+                    Console.WriteLine($"\nGeselecteerde Veld: {userInputPrint} | Gegeven Waarde: {userInputValue} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                }
+
+                // Checked if user wants to retry or confirm //
+                string confirm = Console.ReadLine();
+                if (confirm == "R" || confirm == "r" || confirm == "'R'" || confirm == "'r'")
+                {
+                    retry = true;
+                }
+                else if (confirm == "X" || confirm == "x" || confirm == "'X'" || confirm == "'x'")
+                {
+                    retry = false;
+                }
+                else
+                {
+                    if (inputCheck == true)
+                    {
+                        retry = true;
+                    }
+                    else
+                    {
+                        returnValue = UpdateUser(userInputItem ,userInputValue, index);
+                    }
+                }
+            }
         }
     }
 }

@@ -1,83 +1,78 @@
 [
   {
-    "Name": "myName1",
-    "Password": "myPassword1",
-    "Age": 10,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": null
-  },
-  {
-    "Name": "boos",
-    "Password": "ttee",
-    "Age": 23,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": null
-  },
-  {
-    "Name": "Bjorn",
-    "Password": "abcd",
-    "Age": 12,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": null
-  },
-  {
-    "Name": "koos",
-    "Password": "broer",
+    "Name": "deBobbel",
+    "Password": "34bd4f994f97fe925a10999e99b239645015180e89343794f830225492277954",
     "Age": 16,
-    "Gender": null,
+    "Gender": "man",
     "Email": null,
     "bankingDetails": null,
-    "Allergies": null
+    "Allergies": [
+      "amandel"
+    ],
+    "Permission": false
   },
   {
-    "Name": "boos",
-    "Password": "ttee",
-    "Age": 23,
+    "Name": "Hallo2",
+    "Password": "02bbae72c3a28f6dab86f60e9f375e4fe210e29c6741f0cb54ff08efe0df11a3",
+    "Age": -1,
+    "Gender": null,
+    "Email": "wat@jaho.com",
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": true
+  },
+  {
+    "Name": "hallo",
+    "Password": "de6b9dbb007c8b094257d2ad95099a067d6619b57c6a20f774d91fbf538aae11",
+    "Age": -1,
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
-    "Allergies": null
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "RDe_ADMIN",
+    "Password": "753692ec36adb4c794c973945eb2a99c1649703ea6f76bf259abb4fb838e013e",
+    "Age": 19,
+    "Gender": "man",
+    "Email": "bjornkok@outlook.com",
+    "bankingDetails": "6213845ed",
+    "Allergies": [
+      "lactose"
+    ],
+    "Permission": true
   },
   {
     "Name": "Bjorn",
-    "Password": "12345",
-    "Age": 0,
-    "Gender": null,
-    "Email": null,
+    "Password": "f00a787f7492a95e165b470702f4fe9373583fbdc025b2c8bdf0262cc48fcff4",
+    "Age": 19,
+    "Gender": "man",
+    "Email": "bjornkok@outlook.com",
     "bankingDetails": null,
-    "Allergies": null
+    "Allergies": [
+      "tarwe"
+    ],
+    "Permission": false
   },
   {
-    "Name": "niewe",
-    "Password": "wowie",
+    "Name": "Nacc",
+    "Password": "e1b7ce275fe0ce879b7f5b8ab26b91efd82fdd5d70289d60f780d4766313b8dd",
     "Age": -1,
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
-    "Allergies": null
+    "Allergies": [],
+    "Permission": false
   },
   {
-    "Name": "Bj_orn",
-    "Password": "HoiHoi",
+    "Name": "Admin1",
+    "Password": "0afb00138d8e73348ec1fe41fd3d3a8fcbd90156b263bfa5791ba0e095f42cfc",
     "Age": -1,
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
-    "Allergies": null
-  },
-  {
-    "Name": "hello",
-    "Password": "hoi",
-    "Age": -1,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": null
+    "Allergies": [],
+    "Permission": true
   }
 ]
