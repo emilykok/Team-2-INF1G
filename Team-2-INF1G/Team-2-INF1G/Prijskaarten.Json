@@ -1,7 +1,7 @@
 [
   {
     "filmnaam": "The Broken Hearts Gallery",
-    "naamaccount": "Harryvsunweb",
+    "naampersoon": null,
     "kaartnaam": null,
     "prijs": "10.00",
     "leeftijd": "10",
@@ -15,7 +15,7 @@
     "filmnaam": "",
     "naampersoon": null,
     "kaartnaam": null,
-    "prijs": -1,
+    "prijs": "-1",
     "leeftijd": null,
     "tijd": null,
     "filmduur": null,
@@ -27,7 +27,19 @@
     "filmnaam": "",
     "naampersoon": null,
     "kaartnaam": null,
-    "prijs": -1,
+    "prijs": "-1",
+    "leeftijd": null,
+    "tijd": null,
+    "filmduur": null,
+    "zaal": null,
+    "rij": null,
+    "stoel": null
+  },
+  {
+    "filmnaam": "Honest Thief",
+    "naampersoon": null,
+    "kaartnaam": null,
+    "prijs": null,
     "leeftijd": null,
     "tijd": null,
     "filmduur": null,

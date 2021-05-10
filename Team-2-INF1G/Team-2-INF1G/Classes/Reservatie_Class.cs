@@ -4,30 +4,22 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace Ticket_Class
+namespace Reservatie_Class
 {
-
-    public class program
-    {
-
-        public static void Main()
-        {
-            reservering reservering = new reservering();
-            reservering.RunTickets();
-        }
-    }
-    public class reservering
+    public class Reservering
     {
         // Is de Json van bjorn
         public struct AccountData
         {
-            public string name;
-            public string password;
-            public int age;
-            public string gender;
-            public string email;
-            public string bankdetails;
-            public string allergies;
+            public string Name;
+            public string Password;
+            
+            public int Age;
+            public string Gender;
+            public string Email;
+            public string bankingDetails;
+            public string[] Allergies;
+            public bool Permission;
         }
 
         public List<AccountData> accountDataList = new List<AccountData>();
@@ -81,7 +73,7 @@ namespace Ticket_Class
         public string jsonPathAccounts;
 
         // Constructor
-        public reservering()
+        public Reservering()
         {
 
             this.pathCatalog = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Catalog.json"));
@@ -110,10 +102,10 @@ namespace Ticket_Class
             Console.WriteLine("*Reservatie pagina*");
             Console.WriteLine("===============\n");
             Console.WriteLine("Gerserveerde film: " + movieData.titel); //Goed
-            Console.WriteLine("Naam: " + accountDataList[0].name); //Goed
+            Console.WriteLine("Naam: " + accountDataList[0].Name); //Goed
 
-            if (accountDataList[0].age >= 0 && accountDataList[0].age <= 10)
-                PrijsKaartenList[0].kaartnaam = "KinderKaart";
+            //if (accountDataList[0].age >= 0 && accountDataList[0].age <= 10) <-- methods die variablen aanpassen NIET in de display method zetten!
+            //    PrijsKaartenList[0].kaartnaam = "KinderKaart";
 
 
             Console.WriteLine("Kaartje: " + PrijsKaartenList[0].kaartnaam); //Zelf nog niet gedaan
@@ -124,7 +116,7 @@ namespace Ticket_Class
             Console.WriteLine("Zaal: " + PrijsKaartenList[0].zaal); //Nog nergens te bekennen
             Console.WriteLine("Rij: " + PrijsKaartenList[0].rij); //Nog nergens te bekennen
             Console.WriteLine("Stoel: " + PrijsKaartenList[0].stoel); //Nog nergens te bekennen
-            Console.WriteLine("Uw authentieke reservatie nummer is: "); //goed
+            //Console.WriteLine("Uw authentieke reservatie nummer is: "); <-- Dit werkt nog niet, en geeft ongeldige informatie mee! check hier nog op
         }
 
 
@@ -157,7 +149,7 @@ namespace Ticket_Class
                     Console.WriteLine("Ongeldige invoer");
                 }
 
-                Console.WriteLine("\nU heeft nu een reservering gemaakt voor de film: " + movieDataList[x - 1].titel + ", klik op R om naar de reservatie te gaan.");
+                Console.WriteLine("\nU heeft nu een reservering gemaakt voor de film: " + movieDataList[x - 1].titel + ", klik op R om naar de reservatie te gaan.\nklik op 'X' om terug te gaan");
 
 
                 bool retry = true;
@@ -168,6 +160,16 @@ namespace Ticket_Class
                     {
                         Console.Clear();
                         DisplayReservatie(movieDataList[x - 1]);
+                        Console.WriteLine("\nOm terug te gaan, toets 'X'");
+                        string whileInput = Console.ReadLine();
+                        if (whileInput == "x" || whileInput == "X")
+                        {
+                            retry = false;
+                        }
+                    }
+                    else
+                    {
+                        retry = false;
                     }
                 }
 
