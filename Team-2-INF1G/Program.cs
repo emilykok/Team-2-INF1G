@@ -20,7 +20,7 @@ namespace Team_2
     {
         static void Main(string[] args)
         {
-            /*
+            
             // BJORN GEDEELTE //
             Account acc = new Account();
             Reservering reservering = new Reservering();
