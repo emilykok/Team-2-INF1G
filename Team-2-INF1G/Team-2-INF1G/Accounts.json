@@ -2,7 +2,7 @@
   {
     "Name": "deBobbel",
     "Password": "34bd4f994f97fe925a10999e99b239645015180e89343794f830225492277954",
-    "Age": 16,
+    "Age": 14,
     "Gender": "man",
     "Email": null,
     "bankingDetails": null,
@@ -24,7 +24,7 @@
   {
     "Name": "hallo",
     "Password": "de6b9dbb007c8b094257d2ad95099a067d6619b57c6a20f774d91fbf538aae11",
-    "Age": -1,
+    "Age": -10,
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
@@ -68,11 +68,21 @@
   {
     "Name": "Admin1",
     "Password": "0afb00138d8e73348ec1fe41fd3d3a8fcbd90156b263bfa5791ba0e095f42cfc",
-    "Age": -1,
+    "Age": -10,
     "Gender": null,
     "Email": null,
     "bankingDetails": null,
     "Allergies": [],
     "Permission": true
+  },
+  {
+    "Name": "bjorn1",
+    "Password": "384eb271eb947e6718c67ab7db7a8f35f8287084f712010ce018aec3c231648f",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
   }
 ]

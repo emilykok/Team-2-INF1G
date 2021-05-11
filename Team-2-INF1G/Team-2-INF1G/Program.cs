@@ -1,12 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
-using Formatting = Newtonsoft.Json.Formatting;
-using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+
 
 using Account_Class;
 using Food_Drink_Run;
@@ -21,7 +15,6 @@ namespace Team_2
         static void Main(string[] args)
         {
             
-            // BJORN GEDEELTE //
             Account acc = new Account();
             Reservering reservering = new Reservering();
             bool retry = true;
@@ -31,7 +24,8 @@ namespace Team_2
                 if (user == -1) // If there is no login (no user selected)
                 {
                     Console.Clear();
-                    Console.WriteLine("Om in te loggen, enter 1.\nOm een account te creeeren, enter 2.\nOm films te bekijken, enter 3.\nOm ons eten & drinken te bekijken, enter 4.\nOm terug te gaan, enter 'X'\n\nAls u wilt reserveren. moet u eerst een account aanmaken.");
+                    Console.WriteLine("Welkom bij Cinematrix\nHoofd menu:\n---------------------------------------------------\n");
+                    Console.WriteLine("1. Inloggen.\n2. Account creeeren.\n3. Bekijk catalogus.\n4. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -57,7 +51,12 @@ namespace Team_2
                 else if (user > 0 && acc.accountDataList[user].Permission == true) // If there is logged in (admin)
                 {
                     Console.Clear();
-                    Console.WriteLine("Om eigen account te zien, enter 1.\nOm admin menu in te gaan, enter 2.\nOm uit te loggen, enter 3.\nOm films te bekijken, enter 4.\nOm te reserveren, enter 5.\nOm ons eten & drinken te bekijken, enter 6.\nOm terug te gaan, enter 'X'");
+
+                    // Print the username with welcome text
+                    string username = acc.ReturnUsername(user);
+                    Console.WriteLine("Administrator: " + username + "\n");
+
+                    Console.WriteLine("1. Account overzicht.\n2. Admin menu.\n3. Uitloggen.\n4. Bekijk catalogus.\n5. Reserveren.\n6. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -91,7 +90,12 @@ namespace Team_2
                 else // If there is logged in (user)
                 {
                     Console.Clear();
-                    Console.WriteLine("Om eigen account te zien, enter 1.\nOm uit te loggen, enter 2.\nOm films te bekijken, enter 3.\nOm te reserveren, enter 4.\nOm ons eten & drinken te bekijken, enter 5.\nOm terug te gaan, enter 'X'");
+
+                    // Print the username with welcome text
+                    string username = acc.ReturnUsername(user);
+                    Console.WriteLine("Welkom " + username + "\n");
+
+                    Console.WriteLine("1. Account overzicht.\n2. Uitloggen.\n3. Bekijk catalogus.\n4. Reserveren.\n5. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -119,29 +123,6 @@ namespace Team_2
                     }
                 }
             }
-
-            // Creates user in JSON
-            // acc.TextCreateUser();
-
-            // Login with username and password
-            //int print_this = acc.TextLogin();
-            //Console.WriteLine(print_this);
-
-
-            // MELISSA GEDEELTE //
-            //Eten eten = new Eten();
-            //eten.EtenMenu();
-
-            // DAVID GEDEELTE //
-            //MovieDetail.CodeActivate();
-
-            // NOAH GEDEELTE //
-            //reservering resv = new reservering();
-            //resv.RunTickets();
-
-            // JAMIE GEDEELTE //
-            //Applicatie myApllicatie = new Applicatie();
-            //myApllicatie.Start();
         }
     }
 }
