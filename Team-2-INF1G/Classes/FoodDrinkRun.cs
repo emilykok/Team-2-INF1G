@@ -8,19 +8,20 @@ namespace Food_Drink_Run
 {
     class FoodDrinkRun
     {
-        public void Run(bool permission)
+        public static void Run(bool permission = false)
         { // functie callen met een bool of er admin permissions zijn
             Eten eten = new Eten();
             Drinken drinken = new Drinken();
+            bool whileLoop = true;
 
-            while (true)
+            while (whileLoop == true)
             {
                 Console.Clear();
                 Console.WriteLine("Welkom bij het eten en drinken menu.\nTyp het nummer wat je wil doen en klik op enter:\n");
                 Console.WriteLine("1. Eten menu\n2. Eten filteren\n3. Drinken menu\n4. Drinken filteren");
                 if (permission == true)
                 { //menu drinken eten voor admin
-                    Console.WriteLine("5. Clicks bekijken\n6. Eten Clicks verwijderen\n7. Drinken Clicks verwijderen");
+                    Console.WriteLine("5. Clicks bekijken\n6. Eten Clicks verwijderen\n7. Drinken Clicks verwijderen\n8. Terug naar vorige pagina");
                     string nummer = Console.ReadLine();
                     // etenmenu
                     if (nummer == "1")
@@ -114,10 +115,15 @@ namespace Food_Drink_Run
                             Console.WriteLine("Alle clicks van het drinken zijn verwijderd.");
                         }
                     }
+                    if (nummer == "8")
+                    {
+                        whileLoop = false;
+                    }
                 }
 
                 else
                 {
+                    Console.WriteLine("\n5. Terug naar vorige pagina");
                     string nummer = Console.ReadLine();
                     if (nummer == "1")
                     {
@@ -152,6 +158,10 @@ namespace Food_Drink_Run
                         string strInp = Console.ReadLine();
                         if (fNum == "1") drinken.DrinkenFilter(strInp);
                         if (fNum == "2") drinken.DrinkenAllergieFilter(strInp); ;
+                    }
+                    if (nummer == "5")
+                    {
+                        whileLoop = false;
                     }
                 }
             }
