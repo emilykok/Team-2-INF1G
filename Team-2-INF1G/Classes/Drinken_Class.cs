@@ -7,6 +7,7 @@ using System.Text.Json.Serialization;
 using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+using Food_Drink_Run;
 
 
 namespace Drinken_Class 
@@ -49,7 +50,7 @@ namespace Drinken_Class
         // drinkendisplay
         public void DrinkenMenu()
         {
-            Console.WriteLine("Drinken Menu:\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49");
+            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11.Terug naar de vorige pagina");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
             // leest input command van de console
@@ -59,38 +60,36 @@ namespace Drinken_Class
             try // in t geval dat de input te hoog is of niet convertible is tot int
             {
                 int num = Convert.ToInt32(input);
-                // print naam item
-                Console.WriteLine($"{drinkenDataList[num - 1].naam}\n");
-
-                // print inhoud item
-                Console.WriteLine($"inhoud: {drinkenDataList[num - 1].inhoud}");
-
-                // print prijs item
-                Console.WriteLine($"prijs: {drinkenDataList[num - 1].prijs}+\n");
-
-                // print voedingswaarde
-                Console.WriteLine($"{drinkenDataList[num - 1].voedingswaarde}\n");
-
-                // print allergenen
-                string al = "";
-                for (int i = 0; i < (drinkenDataList[num - 1].allergenen).Length; i++)
+                if (num <= 10)
                 {
-                    al += drinkenDataList[num - 1].allergenen[i] + ", ";
-                }
-                Console.WriteLine("allergenen: " + al);
+                    // print naam item
+                    Console.WriteLine($"{drinkenDataList[num - 1].naam}\n");
 
-                // input na de display
-                bool goodInput = false;
-                while (!goodInput)
-                {
-                    Console.WriteLine("\nTyp 'x' om terug te gaan of 'r' om een andere item te selecteren.");
+                    // print inhoud item
+                    Console.WriteLine($"inhoud: {drinkenDataList[num - 1].inhoud}");
+
+                    // print prijs item
+                    Console.WriteLine($"prijs: {drinkenDataList[num - 1].prijs}+\n");
+
+                    // print voedingswaarde
+                    Console.WriteLine($"{drinkenDataList[num - 1].voedingswaarde}\n");
+
+                    // print allergenen
+                    string al = "";
+                    for (int i = 0; i < (drinkenDataList[num - 1].allergenen).Length; i++)
+                    {
+                        al += drinkenDataList[num - 1].allergenen[i] + ", ";
+                    }
+                    Console.WriteLine("allergenen: " + al);
+
+                    // input na de display
+                    Console.WriteLine("\n1. Terug naar het eten & drinken menu");
                     input = Console.ReadLine();
                     Console.Clear();
-                    if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; /*menu opnieuw laten runnen*/}
-                    else if (input == "r" || input == "'r'") { DrinkenMenu(); goodInput = true; break; }
-                    else Console.WriteLine("Er is een onjuist command ingevuld, probeer het nog eens.");
+                    if (input == "1" || input == "") DrinkenMenu();                    
                 }
-            }
+                else if (num == 11) FoodDrinkRun.Run();
+            }   
 
             catch (Exception)
             { // input is niet convertible naar int of input is te hoog nummer
