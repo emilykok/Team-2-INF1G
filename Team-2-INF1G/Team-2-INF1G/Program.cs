@@ -60,11 +60,15 @@ namespace Team_2
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
-                        acc.AccountView(user);
+                        bool returnBool = acc.AccountView(user);
+                        if (returnBool == true)
+                        {
+                            user = -1;
+                        }
                     }
                     else if (choose == "2")
                     {
-                        acc.AdminAccountViewer();
+                        user = acc.AdminAccountViewer(acc.ReturnUsername(user));
                     }
                     else if (choose == "3")
                     {
@@ -99,7 +103,11 @@ namespace Team_2
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
-                        acc.AccountView(user);
+                        bool returnBool = acc.AccountView(user);
+                        if (returnBool == true)
+                        {
+                            user = -1;
+                        }
                     }
                     else if (choose == "2")
                     {

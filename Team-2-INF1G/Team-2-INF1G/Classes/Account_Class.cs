@@ -535,11 +535,20 @@ namespace Account_Class
             // write to the JSON file (updates the file)
             System.IO.File.WriteAllText(this.path, ToJSON());
 
+            if (item == "accountRemove" && value == "VERWIJDER")
+            {
+                DeleteUser(index);
+            }
+            else if (item == "accountRemove" && value != "VERWIJDER")
+            {
+                returnValue = false;
+            }
+
             return returnValue;
         }
 
-        // Prints all the users based on user input given in method
-        public void AdminAccountViewer()
+        // Prints all the users based on user input given in method, returns integer with current account location (because it changes)
+        public int AdminAccountViewer(string activeAdmin)
         {
             string state = " ";
             int start = 0;
@@ -652,11 +661,20 @@ namespace Account_Class
                         state = " ";
                     }
                 }
-            }   
+            }
+
+            for (int i = 0; i < accountDataList.Count; i++)
+            {
+                if (accountDataList[i].Name == activeAdmin)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
-        // Method that display's account of specific person
-        public void AccountView(int index, bool perm = false)
+        // Method that display's account of specific person, returns bool if account still exists
+        public bool AccountView(int index, bool perm = false)
         {
 
             bool retry = true;
@@ -715,6 +733,11 @@ namespace Account_Class
                 if (perm == true) // only gives option to change permission value if permission entered is true, for admin reasons
                 {
                     Console.WriteLine($"\n[8] Permission: {permission}");
+                    Console.WriteLine($"\n[9] Verwijder account");
+                }
+                else
+                {
+                    Console.WriteLine($"\n[8] Verwijder account");
                 }
        
                 Console.WriteLine($"\nVoer nummer in om geselecteerde veld te wijzigen of toe te voegen, of druk X in om terug te gaan: ");
@@ -828,7 +851,13 @@ namespace Account_Class
                 
                 else // for every other input
                 {
-                    Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                    if ((userInputItem == "8" && perm == false) || (userInputItem == "9" && perm == true)){
+                        Console.WriteLine("\nOm account te verwijderen, typ VERWIJDER");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nVoer hier waarde in om mee te geven: ");
+                    }
                     userInputValue = Console.ReadLine();
                 }
                 
@@ -879,10 +908,20 @@ namespace Account_Class
                     userInputItem = "allergiesRemove";
                     userInputPrint = "Allergie verwijderen";
                 }
-                else  if (userInputItem == "8" && perm == true)
+                else if (userInputItem == "8" && perm == true) // only use 8 if perms == true
                 {
                     userInputItem = "permission";
                     userInputPrint = "Rechten";
+                }
+                else if (userInputItem == "8" && perm == false) // uses 8 to delete acc if perms == false
+                {
+                    userInputItem = "accountRemove";
+                    userInputPrint = "Account verwijderen";
+                }
+                else if (userInputItem == "9" && perm == true) // uses 9 to delete acc if perms == true
+                {
+                    userInputItem = "accountRemove";
+                    userInputPrint = "Account verwijderen";
                 }
                 else
                 {
@@ -919,7 +958,13 @@ namespace Account_Class
                         returnValue = UpdateUser(userInputItem ,userInputValue, index);
                     }
                 }
+                if (userInputItem == "accountRemove" && returnValue == true)
+                {
+                    retry = false;
+                    return true; // account has been removed
+                }
             }
+            return false; // no account removal
         }
     }
 }
