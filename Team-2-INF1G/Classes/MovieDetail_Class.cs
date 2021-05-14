@@ -124,7 +124,7 @@ namespace MovieDetail_Class
             // returns a string array of movie titles on that page //
             MovieDetail movie = new MovieDetail();
             int x = 0;
-            string[] moviePage = new string[13];
+            string[] moviePage = new string[14];
             if (page != 1) x = (10 * (page - 1));
             for (int i = x, count = 0; i < (x + 10); i++, count++)
             {
@@ -132,14 +132,44 @@ namespace MovieDetail_Class
             }
             moviePage[10] = "vorige pagina";
             moviePage[11] = "volgende pagina";
-            moviePage[12] = "exit";
+            moviePage[12] = "filter films";
+            moviePage[13] = "terug naar hoofmenu";
             return moviePage;
         }
+        /*
+        public static string[] movieFilter(string tag)
+        {
+            // movielist with filter applied //
+            int count = 0;
+            MovieDetail movie = new MovieDetail();
+            for (int i = 0; i < movie.movieDataList.Count; i++)
+            {
+                for(int j = 0; j < movie.movieDataList[i].genre.Length; j++)
+                {
+                    if (tag == movie.movieDataList[i].genre[j]) count++;
+                }
+            }
+
+            string[] included = new string[count];
+            for (int i = 0, arrayIndex = 0; i < movie.movieDataList.Count; i++)
+            {
+                for (int j = 0; j < movie.movieDataList[i].genre.Length; j++)
+                {
+                    if (tag == movie.movieDataList[i].genre[j])
+                    {
+                        included[arrayIndex] = $"{arrayIndex}.\t{movie.movieDataList[i].titel}";
+                    }
+                }
+            }
+            return included;
+        }
+        */
+
         public static void Navigation()
         {
             // Navigation of the catalog //
             int page = 1;
-            Menu select = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren", GetList(page));
+            Menu select = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n", GetList(page), $"\nPagina: {page} / 5", 10);
             select.Run();
 
             bool retry = true;
@@ -155,12 +185,14 @@ namespace MovieDetail_Class
                         if (page <= 1)
                         {
                             page = 1;
+                            select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
                             select.Run();
                         }
                         else
                         {
                             page--;
+                            select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
                             select.Run();
                         }
@@ -171,18 +203,25 @@ namespace MovieDetail_Class
                         if (page >= 5)
                         {
                             page = 5;
+                            select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
                             select.Run();
                         }
                         else
                         {
                             page++;
+                            select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
                             select.Run();
                         }
                     }
-                    // to exit //
+                    // to filter movies //
                     else if(select.SelectedIndex == 12)
+                    {
+                        Console.Clear();
+                    }
+                    // to exit //
+                    else if(select.SelectedIndex == 13)
                     {
                         retry = false;
                     }
@@ -192,15 +231,17 @@ namespace MovieDetail_Class
                 {
                     // clear the console and print the movie info //
                     Console.Clear();
+                    select.finalText = "";
                     select.Prompt = DisplayMovie(((page - 1) * 10) + (select.SelectedIndex + 1));// get the right index for the Json file //
                     // change the selection menu for select //
-                    select.Options = new string[] { "terug naar lijst", "exit" };
+                    select.Options = new string[] { "terug naar lijst", "terug naar hoofdmenu" };
                     select.SelectedIndex = 0;
                     select.Run();
                     // to go back to the list of movies //
                     if(select.SelectedIndex == 0)
                     {
-                        select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren";
+                        select.finalText = $"\nPagina: {page} / 5";
+                        select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n";
                         select.Options = GetList(page);
                         select.Run();
                     }
