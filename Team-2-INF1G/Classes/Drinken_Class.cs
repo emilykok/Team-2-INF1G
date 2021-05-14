@@ -10,6 +10,7 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Food_Drink_Run;
 
 
+
 namespace Drinken_Class 
 {
     public class Drinken
@@ -50,7 +51,7 @@ namespace Drinken_Class
         // drinkendisplay
         public void DrinkenMenu()
         {
-            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11.Terug naar de vorige pagina");
+            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11.Terug naar de vorige pagina\n");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
             // leest input command van de console
@@ -63,7 +64,7 @@ namespace Drinken_Class
                 if (num <= 10)
                 {
                     // print naam item
-                    Console.WriteLine($"{drinkenDataList[num - 1].naam}\n");
+                    Console.WriteLine($"{drinkenDataList[num - 1].naam}\n---------------------------------------------------\n");
 
                     // print inhoud item
                     Console.WriteLine($"inhoud: {drinkenDataList[num - 1].inhoud}");
@@ -80,7 +81,7 @@ namespace Drinken_Class
                     {
                         al += drinkenDataList[num - 1].allergenen[i] + ", ";
                     }
-                    Console.WriteLine("allergenen: " + al);
+                    Console.WriteLine("allergenen: " + al + "\n");
 
                     // input na de display
                     Console.WriteLine("\n1. Terug naar het eten & drinken menu");
@@ -202,29 +203,32 @@ namespace Drinken_Class
             Console.Clear();
             string s = "";
             toFilter = toFilter.ToLower();
+            bool add;
             try
             {   // loopt door alle items in de json
                 for (int i = 0; i < drinkenDataList.Count; i++)
                 {
+                    add = false;
                     // zoekt in titel van item
-                    if (drinkenDataList[i].naam.ToLower().Contains(toFilter)) s += drinkenDataList[i].naam + "\n";
+                    if (drinkenDataList[i].naam.ToLower().Contains(toFilter)) add = true;
                     // zoekt in tags
                     for (int j = 0; j < drinkenDataList[i].tags.Length; j++)
                     {
-                        if (drinkenDataList[i].tags[j].Contains(toFilter)) s += drinkenDataList[i].naam + "\n";
+                        if (drinkenDataList[i].tags[j].Contains(toFilter)) add = true;
                     }
                     // zoekt in allergenen
                     for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
                     {
-                        if (drinkenDataList[i].allergenen[j].Contains(toFilter)) s += drinkenDataList[i].naam + "\n";
+                        if (drinkenDataList[i].allergenen[j].Contains(toFilter)) add = true;
                     }
+                    if (add == true) s += drinkenDataList[i].naam + "\n";
                 }
-                return $"Gevonden drinken met zoekterm '{toFilter}':\n{s}"; ;
+                return $"Gevonden drinken met zoekterm '{toFilter}':\n\n{s}"; ;
             }
 
             catch (Exception)
             {
-                return "Input is invalid";
+                return "je input was onjuist";
             }
 
         }
@@ -247,11 +251,11 @@ namespace Drinken_Class
                     }   // als de item het niet bevat wordt hij toegevoegd aan string
                     if (check) s += drinkenDataList[i].naam + "\n";
                 }
-                return $"Gevonden drinken zonder zoekterm '{toFilter}':\n{s}";
+                return $"Gevonden drinken zonder zoekterm '{toFilter}':\n\n{s}";
             }
             catch
             {
-                return "Input is invalid";
+                return "je input was onjuist";
             }
         }
     }

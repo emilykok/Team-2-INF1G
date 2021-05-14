@@ -8,6 +8,7 @@ using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Food_Drink_Run;
+using Hoofdmenu;
 
 namespace Eten_Class
 {
@@ -50,7 +51,7 @@ namespace Eten_Class
         public void EtenMenu()
         {
             Console.Clear();
-            Console.WriteLine("Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina");
+            Console.WriteLine("Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
             // leest input command van de console
@@ -63,7 +64,7 @@ namespace Eten_Class
                 if (num <= 10)
                 {
                     // print naam item
-                    Console.WriteLine($"{etenDataList[num - 1].naam}\n");
+                    Console.WriteLine($"{etenDataList[num - 1].naam}\n---------------------------------------------------\n");
 
                     // print inhoud item
                     string inh = "";
@@ -90,20 +91,14 @@ namespace Eten_Class
                     {
                         al += etenDataList[num - 1].allergenen[i] + ", ";
                     }
-                    Console.WriteLine("allergenen: " + al);
+                    Console.WriteLine("allergenen: " + al + "\n");
                     UpdateClicks(num);
 
-                    // input na de display
-                    bool goodInput = false;
-                    while (!goodInput)
-                    {
-                        Console.WriteLine("\nTyp 'x' om terug te gaan of 'r' om een andere item te selecteren.");
-                        input = Console.ReadLine();
-                        Console.Clear();
-                        if (input == "x" || input == "'x'" || input == "X" || input == "'X'") { goodInput = true; break; }
-                        else if (input == "r" || input == "'r'") { EtenMenu(); goodInput = true; break; }
-                        else Console.WriteLine("Er is een onjuist command ingevuld, probeer het nog eens.");
-                    }
+                    /// input na de display
+                    Console.WriteLine("\n1. Terug naar het eten & drinken menu");
+                    input = Console.ReadLine();
+                    Console.Clear();
+                    if (input == "1" || input == "") EtenMenu();
                 }
                 else if (num == 11) FoodDrinkRun.Run();
                 
@@ -220,28 +215,31 @@ namespace Eten_Class
             Console.Clear();
             string s = "";
             toFilter = toFilter.ToLower();
+            bool add;
             try
             {   // loopt door alle items in de json
                 for (int i = 0; i < etenDataList.Count; i++)
-                {   
+                {
+                    add = false;
                     // zoekt in titel van item
-                    if (etenDataList[i].naam.ToLower().Contains(toFilter)) s += etenDataList[i].naam + "\n";
+                    if (etenDataList[i].naam.ToLower().Contains(toFilter)) add = true;
                     // zoekt in tags
                     for (int j = 0; j < etenDataList[i].tags.Length; j++)
                     {
-                        if (etenDataList[i].tags[j].Contains(toFilter)) s += etenDataList[i].naam + "\n";
+                        if (etenDataList[i].tags[j].Contains(toFilter)) add = true;
                     }
                     // zoekt in allergenen
                     for (int j = 0; j < etenDataList[i].allergenen.Length; j++) {
-                        if (etenDataList[i].allergenen[j].Contains(toFilter)) s += etenDataList[i].naam + "\n";
+                        if (etenDataList[i].allergenen[j].Contains(toFilter))add = true;
                     }
+                    if (add == true) s += etenDataList[i].naam + "\n"; 
                 }
-                return $"Gevonden eten met zoekterm '{toFilter}':\n{s}"; ;
+                return $"Gevonden eten met zoekterm '{toFilter}':\n\n{s}"; ;
             }
 
             catch (Exception)
             {
-                return "Input is invalid";
+                return "je input was onjuist";
             }
             
         }
@@ -263,10 +261,10 @@ namespace Eten_Class
                     }   // als de item het niet bevat wordt hij toegevoegd aan string
                     if (check) s += etenDataList[i].naam + "\n";
                 }
-                return $"Gevonden eten zonder zoekterm '{toFilter}':\n{s}";
+                return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
             }
             catch {
-                return "Input is invalid";
+                return "je input was onjuist";
             }
         }
 
