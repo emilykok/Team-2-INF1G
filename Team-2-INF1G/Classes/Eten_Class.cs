@@ -125,7 +125,7 @@ namespace Eten_Class
         public void ViewClicks(int num)
         {
             Console.Clear();
-            Console.WriteLine(etenDataList[num - 1].clicks);
+            Console.WriteLine("Clicks op geselecteerde item is: "+ etenDataList[num - 1].clicks);
         }
 
         //method to update clicks

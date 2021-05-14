@@ -111,7 +111,7 @@ namespace Drinken_Class
         // method to view clicks of certain index
         public void ViewClicks(int num) {
             Console.Clear();
-            Console.WriteLine(drinkenDataList[num-1].clicks);
+            Console.WriteLine("Clicks op geselecteerde item is: " + drinkenDataList[num-1].clicks);
         }
 
         //method to update clicks

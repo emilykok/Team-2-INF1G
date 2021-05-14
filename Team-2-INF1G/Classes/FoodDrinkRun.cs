@@ -20,10 +20,10 @@ namespace Food_Drink_Run
             {
                 Console.Clear();
                 Console.WriteLine("Welkom bij het eten en drinken menu.\n---------------------------------------------------\n\nTyp het nummer wat je wil doen en klik op enter:\n");
-                Console.WriteLine("1. Eten menu\n2. Eten filteren\n3. Drinken menu\n4. Drinken filteren");
+                Console.WriteLine("1. Eten menu\n2. Eten filteren\n3. Drinken menu\n4. Drinken filteren\n");
                 if (permission == true)
                 { //menu drinken eten voor admin
-                    Console.WriteLine("5. Clicks bekijken\n6. Eten Clicks verwijderen\n7. Drinken Clicks verwijderen\n8. Terug naar vorige pagina");
+                    Console.WriteLine("5. Clicks bekijken\n6. Eten Clicks verwijderen\n7. Drinken Clicks verwijderen\n\n8. Terug naar vorige pagina");
                     string nummer = Console.ReadLine();
                     // etenmenu
                     if (nummer == "1")
@@ -98,11 +98,16 @@ namespace Food_Drink_Run
                     if (nummer == "5")
                     {
                         Console.Clear();
-                        Console.WriteLine("Van welke item wil je de clicks bekijken?\n1. Popcorn zoet\n2. Popcorn zout\n3. Popcorn karamel\n4. M&M's pinda\n5. M&M's chocola\n6. Chips naturel\n7. Chips paprika\n8. Doritos nacho cheese\n9. Haribo goudberen\n10. Skittles fruits\n11. Cola\n12. Pepsi\n13. Dr.Pepper\n14. Fanta Orange\n15. Spa rood\n16. Spa blauw\n17. Appelsap\n18. Rode wijn\n19. Witte wijn\n20. Heineken\n\nTyp het nummer van het product:");
+                        Console.WriteLine("Van welke item wil je de clicks bekijken?\n---------------------------------------------------\n1. Popcorn zoet\n2. Popcorn zout\n3. Popcorn karamel\n4. M&M's pinda\n5. M&M's chocola\n6. Chips naturel\n7. Chips paprika\n8. Doritos nacho cheese\n9. Haribo goudberen\n10. Skittles fruits\n\n11. Cola\n12. Pepsi\n13. Dr.Pepper\n14. Fanta Orange\n15. Spa rood\n16. Spa blauw\n17. Appelsap\n18. Rode wijn\n19. Witte wijn\n20. Heineken\n\nTyp het nummer van het product:");
                         string inp = Console.ReadLine();
                         try
                         {
-                            if (Convert.ToInt32(inp) < 11) eten.ViewClicks(Convert.ToInt32(inp));
+                            if (Convert.ToInt32(inp) < 11) {
+                                eten.ViewClicks(Convert.ToInt32(inp));
+                                Console.WriteLine("Toets enter om terug te gaan");
+                                string inn = Console.ReadLine();
+                                if (inn == "") FoodDrinkRun.Run();
+                            } 
                             else drinken.ViewClicks(Convert.ToInt32(inp) - 10);
                         }
                         catch { Console.WriteLine("Je input is niet correct, weet je zeker dat je een nummer uit de lijst hebt getoetst?"); }
