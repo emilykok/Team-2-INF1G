@@ -136,12 +136,13 @@ namespace MovieDetail_Class
             moviePage[13] = "terug naar hoofmenu";
             return moviePage;
         }
-        /*
-        public static string[] movieFilter(string tag)
+        
+        public static string[][] movieFilter(string tag)
         {
             // movielist with filter applied //
             int count = 0;
             MovieDetail movie = new MovieDetail();
+            // determine how long the array will be //
             for (int i = 0; i < movie.movieDataList.Count; i++)
             {
                 for(int j = 0; j < movie.movieDataList[i].genre.Length; j++)
@@ -150,20 +151,39 @@ namespace MovieDetail_Class
                 }
             }
 
-            string[] included = new string[count];
+            // create one string array for the entire filtered list with movies //
+            string[] included = new string[count+1];
             for (int i = 0, arrayIndex = 0; i < movie.movieDataList.Count; i++)
             {
                 for (int j = 0; j < movie.movieDataList[i].genre.Length; j++)
                 {
                     if (tag == movie.movieDataList[i].genre[j])
                     {
-                        included[arrayIndex] = $"{arrayIndex}.\t{movie.movieDataList[i].titel}";
+                        included[arrayIndex] = $"{arrayIndex+1}.\t{movie.movieDataList[i].titel}";
+                        arrayIndex++;
                     }
                 }
             }
-            return included;
+
+            // divide the list into pages of max. 10 movies a page //
+            count += 10;
+            string[][] divided = new string[(count / 10)][];
+            for(int i = 0; i < divided.Length; i++)
+            {
+                if(count > 10) divided[i] = new string[13];
+                else divided[i] = new string[(count % 10)+3];
+
+                for(int j = 0; j < (divided[i].Length-3); j++)
+                {
+                    divided[i][j] = included[(count - (count-j))];
+                }
+                divided[i][(divided[i].Length - 3)] = "vorige pagina";
+                divided[i][(divided[i].Length - 2)] = "volgende pagina";
+                divided[i][(divided[i].Length - 1)] = "terug naar lijst";
+            }
+            return divided;
         }
-        */
+        
 
         public static void Navigation()
         {
@@ -216,9 +236,56 @@ namespace MovieDetail_Class
                         }
                     }
                     // to filter movies //
-                    else if(select.SelectedIndex == 12)
+                    else if(select.SelectedIndex == 12) // WIP. note to self: create a seperate function for the filter navigation //
                     {
                         Console.Clear();
+                        string[][] filterPages = movieFilter("actie");
+                        select.SelectedIndex = 0;
+                        int currentPage = 0;
+                        select.Options = filterPages[currentPage];
+                        select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                        select.Run();
+
+                        // the navigation options at the bottom of the page //
+                        if(select.SelectedIndex >= (filterPages[currentPage].Length - 3))
+                        {
+                            // to go to the previous page //
+                            if (select.SelectedIndex == (filterPages[currentPage].Length - 3))
+                            {
+                                if(currentPage <= 0)
+                                {
+                                    currentPage = 0;
+                                    select.finalText = $"\nPagina: {currentPage+1} / {filterPages.Length}";
+                                    select.Options = filterPages[currentPage];
+                                    select.Run();
+                                }
+                                else
+                                {
+                                    currentPage--;
+                                    select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                                    select.Options = filterPages[currentPage];
+                                    select.Run();
+                                }
+                            }
+                            // to go to the next page //
+                            if (select.SelectedIndex == (filterPages[currentPage].Length - 2))
+                            {
+                                if(currentPage >= (filterPages.Length - 1))
+                                {
+                                    currentPage = (filterPages.Length - 1);
+                                    select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                                    select.Options = filterPages[currentPage];
+                                    select.Run();
+                                }
+                                else
+                                {
+                                    currentPage++;
+                                    select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                                    select.Options = filterPages[currentPage];
+                                    select.Run();
+                                }
+                            }
+                        }
                     }
                     // to exit //
                     else if(select.SelectedIndex == 13)
