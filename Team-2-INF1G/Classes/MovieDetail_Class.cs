@@ -139,11 +139,17 @@ namespace MovieDetail_Class
         {
             // navigation for the entire filter section //
             Console.Clear();
-            string[][] filterPages = movieFilter("romantiek");
+            string[] genreOptions = new string[] { "actie", "animatie", "avontuur", "drama", "familie", "fantasy", "horror", "komedie", "misdaad", "muziek", "mysterie", "romantiek", "sci-fi", "thriller" };
+            Menu genre = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren\nKies een genre om te filteren\n",
+                                  genreOptions);
+            genre.Run();
+            string chosenGenre = genreOptions[genre.SelectedIndex];
+            Console.Clear();
+            string[][] filterPages = movieFilter(chosenGenre);
             int currentPage = 0;
             bool retry = true;
             MovieDetail movie = new MovieDetail();
-            Menu select = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n",
+            Menu select = new Menu($"gebruik de pijltjes om te navigeren en druk op enter om te selecteren\ngefilterd genre: {chosenGenre}\n",
                                     filterPages[currentPage],
                                     $"\nPagina: {currentPage + 1} / {filterPages.Length}",
                                     filterPages[currentPage].Length - 3);
@@ -167,6 +173,7 @@ namespace MovieDetail_Class
                         else
                         {
                             currentPage--;
+                            select.SelectedIndex = (filterPages[currentPage].Length - 3);
                             select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
                             select.Options = filterPages[currentPage];
                             select.whiteLine = filterPages[currentPage].Length - 3;
@@ -187,6 +194,7 @@ namespace MovieDetail_Class
                         else
                         {
                             currentPage++;
+                            select.SelectedIndex = (filterPages[currentPage].Length - 2);
                             select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
                             select.Options = filterPages[currentPage];
                             select.whiteLine = filterPages[currentPage].Length - 3;
@@ -209,13 +217,10 @@ namespace MovieDetail_Class
                     {
                         if(movie.movieDataList[i].titel == selected)
                         {
-                            //info = DisplayMovie(i+1);
-                            info = "has been found\n";
+                            info = DisplayMovie(i+1);
+                            //info = "has been found\n";
                         }
-                        else
-                        {
-                            info = "Not found\n";
-                        }
+
                     }
                     // clear the console and print the movie info //
                     Console.Clear();
@@ -224,6 +229,7 @@ namespace MovieDetail_Class
                     // change the selection menu for select //
                     select.Options = new string[] { "terug naar lijst", "terug naar reguliere catalogus" };
                     select.SelectedIndex = 0;
+                    select.whiteLine = 0;
                     select.Run();
                     // to go back to the list of movies //
                     if (select.SelectedIndex == 0)
