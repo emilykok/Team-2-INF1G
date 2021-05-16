@@ -40,43 +40,6 @@ namespace MovieDetail_Class
             this.jsonPath = File.ReadAllText(path);
             this.movieDataList = JsonConvert.DeserializeObject<List<MovieData>>(jsonPath);
         }
-        /*
-        public string ToJSON()
-        {
-            return JsonConvert.SerializeObject(this.movieDataList, Formatting.Indented);
-        }
-        
-        public static string[] GetList(int page)
-        {
-            int index;
-            if (page == 1) index = 1;
-            else index = 1 + (10 * (page - 1));
-            string[] titleList;
-            //for(int i = 0, x = index; i < 10; i++, x++)
-            //{
-            //    titleList
-            //}
-            //return titleList;
-        }
-        */
-        /*
-        public void CreateMovie(string Titel, double Rating, string[] Kijkwijzer, string[] Genre, string Regisseur, int Speeltijd, string[] Acteurs, string Samenvatting)
-        {
-            MovieData newMovieData = new MovieData();
-            newMovieData.titel = Titel;
-            newMovieData.rating = Rating;
-            newMovieData.kijkwijzer = Kijkwijzer;
-            newMovieData.genre = Genre;
-            newMovieData.regisseur = Regisseur;
-            newMovieData.speeltijd = Speeltijd;
-            newMovieData.acteurs = Acteurs;
-            newMovieData.samenvatting = Samenvatting;
-
-            movieDataList.Add(newMovieData);
-            Console.WriteLine(movieDataList);
-            System.IO.File.WriteAllText(this.path, ToJSON());
-        }
-        */
 
         public static string ArrToString(string[] before)
         {
@@ -103,22 +66,7 @@ namespace MovieDetail_Class
 
             return run;
         }
-        /*
-        public static void MovieList(int page = 1)
-        {
-            // shows a list of movies(page of movieTitles) //
-            MovieDetail movie = new MovieDetail();
-            Console.WriteLine("vul < of > in om te navigeren tussen de bladzijden, druk het corresponderende nummer in om\nde film informatie te zien.");
-            Console.WriteLine($"page {page}");
-            int x = 0;
-            // calculation to get the right index for the json file //
-            if (page != 1) x = (10 * (page - 1));
-            for (int i = x, count = 0; i < (x + 10); i++, count++)
-            {
-                Console.WriteLine($"{i + 1}.\t{movie.movieDataList[i].titel}");
-            }
-        }
-        */
+
         public static string[] GetList(int page)
         {
             // returns a string array of movie titles on that page //
@@ -159,31 +107,141 @@ namespace MovieDetail_Class
                 {
                     if (tag == movie.movieDataList[i].genre[j])
                     {
-                        included[arrayIndex] = $"{arrayIndex+1}.\t{movie.movieDataList[i].titel}";
+                        included[arrayIndex] = movie.movieDataList[i].titel;
                         arrayIndex++;
                     }
                 }
             }
 
             // divide the list into pages of max. 10 movies a page //
-            count += 10;
-            string[][] divided = new string[(count / 10)][];
+            int movieIndex = 0;
+            string[][] divided;
+            if (count <= 10) divided = new string[1][];
+            else divided = new string[(count / 10 + 1)][];
             for(int i = 0; i < divided.Length; i++)
             {
-                if(count > 10) divided[i] = new string[13];
+                if(count >= 10) divided[i] = new string[13];
                 else divided[i] = new string[(count % 10)+3];
 
                 for(int j = 0; j < (divided[i].Length-3); j++)
                 {
-                    divided[i][j] = included[(count - (count-j))];
+                    divided[i][j] = included[movieIndex++];
                 }
                 divided[i][(divided[i].Length - 3)] = "vorige pagina";
                 divided[i][(divided[i].Length - 2)] = "volgende pagina";
-                divided[i][(divided[i].Length - 1)] = "terug naar lijst";
+                divided[i][(divided[i].Length - 1)] = "terug naar reguliere catalogus";
+                count -= 10;
             }
             return divided;
         }
         
+        public static void FilterNavigation()
+        {
+            // navigation for the entire filter section //
+            Console.Clear();
+            string[][] filterPages = movieFilter("romantiek");
+            int currentPage = 0;
+            bool retry = true;
+            MovieDetail movie = new MovieDetail();
+            Menu select = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n",
+                                    filterPages[currentPage],
+                                    $"\nPagina: {currentPage + 1} / {filterPages.Length}",
+                                    filterPages[currentPage].Length - 3);
+            select.Run();
+            while (retry)
+            {
+                // the navigation options at the bottom of the page //
+                if (select.SelectedIndex >= (filterPages[currentPage].Length - 3))
+                {
+                    // to go to the previous page //
+                    if (select.SelectedIndex == (filterPages[currentPage].Length - 3))
+                    {
+                        if (currentPage <= 0)
+                        {
+                            currentPage = 0;
+                            select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                            select.Options = filterPages[currentPage];
+                            select.whiteLine = filterPages[currentPage].Length - 3;
+                            select.Run();
+                        }
+                        else
+                        {
+                            currentPage--;
+                            select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                            select.Options = filterPages[currentPage];
+                            select.whiteLine = filterPages[currentPage].Length - 3;
+                            select.Run();
+                        }
+                    }
+                    // to go to the next page //
+                    else if (select.SelectedIndex == (filterPages[currentPage].Length - 2))
+                    {
+                        if (currentPage >= (filterPages.Length - 1))
+                        {
+                            currentPage = (filterPages.Length - 1);
+                            select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                            select.Options = filterPages[currentPage];
+                            select.whiteLine = filterPages[currentPage].Length - 3;
+                            select.Run();
+                        }
+                        else
+                        {
+                            currentPage++;
+                            select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                            select.Options = filterPages[currentPage];
+                            select.whiteLine = filterPages[currentPage].Length - 3;
+                            select.Run();
+                        }
+                    }
+                    // to return to the regular catalog //
+                    else if(select.SelectedIndex == (filterPages[currentPage].Length - 1))
+                    {
+                        retry = false;
+                    }
+                }
+                // get info about the selected movie //
+                else
+                {
+                    // get the movie info from the json file //
+                    string selected = filterPages[currentPage][select.SelectedIndex];
+                    string info = "";
+                    for(int i = 0; i < movie.movieDataList.Count; i++)
+                    {
+                        if(movie.movieDataList[i].titel == selected)
+                        {
+                            //info = DisplayMovie(i+1);
+                            info = "has been found\n";
+                        }
+                        else
+                        {
+                            info = "Not found\n";
+                        }
+                    }
+                    // clear the console and print the movie info //
+                    Console.Clear();
+                    select.finalText = "";
+                    select.Prompt = info;
+                    // change the selection menu for select //
+                    select.Options = new string[] { "terug naar lijst", "terug naar reguliere catalogus" };
+                    select.SelectedIndex = 0;
+                    select.Run();
+                    // to go back to the list of movies //
+                    if (select.SelectedIndex == 0)
+                    {
+                        select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                        select.Options = filterPages[currentPage];
+                        select.whiteLine = filterPages[currentPage].Length - 3;
+                        select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n";
+                        select.Run();
+                    }
+                    // to exit //
+                    else if (select.SelectedIndex == 1)
+                    {
+                        retry = false;
+                    }
+                }
+            }
+        }
 
         public static void Navigation()
         {
@@ -207,6 +265,7 @@ namespace MovieDetail_Class
                             page = 1;
                             select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
+                            select.whiteLine = 10;
                             select.Run();
                         }
                         else
@@ -214,6 +273,7 @@ namespace MovieDetail_Class
                             page--;
                             select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
+                            select.whiteLine = 10;
                             select.Run();
                         }
                     }
@@ -225,6 +285,7 @@ namespace MovieDetail_Class
                             page = 5;
                             select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
+                            select.whiteLine = 10;
                             select.Run();
                         }
                         else
@@ -232,60 +293,15 @@ namespace MovieDetail_Class
                             page++;
                             select.finalText = $"\nPagina: {page} / 5";
                             select.Options = GetList(page);
+                            select.whiteLine = 10;
                             select.Run();
                         }
                     }
                     // to filter movies //
                     else if(select.SelectedIndex == 12) // WIP. note to self: create a seperate function for the filter navigation //
                     {
-                        Console.Clear();
-                        string[][] filterPages = movieFilter("actie");
-                        select.SelectedIndex = 0;
-                        int currentPage = 0;
-                        select.Options = filterPages[currentPage];
-                        select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
+                        FilterNavigation();
                         select.Run();
-
-                        // the navigation options at the bottom of the page //
-                        if(select.SelectedIndex >= (filterPages[currentPage].Length - 3))
-                        {
-                            // to go to the previous page //
-                            if (select.SelectedIndex == (filterPages[currentPage].Length - 3))
-                            {
-                                if(currentPage <= 0)
-                                {
-                                    currentPage = 0;
-                                    select.finalText = $"\nPagina: {currentPage+1} / {filterPages.Length}";
-                                    select.Options = filterPages[currentPage];
-                                    select.Run();
-                                }
-                                else
-                                {
-                                    currentPage--;
-                                    select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
-                                    select.Options = filterPages[currentPage];
-                                    select.Run();
-                                }
-                            }
-                            // to go to the next page //
-                            if (select.SelectedIndex == (filterPages[currentPage].Length - 2))
-                            {
-                                if(currentPage >= (filterPages.Length - 1))
-                                {
-                                    currentPage = (filterPages.Length - 1);
-                                    select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
-                                    select.Options = filterPages[currentPage];
-                                    select.Run();
-                                }
-                                else
-                                {
-                                    currentPage++;
-                                    select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
-                                    select.Options = filterPages[currentPage];
-                                    select.Run();
-                                }
-                            }
-                        }
                     }
                     // to exit //
                     else if(select.SelectedIndex == 13)
@@ -310,6 +326,7 @@ namespace MovieDetail_Class
                         select.finalText = $"\nPagina: {page} / 5";
                         select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n";
                         select.Options = GetList(page);
+                        select.whiteLine = 10;
                         select.Run();
                     }
                     // to exit //
