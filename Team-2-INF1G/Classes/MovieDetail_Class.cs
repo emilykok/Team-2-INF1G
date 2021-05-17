@@ -139,12 +139,14 @@ namespace MovieDetail_Class
         {
             // navigation for the entire filter section //
             Console.Clear();
+            // genre selection //
             string[] genreOptions = new string[] { "actie", "animatie", "avontuur", "drama", "familie", "fantasy", "horror", "komedie", "misdaad", "muziek", "mysterie", "romantiek", "sci-fi", "thriller" };
             Menu genre = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren\nKies een genre om te filteren\n",
                                   genreOptions);
             genre.Run();
             string chosenGenre = genreOptions[genre.SelectedIndex];
             Console.Clear();
+            // use chosen genre to display a list of movies that fit the filter //
             string[][] filterPages = movieFilter(chosenGenre);
             int currentPage = 0;
             bool retry = true;
@@ -218,7 +220,7 @@ namespace MovieDetail_Class
                         if(movie.movieDataList[i].titel == selected)
                         {
                             info = DisplayMovie(i+1);
-                            //info = "has been found\n";
+                            // info has been found //
                         }
 
                     }
