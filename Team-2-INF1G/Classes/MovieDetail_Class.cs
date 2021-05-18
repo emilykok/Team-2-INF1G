@@ -229,12 +229,17 @@ namespace MovieDetail_Class
                     select.finalText = "";
                     select.Prompt = info;
                     // change the selection menu for select //
-                    select.Options = new string[] { "terug naar lijst", "terug naar reguliere catalogus" };
+                    select.Options = new string[] { "maak een reservering", "terug naar lijst", "terug naar hoofdmenu" };
                     select.SelectedIndex = 0;
                     select.whiteLine = 0;
                     select.Run();
+                    // to make a reservation //
+                    if(select.SelectedIndex == 0)
+                    {
+                        retry = false;
+                    }
                     // to go back to the list of movies //
-                    if (select.SelectedIndex == 0)
+                    else if (select.SelectedIndex == 1)
                     {
                         select.finalText = $"\nPagina: {currentPage + 1} / {filterPages.Length}";
                         select.Options = filterPages[currentPage];
@@ -243,7 +248,7 @@ namespace MovieDetail_Class
                         select.Run();
                     }
                     // to exit //
-                    else if (select.SelectedIndex == 1)
+                    else if (select.SelectedIndex == 2)
                     {
                         retry = false;
                     }
@@ -325,11 +330,16 @@ namespace MovieDetail_Class
                     select.finalText = "";
                     select.Prompt = DisplayMovie(((page - 1) * 10) + (select.SelectedIndex + 1));// get the right index for the Json file //
                     // change the selection menu for select //
-                    select.Options = new string[] { "terug naar lijst", "terug naar hoofdmenu" };
+                    select.Options = new string[] { "maak een reservering", "terug naar lijst", "terug naar hoofdmenu" };
                     select.SelectedIndex = 0;
                     select.Run();
-                    // to go back to the list of movies //
+                    // to make a reservation //
                     if(select.SelectedIndex == 0)
+                    {
+                        retry = false;
+                    }
+                    // to go back to the list of movies //
+                    else if(select.SelectedIndex == 1)
                     {
                         select.finalText = $"\nPagina: {page} / 5";
                         select.Prompt = "gebruik de pijltjes om te navigeren en druk op enter om te selecteren\n";
@@ -338,7 +348,7 @@ namespace MovieDetail_Class
                         select.Run();
                     }
                     // to exit //
-                    else if(select.SelectedIndex == 1)
+                    else if(select.SelectedIndex == 2)
                     {
                         retry = false;
                     }
