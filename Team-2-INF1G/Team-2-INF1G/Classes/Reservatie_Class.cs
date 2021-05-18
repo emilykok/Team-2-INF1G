@@ -110,7 +110,7 @@ namespace Reservatie_Class
             int reservationNumber = 0;
             try
             {
-                int number = TicketsList[-1].reservationNumber;
+                int number = TicketsList[TicketsList.Count-1].reservationNumber;
                 reservationNumber = number + 1;
             }
             catch
@@ -144,19 +144,19 @@ namespace Reservatie_Class
             }
         }
 
-        public string[] TimeSelection(string titel)
-        {
-            int count = 0;
-            for(int i = 0; i < ...datalist; i++)
-            {
+        //public string[] TimeSelection(string titel)
+        //{
+        //    int count = 0;
+        //    for(int i = 0; i < ...datalist; i++)
+        //    {
                 // if titel == ...datalist[i].film1 count++
                 // if titel == ...datalist[i].film2 count++
                 // if titel == ...datalist[i].film3 count++
                 // if titel == ...datalist[i].film4 count++
                 // if titel == ...datalist[i].film5 count++
                 // if titel == ...datalist[i].film6 count++
-            }
-        }
+        //    }
+        //}
 
         public void DisplayReservatie(Tickets ticket)
         {
@@ -191,10 +191,7 @@ namespace Reservatie_Class
             }
         }
 
-
-
-
-        public void RunTicket(string title, int user) //Get the film title, index that to get film data. Get user int to index account and get the data
+        public void CreateTicket(string title, int user) //Get the film title, index that to get film data. Get user int to index account and get the data
         {
             // Data preparation for creation ticket
             int movieIndex = -1;
@@ -217,7 +214,7 @@ namespace Reservatie_Class
             string[] funcRSArray = { "A", "35" };
 
 
-            //Makes reservation number
+            //Makes unique reservation number
             int reservationNumber = ReservationNumber();
 
             // Convert all data for ticket creation
@@ -247,6 +244,17 @@ namespace Reservatie_Class
                 // write to the JSON file (updates the file)
                 System.IO.File.WriteAllText(this.pathTickets, ToJSON());
             }
+        }
+        public void DeleteTicket(int reservationNumber)
+        {
+            for (int i = 0; i < TicketsList.Count; i++)
+            {
+                if (reservationNumber == TicketsList[i].reservationNumber)
+                {
+                    TicketsList.RemoveAt(i);
+                }
+            }
+            System.IO.File.WriteAllText(this.pathTickets, ToJSON());
         }
     }
 }

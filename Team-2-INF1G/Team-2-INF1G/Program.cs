@@ -16,7 +16,7 @@ namespace Team_2
         {
             
             Account acc = new Account();
-            //Reservering reservering = new Reservering();
+            Reservering reservering = new Reservering();
             bool retry = true;
             int user = -1;
             while (retry == true)
@@ -80,7 +80,7 @@ namespace Team_2
                     }
                     else if (choose == "5")
                     {
-                        //reservering.RunTickets();
+                        reservering.CreateTicket("Avengers: Endgame", user);
                     }
                     else if (choose == "6")
                     {
@@ -119,7 +119,7 @@ namespace Team_2
                     }
                     else if (choose == "4")
                     {
-                        //reservering.RunTickets();
+                        reservering.CreateTicket("Avengers: Endgame", user);
                     }
                     else if (choose == "5")
                     {
