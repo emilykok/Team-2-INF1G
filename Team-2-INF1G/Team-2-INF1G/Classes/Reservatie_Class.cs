@@ -8,7 +8,7 @@ namespace Reservatie_Class
 {
     public class Reservering
     {
-        // Is de Json van bjorn
+        // Account JSON struct
         public struct AccountData
         {
             public string Name;
@@ -25,7 +25,7 @@ namespace Reservatie_Class
         public List<AccountData> accountDataList = new List<AccountData>();
 
 
-        // Is de JSON file van David
+        // Movie JSON struct
         public struct MovieData
         {
             public string titel;
@@ -40,22 +40,23 @@ namespace Reservatie_Class
 
         public List<MovieData> movieDataList = new List<MovieData>();
 
-        // Noah JSON file
-        public struct PrijsKaarten
+        // Kaartje JSON struct
+        public struct Tickets
         {
-            public string filmnaam;
-            public string naampersoon;
-            public string kaartnaam;
-            public string prijs;
-            public string leeftijd;
-            public string tijd;
-            public string filmduur;
-            public string zaal;
-            public string rij;
-            public string stoel;
+            public string filmName;
+            public string namePerson;
+            public int ticketAmount;
+            public double price;
+            public string weekday;
+            public string startTime;
+            public int filmDuration;
+            public string hall;
+            public string row;
+            public string seat;
+            public int reservationNumber;
         }
 
-        public List<PrijsKaarten> PrijsKaartenList = new List<PrijsKaarten>();
+        public List<Tickets> TicketsList = new List<Tickets>();
 
         [JsonIgnore]
         public string pathCatalog;
@@ -63,9 +64,9 @@ namespace Reservatie_Class
         public string jsonPathCatalog;
 
         [JsonIgnore]
-        public string pathPrijskaarten;
+        public string pathTickets;
         [JsonIgnore]
-        public string jsonPathPrijskaarten;
+        public string jsonPathTickets;
 
         [JsonIgnore]
         public string pathAccounts;
@@ -79,120 +80,173 @@ namespace Reservatie_Class
             this.pathCatalog = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Catalog.json"));
             this.jsonPathCatalog = File.ReadAllText(pathCatalog);
 
-            this.pathPrijskaarten = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Prijskaarten.json"));
-            this.jsonPathPrijskaarten = File.ReadAllText(pathPrijskaarten);
+            this.pathTickets = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Tickets.json"));
+            this.jsonPathTickets = File.ReadAllText(pathTickets);
 
             this.pathAccounts = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Accounts.json"));
             this.jsonPathAccounts = File.ReadAllText(pathAccounts);
 
             this.movieDataList = JsonConvert.DeserializeObject<List<MovieData>>(jsonPathCatalog);
-            this.PrijsKaartenList = JsonConvert.DeserializeObject<List<PrijsKaarten>>(jsonPathPrijskaarten);
+            this.TicketsList = JsonConvert.DeserializeObject<List<Tickets>>(jsonPathTickets);
             this.accountDataList = JsonConvert.DeserializeObject<List<AccountData>>(jsonPathAccounts);
         }
 
         // Method that is used to write data to the JSON file.
         public string ToJSON()
         {
-            return JsonConvert.SerializeObject(this.PrijsKaartenList, Formatting.Indented);
+            return JsonConvert.SerializeObject(this.TicketsList, Formatting.Indented);
         }
 
-        public void DisplayReservatie(MovieData movieData)
+        public int CreateTicket(MovieData movieData, AccountData accountData)
         {
-            Console.WriteLine("===============");
-            Console.WriteLine("*Reservatie pagina*");
-            Console.WriteLine("===============\n");
-            Console.WriteLine("Gerserveerde film: " + movieData.titel); //Goed
-            Console.WriteLine("Naam: " + accountDataList[0].Name); //Goed
+            Tickets newTicket = new Tickets();
+            newTicket.namePerson = accountData.Name;
+            newTicket.filmName = movieData.titel;
 
-            //if (accountDataList[0].age >= 0 && accountDataList[0].age <= 10) <-- methods die variablen aanpassen NIET in de display method zetten!
-            //    PrijsKaartenList[0].kaartnaam = "KinderKaart";
-
-
-            Console.WriteLine("Kaartje: " + PrijsKaartenList[0].kaartnaam); //Zelf nog niet gedaan
-            Console.WriteLine("Prijs: " + PrijsKaartenList[0].prijs); //Zelf nog niet gedaan
-            Console.WriteLine("Leeftijd: " + PrijsKaartenList[0].leeftijd); //Zelf nog niet gedaan
-            Console.WriteLine("Tijd: " + PrijsKaartenList[0].tijd); //Nog in de maak
-            Console.WriteLine("Filmduur: " + movieData.speeltijd); //Goed
-            Console.WriteLine("Zaal: " + PrijsKaartenList[0].zaal); //Nog nergens te bekennen
-            Console.WriteLine("Rij: " + PrijsKaartenList[0].rij); //Nog nergens te bekennen
-            Console.WriteLine("Stoel: " + PrijsKaartenList[0].stoel); //Nog nergens te bekennen
-            //Console.WriteLine("Uw authentieke reservatie nummer is: "); <-- Dit werkt nog niet, en geeft ongeldige informatie mee! check hier nog op
+            return -1;
         }
-
-
-        public void RunTickets()
+        public int ReservationNumber() //Makes reservation number
         {
-            for (int i = 0; i < movieDataList.Count; i++)
+            int reservationNumber = 0;
+            try
             {
-                Console.WriteLine($"{i + 1}. {movieDataList[i].titel}");
+                int number = TicketsList[-1].reservationNumber;
+                reservationNumber = number + 1;
             }
-
-            Console.WriteLine("\nKlik op het nummer van de bijbehoorende film om deze te reserveren.");
-
-            int x = 0;
-
-            bool check = true;
-            while (check == true)
+            catch
             {
-                Console.WriteLine("Typ alstublieft een nummer van 1 tot 50");
-                string input = Console.ReadLine();
+                reservationNumber = 1;
+            }
+            return reservationNumber;
+        }
+
+        public int PersonAmount()
+        {
+            Console.Clear();
+            Console.WriteLine("voor hoeveel personen wil je reserveren?");
+            var PersonCount = Console.ReadLine();
+            if  (PersonCount == "x" || PersonCount == "X")
+            {
+                return -1;
+            }
+            else
+            {
                 try
                 {
-                    x = Convert.ToInt32(input);
-                    if (x >= 1 && x <= 50)
-                    {
-                        check = false;
-                    }
+                    int count = Convert.ToInt32(PersonCount);
+                    return count;
                 }
                 catch
                 {
-                    Console.WriteLine("Ongeldige invoer");
+                    Console.WriteLine("dit is geen geldige waarde");
+                    return -1;
                 }
+            }
+        }
 
-                Console.WriteLine("\nU heeft nu een reservering gemaakt voor de film: " + movieDataList[x - 1].titel + ", klik op R om naar de reservatie te gaan.\nklik op 'X' om terug te gaan");
+        public string[] TimeSelection(string titel)
+        {
+            int count = 0;
+            for(int i = 0; i < ...datalist; i++)
+            {
+                // if titel == ...datalist[i].film1 count++
+                // if titel == ...datalist[i].film2 count++
+                // if titel == ...datalist[i].film3 count++
+                // if titel == ...datalist[i].film4 count++
+                // if titel == ...datalist[i].film5 count++
+                // if titel == ...datalist[i].film6 count++
+            }
+        }
+
+        public void DisplayReservatie(Tickets ticket)
+        {
+            Console.Clear();
+            Console.WriteLine("===============");
+            Console.WriteLine($"*Reservatie {ticket.filmName}*");
+            Console.WriteLine("===============\n");
+            Console.WriteLine("Gerserveerde film: " + ticket.filmName); 
+            Console.WriteLine("Naam: " + ticket.namePerson); 
+            Console.WriteLine("Kaartje(s): " + ticket.ticketAmount); 
+            Console.WriteLine("Prijs: " + ticket.price); 
+            Console.WriteLine("Dag: " + ticket.weekday); 
+            Console.WriteLine("Tijd: " + ticket.startTime); 
+            Console.WriteLine("Filmduur: " + ticket.filmDuration); 
+            Console.WriteLine("Zaal: " + ticket.hall); 
+            Console.WriteLine("Rij: " + ticket.row); 
+            Console.WriteLine("Stoel: " + ticket.seat); 
+            Console.WriteLine("Reservatie nummer: " + ticket.reservationNumber);
+        }
+
+        public bool ReservationConfirm()
+        {
+            Console.WriteLine("\nKlik op ENTER op de reservering te plaatsen. Om te annuleren toets 'X'");
+            string userInput = Console.ReadLine();
+            if (userInput == "x" || userInput == "X")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
 
-                bool retry = true;
-                while (retry)
+
+
+        public void RunTicket(string title, int user) //Get the film title, index that to get film data. Get user int to index account and get the data
+        {
+            // Data preparation for creation ticket
+            int movieIndex = -1;
+            for (int i = 0; i < movieDataList.Count; i++) //Get the film index for corresponding data
+            {
+                if (title == movieDataList[i].titel)
                 {
-                    var navigation = Console.ReadLine();
-                    if (navigation == "r" || navigation == "R")
-                    {
-                        Console.Clear();
-                        DisplayReservatie(movieDataList[x - 1]);
-                        Console.WriteLine("\nOm terug te gaan, toets 'X'");
-                        string whileInput = Console.ReadLine();
-                        if (whileInput == "x" || whileInput == "X")
-                        {
-                            retry = false;
-                        }
-                    }
-                    else
-                    {
-                        retry = false;
-                    }
+                    movieIndex = i;
                 }
-
             }
 
+            //Get zaal / datum / tijd for the ticket
+            // Insert function here, MUST return string array [amount, hall, weekday, time]
+
+            string[] funcHallArray = { "3", "Zaal 1", "maandag", "14:00" };
+
+            //Get row / seat for the specific hall
+            // Insert function here , MUST return string [slice first letter for row, rest convert to int]
+
+            string[] funcRSArray = { "A", "35" };
 
 
-            PrijsKaarten newTicket = new PrijsKaarten();
-            newTicket.filmnaam = movieDataList[x - 1].titel;
-            newTicket.naampersoon = null;
-            newTicket.kaartnaam = null;
-            newTicket.prijs = null;
-            newTicket.leeftijd = null;
-            newTicket.tijd = null;
-            newTicket.filmduur = null;
-            newTicket.zaal = null;
-            newTicket.rij = null;
-            newTicket.stoel = null;
+            //Makes reservation number
+            int reservationNumber = ReservationNumber();
 
-            // add to the list with the added data
-            PrijsKaartenList.Add(newTicket);
+            // Convert all data for ticket creation
 
-            System.IO.File.WriteAllText(this.pathPrijskaarten, ToJSON());
+            Tickets newTicket = new Tickets();
+            newTicket.filmName          = movieDataList[movieIndex].titel;
+            newTicket.namePerson        = accountDataList[user].Name;
+            newTicket.ticketAmount      = Convert.ToInt32(funcHallArray[0]);
+            newTicket.price             = 20.00; // <-- HARD CODED!!!
+            newTicket.weekday           = funcHallArray[2];
+            newTicket.startTime         = funcHallArray[3];
+            newTicket.filmDuration      = movieDataList[movieIndex].speeltijd;
+            newTicket.hall              = funcHallArray[1];
+            newTicket.row               = funcRSArray[0];
+            newTicket.seat              = funcRSArray[1];
+            newTicket.reservationNumber = reservationNumber;
+
+            // Displays selected reservation
+            DisplayReservatie(newTicket);
+            bool confirm = ReservationConfirm();
+
+            if (confirm == true)
+            {
+                // add to the list with the added data
+                TicketsList.Add(newTicket);
+
+                // write to the JSON file (updates the file)
+                System.IO.File.WriteAllText(this.pathTickets, ToJSON());
+            }
         }
     }
 }
