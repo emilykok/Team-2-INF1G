@@ -97,15 +97,34 @@ namespace Reservatie_Class
             return JsonConvert.SerializeObject(this.TicketsList, Formatting.Indented);
         }
 
-        public int CreateTicket(MovieData movieData, AccountData accountData)
+        public void PrintItem(int start, int stop, List<int> reservationList)
         {
-            Tickets newTicket = new Tickets();
-            newTicket.namePerson = accountData.Name;
-            newTicket.filmName = movieData.titel;
+            for (int i = 0; i < TicketsList.Count; i++)
+            {
+                try
+                {
+                    Console.WriteLine($"[{i + 1}] {TicketsList[i].filmName} | {TicketsList[i].startTime} {TicketsList[i].weekday}");
+                }
+                catch
+                {
+                    break;
+                }
+            }
+        }
 
+        private int ReservationNumberIndexer(int reservationNumber)
+        {
+            for (int i = 0; i < TicketsList.Count; i++)
+            {
+                if (reservationNumber == TicketsList[i].reservationNumber)
+                {
+                    return i;
+                }
+            }
             return -1;
         }
-        public int ReservationNumber() //Makes reservation number
+        
+        public int ReservationNumberMaker() //Makes reservation number
         {
             int reservationNumber = 0;
             try
@@ -120,10 +139,11 @@ namespace Reservatie_Class
             return reservationNumber;
         }
 
+        // Method that asks user the amount of people reserving, 
         public int PersonAmount()
         {
             Console.Clear();
-            Console.WriteLine("voor hoeveel personen wil je reserveren?");
+            Console.WriteLine("Voor hoeveel personen wilt u reserveren?");
             var PersonCount = Console.ReadLine();
             if  (PersonCount == "x" || PersonCount == "X")
             {
@@ -144,20 +164,167 @@ namespace Reservatie_Class
             }
         }
 
-        //public string[] TimeSelection(string titel)
-        //{
-        //    int count = 0;
-        //    for(int i = 0; i < ...datalist; i++)
-        //    {
-                // if titel == ...datalist[i].film1 count++
-                // if titel == ...datalist[i].film2 count++
-                // if titel == ...datalist[i].film3 count++
-                // if titel == ...datalist[i].film4 count++
-                // if titel == ...datalist[i].film5 count++
-                // if titel == ...datalist[i].film6 count++
-        //    }
-        //}
 
+        public void reservationList(int user)
+        {
+            string state = " ";
+            int start = 0;
+            int stop = 0;
+            bool loop = true;
+
+            while (loop == true)
+            {
+                bool executeRun = true;
+
+                // creates a list of all the users reservations, MUST be in the loop, so that it refreshes if a reservation is deleted
+                List<int> reservationList = new List<int>();
+
+                for (int i = 0; i < TicketsList.Count; i++)
+                {
+                    if (TicketsList[i].namePerson == accountDataList[user].Name)
+                    {
+                        reservationList.Add(TicketsList[i].reservationNumber);
+                    }
+                }
+
+                if (reservationList.Count != 0)
+                {
+                    // runs code when page is at 0, no increase in value
+                    if (start == 0 && (state != ">" && state != "<"))
+                    {
+                        if (start + 40 > reservationList.Count)
+                        {
+                            if (start == reservationList.Count)
+                            {
+                                executeRun = false;
+                            }
+                            stop = reservationList.Count;
+                        }
+                        else
+                        {
+                            stop = start + 20;
+                        }
+                    }
+
+                    // runs code when page is NOT at 0, no increase in value
+                    else if (start != 0 && (state != ">" && state != "<"))
+                    {
+                        if (start + 40 > reservationList.Count)
+                        {
+                            if (start == reservationList.Count)
+                            {
+                                executeRun = false;
+                            }
+                            stop = reservationList.Count;
+                        }
+                        else
+                        {
+                            stop = start + 20;
+                        }
+                    }
+                    // runs code with 20 increment, stores value
+                    else if (state == ">")
+                    {
+                        if ((start + 20) >= reservationList.Count)
+                        {
+                            executeRun = false;
+                        }
+                        else
+                        {
+                            start += 20;
+                            stop = start + 20;
+                        }
+                    }
+
+                    // Runs code with 20 decrement, stores value
+                    else if (state == "<")
+                    {
+                        if ((start - 20) < reservationList.Count)
+                        {
+                            executeRun = false;
+                        }
+                        else
+                        {
+                            start -= 20;
+                            stop = start + 20;
+                        }
+                    }
+
+                    // Runs the code
+                    if (executeRun == true)
+                    {
+                        // Header
+                        Console.Clear();
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de reservering te gaan\nOm te stoppen toets X.\n");
+
+                        // Print the users
+                        PrintItem(start, stop, reservationList);
+
+                        // current page indicator
+                        int pageCounterCurrent = (start / 20) + 1;
+                        int pageCounterAll = (accountDataList.Count / 20) + 1;
+                        Console.WriteLine($"\nPage {pageCounterCurrent}/{pageCounterAll}");
+                    }
+
+                    // Process user input
+                    string userInput = Console.ReadLine();
+                    try
+                    {
+                        int convert = Convert.ToInt32(userInput);
+                        convert -= 1;
+
+                        bool inspectReservation = true;
+                        while (inspectReservation == true)
+                        {
+                            DisplayReservatie(TicketsList[ReservationNumberIndexer(reservationList[convert])]);
+                            Console.WriteLine("\nals u de reservatie wilt verwijderen, typ VERWIJDER. Om terug te gaan, toets 'X'");
+
+                            string innerUserInput = Console.ReadLine();
+                            if (innerUserInput == "x" || innerUserInput == "X")
+                            {
+                                inspectReservation = false;
+                            }
+                            else if (innerUserInput == "VERWIJDER")
+                            {
+                                DeleteTicket(reservationList[convert]);
+                                inspectReservation = false;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        if (userInput == ">" || userInput == "<")
+                        {
+                            state = userInput;
+                        }
+                        else if (userInput == "x" || userInput == "X")
+                        {
+                            loop = false;
+                            break;
+                        }
+                        else
+                        {
+                            state = " ";
+                        }
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("\nEr zijn geen reserveringen gevonden");
+                    Console.WriteLine("\nU kunt gemakkelijk een reservering maken door een film in onze catalogus te selecteren en op reserveren te drukken!");
+                    Console.WriteLine("\n\nDruk een toets in om door te gaan");
+
+                    string userInput = Console.ReadLine();
+                    loop = false;
+                }
+            }
+        }
+    
+
+        // Method that only prints the ticket, has the specific ticket as parameter
         public void DisplayReservatie(Tickets ticket)
         {
             Console.Clear();
@@ -177,7 +344,8 @@ namespace Reservatie_Class
             Console.WriteLine("Reservatie nummer: " + ticket.reservationNumber);
         }
 
-        public bool ReservationConfirm()
+        // Method that prompts the user if the reservation is correct, returns boolean
+        private bool ReservationConfirm()
         {
             Console.WriteLine("\nKlik op ENTER op de reservering te plaatsen. Om te annuleren toets 'X'");
             string userInput = Console.ReadLine();
@@ -191,6 +359,7 @@ namespace Reservatie_Class
             }
         }
 
+        // Method that Creates a ticket, requires the title and user as parameter !! CREATES AN WHILE LOOP WITH DISPLAY !!
         public void CreateTicket(string title, int user) //Get the film title, index that to get film data. Get user int to index account and get the data
         {
             // Data preparation for creation ticket
@@ -215,7 +384,7 @@ namespace Reservatie_Class
 
 
             //Makes unique reservation number
-            int reservationNumber = ReservationNumber();
+            int reservationNumber = ReservationNumberMaker();
 
             // Convert all data for ticket creation
 
@@ -245,6 +414,8 @@ namespace Reservatie_Class
                 System.IO.File.WriteAllText(this.pathTickets, ToJSON());
             }
         }
+        
+        // Method that deletes ticket, requires the reservationNumber of the specific ticket
         public void DeleteTicket(int reservationNumber)
         {
             for (int i = 0; i < TicketsList.Count; i++)

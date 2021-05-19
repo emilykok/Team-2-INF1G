@@ -11,44 +11,5 @@
     "row": "A",
     "seat": "4",
     "reservationNumber": 0
-  },
-  {
-    "filmName": "Avengers: Endgame",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 182,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 1
-  },
-  {
-    "filmName": "Avengers: Endgame",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 182,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 1
-  },
-  {
-    "filmName": "Avengers: Endgame",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 182,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 1
   }
 ]

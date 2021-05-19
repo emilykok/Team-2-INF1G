@@ -56,7 +56,7 @@ namespace Team_2
                     string username = acc.ReturnUsername(user);
                     Console.WriteLine("Administrator: " + username + "\n");
 
-                    Console.WriteLine("1. Account overzicht.\n2. Admin menu.\n3. Uitloggen.\n4. Bekijk catalogus.\n5. Reserveren.\n6. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
+                    Console.WriteLine("1. Account overzicht.\n2. Admin menu.\n3. Uitloggen.\n4. Bekijk catalogus.\n5. Mijn reserveringen.\n6. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -80,7 +80,7 @@ namespace Team_2
                     }
                     else if (choose == "5")
                     {
-                        reservering.CreateTicket("Avengers: Endgame", user);
+                        reservering.reservationList(user);
                     }
                     else if (choose == "6")
                     {
@@ -99,7 +99,7 @@ namespace Team_2
                     string username = acc.ReturnUsername(user);
                     Console.WriteLine("Welkom " + username + "\n");
 
-                    Console.WriteLine("1. Account overzicht.\n2. Uitloggen.\n3. Bekijk catalogus.\n4. Reserveren.\n5. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
+                    Console.WriteLine("1. Account overzicht.\n2. Uitloggen.\n3. Bekijk catalogus.\n4. Mijn reserveringen.\n5. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -119,7 +119,7 @@ namespace Team_2
                     }
                     else if (choose == "4")
                     {
-                        reservering.CreateTicket("Avengers: Endgame", user);
+                        reservering.reservationList(user);
                     }
                     else if (choose == "5")
                     {
