@@ -13,6 +13,7 @@ using Food_Drink_Run;
 using MovieDetail_Class;
 using Hoofdmenu;
 using Reservatie_Class;
+using SelectSpot_Class;
 
 namespace Team_2
 {
@@ -43,7 +44,9 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        MovieDetail.Navigation();
+                        //MovieDetail.Navigation();
+                        Theater.Run("Deadpool");
+
                     }
                     else if (choose == "4")
                     {
