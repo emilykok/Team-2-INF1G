@@ -39,6 +39,65 @@ namespace SelectSpot_Class
             return JsonConvert.SerializeObject(this.theaterDataList, Formatting.Indented);
         }
 
+        public void DeleteSeat(int index)
+        {
+            theaterDataList.RemoveAt(index);
+
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
+        public void ReserveAvailability(int seatIndex, string film)
+        {
+            string Posit    = theaterDataList[seatIndex].position;
+            string kind     = theaterDataList[seatIndex].soort;
+            string[] ava    = theaterDataList[seatIndex].availability;
+
+            string[] eve = new string[ava.Length+1];
+            for(int i = 0; i < ava.Length; i++)
+            {
+                eve[i] = ava[i];
+            }
+            eve[eve.Length - 1] = film;
+
+            TheaterData TD = new TheaterData();
+            TD.position     = Posit;
+            TD.soort        = kind;
+            TD.availability = eve;
+
+            DeleteSeat(seatIndex);
+
+            theaterDataList.Insert(seatIndex, TD);
+
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
+        public void RemoveAvailability(int seatIndex, string film)
+        {
+            string Posit = theaterDataList[seatIndex].position;
+            string kind = theaterDataList[seatIndex].soort;
+            string[] ava = theaterDataList[seatIndex].availability;
+
+            string[] eve = new string[ava.Length - 1];
+            for (int i = 0, count = 0; i < ava.Length; i++)
+            {
+                if(film != ava[i])
+                {
+                    eve[count++] = ava[i];
+                }
+            }
+
+            TheaterData TD = new TheaterData();
+            TD.position = Posit;
+            TD.soort = kind;
+            TD.availability = eve;
+
+            DeleteSeat(seatIndex);
+
+            theaterDataList.Insert(seatIndex, TD);
+
+            System.IO.File.WriteAllText(this.path, ToJSON());
+        }
+
         public static string IsSeatAvailable(int index, string film)
         {
             Theater choice = new Theater();
@@ -55,10 +114,35 @@ namespace SelectSpot_Class
                 return " ";
             }
         }
+
+        public static int ChooseSeat(string film)
+        {
+            Theater choice = new Theater();
+            Console.WriteLine("Welke stoel wilt u reserveren?(zorg dat de letter een Hoofdletter is, Bijvoorbeeld: A1.)");
+            string seat = Console.ReadLine();
+            for(int i = 0; i < choice.theaterDataList.Count; i++)
+            {
+                if(seat == choice.theaterDataList[i].position)
+                {
+                    if(IsSeatAvailable(i, film) == "X")
+                    {
+                        Console.WriteLine($"Stoel nummer {seat} is al gereserveerd");
+                        return -1;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Stoel nummer {seat} is geselecteerd");
+                        return i;
+                    }
+                }
+            }
+            Console.WriteLine("Dit is geen geldige invoerwaarde");
+            return -1;
+        }
+
         public static void Zaal150(string film)
         {
             int index = 0;
-            string A1 = " ";
 
             Console.WriteLine("     1   2   3   4   5   6   7   8   9   10  11  12\n");
             string zaal150RijA = $"A           [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
@@ -76,7 +160,7 @@ namespace SelectSpot_Class
             string zaal150RijM = $"M           [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
             string zaal150RijN = $"N           [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
 
-            Console.WriteLine($"{zaal150RijA}\n{zaal150RijB}\n{zaal150RijC}\n{zaal150RijD}\n{zaal150RijE}\n{zaal150RijF}\n{zaal150RijG}\n{zaal150RijH}\n{zaal150RijI}\n{zaal150RijJ}\n{zaal150RijK}\n{zaal150RijL}\n{zaal150RijM}\n{zaal150RijN}");
+            Console.WriteLine($"{zaal150RijA}\n{zaal150RijB}\n{zaal150RijC}\n{zaal150RijD}\n{zaal150RijE}\n{zaal150RijF}\n{zaal150RijG}\n{zaal150RijH}\n{zaal150RijI}\n{zaal150RijJ}\n{zaal150RijK}\n{zaal150RijL}\n{zaal150RijM}\n{zaal150RijN}\n");
         }
 
         public static void Zaal300()
@@ -141,8 +225,19 @@ namespace SelectSpot_Class
         {
             Theater choice = new Theater();
             Console.Clear();
-            Console.WriteLine($"Chosen: {choice.theaterDataList[0].position}");
+            Console.WriteLine("Kies hier welke stoel u wilt reserveren\n--------------------------------------------------------\n");
             Zaal150(film);
+            int seat = (ChooseSeat(film));
+            if(seat != -1)
+            {
+                choice.ReserveAvailability(seat, film);
+                Console.Clear();
+                Zaal150(film);
+                Console.ReadLine();
+                choice.RemoveAvailability(seat, film);
+                Console.Clear();
+                Zaal150(film);
+            }
             //Zaal300();
             //Zaal500();
             Console.ReadLine();

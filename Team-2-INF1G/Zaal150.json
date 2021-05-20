@@ -2,12 +2,16 @@
   {
     "position": "A3",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "A4",
     "soort": "b",
-    "availability": []
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "A5",
@@ -22,7 +26,9 @@
   {
     "position": "A7",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "A8",
@@ -42,7 +48,9 @@
   {
     "position": "B2",
     "soort": "b",
-    "availability": []
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "B3",
@@ -92,7 +100,9 @@
   {
     "position": "C2",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "C3",
@@ -147,12 +157,16 @@
   {
     "position": "D2",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "D3",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "D4",
@@ -237,7 +251,9 @@
   {
     "position": "E8",
     "soort": "o",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "E9",
@@ -422,7 +438,9 @@
   {
     "position": "H9",
     "soort": "o",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "H10",
@@ -547,7 +565,9 @@
   {
     "position": "J10",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "J11",
@@ -597,7 +617,9 @@
   {
     "position": "K8",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "K9",
@@ -702,7 +724,9 @@
   {
     "position": "M9",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   },
   {
     "position": "M10",
@@ -747,6 +771,8 @@
   {
     "position": "N10",
     "soort": "b",
-    "availability": [ "Deadpool" ]
+    "availability": [
+      "Deadpool"
+    ]
   }
 ]
