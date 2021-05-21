@@ -45,7 +45,7 @@ namespace Team_2
                     else if (choose == "3")
                     {
                         //MovieDetail.Navigation();
-                        Theater.Run("Deadpool");
+                        Theater.Run("Deadpool", 0);
 
                     }
                     else if (choose == "4")

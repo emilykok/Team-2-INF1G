@@ -14,7 +14,7 @@ namespace SelectSpot_Class
         {
             public string position;
             public string soort;
-            public string[] availability;
+            public string[][] availability;
         }
 
         public List<TheaterData> theaterDataList = new List<TheaterData>();
@@ -41,28 +41,33 @@ namespace SelectSpot_Class
 
         public void DeleteSeat(int index)
         {
+            // delete a seat from the json file //
             theaterDataList.RemoveAt(index);
 
             System.IO.File.WriteAllText(this.path, ToJSON());
         }
 
-        public void ReserveAvailability(int seatIndex, string film)
+        public void ReserveAvailability(int seatIndex, string film, int day)
         {
+            // reserve a seat for a movie //
             string Posit    = theaterDataList[seatIndex].position;
             string kind     = theaterDataList[seatIndex].soort;
-            string[] ava    = theaterDataList[seatIndex].availability;
+            string[][] ava    = theaterDataList[seatIndex].availability;
 
-            string[] eve = new string[ava.Length+1];
-            for(int i = 0; i < ava.Length; i++)
+            // add the movietitle to the list of reserved movies for that seat //
+            string[] eve = new string[ava[day].Length+1];
+            for(int i = 0; i < ava[day].Length; i++)
             {
-                eve[i] = ava[i];
+                eve[i] = ava[day][i];
             }
             eve[eve.Length - 1] = film;
+            ava[day] = eve;
 
+            // renew the json item with the added change //
             TheaterData TD = new TheaterData();
             TD.position     = Posit;
             TD.soort        = kind;
-            TD.availability = eve;
+            TD.availability = ava;
 
             DeleteSeat(seatIndex);
 
@@ -71,25 +76,29 @@ namespace SelectSpot_Class
             System.IO.File.WriteAllText(this.path, ToJSON());
         }
 
-        public void RemoveAvailability(int seatIndex, string film)
+        public void RemoveAvailability(int seatIndex, string film, int day)
         {
+            // remove a seat reservation //
             string Posit = theaterDataList[seatIndex].position;
             string kind = theaterDataList[seatIndex].soort;
-            string[] ava = theaterDataList[seatIndex].availability;
+            string[][] ava = theaterDataList[seatIndex].availability;
 
+            // locate the movietitle for which it was reserved and remove it //
             string[] eve = new string[ava.Length - 1];
-            for (int i = 0, count = 0; i < ava.Length; i++)
+            for (int i = 0, count = 0; i < ava[day].Length; i++)
             {
-                if(film != ava[i])
+                if(film != ava[day][i])
                 {
-                    eve[count++] = ava[i];
+                    eve[count++] = ava[day][i];
                 }
             }
+            ava[day] = eve;
 
+            // renew the json item with the added change //
             TheaterData TD = new TheaterData();
             TD.position = Posit;
             TD.soort = kind;
-            TD.availability = eve;
+            TD.availability = ava;
 
             DeleteSeat(seatIndex);
 
@@ -98,15 +107,17 @@ namespace SelectSpot_Class
             System.IO.File.WriteAllText(this.path, ToJSON());
         }
 
-        public static string IsSeatAvailable(int index, string film)
+        public static string IsSeatAvailable(int index, string film, int day)
         {
+            // check if the seat is available for that movie //
             Theater choice = new Theater();
-            if (choice.theaterDataList[index].availability.Length <= 0) return " ";
+            if (choice.theaterDataList[index].availability[day].Length <= 0) return " ";
             else
             {
-                for(int i = 0; i < choice.theaterDataList[index].availability.Length; i++)
+                for(int i = 0; i < choice.theaterDataList[index].availability[day].Length; i++)
                 {
-                    if(choice.theaterDataList[index].availability[i] == film)
+                    // if the movie is already in the array it's not available //
+                    if(choice.theaterDataList[index].availability[day][i] == film)
                     {
                         return "X";
                     }
@@ -115,20 +126,24 @@ namespace SelectSpot_Class
             }
         }
 
-        public static int ChooseSeat(string film)
+        public static int ChooseSeat(string film, int day)
         {
+            // function to ask the user which seat he would like to reserve //
             Theater choice = new Theater();
-            Console.WriteLine("Welke stoel wilt u reserveren?(zorg dat de letter een Hoofdletter is, Bijvoorbeeld: A1.)");
+            Console.WriteLine("Welke stoel wilt u reserveren?(zorg dat de letter een Hoofdletter is, Bijvoorbeeld: A3.)");
             string seat = Console.ReadLine();
             for(int i = 0; i < choice.theaterDataList.Count; i++)
             {
+                // locate the right seat //
                 if(seat == choice.theaterDataList[i].position)
                 {
-                    if(IsSeatAvailable(i, film) == "X")
+                    // seat isn't available //
+                    if(IsSeatAvailable(i, film, day) == "X")
                     {
                         Console.WriteLine($"Stoel nummer {seat} is al gereserveerd");
                         return -1;
                     }
+                    // seat is available //
                     else
                     {
                         Console.WriteLine($"Stoel nummer {seat} is geselecteerd");
@@ -136,29 +151,31 @@ namespace SelectSpot_Class
                     }
                 }
             }
+            // invalid input //
             Console.WriteLine("Dit is geen geldige invoerwaarde");
             return -1;
         }
 
-        public static void Zaal150(string film)
+        public static void Zaal150(string film, int day)
         {
+            // display all the seats //
             int index = 0;
-
+            
             Console.WriteLine("     1   2   3   4   5   6   7   8   9   10  11  12\n");
-            string zaal150RijA = $"A           [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijB = $"B       [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijC = $"C       [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijD = $"D   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijE = $"E   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijF = $"F   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijG = $"G   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijH = $"H   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijI = $"I   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijJ = $"J   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijK = $"K   [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijL = $"L       [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijM = $"M           [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
-            string zaal150RijN = $"N           [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}] [{IsSeatAvailable(index++, film)}]";
+            string zaal150RijA = $"A           [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijB = $"B       [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijC = $"C       [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijD = $"D   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijE = $"E   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijF = $"F   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijG = $"G   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijH = $"H   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijI = $"I   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijJ = $"J   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijK = $"K   [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijL = $"L       [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijM = $"M           [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
+            string zaal150RijN = $"N           [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}] [{IsSeatAvailable(index++, film, day)}]";
 
             Console.WriteLine($"{zaal150RijA}\n{zaal150RijB}\n{zaal150RijC}\n{zaal150RijD}\n{zaal150RijE}\n{zaal150RijF}\n{zaal150RijG}\n{zaal150RijH}\n{zaal150RijI}\n{zaal150RijJ}\n{zaal150RijK}\n{zaal150RijL}\n{zaal150RijM}\n{zaal150RijN}\n");
         }
@@ -221,26 +238,58 @@ namespace SelectSpot_Class
             Console.WriteLine($"{zaal150RijA}\n{zaal150RijB}\n{zaal150RijC}\n{zaal150RijD}\n{zaal150RijE}\n{zaal150RijF}\n{zaal150RijG}\n{zaal150RijH}\n{zaal150RijI}\n{zaal150RijJ}\n{zaal150RijK}\n{zaal150RijL}\n{zaal150RijM}\n{zaal150RijN}\n{zaal150RijO}\n{zaal150RijP}\n{zaal150RijQ}\n{zaal150RijR}\n{zaal150RijS}\n{zaal150RijT}");
 
         }
-        public static void Run(string film)
+
+        public static void Run(string film, int day)
         {
+            // function to run the theater class //
             Theater choice = new Theater();
-            Console.Clear();
-            Console.WriteLine("Kies hier welke stoel u wilt reserveren\n--------------------------------------------------------\n");
-            Zaal150(film);
-            int seat = (ChooseSeat(film));
-            if(seat != -1)
+            bool retry = true;
+            string prompt = "Kies hier welke stoel u wilt reserveren\n--------------------------------------------------------\n";
+            while (retry)
             {
-                choice.ReserveAvailability(seat, film);
+                // show the seats and ask which seat the user wants //
                 Console.Clear();
-                Zaal150(film);
-                Console.ReadLine();
-                choice.RemoveAvailability(seat, film);
-                Console.Clear();
-                Zaal150(film);
+                Console.WriteLine(prompt);
+                Zaal150(film, day);
+                int seat = (ChooseSeat(film, day));
+                if(seat != -1)
+                {
+                    // the seat will be reserved and the user is asked if he is sure //
+                    choice.ReserveAvailability(seat, film, day);
+                    Console.WriteLine("weet u het zeker 'ja'. vul anders 'nee' in. vul 'x' in om de reservering te annuleren.");
+                    string answer = Console.ReadLine();
+                    // the user is sure //
+                    if(answer == "ja")
+                    {
+                        retry = false;
+                    }
+                    // the user wants to rechoose //
+                    else if(answer == "nee")
+                    {
+                        choice.RemoveAvailability(seat, film, day);
+                    }
+                    // the user wants to cancel the seat selection //
+                    else if(answer == "x" || answer == "X")
+                    {
+                        choice.RemoveAvailability(seat, film, day);
+                        retry = false;
+                    }
+                }
+                // invalid input or reserved seat // 
+                else
+                {
+                    Console.WriteLine("Wilt u het opniew proberen? 'ja/nee'.");
+                    string answer = Console.ReadLine();
+                    // 'nee' cancels the selection, anything else will repeat the loop //
+                    if(answer == "nee")
+                    {
+                        retry = false;
+                    }
+                }
+                //Zaal300();
+                //Zaal500();
             }
-            //Zaal300();
-            //Zaal500();
-            Console.ReadLine();
+                
         }
     }
 }
