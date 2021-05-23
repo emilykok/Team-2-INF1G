@@ -1,6 +1,5 @@
 using System;
 using Account_Class;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BiosTest
@@ -37,6 +36,7 @@ namespace BiosTest
             Assert.IsFalse(result);
         }
 
+
         // UsernameCheck //
         [TestMethod]
         public void UsernameCheck_NewName_ReturnsFalse()
@@ -65,5 +65,99 @@ namespace BiosTest
             // Assert
             Assert.IsTrue(result);
         }
+
+
+        // PrintItem //
+        [TestMethod]
+        public void PrintItem_InRange_PrintsItems()
+        {
+            // Arrange
+            Account acc1 = new Account();
+
+            // Act
+            acc1.PrintItem(2,5);
+
+            // Assert
+            Assert.AreEqual("a", "a"); // need a way to read what is printed on the console...
+        }
+
+        // AvailableAllergie //
+        [TestMethod]
+        public void AvailableAllergies_Empty_ReturnAllAllergies() {
+            // Arrange
+            Account acc1 = new Account();
+            string[] allAll = new string[] { "lactose", "soja", "pinda", "amandel", "hazelnoot", "noten", "gluten", "tarwe" };
+            string[] allergies = new string[0];
+
+            // Act
+            string[] res = acc1.AvailableAllergie(allergies);
+
+            // Assert
+            Assert.AreEqual(res, allAll);
+        }
+
+        [TestMethod]
+        public void AvailableAllergies_Input_ReturnAllAllergies()
+        {
+            // Arrange
+            Account acc1 = new Account();
+            string[] expected = new string[] { "lactose", "pinda", "amandel", "noten", "gluten", "tarwe" };
+            string[] allergies = new string[] {"soja", "hazelnoot"};
+
+            // Act
+            string[] res = acc1.AvailableAllergie(allergies);
+
+            // Assert
+            Assert.AreEqual(res, expected);
+        }
+
+        // Login //
+        [TestMethod]
+        public void Login_CorrectInput_Return6()
+        {
+            // Arrange
+            Account acc1 = new Account();
+
+            // Act
+            int res = acc1.Login("Admin1", "Admin1");
+
+            // Assert
+            Assert.AreEqual(res, 6);
+        }
+
+        [TestMethod]
+        public void Login_WrongtInput_ReturnMin1()
+        {
+            // Arrange
+            Account acc1 = new Account();
+
+            // Act
+            int res = acc1.Login("Admin1", "wrong");
+
+            // Assert
+            Assert.AreEqual(res, -1);
+        }
+
+        // TextLogin //
+
+
+        // CreateUser //
+
+
+        // TextCreateUser //
+
+
+        // DeleteUser //
+
+
+        // AdminAccountViewer //
+
+
+        // UpdateUser //
+
+
+        // AccountView //
+
+
     }
 }
