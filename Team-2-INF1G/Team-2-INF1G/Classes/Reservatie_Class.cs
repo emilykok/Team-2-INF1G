@@ -97,6 +97,8 @@ namespace Reservatie_Class
             return JsonConvert.SerializeObject(this.TicketsList, Formatting.Indented);
         }
 
+        //// Miscellaneous methods
+        // Method that print the items (here from the reservation list)
         public void PrintItem(int start, int stop, List<int> reservationList)
         {
             for (int i = 0; i < TicketsList.Count; i++)
@@ -112,6 +114,7 @@ namespace Reservatie_Class
             }
         }
 
+        // Method that returns the index of where the reservation number is in the JSON file
         private int ReservationNumberIndexer(int reservationNumber)
         {
             for (int i = 0; i < TicketsList.Count; i++)
@@ -124,6 +127,7 @@ namespace Reservatie_Class
             return -1;
         }
         
+        // Method that creates a number for the reservation
         public int ReservationNumberMaker() //Makes reservation number
         {
             int reservationNumber = 0;
@@ -139,32 +143,81 @@ namespace Reservatie_Class
             return reservationNumber;
         }
 
-        // Method that asks user the amount of people reserving, 
-        public int PersonAmount()
+        // Method that prompts the user if the reservation is correct, returns boolean
+        private bool ReservationConfirm()
         {
-            Console.Clear();
-            Console.WriteLine("Voor hoeveel personen wilt u reserveren?");
-            var PersonCount = Console.ReadLine();
-            if  (PersonCount == "x" || PersonCount == "X")
+            Console.WriteLine("\nKlik op ENTER op de reservering te plaatsen. Om te annuleren toets 'X'");
+            string userInput = Console.ReadLine();
+            if (userInput == "x" || userInput == "X")
             {
-                return -1;
+                return false;
             }
             else
             {
-                try
-                {
-                    int count = Convert.ToInt32(PersonCount);
-                    return count;
-                }
-                catch
-                {
-                    Console.WriteLine("dit is geen geldige waarde");
-                    return -1;
-                }
+                return true;
             }
         }
 
 
+        //// USER INPUTS FOR CREATION TICKET
+        // Method that asks user the amount of people reserving, returns string of the amount (easier to compute)
+        public string PersonAmount()
+        {
+            bool loop = true;
+            bool falseInput = false;
+
+            while(loop == true)
+            {
+                Console.Clear();
+                Console.WriteLine("----Reserveren----");
+                if (falseInput == true)
+                {
+                    Console.WriteLine("Ongeldige waarde meegevem, probeer het opnieuw");
+                }
+                Console.WriteLine("\nVoor hoeveel personen wilt u reserveren?");
+                var PersonCount = Console.ReadLine();
+                Console.WriteLine($"\nGegeven Waarde: {PersonCount} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+
+                if (PersonCount == "x" || PersonCount == "X")
+                {
+                    loop = false;
+                    return ""; // Returns nothing
+                }
+                else if (PersonCount == "r" || PersonCount == "R")
+                {
+                    loop = true;
+                }
+                else if (PersonCount.Length == 0)
+                {
+                    loop = true;
+                    falseInput = true;
+                }
+                else
+                {
+                    try
+                    {
+                        int check = Convert.ToInt32(PersonCount);
+                        return PersonCount;
+                    }
+                    catch
+                    {
+                        falseInput = true;
+                        loop = true;
+                    }
+                }
+            }
+            return ""; // Returns nothing <-- check for the compiler so that it doesnt nag
+        }
+
+        // Method that asks user which hall and date it wants from the schedule, returns string array
+        public string[] HallNDate()
+        {
+            return null; // User must select an hall and date from the schedule...
+        }
+
+
+        //// RESERVATION LIST AND DISPLAY
+        // Method that prints the list of reservation of specific user
         public void reservationList(int user)
         {
             string state = " ";
@@ -323,7 +376,6 @@ namespace Reservatie_Class
             }
         }
     
-
         // Method that only prints the ticket, has the specific ticket as parameter
         public void DisplayReservatie(Tickets ticket)
         {
@@ -344,22 +396,9 @@ namespace Reservatie_Class
             Console.WriteLine("Reservatie nummer: " + ticket.reservationNumber);
         }
 
-        // Method that prompts the user if the reservation is correct, returns boolean
-        private bool ReservationConfirm()
-        {
-            Console.WriteLine("\nKlik op ENTER op de reservering te plaatsen. Om te annuleren toets 'X'");
-            string userInput = Console.ReadLine();
-            if (userInput == "x" || userInput == "X")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
 
-        // Method that Creates a ticket, requires the title and user as parameter !! CREATES AN WHILE LOOP WITH DISPLAY !!
+        //// CREATE AND DELETE TICKET
+        // Method that Creates a ticket, requires the title and user as parameter !! CREATES AN WHILE LOOPS WITH DISPLAY !!
         public void CreateTicket(string title, int user) //Get the film title, index that to get film data. Get user int to index account and get the data
         {
             // Data preparation for creation ticket
@@ -374,6 +413,13 @@ namespace Reservatie_Class
 
             //Get zaal / datum / tijd for the ticket
             // Insert function here, MUST return string array [amount, hall, weekday, time]
+
+            string ticketAmount = PersonAmount();
+            if (ticketAmount == "")
+            {
+                // NEEDS TO STOP HERE?!!!!
+            }
+
 
             string[] funcHallArray = { "3", "Zaal 1", "maandag", "14:00" };
 
