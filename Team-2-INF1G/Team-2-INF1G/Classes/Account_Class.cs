@@ -8,6 +8,8 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Hashing_Class;
 using System.Linq;
 
+using Reservatie_Class;
+
 namespace Account_Class
 {
     public class Account
@@ -128,7 +130,6 @@ namespace Account_Class
         {
             return accountDataList[index].Name;
         }
-
 
 
 
@@ -320,6 +321,17 @@ namespace Account_Class
         // Method that deletes entry at certain index
         public void DeleteUser(int index)
         {
+            // Makes a list of all the reservations
+            Reservering deleteReservations = new Reservering();
+            List<int> deleteList = deleteReservations.ReservationList(index);
+
+            // Goes through the list, deleting every entry
+            foreach (int itemIndex in deleteList)
+            {
+                deleteReservations.DeleteTicket(itemIndex);
+            }
+            
+            // Removes account in the JSON file
             accountDataList.RemoveAt(index);
 
             System.IO.File.WriteAllText(this.path, ToJSON());

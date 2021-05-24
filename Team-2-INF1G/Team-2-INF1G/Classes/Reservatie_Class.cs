@@ -158,6 +158,21 @@ namespace Reservatie_Class
             }
         }
 
+        //Method that creates a list of all the reservation for given user
+        public List<int> ReservationList(int user)
+        {
+            List<int> reservationList = new List<int>();
+
+            for (int i = 0; i < TicketsList.Count; i++)
+            {
+                if (TicketsList[i].namePerson == accountDataList[user].Name)
+                {
+                    reservationList.Add(TicketsList[i].reservationNumber);
+                }
+            }
+            return reservationList;
+        }
+
 
         //// USER INPUTS FOR CREATION TICKET
         // Method that asks user the amount of people reserving, returns string of the amount (easier to compute)
@@ -218,7 +233,7 @@ namespace Reservatie_Class
 
         //// RESERVATION LIST AND DISPLAY
         // Method that prints the list of reservation of specific user
-        public void reservationList(int user)
+        public void ReservationUserPrint(int user)
         {
             string state = " ";
             int start = 0;
@@ -230,15 +245,7 @@ namespace Reservatie_Class
                 bool executeRun = true;
 
                 // creates a list of all the users reservations, MUST be in the loop, so that it refreshes if a reservation is deleted
-                List<int> reservationList = new List<int>();
-
-                for (int i = 0; i < TicketsList.Count; i++)
-                {
-                    if (TicketsList[i].namePerson == accountDataList[user].Name)
-                    {
-                        reservationList.Add(TicketsList[i].reservationNumber);
-                    }
-                }
+                List<int> reservationList = ReservationList(user);
 
                 if (reservationList.Count != 0)
                 {
