@@ -52,5 +52,25 @@
     "bankingDetails": null,
     "Allergies": [],
     "Permission": true
+  },
+  {
+    "Name": "Bjorn1",
+    "Password": "9a9311f9129f575073c2b1a46f554c2097b91aae9c51a1cfa1cce354ce32fe3c",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "jan1",
+    "Password": "dc8b595722d25d4486246747db8cbb59b6fe3c1d76e8576ec63b985b4c936169",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
   }
 ]

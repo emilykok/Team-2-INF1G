@@ -91,25 +91,33 @@ namespace Reservatie_Class
             this.accountDataList = JsonConvert.DeserializeObject<List<AccountData>>(jsonPathAccounts);
         }
 
+        //// Json methods
         // Method that is used to write data to the JSON file.
         public string ToJSON()
         {
             return JsonConvert.SerializeObject(this.TicketsList, Formatting.Indented);
         }
 
+
         //// Miscellaneous methods
         // Method that print the items (here from the reservation list)
         public void PrintItem(int start, int stop, List<int> reservationList)
         {
-            for (int i = 0; i < TicketsList.Count; i++)
+            for (int i = start; i < stop; i++)
             {
-                try
+                for (int j = 0; j < TicketsList.Count; j++)
                 {
-                    Console.WriteLine($"[{i + 1}] {TicketsList[i].filmName} | {TicketsList[i].startTime} {TicketsList[i].weekday}");
-                }
-                catch
-                {
-                    break;
+                    if (TicketsList[j].reservationNumber == reservationList[i])
+                    {
+                        try
+                        {
+                            Console.WriteLine($"[{i + 1}] {TicketsList[j].filmName} | {TicketsList[j].startTime} {TicketsList[j].weekday}");
+                        }
+                        catch
+                        {
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -187,7 +195,7 @@ namespace Reservatie_Class
                 Console.WriteLine("----Reserveren----");
                 if (falseInput == true)
                 {
-                    Console.WriteLine("Ongeldige waarde meegevem, probeer het opnieuw");
+                    Console.WriteLine("Ongeldige waarde meegeven, probeer het opnieuw");
                 }
                 Console.WriteLine("\nVoor hoeveel personen wilt u reserveren?");
                 var PersonCount = Console.ReadLine();

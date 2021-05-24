@@ -10,12 +10,16 @@ namespace Hoofdmenu
         public int SelectedIndex;
         public string[] Options;
         public string Prompt;
+        public string finalText;
+        public int whiteLine;
 
-        public Menu(string prompt, string[] options)
+        public Menu(string prompt, string[] options, string final = "", int line = 0)
         {
             Prompt = prompt;
             Options = options;
             SelectedIndex = 0;
+            finalText = final;
+            whiteLine = line;
         }
 
         private void DisplayOptions()
@@ -23,6 +27,10 @@ namespace Hoofdmenu
             WriteLine(Prompt);
             for (int i = 0; i < Options.Length; i++)
             {
+                if (whiteLine != 0 && whiteLine == i)
+                {
+                    WriteLine("\n");
+                }
                 string currentOption = Options[i];
                 string prefix;
 
@@ -39,13 +47,13 @@ namespace Hoofdmenu
                     ForegroundColor = ConsoleColor.White;
                     BackgroundColor = ConsoleColor.Black;
 
-                    
+
                 }
 
                 WriteLine($"-> {currentOption} ");
-
             }
             ResetColor();
+            WriteLine(finalText);
         }
 
         public int Run()
@@ -76,7 +84,7 @@ namespace Hoofdmenu
                         SelectedIndex = 0;
                     }
                 }
-                else if(keyPressed == ConsoleKey.Enter)
+                else if (keyPressed == ConsoleKey.Enter)
                 {
                     retry = false;
                 }
@@ -87,3 +95,4 @@ namespace Hoofdmenu
         }
     }
 }
+

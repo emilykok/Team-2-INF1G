@@ -16,7 +16,7 @@ namespace Team_2
         {
             
             Account acc = new Account();
-            Reservering reservering = new Reservering();
+            
             bool retry = true;
             int user = -1;
             while (retry == true)
@@ -76,11 +76,12 @@ namespace Team_2
                     }
                     else if (choose == "4")
                     {
-                        MovieDetail.Navigation();
+                        MovieDetail.Navigation(user);
                     }
                     else if (choose == "5")
                     {
-                        reservering.reservationList(user);
+                        Reservering reservering = new Reservering();
+                        reservering.ReservationUserPrint(user);
                     }
                     else if (choose == "6")
                     {
@@ -115,11 +116,12 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        MovieDetail.Navigation();
+                        MovieDetail.Navigation(user);
                     }
                     else if (choose == "4")
                     {
-                        reservering.reservationList(user);
+                        Reservering reservering = new Reservering();
+                        reservering.ReservationUserPrint(user);
                     }
                     else if (choose == "5")
                     {
