@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj": {}
+    "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj": {
+    "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj",
+        "projectUniqueName": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj",
         "projectName": "BiosTest",
-        "projectPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj",
-        "packagesPath": "C:\\Users\\melis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\obj\\",
+        "projectPath": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\BiosTest.csproj",
+        "packagesPath": "C:\\Users\\bjorn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\BiosTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\melis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bjorn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
-                "projectPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj"
+              "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
+                "projectPath": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj"
               }
             }
           }
@@ -80,24 +80,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
+    "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+        "projectUniqueName": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
         "projectName": "Team-2-INF1G",
-        "projectPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
-        "packagesPath": "C:\\Users\\melis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
+        "projectPath": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+        "packagesPath": "C:\\Users\\bjorn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\melis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bjorn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -144,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

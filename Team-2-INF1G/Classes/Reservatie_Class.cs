@@ -13,7 +13,7 @@ namespace Reservatie_Class
         {
             public string Name;
             public string Password;
-            
+
             public int Age;
             public string Gender;
             public string Email;
@@ -24,6 +24,16 @@ namespace Reservatie_Class
 
         public List<AccountData> accountDataList = new List<AccountData>();
 
+        // Schema JSON struct
+        public struct MovieSchema
+        {
+            public string title;
+            public string hall;
+            public string day;
+            public string time;
+        }
+
+        public List<MovieSchema> movieSchemaList = new List<MovieSchema>();
 
         // Movie JSON struct
         public struct MovieData
@@ -64,6 +74,11 @@ namespace Reservatie_Class
         public string jsonPathCatalog;
 
         [JsonIgnore]
+        public string pathSchema;
+        [JsonIgnore]
+        public string jsonPathSchema;
+
+        [JsonIgnore]
         public string pathTickets;
         [JsonIgnore]
         public string jsonPathTickets;
@@ -80,6 +95,9 @@ namespace Reservatie_Class
             this.pathCatalog = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Catalog.json"));
             this.jsonPathCatalog = File.ReadAllText(pathCatalog);
 
+            this.pathSchema = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Movie_Schema.json"));
+            this.jsonPathSchema = File.ReadAllText(pathSchema);
+
             this.pathTickets = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Tickets.json"));
             this.jsonPathTickets = File.ReadAllText(pathTickets);
 
@@ -87,6 +105,7 @@ namespace Reservatie_Class
             this.jsonPathAccounts = File.ReadAllText(pathAccounts);
 
             this.movieDataList = JsonConvert.DeserializeObject<List<MovieData>>(jsonPathCatalog);
+            this.movieSchemaList = JsonConvert.DeserializeObject<List<MovieSchema>>(jsonPathSchema);
             this.TicketsList = JsonConvert.DeserializeObject<List<Tickets>>(jsonPathTickets);
             this.accountDataList = JsonConvert.DeserializeObject<List<AccountData>>(jsonPathAccounts);
         }
@@ -101,7 +120,7 @@ namespace Reservatie_Class
 
         //// Miscellaneous methods
         // Method that print the items (here from the reservation list)
-        public void PrintItem(int start, int stop, List<int> reservationList)
+        public void PrintItemReservation(int start, int stop, List<int> reservationList)
         {
             for (int i = start; i < stop; i++)
             {
@@ -121,6 +140,22 @@ namespace Reservatie_Class
                 }
             }
         }
+
+        public void PrintItemSelection(string[][] selectionList)
+        {
+            for (int i = 0; i < selectionList.Length; i++)
+            {
+                try
+                {
+                    Console.WriteLine($"[{i + 1}] {selectionList[i][2]} | {selectionList[i][3]} {selectionList[i][1]}");
+                }
+                catch
+                {
+                    break;
+                }
+            }
+        }
+
 
         // Method that returns the index of where the reservation number is in the JSON file
         private int ReservationNumberIndexer(int reservationNumber)
@@ -204,7 +239,7 @@ namespace Reservatie_Class
                 if (PersonCount == "x" || PersonCount == "X")
                 {
                     loop = false;
-                    return ""; // Returns nothing
+                    return null; // Returns nothing
                 }
                 else if (PersonCount == "r" || PersonCount == "R")
                 {
@@ -229,13 +264,90 @@ namespace Reservatie_Class
                     }
                 }
             }
-            return ""; // Returns nothing <-- check for the compiler so that it doesnt nag
+            return null; // Returns nothing <-- check for the compiler so that it doesnt nag
         }
 
         // Method that asks user which hall and date it wants from the schedule, returns string array
-        public string[] HallNDate()
+        public string[] HallNDate(string title)
         {
-            return null; // User must select an hall and date from the schedule...
+            // Determine size of the array
+            int count = 0;
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].title == title)
+                {
+                    count += 1;
+                }
+            }
+
+            // Create array of movies that contains the title given in parameter
+            string[][] selectionArr = new string[count][];
+
+            count = 0;
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].title == title)
+                {
+                    // Creates a movie array 
+                    string[] movie = {
+                        movieSchemaList[i].title,
+                        movieSchemaList[i].hall,
+                        movieSchemaList[i].day,
+                        movieSchemaList[i].time
+                            };
+
+                    // Forwards it to the selection array
+                    selectionArr[count] = movie;
+                    count += 1;
+                }
+            }
+
+
+            bool loop = true;
+            bool falseInput = false;
+
+            while (loop == true)
+            {
+                Console.Clear();
+                Console.WriteLine("----Reserveren----");
+                if (falseInput == true)
+                {
+                    Console.WriteLine("Ongeldige waarde meegeven, probeer het opnieuw");
+                }
+                Console.WriteLine("\nSelecteer de dag, tijd en zaal.");
+                PrintItemSelection(selectionArr);
+                var userInput = Console.ReadLine();
+                Console.WriteLine($"\nGegeven Waarde: {userInput} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+
+                if (userInput == "x" || userInput == "X")
+                {
+                    loop = false;
+                    return null; // Returns nothing
+                }
+                else if (userInput == "r" || userInput == "R")
+                {
+                    loop = true;
+                }
+                else if (userInput.Length == 0)
+                {
+                    loop = true;
+                    falseInput = true;
+                }
+                else
+                {
+                    try
+                    {
+                        int check = Convert.ToInt32(userInput);
+                        return selectionArr[check-1];
+                    }
+                    catch
+                    {
+                        falseInput = true;
+                        loop = true;
+                    }
+                }
+            }
+            return null; // Returns nothing <-- check for the compiler so that it doesnt nag
         }
 
 
@@ -327,7 +439,7 @@ namespace Reservatie_Class
                         Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de reservering te gaan\nOm te stoppen toets X.\n");
 
                         // Print the users
-                        PrintItem(start, stop, reservationList);
+                        PrintItemReservation(start, stop, reservationList);
 
                         // current page indicator
                         int pageCounterCurrent = (start / 20) + 1;
@@ -430,13 +542,17 @@ namespace Reservatie_Class
             // Insert function here, MUST return string array [amount, hall, weekday, time]
 
             string ticketAmount = PersonAmount();
-            if (ticketAmount == "")
+            if (ticketAmount == null)
             {
                 // NEEDS TO STOP HERE?!!!!
             }
 
-
-            string[] funcHallArray = { "3", "Zaal 1", "maandag", "14:00" };
+            string[] HDT = HallNDate(title);
+            if (HDT == null)
+            {
+                // NEEDS TO STOP HERE?!!!!
+            }
+            string[] funcHallArray = { ticketAmount, HDT[1], HDT[3], HDT[2] };
 
             //Get row / seat for the specific hall
             // Insert function here , MUST return string [slice first letter for row, rest convert to int]
