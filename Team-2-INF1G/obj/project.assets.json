@@ -48,23 +48,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\melis\\.nuget\\packages\\": {},
+    "C:\\Users\\dvdg1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+      "projectUniqueName": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
       "projectName": "Team-2-INF1G",
-      "projectPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
-      "packagesPath": "C:\\Users\\melis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\melis\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
+      "projectPath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+      "packagesPath": "C:\\Users\\dvdg1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\melis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dvdg1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
