@@ -1,8 +1,13 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD:BiosTest/bin/Debug/netcoreapp3.1/Team-2-INF1G.runtimeconfig.dev.json
       "C:\\Users\\melis\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\melis\\.nuget\\packages",
+=======
+      "C:\\Users\\dvdg1\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dvdg1\\.nuget\\packages",
+>>>>>>> origin/David:Team-2-INF1G/bin/Debug/netcoreapp3.1/Team-2-INF1G.runtimeconfig.dev.json
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }
