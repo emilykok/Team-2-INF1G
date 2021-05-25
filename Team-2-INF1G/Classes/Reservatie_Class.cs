@@ -141,6 +141,7 @@ namespace Reservatie_Class
             }
         }
 
+        // Method that print the items (here from the selection list)
         public void PrintItemSelection(string[][] selectionList)
         {
             for (int i = 0; i < selectionList.Length; i++)
@@ -235,13 +236,14 @@ namespace Reservatie_Class
                 Console.WriteLine("\nVoor hoeveel personen wilt u reserveren?");
                 var PersonCount = Console.ReadLine();
                 Console.WriteLine($"\nGegeven Waarde: {PersonCount} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                var confirm = Console.ReadLine();
 
-                if (PersonCount == "x" || PersonCount == "X")
+                if (confirm == "x" || confirm == "X")
                 {
                     loop = false;
                     return null; // Returns nothing
                 }
-                else if (PersonCount == "r" || PersonCount == "R")
+                else if (confirm == "r" || confirm == "R")
                 {
                     loop = true;
                 }
@@ -302,48 +304,63 @@ namespace Reservatie_Class
                 }
             }
 
-
-            bool loop = true;
-            bool falseInput = false;
-
-            while (loop == true)
+            // Checks if selectionArr is filled (if the movie is shown)
+            if (selectionArr.Length == 0)
             {
                 Console.Clear();
                 Console.WriteLine("----Reserveren----");
-                if (falseInput == true)
-                {
-                    Console.WriteLine("Ongeldige waarde meegeven, probeer het opnieuw");
-                }
-                Console.WriteLine("\nSelecteer de dag, tijd en zaal.");
-                PrintItemSelection(selectionArr);
-                var userInput = Console.ReadLine();
-                Console.WriteLine($"\nGegeven Waarde: {userInput} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                Console.WriteLine("Op dit moment is deze film niet toonbaar bij ons.");
+                Console.WriteLine("\nklik op enter om door te gaan");
+                var nothing = Console.ReadLine();
+                return null;
+            }
 
-                if (userInput == "x" || userInput == "X")
+            // Lets user select specific movie
+            else
+            {
+                bool loop = true;
+                bool falseInput = false;
+
+                while (loop == true)
                 {
-                    loop = false;
-                    return null; // Returns nothing
-                }
-                else if (userInput == "r" || userInput == "R")
-                {
-                    loop = true;
-                }
-                else if (userInput.Length == 0)
-                {
-                    loop = true;
-                    falseInput = true;
-                }
-                else
-                {
-                    try
+                    Console.Clear();
+                    Console.WriteLine("----Reserveren----");
+                    if (falseInput == true)
                     {
-                        int check = Convert.ToInt32(userInput);
-                        return selectionArr[check-1];
+                        Console.WriteLine("Ongeldige waarde meegeven, probeer het opnieuw");
                     }
-                    catch
+                    Console.WriteLine("\nSelecteer de dag, tijd en zaal.");
+                    PrintItemSelection(selectionArr);
+                    var userInput = Console.ReadLine();
+                    Console.WriteLine($"\nGegeven Waarde: {userInput} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                    var confirm = Console.ReadLine();
+
+                    if (confirm == "x" || confirm == "X")
                     {
-                        falseInput = true;
+                        loop = false;
+                        return null; // Returns nothing
+                    }
+                    else if (confirm == "r" || confirm == "R")
+                    {
                         loop = true;
+                    }
+                    else if (userInput.Length == 0)
+                    {
+                        loop = true;
+                        falseInput = true;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            int check = Convert.ToInt32(userInput);
+                            return selectionArr[check - 1];
+                        }
+                        catch
+                        {
+                            falseInput = true;
+                            loop = true;
+                        }
                     }
                 }
             }
@@ -538,24 +555,21 @@ namespace Reservatie_Class
                 }
             }
 
-            //Get zaal / datum / tijd for the ticket
-            // Insert function here, MUST return string array [amount, hall, weekday, time]
-
-            string ticketAmount = PersonAmount();
-            if (ticketAmount == null)
-            {
-                // NEEDS TO STOP HERE?!!!!
-            }
-
+            // Ask the user to select an hall date and time
             string[] HDT = HallNDate(title);
             if (HDT == null)
             {
-                // NEEDS TO STOP HERE?!!!!
+                return;
             }
-            string[] funcHallArray = { ticketAmount, HDT[1], HDT[3], HDT[2] };
 
-            //Get row / seat for the specific hall
-            // Insert function here , MUST return string [slice first letter for row, rest convert to int]
+            // Ask the amount of people 
+            string ticketAmount = PersonAmount();
+            if (ticketAmount == null)
+            {
+                return;
+            }
+
+            string[] funcHallArray = { ticketAmount, HDT[1], HDT[3], HDT[2] };
 
             string[] funcRSArray = { "A", "35" };
 

@@ -141,18 +141,5 @@
     "row": "A",
     "seat": "35",
     "reservationNumber": 10
-  },
-  {
-    "filmName": "The Broken Hearts Gallery",
-    "namePerson": "Admin1",
-    "ticketAmount": 2,
-    "price": 20.0,
-    "weekday": "12:00",
-    "startTime": "Maandag",
-    "filmDuration": 108,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 11
   }
 ]
