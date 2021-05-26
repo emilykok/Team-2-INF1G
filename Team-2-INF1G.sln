@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team-2-INF1G", "Team-2-INF1G\Team-2-INF1G.csproj", "{718C2381-23DD-40ED-8E9A-D618BD5BF07C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiosTest", "BiosTest\BiosTest.csproj", "{67493759-3F40-4171-9114-39DF6407E630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiosTest", "BiosTest\BiosTest.csproj", "{67493759-3F40-4171-9114-39DF6407E630}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
