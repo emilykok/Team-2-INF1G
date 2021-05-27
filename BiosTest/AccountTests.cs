@@ -93,7 +93,7 @@ namespace BiosTest
             string[] res = acc1.AvailableAllergie(allergies);
 
             // Assert
-            Assert.AreEqual(res, allAll);
+            CollectionAssert.AreEqual(res, allAll);
         }
 
         [TestMethod]
@@ -108,7 +108,7 @@ namespace BiosTest
             string[] res = acc1.AvailableAllergie(allergies);
 
             // Assert
-            Assert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(res, expected);
         }
 
         // Login //
@@ -122,7 +122,7 @@ namespace BiosTest
             int res = acc1.Login("Admin1", "Admin1");
 
             // Assert
-            Assert.AreEqual(res, 6);
+            Assert.AreEqual(res, 4);
         }
 
         [TestMethod]

@@ -12,7 +12,9 @@
       [],
       [],
       [],
-      []
+      [
+        "Deadpool"
+      ]
     ]
   },
   {
@@ -104,7 +106,9 @@
     "position": "A12",
     "soort": "b",
     "availability": [
-      [],
+      [
+        "Deadpool"
+      ],
       [],
       [],
       [],
@@ -3919,12 +3923,6 @@
     "soort": "o",
     "availability": [
       [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         "Deadpool"
       ],
       [],
@@ -3956,12 +3954,7 @@
     "soort": "o",
     "availability": [
       [
-        "Men in Black: International",
-        null,
-        null,
-        null,
-        null,
-        null
+        "Men in Black: International"
       ],
       [],
       [],
@@ -5545,6 +5538,32 @@
     ]
   },
   {
+    "position": "P25",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P26",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
     "position": "P27",
     "soort": "b",
     "availability": [
@@ -5887,12 +5906,6 @@
     "soort": "b",
     "availability": [
       [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         "Deadpool"
       ],
       [],
@@ -5924,12 +5937,7 @@
     "soort": "b",
     "availability": [
       [
-        "Men in Black: International",
-        null,
-        null,
-        null,
-        null,
-        null
+        "Men in Black: International"
       ],
       [],
       [],
@@ -6528,7 +6536,9 @@
     "position": "T22",
     "soort": "b",
     "availability": [
-      [],
+      [
+        "Deadpool"
+      ],
       [],
       [],
       [],

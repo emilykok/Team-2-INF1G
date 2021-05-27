@@ -3911,7 +3911,9 @@
     "position": "S15",
     "soort": "b",
     "availability": [
-      [],
+      [
+        "Deadpool"
+      ],
       [],
       [],
       [],
