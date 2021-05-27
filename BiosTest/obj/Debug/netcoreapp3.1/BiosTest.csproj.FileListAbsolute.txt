@@ -99,3 +99,5 @@ C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\Bi
 C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.dll
 C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.pdb
 C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.genruntimeconfig.cache
+C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.AdapterUtilities.dll
