@@ -1,11 +1,9 @@
 ﻿
 using System;
 
-
 using Account_Class;
 using Food_Drink_Run;
 using MovieDetail_Class;
-using Hoofdmenu;
 using Reservatie_Class;
 
 namespace Team_2
@@ -48,7 +46,7 @@ namespace Team_2
                         retry = false;
                     }
                 }
-                else if (user > 0 && acc.accountDataList[user].Permission == true) // If there is logged in (admin)
+                else if (user > -1 && acc.accountDataList[user].Permission == true) // If there is logged in (admin)
                 {
                     Console.Clear();
 

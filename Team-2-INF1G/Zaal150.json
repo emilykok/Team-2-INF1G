@@ -3,10 +3,7 @@
     "position": "A3",
     "soort": "b",
     "availability": [
-      [
-        "Deadpool",
-        "Men in Black: International"
-      ],
+      [],
       [],
       [],
       [],
@@ -19,14 +16,7 @@
     "position": "A4",
     "soort": "b",
     "availability": [
-      [
-        "Men in Black: International",
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      [],
       [],
       [],
       [],
@@ -1950,15 +1940,7 @@
     "position": "N10",
     "soort": "b",
     "availability": [
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        "Deadpool"
-      ],
+      [],
       [],
       [],
       [],

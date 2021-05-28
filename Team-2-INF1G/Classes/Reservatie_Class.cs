@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
+using SelectSpot_Class;
 
 namespace Reservatie_Class
 {
@@ -61,9 +62,9 @@ namespace Reservatie_Class
             public string startTime;
             public int filmDuration;
             public string hall;
-            public string row;
-            public string seat;
+            public string[] seatStrings;
             public int reservationNumber;
+            public int[] seatIndexes;
         }
 
         public List<Tickets> TicketsList = new List<Tickets>();
@@ -156,6 +157,31 @@ namespace Reservatie_Class
                 }
             }
         }
+
+        // Method that loops through array of integers to seat(s)
+        public void DeleteSeatLooper(int[] seats, string film, string day, string hall)
+        {
+            int zaal = 0;
+            if (hall == "Zaal 1") zaal = 1;
+            else if (hall == "Zaal 2") zaal = 2;
+            else if (hall == "Zaal 3") zaal = 3;
+
+            int dag = 0;
+            if (day == "Maandag") dag = 0;
+            else if (day == "Dinsdag") dag = 1;
+            else if (day == "Woensdag") dag = 2;
+            else if (day == "Donderdag") dag = 3;
+            else if (day == "Vrijdag") dag = 4;
+            else if (day == "Zaterdag") dag = 5;
+            else if (day == "Zondag") dag = 6;
+
+            foreach (int seat in seats)
+            {
+                Theater theater = new Theater();
+                theater.RemoveAvailability(seat, film, dag, zaal);
+            }
+        }
+
 
 
         // Method that returns the index of where the reservation number is in the JSON file
@@ -524,6 +550,13 @@ namespace Reservatie_Class
         public void DisplayReservatie(Tickets ticket)
         {
             Console.Clear();
+
+            string stoelen = "";
+            foreach (int index in ticket.seatIndexes)
+            {
+                stoelen += ticket.seatStrings[index] + " ";
+            }
+
             Console.WriteLine("===============");
             Console.WriteLine($"*Reservatie {ticket.filmName}*");
             Console.WriteLine("===============\n");
@@ -534,9 +567,8 @@ namespace Reservatie_Class
             Console.WriteLine("Dag: " + ticket.weekday); 
             Console.WriteLine("Tijd: " + ticket.startTime); 
             Console.WriteLine("Filmduur: " + ticket.filmDuration); 
-            Console.WriteLine("Zaal: " + ticket.hall); 
-            Console.WriteLine("Rij: " + ticket.row); 
-            Console.WriteLine("Stoel: " + ticket.seat); 
+            Console.WriteLine("Zaal: " + ticket.hall);
+            Console.WriteLine($"Stoel(en): {stoelen}");
             Console.WriteLine("Reservatie nummer: " + ticket.reservationNumber);
         }
 
@@ -570,9 +602,23 @@ namespace Reservatie_Class
             }
 
             string[] funcHallArray = { ticketAmount, HDT[1], HDT[3], HDT[2] };
+            
+            // Loops through amount of people, selects amounts of seats!
+            int[] SeatIndexes = new int[Convert.ToInt32(ticketAmount)];
+            string[] SeatStrings = new string[Convert.ToInt32(ticketAmount)];
 
-            string[] funcRSArray = { "A", "35" };
+            for (int i = 0; i < Convert.ToInt32(ticketAmount); i++)
+            {
+                Tuple<int, string> RS = Theater.Run(movieDataList[movieIndex].titel, funcHallArray[2], funcHallArray[1]);
 
+                if (RS == null)
+                {
+                    return;
+                }
+                SeatIndexes[i] = RS.Item1;
+                SeatStrings[i] = RS.Item2;
+            }
+            
 
             //Makes unique reservation number
             int reservationNumber = ReservationNumberMaker();
@@ -588,9 +634,9 @@ namespace Reservatie_Class
             newTicket.startTime         = funcHallArray[3];
             newTicket.filmDuration      = movieDataList[movieIndex].speeltijd;
             newTicket.hall              = funcHallArray[1];
-            newTicket.row               = funcRSArray[0];
-            newTicket.seat              = funcRSArray[1];
+            newTicket.seatStrings       = SeatStrings;
             newTicket.reservationNumber = reservationNumber;
+            newTicket.seatIndexes       = SeatIndexes;
 
             // Displays selected reservation
             DisplayReservatie(newTicket);
@@ -604,6 +650,10 @@ namespace Reservatie_Class
                 // write to the JSON file (updates the file)
                 System.IO.File.WriteAllText(this.pathTickets, ToJSON());
             }
+            else
+            {
+                this.DeleteSeatLooper(newTicket.seatIndexes, newTicket.filmName, newTicket.weekday, newTicket.hall);
+            }
         }
         
         // Method that deletes ticket, requires the reservationNumber of the specific ticket
@@ -613,6 +663,7 @@ namespace Reservatie_Class
             {
                 if (reservationNumber == TicketsList[i].reservationNumber)
                 {
+                    this.DeleteSeatLooper(TicketsList[i].seatIndexes, TicketsList[i].filmName, TicketsList[i].weekday, TicketsList[i].hall);
                     TicketsList.RemoveAt(i);
                 }
             }
