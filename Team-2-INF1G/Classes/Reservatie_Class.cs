@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
+using SelectSpot_Class;
 
 namespace Reservatie_Class
 {
@@ -13,7 +14,7 @@ namespace Reservatie_Class
         {
             public string Name;
             public string Password;
-            
+
             public int Age;
             public string Gender;
             public string Email;
@@ -24,6 +25,16 @@ namespace Reservatie_Class
 
         public List<AccountData> accountDataList = new List<AccountData>();
 
+        // Schema JSON struct
+        public struct MovieSchema
+        {
+            public string title;
+            public string hall;
+            public string day;
+            public string time;
+        }
+
+        public List<MovieSchema> movieSchemaList = new List<MovieSchema>();
 
         // Movie JSON struct
         public struct MovieData
@@ -51,9 +62,9 @@ namespace Reservatie_Class
             public string startTime;
             public int filmDuration;
             public string hall;
-            public string row;
-            public string seat;
+            public string[] seatStrings;
             public int reservationNumber;
+            public int[] seatIndexes;
         }
 
         public List<Tickets> TicketsList = new List<Tickets>();
@@ -62,6 +73,11 @@ namespace Reservatie_Class
         public string pathCatalog;
         [JsonIgnore]
         public string jsonPathCatalog;
+
+        [JsonIgnore]
+        public string pathSchema;
+        [JsonIgnore]
+        public string jsonPathSchema;
 
         [JsonIgnore]
         public string pathTickets;
@@ -80,6 +96,9 @@ namespace Reservatie_Class
             this.pathCatalog = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Catalog.json"));
             this.jsonPathCatalog = File.ReadAllText(pathCatalog);
 
+            this.pathSchema = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Movie_Schema.json"));
+            this.jsonPathSchema = File.ReadAllText(pathSchema);
+
             this.pathTickets = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Tickets.json"));
             this.jsonPathTickets = File.ReadAllText(pathTickets);
 
@@ -87,6 +106,7 @@ namespace Reservatie_Class
             this.jsonPathAccounts = File.ReadAllText(pathAccounts);
 
             this.movieDataList = JsonConvert.DeserializeObject<List<MovieData>>(jsonPathCatalog);
+            this.movieSchemaList = JsonConvert.DeserializeObject<List<MovieSchema>>(jsonPathSchema);
             this.TicketsList = JsonConvert.DeserializeObject<List<Tickets>>(jsonPathTickets);
             this.accountDataList = JsonConvert.DeserializeObject<List<AccountData>>(jsonPathAccounts);
         }
@@ -101,7 +121,7 @@ namespace Reservatie_Class
 
         //// Miscellaneous methods
         // Method that print the items (here from the reservation list)
-        public void PrintItem(int start, int stop, List<int> reservationList)
+        public void PrintItemReservation(int start, int stop, List<int> reservationList)
         {
             for (int i = start; i < stop; i++)
             {
@@ -121,6 +141,48 @@ namespace Reservatie_Class
                 }
             }
         }
+
+        // Method that print the items (here from the selection list)
+        public void PrintItemSelection(string[][] selectionList)
+        {
+            for (int i = 0; i < selectionList.Length; i++)
+            {
+                try
+                {
+                    Console.WriteLine($"[{i + 1}] {selectionList[i][2]} | {selectionList[i][3]} {selectionList[i][1]}");
+                }
+                catch
+                {
+                    break;
+                }
+            }
+        }
+
+        // Method that loops through array of integers to seat(s)
+        public void DeleteSeatLooper(int[] seats, string film, string day, string hall)
+        {
+            int zaal = 0;
+            if (hall == "Zaal 1") zaal = 1;
+            else if (hall == "Zaal 2") zaal = 2;
+            else if (hall == "Zaal 3") zaal = 3;
+
+            int dag = 0;
+            if (day == "Maandag") dag = 0;
+            else if (day == "Dinsdag") dag = 1;
+            else if (day == "Woensdag") dag = 2;
+            else if (day == "Donderdag") dag = 3;
+            else if (day == "Vrijdag") dag = 4;
+            else if (day == "Zaterdag") dag = 5;
+            else if (day == "Zondag") dag = 6;
+
+            foreach (int seat in seats)
+            {
+                Theater theater = new Theater();
+                theater.RemoveAvailability(seat, film, dag, zaal);
+            }
+        }
+
+
 
         // Method that returns the index of where the reservation number is in the JSON file
         private int ReservationNumberIndexer(int reservationNumber)
@@ -200,13 +262,14 @@ namespace Reservatie_Class
                 Console.WriteLine("\nVoor hoeveel personen wilt u reserveren?");
                 var PersonCount = Console.ReadLine();
                 Console.WriteLine($"\nGegeven Waarde: {PersonCount} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                var confirm = Console.ReadLine();
 
-                if (PersonCount == "x" || PersonCount == "X")
+                if (confirm == "x" || confirm == "X")
                 {
                     loop = false;
-                    return ""; // Returns nothing
+                    return null; // Returns nothing
                 }
-                else if (PersonCount == "r" || PersonCount == "R")
+                else if (confirm == "r" || confirm == "R")
                 {
                     loop = true;
                 }
@@ -229,13 +292,105 @@ namespace Reservatie_Class
                     }
                 }
             }
-            return ""; // Returns nothing <-- check for the compiler so that it doesnt nag
+            return null; // Returns nothing <-- check for the compiler so that it doesnt nag
         }
 
         // Method that asks user which hall and date it wants from the schedule, returns string array
-        public string[] HallNDate()
+        public string[] HallNDate(string title)
         {
-            return null; // User must select an hall and date from the schedule...
+            // Determine size of the array
+            int count = 0;
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].title == title)
+                {
+                    count += 1;
+                }
+            }
+
+            // Create array of movies that contains the title given in parameter
+            string[][] selectionArr = new string[count][];
+
+            count = 0;
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].title == title)
+                {
+                    // Creates a movie array 
+                    string[] movie = {
+                        movieSchemaList[i].title,
+                        movieSchemaList[i].hall,
+                        movieSchemaList[i].day,
+                        movieSchemaList[i].time
+                            };
+
+                    // Forwards it to the selection array
+                    selectionArr[count] = movie;
+                    count += 1;
+                }
+            }
+
+            // Checks if selectionArr is filled (if the movie is shown)
+            if (selectionArr.Length == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("----Reserveren----");
+                Console.WriteLine("Op dit moment is deze film niet toonbaar bij ons.");
+                Console.WriteLine("\nklik op enter om door te gaan");
+                var nothing = Console.ReadLine();
+                return null;
+            }
+
+            // Lets user select specific movie
+            else
+            {
+                bool loop = true;
+                bool falseInput = false;
+
+                while (loop == true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("----Reserveren----");
+                    if (falseInput == true)
+                    {
+                        Console.WriteLine("Ongeldige waarde meegeven, probeer het opnieuw");
+                    }
+                    Console.WriteLine("\nSelecteer de dag, tijd en zaal.");
+                    PrintItemSelection(selectionArr);
+                    var userInput = Console.ReadLine();
+                    Console.WriteLine($"\nGegeven Waarde: {userInput} \nOm toe te passen toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                    var confirm = Console.ReadLine();
+
+                    if (confirm == "x" || confirm == "X")
+                    {
+                        loop = false;
+                        return null; // Returns nothing
+                    }
+                    else if (confirm == "r" || confirm == "R")
+                    {
+                        loop = true;
+                    }
+                    else if (userInput.Length == 0)
+                    {
+                        loop = true;
+                        falseInput = true;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            int check = Convert.ToInt32(userInput);
+                            return selectionArr[check - 1];
+                        }
+                        catch
+                        {
+                            falseInput = true;
+                            loop = true;
+                        }
+                    }
+                }
+            }
+            return null; // Returns nothing <-- check for the compiler so that it doesnt nag
         }
 
 
@@ -327,7 +482,7 @@ namespace Reservatie_Class
                         Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de reservering te gaan\nOm te stoppen toets X.\n");
 
                         // Print the users
-                        PrintItem(start, stop, reservationList);
+                        PrintItemReservation(start, stop, reservationList);
 
                         // current page indicator
                         int pageCounterCurrent = (start / 20) + 1;
@@ -395,6 +550,13 @@ namespace Reservatie_Class
         public void DisplayReservatie(Tickets ticket)
         {
             Console.Clear();
+
+            string stoelen = "";
+            foreach (int index in ticket.seatIndexes)
+            {
+                stoelen += ticket.seatStrings[index] + " ";
+            }
+
             Console.WriteLine("===============");
             Console.WriteLine($"*Reservatie {ticket.filmName}*");
             Console.WriteLine("===============\n");
@@ -405,9 +567,8 @@ namespace Reservatie_Class
             Console.WriteLine("Dag: " + ticket.weekday); 
             Console.WriteLine("Tijd: " + ticket.startTime); 
             Console.WriteLine("Filmduur: " + ticket.filmDuration); 
-            Console.WriteLine("Zaal: " + ticket.hall); 
-            Console.WriteLine("Rij: " + ticket.row); 
-            Console.WriteLine("Stoel: " + ticket.seat); 
+            Console.WriteLine("Zaal: " + ticket.hall);
+            Console.WriteLine($"Stoel(en): {stoelen}");
             Console.WriteLine("Reservatie nummer: " + ticket.reservationNumber);
         }
 
@@ -426,23 +587,38 @@ namespace Reservatie_Class
                 }
             }
 
-            //Get zaal / datum / tijd for the ticket
-            // Insert function here, MUST return string array [amount, hall, weekday, time]
-
-            string ticketAmount = PersonAmount();
-            if (ticketAmount == "")
+            // Ask the user to select an hall date and time
+            string[] HDT = HallNDate(title);
+            if (HDT == null)
             {
-                // NEEDS TO STOP HERE?!!!!
+                return;
             }
 
+            // Ask the amount of people 
+            string ticketAmount = PersonAmount();
+            if (ticketAmount == null)
+            {
+                return;
+            }
 
-            string[] funcHallArray = { "3", "Zaal 1", "maandag", "14:00" };
+            string[] funcHallArray = { ticketAmount, HDT[1], HDT[3], HDT[2] };
+            
+            // Loops through amount of people, selects amounts of seats!
+            int[] SeatIndexes = new int[Convert.ToInt32(ticketAmount)];
+            string[] SeatStrings = new string[Convert.ToInt32(ticketAmount)];
 
-            //Get row / seat for the specific hall
-            // Insert function here , MUST return string [slice first letter for row, rest convert to int]
+            for (int i = 0; i < Convert.ToInt32(ticketAmount); i++)
+            {
+                Tuple<int, string> RS = Theater.Run(movieDataList[movieIndex].titel, funcHallArray[2], funcHallArray[1]);
 
-            string[] funcRSArray = { "A", "35" };
-
+                if (RS == null)
+                {
+                    return;
+                }
+                SeatIndexes[i] = RS.Item1;
+                SeatStrings[i] = RS.Item2;
+            }
+            
 
             //Makes unique reservation number
             int reservationNumber = ReservationNumberMaker();
@@ -458,9 +634,9 @@ namespace Reservatie_Class
             newTicket.startTime         = funcHallArray[3];
             newTicket.filmDuration      = movieDataList[movieIndex].speeltijd;
             newTicket.hall              = funcHallArray[1];
-            newTicket.row               = funcRSArray[0];
-            newTicket.seat              = funcRSArray[1];
+            newTicket.seatStrings       = SeatStrings;
             newTicket.reservationNumber = reservationNumber;
+            newTicket.seatIndexes       = SeatIndexes;
 
             // Displays selected reservation
             DisplayReservatie(newTicket);
@@ -474,6 +650,10 @@ namespace Reservatie_Class
                 // write to the JSON file (updates the file)
                 System.IO.File.WriteAllText(this.pathTickets, ToJSON());
             }
+            else
+            {
+                this.DeleteSeatLooper(newTicket.seatIndexes, newTicket.filmName, newTicket.weekday, newTicket.hall);
+            }
         }
         
         // Method that deletes ticket, requires the reservationNumber of the specific ticket
@@ -483,6 +663,7 @@ namespace Reservatie_Class
             {
                 if (reservationNumber == TicketsList[i].reservationNumber)
                 {
+                    this.DeleteSeatLooper(TicketsList[i].seatIndexes, TicketsList[i].filmName, TicketsList[i].weekday, TicketsList[i].hall);
                     TicketsList.RemoveAt(i);
                 }
             }

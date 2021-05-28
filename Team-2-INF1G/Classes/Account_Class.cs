@@ -158,7 +158,7 @@ namespace Account_Class
             while (retry == true)
             {
                 // Clears the console for typing;
-                Console.Clear();
+                //Console.Clear();
 
                 // Header
                 Console.WriteLine("*Login Pagina*");

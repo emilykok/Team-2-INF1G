@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Account_Class;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -108,12 +109,13 @@ namespace BiosTest
             string[] res = acc1.AvailableAllergie(allergies);
 
             // Assert
-            CollectionAssert.AreEqual(res, expected);
+            CollectionAssert.AreEqual(res, expected); // checks the collection disregarding references!
         }
 
         // Login //
+        // correct input
         [TestMethod]
-        public void Login_CorrectInput_Return6()
+        public void Login_CorrectInput_Return4()
         {
             // Arrange
             Account acc1 = new Account();
@@ -124,7 +126,8 @@ namespace BiosTest
             // Assert
             Assert.AreEqual(res, 4);
         }
-
+ 
+        // wrong input
         [TestMethod]
         public void Login_WrongtInput_ReturnMin1()
         {
@@ -135,11 +138,34 @@ namespace BiosTest
             int res = acc1.Login("Admin1", "wrong");
 
             // Assert
-            Assert.AreEqual(res, -1);
+            Assert.AreEqual(res, -1); // checks the value's BE CAREFUL WITH REFERENCES!
         }
 
         // TextLogin //
+        [TestMethod]
+        public void TextLogin_CorrectInput()
+        {
+            // Arrange
+            Account acc1 = new Account();
 
+
+            // Act
+            // _step 1, read from console "user input"
+            // WARNING when using StringReader, you MUST use @ and no indentation!
+            // ALSO NO CONSOLE.CLEAR()!
+            var input = new StringReader(@"Admin1
+Admin1
+
+");
+            Console.SetIn(input);
+
+            int res = acc1.TextLogin();
+            
+            // Assert
+
+            Assert.AreEqual(res, 4); // checks the value's BE CAREFUL WITH REFERENCES!
+            
+        }
 
         // CreateUser //
 

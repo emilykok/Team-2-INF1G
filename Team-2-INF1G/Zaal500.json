@@ -4,8 +4,7 @@
     "soort": "b",
     "availability": [
       [
-        "Deadpool",
-        "Men in Black: International"
+        "Titanic"
       ],
       [],
       [],
@@ -22,12 +21,7 @@
     "soort": "b",
     "availability": [
       [
-        "Men in Black: International",
-        null,
-        null,
-        null,
-        null,
-        null
+        "Titanic"
       ],
       [],
       [],
@@ -106,9 +100,7 @@
     "position": "A12",
     "soort": "b",
     "availability": [
-      [
-        "Deadpool"
-      ],
+      [],
       [],
       [],
       [],
@@ -1954,15 +1946,7 @@
     "position": "G7",
     "soort": "o",
     "availability": [
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        "Deadpool"
-      ],
+      [],
       [],
       [],
       [],
@@ -1975,10 +1959,7 @@
     "position": "G8",
     "soort": "o",
     "availability": [
-      [
-        "Deadpool",
-        "Men in Black: International"
-      ],
+      [],
       [],
       [],
       [],
@@ -1991,14 +1972,7 @@
     "position": "G9",
     "soort": "o",
     "availability": [
-      [
-        "Men in Black: International",
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      [],
       [],
       [],
       [],
@@ -5905,9 +5879,7 @@
     "position": "R7",
     "soort": "b",
     "availability": [
-      [
-        "Deadpool"
-      ],
+      [],
       [],
       [],
       [],
@@ -5920,10 +5892,7 @@
     "position": "R8",
     "soort": "b",
     "availability": [
-      [
-        "Deadpool",
-        "Men in Black: International"
-      ],
+      [],
       [],
       [],
       [],
@@ -5936,9 +5905,7 @@
     "position": "R9",
     "soort": "b",
     "availability": [
-      [
-        "Men in Black: International"
-      ],
+      [],
       [],
       [],
       [],

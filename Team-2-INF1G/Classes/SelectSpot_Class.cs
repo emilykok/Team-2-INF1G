@@ -168,12 +168,12 @@ namespace SelectSpot_Class
             }
         }
 
-        public static int ChooseSeat(string film, int day, int hall)
+        public static Tuple<int, string> ChooseSeat(string film, int day, int hall)
         {
             // function to ask the user which seat he would like to reserve //
             Theater choice = new Theater();
             List<TheaterData> theaterDataList = choice.WhichTheaterHall(hall);
-            Console.WriteLine("Welke stoel wilt u reserveren?(zorg dat de letter een Hoofdletter is, Bijvoorbeeld: A3.)");
+            Console.WriteLine("Welke stoel wilt u reserveren?(zorg dat de letter een Hoofdletter is, Bijvoorbeeld: A5.)");
             string seat = Console.ReadLine();
             for(int i = 0; i < theaterDataList.Count; i++)
             {
@@ -183,20 +183,20 @@ namespace SelectSpot_Class
                     // seat isn't available //
                     if(IsSeatAvailable(i, film, day, hall) == "X")
                     {
-                        Console.WriteLine($"Stoel nummer {seat} is al gereserveerd");
-                        return -1;
+                        Console.WriteLine($"\nStoel nummer {seat} is al gereserveerd");
+                        return Tuple.Create(-1, "");
                     }
                     // seat is available //
                     else
                     {
-                        Console.WriteLine($"Stoel nummer {seat} is geselecteerd");
-                        return i;
+                        Console.WriteLine($"\nStoel nummer {seat} is geselecteerd");
+                        return Tuple.Create(i, seat);
                     }
                 }
             }
             // invalid input //
             Console.WriteLine("Dit is geen geldige invoerwaarde");
-            return -1;
+            return Tuple.Create(-1, ""); ;
         }
 
         public static void Zaal150(string film, int day, int hall)
@@ -284,13 +284,25 @@ namespace SelectSpot_Class
 
         }
 
-        public static void Run(string film, int day, string zaal)
+        public static Tuple<int, string> Run(string film, string dag, string zaal)
         {
             // function to run the theater class //
             int hall = 0;
-            if (zaal == "zaal 1") hall = 1;
-            else if (zaal == "zaal 2") hall = 2;
-            else if (zaal == "zaal 3") hall = 3;
+            int day = 0;
+
+            // Transforms string to int (easier to manage)
+            if (zaal == "Zaal 1") hall = 1;
+            else if (zaal == "Zaal 2") hall = 2;
+            else if (zaal == "Zaal 3") hall = 3;
+
+            if (dag == "Maandag") day = 0;
+            else if (dag == "Dinsdag") day = 1;
+            else if (dag == "Woensdag") day = 2;
+            else if (dag == "Donderdag") day = 3;
+            else if (dag == "Vrijdag") day = 4;
+            else if (dag == "Zaterdag") day = 5;
+            else if (dag == "Zondag") day = 6;
+
             Theater choice = new Theater();
             bool retry = true;
             string prompt = "Kies hier welke stoel u wilt reserveren\n--------------------------------------------------------\n";
@@ -302,49 +314,52 @@ namespace SelectSpot_Class
                 if (hall == 1) Zaal150(film, day, hall);
                 else if (hall == 2) Zaal300(film, day, hall);
                 else if (hall == 3)Zaal500(film, day, hall);
-                int seat = (ChooseSeat(film, day, hall));
-                if(seat != -1)
+                Tuple<int, string> seat = (ChooseSeat(film, day, hall));
+                if(seat.Item1 != -1)
                 {
-                    // the seat will be reserved and the user is asked if he is sure //
-                    choice.ReserveAvailability(seat, film, day, hall);
-                    Console.WriteLine("weet u het zeker 'ja'. vul anders 'nee' in. vul 'x' in om de reservering te annuleren.");
+                    
+                    Console.WriteLine("Om stoel te bevestigen, druk op ENTER. Om opnieuw te selecteren, toets 'r'. Om te annuleren, toets 'X'");
                     string answer = Console.ReadLine();
                     // the user is sure //
-                    if(answer == "ja")
+                    if(answer == "")
                     {
                         retry = false;
+
+                        // the seat will be reserved and the user is asked if he is sure //
+                        choice.ReserveAvailability(seat.Item1, film, day, hall);
+
+                        return Tuple.Create(seat.Item1, seat.Item2);// NOG IETS RETURNEN
                     }
                     // the user wants to rechoose //
-                    else if(answer == "nee")
+                    else if(answer == "r" || answer == "R")
                     {
-                        choice.RemoveAvailability(seat, film, day, hall);
+                        retry = true;
                     }
                     // the user wants to cancel the seat selection //
                     else if(answer == "x" || answer == "X")
                     {
-                        choice.RemoveAvailability(seat, film, day, hall);
+
                         retry = false;
-                    }
-                    else
-                    {
-                        choice.RemoveAvailability(seat, film, day, hall);
+                        return null;
                     }
                 }
                 // invalid input or reserved seat // 
                 else
                 {
-                    Console.WriteLine("Wilt u het opniew proberen? 'ja/nee'.");
+                    Console.WriteLine("Wilt u het opniew proberen? 'Y/N'.");
                     string answer = Console.ReadLine();
                     // 'nee' cancels the selection, anything else will repeat the loop //
-                    if(answer == "nee")
+                    if(answer == "N")
                     {
                         retry = false;
+                        return null;
                     }
                 }
+                
                 //Zaal300();
                 //Zaal500();
             }
-                
+            return null; // <-- to keep it from nagging   
         }
     }
 }
