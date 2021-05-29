@@ -178,7 +178,10 @@ namespace Reservatie_Class
             foreach (int seat in seats)
             {
                 Theater theater = new Theater();
-                theater.RemoveAvailability(seat, film, dag, zaal);
+                if (seat != -1)
+                {
+                    theater.RemoveAvailability(seat, film, dag, zaal);
+                }
             }
         }
 
@@ -613,6 +616,7 @@ namespace Reservatie_Class
 
                 if (RS == null)
                 {
+                    this.DeleteSeatLooper(SeatIndexes, movieDataList[movieIndex].titel, funcHallArray[2], funcHallArray[1]);
                     return;
                 }
                 SeatIndexes[i] = RS.Item1;
