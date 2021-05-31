@@ -3,26 +3,20 @@
     "position": "A5",
     "soort": "b",
     "availability": [
-      [
-        "Titanic"
-      ],
       [],
       [],
       [],
       [],
       [],
-      [
-        "Deadpool"
-      ]
+      [],
+      []
     ]
   },
   {
     "position": "A6",
     "soort": "b",
     "availability": [
-      [
-        "Titanic"
-      ],
+      [],
       [],
       [],
       [],
@@ -3896,9 +3890,7 @@
     "position": "L8",
     "soort": "o",
     "availability": [
-      [
-        "Deadpool"
-      ],
+      [],
       [],
       [],
       [],
@@ -3911,10 +3903,7 @@
     "position": "L9",
     "soort": "o",
     "availability": [
-      [
-        "Deadpool",
-        "Men in Black: International"
-      ],
+      [],
       [],
       [],
       [],
@@ -6503,9 +6492,7 @@
     "position": "T22",
     "soort": "b",
     "availability": [
-      [
-        "Deadpool"
-      ],
+      [],
       [],
       [],
       [],
