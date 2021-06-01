@@ -4,7 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text;
 using Eten_Class;
 using Drinken_Class;
-using System.IO;
 
 namespace BiosTest
 {
@@ -18,11 +17,24 @@ namespace BiosTest
         //  DeleteEten //
 
         // ViewClicks //
+        [TestMethod]
+        public void ViewClicksF_IntIndex_printClicks() {
+            // Arrange
+            Eten eten = new Eten();
+            int num = 8;
+
+            // Act
+            eten.ViewClicks(num);
+            string res = "Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks;
+            // Assert
+
+            Assert.AreEqual(res, "Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks);
+        }
 
         // UpdateClicks //
         [TestMethod]
         public void UpdateClicksF_IntIndex_UpdateClicks()
-        {
+        {                
             // Arrange
             int num = 5;
             Eten eten = new Eten();
@@ -82,9 +94,8 @@ namespace BiosTest
             Assert.AreEqual(res, "Gevonden eten met zoekterm 'pop':\n\nPopcorn zoet\nPopcorn zout\nPopcorn karamel\n");
         }
 
+
         // EtenAllergieFilter //
-
-
 
         /// DRINK///
 
@@ -145,28 +156,16 @@ namespace BiosTest
 
         // DrinkenFilter //
         [TestMethod]
-        public void FilterD_Titel_showRes()
-        {
-            var originalConsoleOut = Console.Out; // preserve the original streamusing(var writer = new StringWriter())
- 
-            using (var writer = new StringWriter())
-                {
-                    Console.SetOut(writer);
-                    // Arrange
-                    Drinken drink = new Drinken();
-                    string toSearch = "wijn";
-                    // Act
-                    string res = drink.DrinkenFilter(toSearch);
-
-                    var stringconsole = writer.GetStringBuilder().ToString();
-                    writer.Flush(); // when you're done, make sure everything is written outvar myString = writer.GetStringBuilder().ToString();
-
-                    // Assert
-                    Assert.AreEqual(res, "Gevonden drinken met zoekterm 'wijn':\n\nRode wijn\nWitte wijn\n"); // //
-                }
-            Console.SetOut(originalConsoleOut); // restore Console.Out
+        public void FilterD_Titel_showRes() {
+            // Arrange
+            Drinken drink = new Drinken(); 
+            string toSearch = "wijn";
+            // Act
+            string res = drink.DrinkenFilter(toSearch);
+            // Assert
+            Assert.AreEqual(res, "Gevonden drinken met zoekterm 'wijn':\n\nRode wijn\nWitte wijn\n"); // //
         }
-        
+
         // DrinkenAllergieFilter //
     }
 }
