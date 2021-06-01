@@ -2,11 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+
+using Console_Buffer;
 using Food_Drink_Run;
 
 
@@ -56,7 +55,7 @@ namespace Drinken_Class
 
             // leest input command van de console
             string input = Console.ReadLine();
-            Console.Clear();
+            Console_Reset.clear();
 
             try // in t geval dat de input te hoog is of niet convertible is tot int
             {
@@ -86,7 +85,7 @@ namespace Drinken_Class
                     // input na de display
                     Console.WriteLine("\n1. Terug naar het eten & drinken menu");
                     input = Console.ReadLine();
-                    Console.Clear();
+                    Console_Reset.clear();
                     if (input == "1" || input == "") DrinkenMenu();                    
                 }
                 else if (num == 11) FoodDrinkRun.Run();
@@ -94,11 +93,11 @@ namespace Drinken_Class
 
             catch (Exception)
             { // input is niet convertible naar int of input is te hoog nummer
-                Console.Clear();
+                Console_Reset.clear();
                 Console.WriteLine("De input is niet juist, probeer het nogeens\n");
                 DrinkenMenu();
             }
-            Console.Clear();
+            Console_Reset.clear();
 
         }
 
@@ -110,7 +109,7 @@ namespace Drinken_Class
 
         // method to view clicks of certain index
         public void ViewClicks(int num) {
-            Console.Clear();
+            Console_Reset.clear();
             Console.WriteLine("Clicks op geselecteerde item is: " + drinkenDataList[num-1].clicks);
         }
 
@@ -200,7 +199,13 @@ namespace Drinken_Class
         // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
         public string DrinkenFilter(string toFilter)
         {
-            Console.Clear();
+            try
+            {
+                // To prevent test failing; console doesnt exist when trying to run test and clearing.
+                Console_Reset.clear();
+            }
+            catch { }
+        
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;
@@ -236,7 +241,7 @@ namespace Drinken_Class
         // functie die weergeeft welke items de gegeven allergeen niet bevatten
         public string DrinkenAllergieFilter(string toFilter)
         {
-            Console.Clear();
+            Console_Reset.clear();
             toFilter = toFilter.ToLower();
             string s = "";
             bool check = true;

@@ -5,6 +5,7 @@ using Account_Class;
 using Food_Drink_Run;
 using MovieDetail_Class;
 using Reservatie_Class;
+//using Kalender_Class;
 
 namespace Team_2
 {
@@ -23,7 +24,7 @@ namespace Team_2
                 {
                     Console.Clear();
                     Console.WriteLine("Welkom bij Cinematrix\nHoofd menu:\n---------------------------------------------------\n");
-                    Console.WriteLine("1. Inloggen.\n2. Account creeeren.\n3. Bekijk catalogus.\n4. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
+                    Console.WriteLine("1. Inloggen.\n2. Account creeeren.\n3. Bekijk kalender\n4. Bekijk catalogus.\n5. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -35,9 +36,13 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        MovieDetail.Navigation();
+                        //Kalender.Navigation();
                     }
                     else if (choose == "4")
+                    {
+                        MovieDetail.Navigation();
+                    }
+                    else if (choose == "5")
                     {
                         FoodDrinkRun.Run();
                     }
@@ -54,7 +59,7 @@ namespace Team_2
                     string username = acc.ReturnUsername(user);
                     Console.WriteLine("Administrator: " + username + "\n");
 
-                    Console.WriteLine("1. Account overzicht.\n2. Admin menu.\n3. Uitloggen.\n4. Bekijk catalogus.\n5. Mijn reserveringen.\n6. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
+                    Console.WriteLine("1. Account overzicht.\n2. Admin menu.\n3. Bekijk kalender\n4. Bekijk catalogus.\n5. Mijn reserveringen.\n6. Eten / Drinken menu.\n7. Uitloggen.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -70,7 +75,7 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        user = -1;
+                        //Kalender.Navigation();
                     }
                     else if (choose == "4")
                     {
@@ -85,7 +90,11 @@ namespace Team_2
                     {
                         FoodDrinkRun.Run(true);
                     }
-                    else
+                    else if (choose == "7")
+                    {
+                        user = -1;
+                    }
+                    else if (choose == "x" || choose == "X")
                     {
                         retry = false;
                     }
@@ -98,7 +107,7 @@ namespace Team_2
                     string username = acc.ReturnUsername(user);
                     Console.WriteLine("Welkom " + username + "\n");
 
-                    Console.WriteLine("1. Account overzicht.\n2. Uitloggen.\n3. Bekijk catalogus.\n4. Mijn reserveringen.\n5. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
+                    Console.WriteLine("1. Account overzicht.\n2. Bekijk catalogus.\n3. Bekijk kalender\n4. Mijn reserveringen.\n5. Eten / Drinken menu.\n6. Uitloggen.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
                     if (choose == "1")
                     {
@@ -110,11 +119,11 @@ namespace Team_2
                     }
                     else if (choose == "2")
                     {
-                        user = -1;
+                        MovieDetail.Navigation(user);
                     }
                     else if (choose == "3")
                     {
-                        MovieDetail.Navigation(user);
+                        //Kalender.Navigation();
                     }
                     else if (choose == "4")
                     {
@@ -125,12 +134,14 @@ namespace Team_2
                     {
                         FoodDrinkRun.Run();
                     }
-                    else
+                    else if (choose == "6")
                     {
+                        user = -1;
+                    }
+                    else if (choose == "x" || choose == "X")
                         retry = false;
                     }
                 }
             }
         }
     }
-}

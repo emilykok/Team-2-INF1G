@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 using Eten_Class;
 using Drinken_Class;
-using Hoofdmenu;
+using Console_Buffer;
 
 namespace Food_Drink_Run
 {
@@ -18,7 +17,7 @@ namespace Food_Drink_Run
 
             while (whileLoop == true)
             {
-                Console.Clear();
+                Console_Reset.clear();
                 Console.WriteLine("Welkom bij het eten en drinken menu.\n---------------------------------------------------\n\nTyp het nummer wat je wil doen en klik op enter:\n");
                 Console.WriteLine("1. Eten menu\n2. Eten filteren\n3. Drinken menu\n4. Drinken filteren\n");
                 if (permission == true)
@@ -28,13 +27,13 @@ namespace Food_Drink_Run
                     // etenmenu
                     if (nummer == "1")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         eten.EtenMenu();
                     }
                     // eten filter
                     if (nummer == "2")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Eten filteren:\n---------------------------------------------------\nTyp het nummer van wat je wilt doen:\n1. Op zoekterm filteren\n2. Allergie uitfilteren\n3. Terug naar vorige pagina");
                         string fNum = Console.ReadLine();
 
@@ -63,14 +62,14 @@ namespace Food_Drink_Run
                     // drinken menu
                     if (nummer == "3")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         drinken.DrinkenMenu();
                     }
 
                     // drinken filter
                     if (nummer == "4")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Drinken filteren:\n---------------------------------------------------\nTyp het nummer van wat je wilt doen:\n1.Op zoekterm filteren\n2.Allergie uitfilteren\n3.Terug naar vorige pagina");
                         string fNum = Console.ReadLine();
                         if (fNum == "1")
@@ -97,7 +96,7 @@ namespace Food_Drink_Run
                     //Clicks bekijken
                     if (nummer == "5")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Van welke item wil je de clicks bekijken?\n---------------------------------------------------\n1. Popcorn zoet\n2. Popcorn zout\n3. Popcorn karamel\n4. M&M's pinda\n5. M&M's chocola\n6. Chips naturel\n7. Chips paprika\n8. Doritos nacho cheese\n9. Haribo goudberen\n10. Skittles fruits\n\n11. Cola\n12. Pepsi\n13. Dr.Pepper\n14. Fanta Orange\n15. Spa rood\n16. Spa blauw\n17. Appelsap\n18. Rode wijn\n19. Witte wijn\n20. Heineken\n\nTyp het nummer van het product:");
                         string inp = Console.ReadLine();
                         try
@@ -116,7 +115,7 @@ namespace Food_Drink_Run
                     // clicks deleten eten
                     if (nummer == "6")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Clicks verwijderen:\n---------------------------------------------------\nTyp het nummer van wat je wilt doen:\n1. Op index verwijderen\n2. Alle clicks van eten verwijderen\n3. Terug naar vorige pagina\n");
                         string num = Console.ReadLine();
                         // deleten op index
@@ -139,7 +138,7 @@ namespace Food_Drink_Run
                     // clicksdeleten drinken
                     if (nummer == "7")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Clicks verwijderen:\n---------------------------------------------------\nTyp het nummer van wat je wilt doen:\n1. Op index verwijderen\n2. Alle clicks van eten verwijderen\n3. Terug naar vorige pagina\n");
                         string numm = Console.ReadLine();
                         // deleten op index
@@ -172,13 +171,13 @@ namespace Food_Drink_Run
                     // eten menu
                     if (nummer == "1")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         eten.EtenMenu();
                     }
                     // eten filter
                     if (nummer == "2")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Eten filteren:\n---------------------------------------------------\nTyp het nummer van wat je wilt doen:\n1. Op zoekterm filteren\n2. Allergie uitfilteren\n3. Terug naar vorige pagina");
                         string fNum = Console.ReadLine();
 
@@ -204,14 +203,14 @@ namespace Food_Drink_Run
                     // drinken menu
                     if (nummer == "3")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         drinken.DrinkenMenu();
                     }
 
                     // drinken filter
                     if (nummer == "4")
                     {
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("Drinken filteren:\n---------------------------------------------------\nTyp het nummer van wat je wilt doen:\n1.Op zoekterm filteren\n2.Allergie uitfilteren\n3.Terug naar vorige pagina");
                         string fNum = Console.ReadLine();
 

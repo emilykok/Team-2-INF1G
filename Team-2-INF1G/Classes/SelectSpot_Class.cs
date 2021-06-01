@@ -5,6 +5,8 @@ using System.IO;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
+using Console_Buffer;
+
 
 namespace SelectSpot_Class
 {
@@ -309,7 +311,7 @@ namespace SelectSpot_Class
             while (retry)
             {
                 // show the seats and ask which seat the user wants //
-                Console.Clear();
+                Console_Reset.clear();
                 Console.WriteLine(prompt);
                 if (hall == 1) Zaal150(film, day, hall);
                 else if (hall == 2) Zaal300(film, day, hall);

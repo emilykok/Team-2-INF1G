@@ -10,71 +10,69 @@ namespace Kalender_Class
 {
     class Kalender
     {
-        public struct KalenderData
+        // Schema JSON struct
+        public struct MovieSchema
         {
-            public string[] film1;
-            public string[] film2;
-            public string[] film3;
-            public string[] film4;
-            public string[] film5;
-            public string[] film6;
+            public string title;
+            public string hall;
+            public string day;
+            public string time;
         }
 
-        public List<KalenderData> kalenderDataList = new List<KalenderData>();
+        public List<MovieSchema> movieSchemaList = new List<MovieSchema>();
 
         [JsonIgnore]
-        public string jsonPath;
+        public string pathSchema;
         [JsonIgnore]
-        public string path;
+        public string jsonPathSchema;
 
         public Kalender()
         {
-            this.path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Kalender_Schema.json"));
-            this.jsonPath = File.ReadAllText(path);
-            this.kalenderDataList = JsonConvert.DeserializeObject<List<KalenderData>>(jsonPath);
+            this.pathSchema = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Movie_Schema.json"));
+            this.jsonPathSchema = File.ReadAllText(pathSchema);
+            this.movieSchemaList = JsonConvert.DeserializeObject<List<MovieSchema>>(jsonPathSchema);
         }
 
-        public static Tuple<string[][], string[][], string[][]> GetDaySchedule(int day)
+        public Tuple<string[][], string[][], string[][]> GetDaySchedule(string day)
         {
-            int index = day + (3 * day);
+            // Zaal 1
 
-            Kalender schedule = new Kalender();
-            string[][] theater1 = new string[6][]
-            { schedule.kalenderDataList[index].film1,
-                schedule.kalenderDataList[index].film2,
-                schedule.kalenderDataList[index].film3,
-                schedule.kalenderDataList[index].film4,
-                schedule.kalenderDataList[index].film5,
-                schedule.kalenderDataList[index].film6 };
-            index++;
-            string[][] theater2 = new string[6][]
-                { schedule.kalenderDataList[index].film1,
-                schedule.kalenderDataList[index].film2,
-                schedule.kalenderDataList[index].film3,
-                schedule.kalenderDataList[index].film4,
-                schedule.kalenderDataList[index].film5,
-                schedule.kalenderDataList[index].film6 };
-            index++;
-            string[][] theater3 = new string[6][]
-                { schedule.kalenderDataList[index].film1,
-                schedule.kalenderDataList[index].film2,
-                schedule.kalenderDataList[index].film3,
-                schedule.kalenderDataList[index].film4,
-                schedule.kalenderDataList[index].film5,
-                schedule.kalenderDataList[index].film6 };
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].hall == "Zaal 1" && movieSchemaList[i].day == day)
+                {
 
-            return Tuple.Create(theater1, theater2, theater3);
+                }
+            }
+
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].hall == "Zaal 2" && movieSchemaList[i].day == day)
+                {
+
+                }
+            }
+
+            for (int i = 0; i < movieSchemaList.Count; i++)
+            {
+                if (movieSchemaList[i].hall == "Zaal 3" && movieSchemaList[i].day == day)
+                {
+
+                }
+            }
+            return null;
+            //return Tuple.Create(theater1, theater2, theater3);
         }
 
-        public static void PrintDaySchedule(int dayNum)
+        public static void PrintDaySchedule(string dayNum)
         {
-            var day = GetDaySchedule(dayNum);
+            //var day = GetDaySchedule(dayNum);
             Console.WriteLine("\t    Zaal1    \t\t\t\t Zaal2    \t\t\t   Zaal3    ");
             for(int i = 0; i < 6; i++)
             {
-                Console.WriteLine($"|{day.Item1[i][0]},\t{day.Item1[i][1]}|" +
-                    $"\t|{day.Item2[i][0]},\t{day.Item2[i][1]}|" +
-                    $"\t|{day.Item3[i][0]},\t{day.Item3[i][1]}|");
+               // Console.WriteLine($"|{day.Item1[i][0]},\t{day.Item1[i][1]}|" +
+                //    $"\t|{day.Item2[i][0]},\t{day.Item2[i][1]}|" +
+                 //   $"\t|{day.Item3[i][0]},\t{day.Item3[i][1]}|");
             }
             
         }
@@ -113,7 +111,7 @@ namespace Kalender_Class
                         int selection = Convert.ToInt32(navigation);
                         Console.Clear();
                         Console.WriteLine("vul '<' in om terug te gaan");
-                        PrintDaySchedule(selection - 1);
+                        //PrintDaySchedule(selection - 1);
                     }
                     catch
                     {

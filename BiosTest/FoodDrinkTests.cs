@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text;
 using Eten_Class;
 using Drinken_Class;
+using System.IO;
 
 namespace BiosTest
 {
@@ -20,7 +21,7 @@ namespace BiosTest
 
         // UpdateClicks //
         [TestMethod]
-        public void UpdateClicks_IntIndex_UpdateClicks()
+        public void UpdateClicksF_IntIndex_UpdateClicks()
         {
             // Arrange
             int num = 5;
@@ -38,7 +39,7 @@ namespace BiosTest
 
         // ClearAllClicks //
         [TestMethod]
-        public void ClearAllClicks_IntIndex_ClearClicks()
+        public void ClearAllClicksF_IntIndex_ClearClicks()
         {
             // Arrange
             Eten eten = new Eten();
@@ -53,9 +54,8 @@ namespace BiosTest
         }
 
         // ClearClicks //
-
         [TestMethod]
-        public void ClearClicks_IntIndex_ClearClicks()
+        public void ClearClicksF_IntIndex_ClearClicks()
         {
             // Arrange
             int num = 7;
@@ -70,6 +70,17 @@ namespace BiosTest
         }
 
         // EtenFilter //
+        [TestMethod]
+        public void FilterF_Titel_showRes()
+        {
+            // Arrange
+            Eten eten = new Eten();
+            string toSearch = "pop";
+            // Act
+            string res = eten.EtenFilter(toSearch);
+            // Assert
+            Assert.AreEqual(res, "Gevonden eten met zoekterm 'pop':\n\nPopcorn zoet\nPopcorn zout\nPopcorn karamel\n");
+        }
 
         // EtenAllergieFilter //
 
@@ -84,13 +95,78 @@ namespace BiosTest
         // ViewClicks //
 
         // UpdateClicks //
+        [TestMethod]
+        public void UpdateClicksD_IntIndex_UpdateClicks()
+        {
+            // Arrange
+            int num = 5;
+            Eten eten = new Eten();
+            int bNum = eten.etenDataList[num - 1].clicks;
+
+            // Act
+            eten.UpdateClicks(5);
+            int resNum = eten.etenDataList[num - 1].clicks;
+
+            // Assert
+            Assert.AreEqual(bNum + 1, resNum);
+        }
 
         // ClearAllClicks //
+        [TestMethod]
+        public void ClearAllClicksD_IntIndex_ClearClicks()
+        {
+            // Arrange
+            Drinken drink = new Drinken();
+            int num = 8;
+
+            // Act
+            drink.ClearAllClicks();
+            int resNum = drink.drinkenDataList[num - 1].clicks;
+
+            // Assert
+            Assert.AreEqual(0, resNum);
+        }
 
         // ClearClicks //
+        [TestMethod]
+        public void ClearClicksD_IntIndex_ClearClicks()
+        {
+            // Arrange
+            int num = 7;
+            Drinken drink = new Drinken();
+
+            // Act
+            drink.ClearClicks(num);
+            int resNum = drink.drinkenDataList[num - 1].clicks;
+
+            // Assert
+            Assert.AreEqual(0, resNum);
+        }
 
         // DrinkenFilter //
+        [TestMethod]
+        public void FilterD_Titel_showRes()
+        {
+            var originalConsoleOut = Console.Out; // preserve the original streamusing(var writer = new StringWriter())
+ 
+            using (var writer = new StringWriter())
+                {
+                    Console.SetOut(writer);
+                    // Arrange
+                    Drinken drink = new Drinken();
+                    string toSearch = "wijn";
+                    // Act
+                    string res = drink.DrinkenFilter(toSearch);
 
+                    var stringconsole = writer.GetStringBuilder().ToString();
+                    writer.Flush(); // when you're done, make sure everything is written outvar myString = writer.GetStringBuilder().ToString();
+
+                    // Assert
+                    Assert.AreEqual(res, "Gevonden drinken met zoekterm 'wijn':\n\nRode wijn\nWitte wijn\n"); // //
+                }
+            Console.SetOut(originalConsoleOut); // restore Console.Out
+        }
+        
         // DrinkenAllergieFilter //
     }
 }

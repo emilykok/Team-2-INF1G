@@ -2,13 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
-using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
-using static System.Console;
 
 using Hoofdmenu;
 using Reservatie_Class;
+using Console_Buffer;
 
 namespace MovieDetail_Class
 {
@@ -139,14 +137,14 @@ namespace MovieDetail_Class
         public static void FilterNavigation(int user = -1)
         {
             // navigation for the entire filter section //
-            Console.Clear();
+            Console_Reset.clear();
             // genre selection //
             string[] genreOptions = new string[] { "actie", "animatie", "avontuur", "drama", "familie", "fantasy", "horror", "komedie", "misdaad", "muziek", "mysterie", "romantiek", "sci-fi", "thriller" };
             Menu genre = new Menu("gebruik de pijltjes om te navigeren en druk op enter om te selecteren\nKies een genre om te filteren\n",
                                   genreOptions);
             genre.Run();
             string chosenGenre = genreOptions[genre.SelectedIndex];
-            Console.Clear();
+            Console_Reset.clear();
             // use chosen genre to display a list of movies that fit the filter //
             string[][] filterPages = movieFilter(chosenGenre);
             int currentPage = 0;
@@ -228,7 +226,7 @@ namespace MovieDetail_Class
 
                     }
                     // clear the console and print the movie info //
-                    Console.Clear();
+                    Console_Reset.clear();
                     select.finalText = "";
                     select.Prompt = info;
                     // change the selection menu for select //
@@ -250,7 +248,7 @@ namespace MovieDetail_Class
                         bool confirm = true;
                         while (confirm)
                         {
-                            Console.Clear();
+                            Console_Reset.clear();
                             Console.WriteLine("U moet een account hebben om te kunnen reserveren");
                             Console.WriteLine("Klik op enter om door te gaan");
                             string userInput = Console.ReadLine();
@@ -346,7 +344,7 @@ namespace MovieDetail_Class
                 else
                 {
                     // clear the console and print the movie info //
-                    Console.Clear();
+                    Console_Reset.clear();
                     select.finalText = "";
                     int movieIndexed = ((page - 1) * 10) + (select.SelectedIndex + 1);
                     select.Prompt = DisplayMovie(movieIndexed);// get the right index for the Json file //
@@ -368,7 +366,7 @@ namespace MovieDetail_Class
                         bool confirm = true;
                         while (confirm)
                         {
-                            Console.Clear();
+                            Console_Reset.clear();
                             Console.WriteLine("U moet een account hebben om te kunnen reserveren");
                             Console.WriteLine("Klik op enter om door te gaan");
                             string userInput = Console.ReadLine();

@@ -8,6 +8,7 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Hashing_Class;
 using System.Linq;
 
+using Console_Buffer;
 using Reservatie_Class;
 
 namespace Account_Class
@@ -158,7 +159,7 @@ namespace Account_Class
             while (retry == true)
             {
                 // Clears the console for typing;
-                //Console.Clear();
+                Console_Reset.clear();
 
                 // Header
                 Console.WriteLine("*Login Pagina*");
@@ -254,7 +255,7 @@ namespace Account_Class
 
             while (retry == true){
                 // Clears the console for typing;
-                Console.Clear();
+                Console_Reset.clear();
 
                 // Ask for user input
                 Console.WriteLine("*Registreren*");
@@ -636,7 +637,7 @@ namespace Account_Class
                 if (executeRun == true)
                 {
                     // Header
-                    Console.Clear();
+                    Console_Reset.clear();
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de gebruiker te gaan\nOm te stoppen toets X.\n");
 
@@ -694,7 +695,7 @@ namespace Account_Class
 
             while (retry == true)
             {
-                Console.Clear();
+                Console_Reset.clear();
 
                 if(returnValue == false)
                 {
@@ -765,7 +766,7 @@ namespace Account_Class
                 
                 else if (userInputItem == "7") // checks for "allergie" add or remove [array]
                 {
-                    Console.Clear();
+                    Console_Reset.clear();
 
                     Console.WriteLine("\nKies uit de volgende opties:\n[1] om een allergie toe te voegen\n[2] om een allergie te verwijderen\n'X' om te stoppen");
                     string choose = Console.ReadLine();
@@ -775,7 +776,7 @@ namespace Account_Class
                         bool innerRetry = true;
                         while (innerRetry == true)
                         {
-                            Console.Clear();
+                            Console_Reset.clear();
 
                             string[] availableArr = this.AvailableAllergie(allergies);
                             Console.WriteLine("\nKies uit de volgende allergenen: ");
@@ -822,7 +823,7 @@ namespace Account_Class
                         {
                             while (innerRetry == true) // to make retry possible
                             {
-                                Console.Clear();
+                                Console_Reset.clear();
 
                                 Console.WriteLine("\nKies uit de volgende allergenen: "); // prints all the users allergies
                                 for (int i = 0; i < allergies.Length; i++)

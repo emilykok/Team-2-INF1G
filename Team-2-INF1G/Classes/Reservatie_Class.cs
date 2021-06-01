@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
 using SelectSpot_Class;
+
+using Console_Buffer; 
 
 namespace Reservatie_Class
 {
@@ -256,7 +257,7 @@ namespace Reservatie_Class
 
             while(loop == true)
             {
-                Console.Clear();
+                Console_Reset.clear();
                 Console.WriteLine("----Reserveren----");
                 if (falseInput == true)
                 {
@@ -336,7 +337,7 @@ namespace Reservatie_Class
             // Checks if selectionArr is filled (if the movie is shown)
             if (selectionArr.Length == 0)
             {
-                Console.Clear();
+                Console_Reset.clear();
                 Console.WriteLine("----Reserveren----");
                 Console.WriteLine("Op dit moment is deze film niet toonbaar bij ons.");
                 Console.WriteLine("\nklik op enter om door te gaan");
@@ -352,7 +353,7 @@ namespace Reservatie_Class
 
                 while (loop == true)
                 {
-                    Console.Clear();
+                    Console_Reset.clear();
                     Console.WriteLine("----Reserveren----");
                     if (falseInput == true)
                     {
@@ -480,7 +481,7 @@ namespace Reservatie_Class
                     if (executeRun == true)
                     {
                         // Header
-                        Console.Clear();
+                        Console_Reset.clear();
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Vul < of > in om te navigeren tussen de bladzijden. \nVoer het corresponderende nummer in om de naar de reservering te gaan\nOm te stoppen toets X.\n");
 
@@ -537,7 +538,7 @@ namespace Reservatie_Class
                 }
                 else
                 {
-                    Console.Clear();
+                    Console_Reset.clear();
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("\nEr zijn geen reserveringen gevonden");
                     Console.WriteLine("\nU kunt gemakkelijk een reservering maken door een film in onze catalogus te selecteren en op reserveren te drukken!");
@@ -552,7 +553,7 @@ namespace Reservatie_Class
         // Method that only prints the ticket, has the specific ticket as parameter
         public void DisplayReservatie(Tickets ticket)
         {
-            Console.Clear();
+            Console_Reset.clear();
 
             string stoelen = "";
             foreach (int index in ticket.seatIndexes)

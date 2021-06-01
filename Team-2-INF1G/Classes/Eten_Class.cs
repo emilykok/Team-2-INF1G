@@ -2,13 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+
+using Console_Buffer;
 using Food_Drink_Run;
-using Hoofdmenu;
+
 
 namespace Eten_Class
 {
@@ -50,13 +49,13 @@ namespace Eten_Class
         // fooddisplay
         public void EtenMenu()
         {
-            Console.Clear();
+            Console_Reset.clear();
             Console.WriteLine("Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
             // leest input command van de console
             string input = Console.ReadLine();
-            Console.Clear();
+            Console_Reset.clear();
 
             try // in t geval dat de input te hoog is of niet convertible is tot int
             {
@@ -97,7 +96,7 @@ namespace Eten_Class
                     /// input na de display
                     Console.WriteLine("\n1. Terug naar het eten & drinken menu");
                     input = Console.ReadLine();
-                    Console.Clear();
+                    Console_Reset.clear();
                     if (input == "1" || input == "") EtenMenu();
                 }
                 else if (num == 11) FoodDrinkRun.Run();
@@ -107,11 +106,11 @@ namespace Eten_Class
 
             catch (Exception)
             { // input is niet convertible naar int of input is te hoog nummer
-                Console.Clear();
+                Console_Reset.clear();
                 Console.WriteLine("De input is niet juist, probeer het nogeens\n");
                 EtenMenu();
             }
-            Console.Clear();
+            Console_Reset.clear();
 
         }
 
@@ -124,7 +123,7 @@ namespace Eten_Class
         // method to view clicks of certain index
         public void ViewClicks(int num)
         {
-            Console.Clear();
+            Console_Reset.clear();
             Console.WriteLine("Clicks op geselecteerde item is: "+ etenDataList[num - 1].clicks);
         }
 
@@ -212,7 +211,7 @@ namespace Eten_Class
 
         // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
         public string EtenFilter(string toFilter) {
-            Console.Clear();
+            Console_Reset.clear();
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;
@@ -247,7 +246,7 @@ namespace Eten_Class
         // functie die weergeeft welke items de gegeven allergeen niet bevatten
         public string EtenAllergieFilter(string toFilter)
         {
-            Console.Clear();
+            Console_Reset.clear();
             toFilter = toFilter.ToLower();
             string s = "";
             bool check = true;
