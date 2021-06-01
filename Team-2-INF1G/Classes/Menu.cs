@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using static System.Console;
 
 namespace Hoofdmenu
 {
+    [ExcludeFromCodeCoverage]
     class Menu
     {
         public int SelectedIndex;

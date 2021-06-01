@@ -8,8 +8,10 @@ using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 using Hashing_Class;
 using System.Linq;
 
+
 using Console_Buffer;
 using Reservatie_Class;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Account_Class
 {
@@ -60,6 +62,7 @@ namespace Account_Class
         }
 
         // Method that is used to write data to the JSON file.
+        [ExcludeFromCodeCoverage]
         public string ToJSON()
         {
             return JsonConvert.SerializeObject(this.accountDataList, Formatting.Indented);
@@ -95,7 +98,7 @@ namespace Account_Class
         // Method that prints items with start and stop input (hard coded for Accounts.json!)
         public void PrintItem(int start, int stop)
         {
-            for (int i = 0; i < accountDataList.Count; i++)
+            for (int i = start; i < stop; i++)
             {
                 try
                 {
@@ -419,7 +422,7 @@ namespace Account_Class
                     }
                     else if (value == "Female" || value == "female" || value == "Vrouw" || value == "vrouw")
                     {
-                        gender = "female";
+                        gender = "vrouw";
                     }
                     else
                     {
@@ -571,11 +574,11 @@ namespace Account_Class
             while (loop == true)
             {
                 bool executeRun = true;
-
+                
                 // runs code when page is at 0, no increase in value
                 if (start == 0 && (state != ">" && state != "<"))
                 {
-                    if (start + 40 > accountDataList.Count)
+                    if (start + 10 > accountDataList.Count)
                     {
                         if (start == accountDataList.Count)
                         {
@@ -585,14 +588,14 @@ namespace Account_Class
                     }
                     else
                     {
-                        stop = start + 20;
+                        stop = start + 10;
                     }
                 }
 
                 // runs code when page is NOT at 0, no increase in value
                 else if (start != 0 && (state != ">" && state != "<"))
                 {
-                    if (start + 40 > accountDataList.Count)
+                    if (start + 10 > accountDataList.Count)
                     {
                         if (start == accountDataList.Count)
                         {
@@ -602,34 +605,34 @@ namespace Account_Class
                     }
                     else
                     {
-                        stop = start + 20;
+                        stop = start + 10;
                     }
                 }
-                // runs code with 20 increment, stores value
+                // runs code with 10 increment, stores value
                 else if (state == ">")
                 {
-                    if ((start + 20) >= accountDataList.Count)
+                    if ((start + 10) >= accountDataList.Count)
                     {
                         executeRun = false;
                     }
                     else
                     {
-                        start += 20;
-                        stop = start + 20;
+                        start += 10;
+                        stop = start + 10;
                     }
                 }
 
-                // Runs code with 20 decrement, stores value
+                // Runs code with 10 decrement, stores value
                 else if (state == "<")
                 {
-                    if ((start - 20) < accountDataList.Count)
+                    if ((start - 10) < 0)
                     {
                         executeRun = false;
                     }
                     else
                     {
-                        start -= 20;
-                        stop = start + 20;
+                        start -= 10;
+                        stop = start + 10;
                     }
                 }
 
@@ -645,8 +648,8 @@ namespace Account_Class
                     PrintItem(start, stop);
 
                     // current page indicator
-                    int pageCounterCurrent = (start / 20) + 1;
-                    int pageCounterAll = (accountDataList.Count / 20) + 1;
+                    int pageCounterCurrent = (start / 10) + 1;
+                    int pageCounterAll = (accountDataList.Count / 10) + 1;
                     Console.WriteLine($"\nPage {pageCounterCurrent}/{pageCounterAll}");
                 }
 
@@ -657,6 +660,7 @@ namespace Account_Class
                     int convert = Convert.ToInt32(userInput);
                     convert -= 1;
                     AccountView(convert, true);
+                    state = " ";
                 }
                 catch
                 {

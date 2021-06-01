@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Hashing_Class
 {
-    class Hashing
+    public class Hashing
     {
         public static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {

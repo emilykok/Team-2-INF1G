@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Console_Buffer
 {
+    [ExcludeFromCodeCoverage]
     class Console_Reset
     {
         public static void clear()

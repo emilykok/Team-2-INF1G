@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text;
 using Eten_Class;
 using Drinken_Class;
+using System.IO;
 
 namespace BiosTest
 {
@@ -17,24 +18,27 @@ namespace BiosTest
         //  DeleteEten //
 
         // ViewClicks //
-        [TestMethod]
-        public void ViewClicksF_IntIndex_printClicks() {
+        //[TestMethod]
+        public void ViewClicksF_IntIndex_printClicks()
+        {
             // Arrange
             Eten eten = new Eten();
             int num = 8;
 
             // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
             eten.ViewClicks(num);
-            string res = "Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks;
-            // Assert
+            string res = output.ToString();
 
-            Assert.AreEqual(res, "Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks);
+            // Assert
+            Assert.AreEqual(res, ("Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks));
         }
 
         // UpdateClicks //
         [TestMethod]
         public void UpdateClicksF_IntIndex_UpdateClicks()
-        {                
+        {
             // Arrange
             int num = 5;
             Eten eten = new Eten();
@@ -156,9 +160,10 @@ namespace BiosTest
 
         // DrinkenFilter //
         [TestMethod]
-        public void FilterD_Titel_showRes() {
+        public void FilterD_Titel_showRes()
+        {
             // Arrange
-            Drinken drink = new Drinken(); 
+            Drinken drink = new Drinken();
             string toSearch = "wijn";
             // Act
             string res = drink.DrinkenFilter(toSearch);

@@ -112,11 +112,13 @@ namespace Kalender_Class
         public static void ChooseDay()
         {
             Console_Reset.clear();
+            Console.WriteLine("Kies hieruit een dag om te bekijken:\n");
             string[] dagen = new string[] { "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag" };
             for(int i = 0; i < dagen.Length; i++)
             {
                 Console.WriteLine($"{i+1}.\t{dagen[i]}");
             }
+            Console.WriteLine("");
         }
 
         public void Navigation()
@@ -143,7 +145,7 @@ namespace Kalender_Class
                     {
                         int selection = Convert.ToInt32(navigation);
                         Console_Reset.clear();
-                        Console.WriteLine("vul '<' in om terug te gaan");
+                        Console.WriteLine("vul '<' in om terug te gaan\n");
                         PrintDaySchedule(selection - 1, this.movieSchemaList);
                     }
                     catch

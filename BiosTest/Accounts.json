@@ -62,15 +62,5 @@
     "bankingDetails": null,
     "Allergies": [],
     "Permission": false
-  },
-  {
-    "Name": "jan1",
-    "Password": "dc8b595722d25d4486246747db8cbb59b6fe3c1d76e8576ec63b985b4c936169",
-    "Age": -1,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": [],
-    "Permission": false
   }
 ]
