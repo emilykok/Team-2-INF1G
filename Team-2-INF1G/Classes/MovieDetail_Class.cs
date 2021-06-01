@@ -44,7 +44,7 @@ namespace MovieDetail_Class
         {
             // function to make a singular string out of a string array //
             string s = "";
-            if (before.Length <= 0) return s;
+            if (before.Length <= 0) return "";
             for (int i = 0; i < (before.Length - 1); i++)
             {
                 s += before[i] + ", ";

@@ -1940,7 +1940,9 @@
     "position": "G7",
     "soort": "o",
     "availability": [
-      [],
+      [
+        "Deadpool"
+      ],
       [],
       [],
       [],
@@ -1953,7 +1955,9 @@
     "position": "G8",
     "soort": "o",
     "availability": [
-      [],
+      [
+        "Deadpool"
+      ],
       [],
       [],
       [],

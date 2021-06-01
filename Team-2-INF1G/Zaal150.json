@@ -934,7 +934,9 @@
     "position": "G7",
     "soort": "r",
     "availability": [
-      [],
+      [
+        "Deadpool"
+      ],
       [],
       [],
       [],
