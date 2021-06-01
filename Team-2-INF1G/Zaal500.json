@@ -3,7 +3,14 @@
     "position": "A5",
     "soort": "b",
     "availability": [
-      [],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       [],
       [],
       [],
@@ -16,7 +23,14 @@
     "position": "A6",
     "soort": "b",
     "availability": [
-      [],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       [],
       [],
       [],
@@ -29,7 +43,14 @@
     "position": "A7",
     "soort": "b",
     "availability": [
-      [],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       [],
       [],
       [],

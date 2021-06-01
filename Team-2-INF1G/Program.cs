@@ -5,7 +5,8 @@ using Account_Class;
 using Food_Drink_Run;
 using MovieDetail_Class;
 using Reservatie_Class;
-//using Kalender_Class;
+using Kalender_Class;
+using Console_Buffer;
 
 namespace Team_2
 {
@@ -15,14 +16,15 @@ namespace Team_2
         {
             
             Account acc = new Account();
-            
+            Kalender kalender = new Kalender();
+
             bool retry = true;
             int user = -1;
             while (retry == true)
             {
                 if (user == -1) // If there is no login (no user selected)
                 {
-                    Console.Clear();
+                    Console_Reset.clear();
                     Console.WriteLine("Welkom bij Cinematrix\nHoofd menu:\n---------------------------------------------------\n");
                     Console.WriteLine("1. Inloggen.\n2. Account creeeren.\n3. Bekijk kalender\n4. Bekijk catalogus.\n5. Eten / Drinken menu.\nOm programma te verlaten, enter 'X'");
                     string choose = Console.ReadLine();
@@ -36,7 +38,7 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        //Kalender.Navigation();
+                        kalender.Navigation();
                     }
                     else if (choose == "4")
                     {
@@ -53,7 +55,7 @@ namespace Team_2
                 }
                 else if (user > -1 && acc.accountDataList[user].Permission == true) // If there is logged in (admin)
                 {
-                    Console.Clear();
+                    Console_Reset.clear();
 
                     // Print the username with welcome text
                     string username = acc.ReturnUsername(user);
@@ -75,7 +77,7 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        //Kalender.Navigation();
+                        kalender.Navigation();
                     }
                     else if (choose == "4")
                     {
@@ -101,7 +103,7 @@ namespace Team_2
                 }
                 else // If there is logged in (user)
                 {
-                    Console.Clear();
+                    Console_Reset.clear();
 
                     // Print the username with welcome text
                     string username = acc.ReturnUsername(user);
@@ -123,7 +125,7 @@ namespace Team_2
                     }
                     else if (choose == "3")
                     {
-                        //Kalender.Navigation();
+                        kalender.Navigation();
                     }
                     else if (choose == "4")
                     {

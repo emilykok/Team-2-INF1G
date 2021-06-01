@@ -556,11 +556,19 @@ namespace Reservatie_Class
             Console_Reset.clear();
 
             string stoelen = "";
-            foreach (int index in ticket.seatIndexes)
-            {
-                stoelen += ticket.seatStrings[index] + " ";
-            }
 
+            if (ticket.seatIndexes.Length == 1)
+            {
+                stoelen = ticket.seatStrings[0];
+            }
+            else
+            {
+                foreach (int index in ticket.seatIndexes)
+                {
+                    stoelen += ticket.seatStrings[index] + " ";
+                }
+            }
+            
             Console.WriteLine("===============");
             Console.WriteLine($"*Reservatie {ticket.filmName}*");
             Console.WriteLine("===============\n");

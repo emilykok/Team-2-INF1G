@@ -176,6 +176,7 @@ namespace SelectSpot_Class
             Theater choice = new Theater();
             List<TheaterData> theaterDataList = choice.WhichTheaterHall(hall);
             Console.WriteLine("Welke stoel wilt u reserveren?(zorg dat de letter een Hoofdletter is, Bijvoorbeeld: A5.)");
+            Console.WriteLine("Als u wilt stoppen, klik op ENTER");
             string seat = Console.ReadLine();
             for(int i = 0; i < theaterDataList.Count; i++)
             {
@@ -351,7 +352,7 @@ namespace SelectSpot_Class
                     Console.WriteLine("Wilt u het opniew proberen? 'Y/N'.");
                     string answer = Console.ReadLine();
                     // 'nee' cancels the selection, anything else will repeat the loop //
-                    if(answer == "N")
+                    if(answer == "N" || answer == "n")
                     {
                         retry = false;
                         return null;
