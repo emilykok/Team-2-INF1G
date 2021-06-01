@@ -6,7 +6,7 @@ Pls use the format below :)
 
 // MethodName //
 [TestMethod]
-    public void Name_Scenario_ExpectedBehavior() // Name_Scenario_ExpectedBehavior{
+    public void Name_Scenario_ExpectedBehavior(){
         // Arrange
         -space for initializing objects-
 

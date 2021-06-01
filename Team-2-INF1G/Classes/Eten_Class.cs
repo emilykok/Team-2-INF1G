@@ -124,7 +124,12 @@ namespace Eten_Class
         // method to view clicks of certain index
         public void ViewClicks(int num)
         {
-            Console.Clear();
+
+            try
+            {
+                Console.Clear();
+            }
+            catch { }
             Console.WriteLine("Clicks op geselecteerde item is: "+ etenDataList[num - 1].clicks);
         }
 
@@ -212,7 +217,7 @@ namespace Eten_Class
 
         // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
         public string EtenFilter(string toFilter) {
-            Console.Clear();
+            //Console.Clear();
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;

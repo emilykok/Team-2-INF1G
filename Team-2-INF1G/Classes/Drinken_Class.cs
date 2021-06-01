@@ -200,7 +200,7 @@ namespace Drinken_Class
         // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
         public string DrinkenFilter(string toFilter)
         {
-            Console.Clear();
+            //Console.Clear();
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;
@@ -223,7 +223,7 @@ namespace Drinken_Class
                     }
                     if (add == true) s += drinkenDataList[i].naam + "\n";
                 }
-                return $"Gevonden drinken met zoekterm '{toFilter}':\n\n{s}"; ;
+                return $"Gevonden drinken met zoekterm '{toFilter}':\n\n{s}";
             }
 
             catch (Exception)
