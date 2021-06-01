@@ -100,7 +100,7 @@ namespace Eten_Class
                     if (input == "1" || input == "") EtenMenu();
                 }
                 else if (num == 11) FoodDrinkRun.Run();
-                
+
 
             }
 
@@ -124,7 +124,7 @@ namespace Eten_Class
         public void ViewClicks(int num)
         {
             Console_Reset.clear();
-            Console.WriteLine("Clicks op geselecteerde item is: "+ etenDataList[num - 1].clicks);
+            Console.WriteLine("Clicks op geselecteerde item is: " + etenDataList[num - 1].clicks);
         }
 
         //method to update clicks
@@ -172,7 +172,7 @@ namespace Eten_Class
                 ClearClicks(i + 1);
             }
         }
-        
+
         // clears click at certain index
         public void ClearClicks(int n) {
             int index = n - 1;
@@ -210,12 +210,12 @@ namespace Eten_Class
         }
 
         // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
-        public string EtenFilter(string toFilter) {
+        public string EtenFilter(string toFilter)
+        {
             Console_Reset.clear();
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;
-            try
             {   // loopt door alle items in de json
                 for (int i = 0; i < etenDataList.Count; i++)
                 {
@@ -228,46 +228,42 @@ namespace Eten_Class
                         if (etenDataList[i].tags[j].Contains(toFilter)) add = true;
                     }
                     // zoekt in allergenen
-                    for (int j = 0; j < etenDataList[i].allergenen.Length; j++) {
-                        if (etenDataList[i].allergenen[j].Contains(toFilter))add = true;
-                    }
-                    if (add == true) s += etenDataList[i].naam + "\n"; 
-                }
-                return $"Gevonden eten met zoekterm '{toFilter}':\n\n{s}"; ;
-            }
-
-            catch (Exception)
-            {
-                return "je input was onjuist";
-            }
-            
-        }
-
-        // functie die weergeeft welke items de gegeven allergeen niet bevatten
-        public string EtenAllergieFilter(string toFilter)
-        {
-            Console_Reset.clear();
-            toFilter = toFilter.ToLower();
-            string s = "";
-            bool check = true;
-            try 
-            {   // loopt door alle items in eten json
-                for (int i = 0; i < etenDataList.Count; i++) {
-                    // loopt door de allergenen in de item
                     for (int j = 0; j < etenDataList[i].allergenen.Length; j++)
-                    {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
-                        if (etenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
-                    }   // als de item het niet bevat wordt hij toegevoegd aan string
-                    if (check) s += etenDataList[i].naam + "\n";
+                    {
+                        if (etenDataList[i].allergenen[j].Contains(toFilter)) add = true;
+                    }
+                    if (add == true) s += etenDataList[i].naam + "\n";
                 }
-                return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
-            }
-            catch {
-                return "je input was onjuist";
+                return $"Gevonden eten met zoekterm '{toFilter}':\n\n{s}";
             }
         }
 
-    }
-}
+            
+            public string EtenAllergieFilter(string toFilter)
+            {// functie die weergeeft welke items de gegeven allergeen niet bevatten
+                Console_Reset.clear();
+                toFilter = toFilter.ToLower();
+                string s = "";
+                bool check = true;
+                try
+                {   // loopt door alle items in eten json
+                    for (int i = 0; i < etenDataList.Count; i++) {
+                        // loopt door de allergenen in de item
+                        for (int j = 0; j < etenDataList[i].allergenen.Length; j++)
+                        {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
+                            if (etenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
+                        }   // als de item het niet bevat wordt hij toegevoegd aan string
+                        if (check) s += etenDataList[i].naam + "\n";
+                    }
+                    return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
+                }
+                catch {
+                    return "je input was onjuist";
+                }
+            }
+        }
+    } 
+
+
 
 

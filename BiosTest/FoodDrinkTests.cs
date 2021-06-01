@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text;
 using Eten_Class;
 using Drinken_Class;
+using System.IO;
 
 namespace BiosTest
 {
@@ -24,11 +25,13 @@ namespace BiosTest
             int num = 8;
 
             // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
             eten.ViewClicks(num);
-            string res = "Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks;
-            // Assert
+            string res = output.ToString();
 
-            Assert.AreEqual(res, "Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks);
+            // Assert
+            Assert.AreEqual(res, ("Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks));
         }
 
         // UpdateClicks //
