@@ -202,3 +202,10 @@ C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\Bi
 C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.genruntimeconfig.cache
 C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
 C:\Users\bjorn\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.csprojAssemblyReference.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.AssemblyInfoInputs.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.AssemblyInfo.cs
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.csproj.CoreCompileInputs.cache
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.dll
+C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.pdb
