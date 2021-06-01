@@ -257,9 +257,7 @@ namespace Eten_Class
                     }
                     return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
                 }
-                catch {
-                    return "je input was onjuist";
-                }
+                catch {}
             }
         }
     } 
