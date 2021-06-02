@@ -564,6 +564,29 @@ x
 
         // Now with admin logged in
         [TestMethod]
+        public void AccountView_Perms_Admin()
+        {
+            // Arrange
+            Account acc1 = new Account();
+            acc1.CreateUser("testpermadmin", "testpermadmin");
+
+            // Act
+            // _step 1, read from console "user input"
+            // WARNING when using StringReader, you MUST use @ and no indentation!
+            var input = new StringReader(@"8
+true
+
+x
+");
+            Console.SetIn(input);
+            acc1.AccountView(acc1.accountDataList.Count - 1, true);
+
+            // Assert
+            Assert.AreEqual(true, acc1.accountDataList[acc1.accountDataList.Count - 1].Permission); // checks the value's BE CAREFUL WITH REFERENCES!
+            acc1.DeleteUser(acc1.accountDataList.Count - 1);
+        }
+
+        [TestMethod]
         public void AccountView_Verwijder_Admin()
         {
             // Arrange

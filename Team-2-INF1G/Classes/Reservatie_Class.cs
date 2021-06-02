@@ -130,16 +130,16 @@ namespace Reservatie_Class
             {
                 for (int j = 0; j < TicketsList.Count; j++)
                 {
-                    if (TicketsList[j].reservationNumber == reservationList[i])
+                    try
                     {
-                        try
+                        if (TicketsList[j].reservationNumber == reservationList[i])
                         {
                             Console.WriteLine($"[{i + 1}] {TicketsList[j].filmName} | {TicketsList[j].startTime} {TicketsList[j].weekday}");
                         }
-                        catch
-                        {
-                            break;
-                        }
+                    }
+                    catch
+                    {
+                        break;
                     }
                 }
             }
@@ -191,7 +191,7 @@ namespace Reservatie_Class
 
 
         // Method that returns the index of where the reservation number is in the JSON file
-        private int ReservationNumberIndexer(int reservationNumber)
+        public int ReservationNumberIndexer(int reservationNumber)
         {
             for (int i = 0; i < TicketsList.Count; i++)
             {
@@ -402,6 +402,7 @@ namespace Reservatie_Class
 
         //// RESERVATION LIST AND DISPLAY
         // Method that prints the list of reservation of specific user
+        [ExcludeFromCodeCoverage] // This will not be covered by the test because it only calls other methods, returns nothing and write's nothing to JSON. All called methods are tested!
         public void ReservationUserPrint(int user)
         {
             string state = " ";
@@ -421,7 +422,7 @@ namespace Reservatie_Class
                     // runs code when page is at 0, no increase in value
                     if (start == 0 && (state != ">" && state != "<"))
                     {
-                        if (start + 40 > reservationList.Count)
+                        if (start + 10 > reservationList.Count)
                         {
                             if (start == reservationList.Count)
                             {
@@ -431,51 +432,35 @@ namespace Reservatie_Class
                         }
                         else
                         {
-                            stop = start + 20;
+                            stop = start + 10;
                         }
                     }
 
-                    // runs code when page is NOT at 0, no increase in value
-                    else if (start != 0 && (state != ">" && state != "<"))
-                    {
-                        if (start + 40 > reservationList.Count)
-                        {
-                            if (start == reservationList.Count)
-                            {
-                                executeRun = false;
-                            }
-                            stop = reservationList.Count;
-                        }
-                        else
-                        {
-                            stop = start + 20;
-                        }
-                    }
-                    // runs code with 20 increment, stores value
+                    // runs code with 10 increment, stores value
                     else if (state == ">")
                     {
-                        if ((start + 20) >= reservationList.Count)
+                        if ((start + 10) >= reservationList.Count)
                         {
                             executeRun = false;
                         }
                         else
                         {
-                            start += 20;
-                            stop = start + 20;
+                            start += 10;
+                            stop = start + 10;
                         }
                     }
 
-                    // Runs code with 20 decrement, stores value
+                    // Runs code with 10 decrement, stores value
                     else if (state == "<")
                     {
-                        if ((start - 20) < reservationList.Count)
+                        if ((start - 10) < 0)
                         {
                             executeRun = false;
                         }
                         else
                         {
-                            start -= 20;
-                            stop = start + 20;
+                            start -= 10;
+                            stop = start + 10;
                         }
                     }
 
@@ -491,8 +476,8 @@ namespace Reservatie_Class
                         PrintItemReservation(start, stop, reservationList);
 
                         // current page indicator
-                        int pageCounterCurrent = (start / 20) + 1;
-                        int pageCounterAll = (accountDataList.Count / 20) + 1;
+                        int pageCounterCurrent = (start / 10) + 1;
+                        int pageCounterAll = (reservationList.Count / 10) + 1;
                         Console.WriteLine($"\nPage {pageCounterCurrent}/{pageCounterAll}");
                     }
 
@@ -507,6 +492,7 @@ namespace Reservatie_Class
                         while (inspectReservation == true)
                         {
                             DisplayReservatie(TicketsList[ReservationNumberIndexer(reservationList[convert])]);
+                            state = " ";
                             Console.WriteLine("\nals u de reservatie wilt verwijderen, typ VERWIJDER. Om terug te gaan, toets 'X'");
 
                             string innerUserInput = Console.ReadLine();

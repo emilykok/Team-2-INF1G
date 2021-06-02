@@ -9,26 +9,7 @@
     "filmDuration": 0,
     "hall": null,
     "seatStrings": null,
-    "reservationNumber": 0,
-    "seatIndexes": null
-  },
-  {
-    "filmName": "Titanic",
-    "namePerson": "Admin1",
-    "ticketAmount": 2,
-    "price": 20.0,
-    "weekday": "13:45",
-    "startTime": "Donderdag",
-    "filmDuration": 194,
-    "hall": "Zaal 3",
-    "seatStrings": [
-      "A5",
-      "A6"
-    ],
     "reservationNumber": 1,
-    "seatIndexes": [
-      0,
-      1
-    ]
+    "seatIndexes": null
   }
 ]

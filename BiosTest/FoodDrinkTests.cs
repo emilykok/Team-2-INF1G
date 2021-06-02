@@ -29,16 +29,16 @@ namespace BiosTest
             eten.EtenMenu();
             string expected = @"Eten Menu:
 ---------------------------------------------------
-1. Popcorn zoet -       va 2,99
-2. Popcorn zout -       va 2,49
-3. Popcorn karamel -        va 2,49
-4. M&M's pinda -        3,99
-5. M&M's chocola -      4,49
-6. Chips naturel -      va 2,99
-7. Chips paprika -      va 2,99
-8. Doritos nacho cheese -   3,99
-9. Haribo goudberen -       3,49
-10. Skittles fruits -       3,99
+1. Popcorn zoet - 		va 2,99
+2. Popcorn zout - 		va 2,49
+3. Popcorn karamel - 		va 2,49
+4. M&M's pinda - 		3,99
+5. M&M's chocola - 		4,49
+6. Chips naturel - 		va 2,99
+7. Chips paprika - 		va 2,99
+8. Doritos nacho cheese - 	3,99
+9. Haribo goudberen - 		3,49
+10. Skittles fruits - 		3,99
 
 11. Terug naar de vorige pagina
 
@@ -47,21 +47,20 @@ Typ het nummer van de item die je wilt bekijken en klik op enter:
 M&M pinda
 ---------------------------------------------------
 
-inhoud: 250g, 
-prijs: 3.99, 
+inhoud: 250g,
+prijs: 3.99,
 
 Per 100gr:
 Energie: 2154kj(515kcal)
 Vet: 26g
-    Waarvan verzadigd: 11g
+   Waarvan verzadigd: 11g
 Koolhydraten: 59g
-    Waarvan suikers: 53g
+   Waarvan suikers: 53g
 Voedingsvezel: 0g
 Eiwitten: 9,9g
 Zout: 0.09g
-    
-allergenen: lactose, pinda, soja, amandel, hazelnoot, noten, 
 
+allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
 
 
 1. Terug naar het eten & drinken menu
