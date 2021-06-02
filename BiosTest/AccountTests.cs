@@ -10,6 +10,21 @@ namespace BiosTest
     [TestClass]
     public class AccountTests
     {
+        // NameReturn //
+        [TestMethod]
+        public void ReturnCorrectUsername()
+        {
+            // Arrange
+            Account acc1 = new Account();
+
+            // Act
+            string res = acc1.ReturnUsername(4);
+
+            // Assert
+            Assert.AreEqual(res, "Admin1");
+        }
+        
+
         // TextCheck //
         [TestMethod]
         public void TextCheck_InputEmpty_ReturnsTrue() 
@@ -540,14 +555,85 @@ x
             Assert.AreNotEqual("testdelete", acc1.accountDataList[acc1.accountDataList.Count - 1].Name); // checks the value's BE CAREFUL WITH REFERENCES!
         }
 
+        // Now with admin logged in
+        [TestMethod]
+        public void AccountView_Verwijder_Admin()
+        {
+            // Arrange
+            Account acc1 = new Account();
+            acc1.CreateUser("testdeleteadmin", "testdeleteadmin");
+
+            // Act
+            // _step 1, read from console "user input"
+            // WARNING when using StringReader, you MUST use @ and no indentation!
+            var input = new StringReader(@"9
+VERWIJDER
+
+x
+");
+            Console.SetIn(input);
+            acc1.AccountView(acc1.accountDataList.Count - 1, true);
+
+            // Assert
+            Assert.AreNotEqual("testdeleteadmin", acc1.accountDataList[acc1.accountDataList.Count - 1].Name); // checks the value's BE CAREFUL WITH REFERENCES!
+        }
+
+
         // AdminAccountViewer //
 
+        [TestMethod]
+        public void AdminControl_Navigate_Normal()
+        {
+            // Arrange
+            Account acc1 = new Account();
 
+            // Act
+            // _step 1, read from console "user input"
+            // WARNING when using StringReader, you MUST use @ and no indentation!
+            var input = new StringReader(@">
 
+>
+<
+<
+21
+x
 
+<
+x
+");
+            Console.SetIn(input);
+            int result = acc1.AdminAccountViewer("Admin1");
 
+            // Assert
+            Assert.AreEqual(4, result); // checks the value's BE CAREFUL WITH REFERENCES!
+        }
+        [TestMethod]
+        public void AdminControl_Navigate_Extend()
+        {
+            // Arrange
+            Account acc1 = new Account();
 
+            // Act
+            // _step 1, read from console "user input"
+            // WARNING when using StringReader, you MUST use @ and no indentation!
+            var input = new StringReader(@">
 
+>
+>
+>
 
+<
+<
+<
+<
+
+x
+");
+            Console.SetIn(input);
+            int result = acc1.AdminAccountViewer("Admin1");
+
+            // Assert
+            Assert.AreEqual(4, result); // checks the value's BE CAREFUL WITH REFERENCES!
+        }
     }
 }

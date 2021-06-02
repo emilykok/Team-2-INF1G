@@ -7,11 +7,13 @@ using MovieDetail_Class;
 using Reservatie_Class;
 using Kalender_Class;
 using Console_Buffer;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Team_2
 {
     class Program
     {
+        [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
             

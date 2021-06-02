@@ -592,22 +592,6 @@ namespace Account_Class
                     }
                 }
 
-                // runs code when page is NOT at 0, no increase in value
-                else if (start != 0 && (state != ">" && state != "<"))
-                {
-                    if (start + 10 > accountDataList.Count)
-                    {
-                        if (start == accountDataList.Count)
-                        {
-                            executeRun = false;
-                        }
-                        stop = accountDataList.Count;
-                    }
-                    else
-                    {
-                        stop = start + 10;
-                    }
-                }
                 // runs code with 10 increment, stores value
                 else if (state == ">")
                 {
