@@ -15,7 +15,7 @@ namespace BiosTest
         /// FOOD ///
 
         // EtenMenu //
-        //[TestMethod]
+        [TestMethod]
         public void FoodMenu_validInp_showItem() {
             // Arrange
             Eten eten = new Eten();
