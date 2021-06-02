@@ -5,6 +5,7 @@ using System.Text;
 using Eten_Class;
 using Drinken_Class;
 using System.IO;
+using Food_Drink_Run;
 
 namespace BiosTest
 {
@@ -135,13 +136,84 @@ namespace BiosTest
 
         // EtenAllergieFilter //
 
+
+
         /// DRINK///
 
         // DrinkenMenu //
+        [TestMethod]
+        public void DrinkMenu_validInp_showItem()
+        {
+            // Arrange
+            Drinken drinken = new Drinken();
+            var input = new StringReader(@"4
+");
+            Console.SetIn(input);
 
+            // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
+            drinken.DrinkenMenu();
+            // Assert
+            // Assert.AreEqual(output.ToString(), $"Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:\nM&M pinda\n---------------------------------------------------\n\ninhoud: 250g, \nprijs: 3.99\n\n{drinken.ddrinkenDataList[4 - 1].voedingswaarde}\n\nallergenen: lactose, pinda, soja, amandel, hazelnoot, noten, \n\n\n1. Terug naar het eten & drinken menu\n");
+        }
+
+        [TestMethod]
+        public void DrinkMenu_wrongInp_showItem()
+        {
+            // Arrange
+            Drinken drinken = new Drinken();
+            var input = new StringReader(@"80
+");
+            Console.SetIn(input);
+
+            // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
+            drinken.DrinkenMenu();
+            // Assert
+            //Assert.AreEqual(output.ToString(), "Drinken Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
+        }
         //  DeleteDrinken //
+        [TestMethod]
+        public void DeleteDrinken_index_deleteItem()
+        {
+            // Arrange
+            Drinken drinken = new Drinken();
+            bool reach = false;
+
+            // Act
+            drinken.DeleteDrinken(9);
+            try
+            {
+                var a = drinken.drinkenDataList[9].naam;
+                reach = true;
+            }
+            catch { reach = false; }
+
+
+
+            // Assert
+            Assert.IsFalse(reach);
+        }
 
         // ViewClicks //
+        [TestMethod]
+        public void ViewClicksD_IntIndex_printClicks()
+        {
+            // Arrange
+            Drinken drinken = new Drinken();
+            int num = 8;
+
+            // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
+            drinken.ViewClicks(num);
+            string res = output.ToString();
+
+            // Assert
+            //Assert.AreEqual(res, ("Clicks op geselecteerde item is: " + drinken.drinkenDataList[num - 1].clicks));
+        }
 
         // UpdateClicks //
         [TestMethod]
@@ -149,12 +221,12 @@ namespace BiosTest
         {
             // Arrange
             int num = 5;
-            Eten eten = new Eten();
-            int bNum = eten.etenDataList[num - 1].clicks;
+            Drinken drinken = new Drinken();
+            int bNum = drinken.drinkenDataList[num - 1].clicks;
 
             // Act
-            eten.UpdateClicks(5);
-            int resNum = eten.etenDataList[num - 1].clicks;
+            drinken.UpdateClicks(5);
+            int resNum = drinken.drinkenDataList[num - 1].clicks;
 
             // Assert
             Assert.AreEqual(bNum + 1, resNum);
@@ -205,5 +277,8 @@ namespace BiosTest
         }
 
         // DrinkenAllergieFilter //
+
+
+        /// MENU ///
     }
 }
