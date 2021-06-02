@@ -241,6 +241,56 @@ namespace BiosTest
             tet.RemoveAvailability(index, film, day, hall);
         }
 
+        [TestMethod]
+        public void ChooseSeat_MultiInput_ReturnsTuple_IV()
+        {
+            // Arrange
+            int index = 0;
+            string film = "Onward";
+            int day = 0;
+            int hall = 1;
+            Tuple<int, string> expected = Tuple.Create(-1, "");
+
+            Theater tet = new Theater();
+
+            tet.ReserveAvailability(index, film, day, hall);
+
+            // Act
+            var input = new StringReader(@"dep
+");
+            Console.SetIn(input);
+
+            var result = Theater.ChooseSeat(film, day, hall);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            tet.RemoveAvailability(index, film, day, hall);
+        }
+
+        [TestMethod]
+        public void ChooseSeat_MultiInput_ReturnsTuple()
+        {
+            // Arrange
+            string film = "Onward";
+            int day = 0;
+            int hall = 1;
+            Tuple<int, string> expected = Tuple.Create(0, "A3");
+
+            Theater tet = new Theater();
+
+            // Act
+            var input = new StringReader(@"A3
+");
+            Console.SetIn(input);
+
+            var result = Theater.ChooseSeat(film, day, hall);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
         // Zaal150 //
 
         // Zaal300 //
