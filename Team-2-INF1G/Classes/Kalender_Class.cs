@@ -5,10 +5,11 @@ using System.IO;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
 
 using Console_Buffer;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Kalender_Class
 {
-    class Kalender
+    public class Kalender
     {
         // Schema JSON struct
         public struct MovieSchema
@@ -108,7 +109,7 @@ namespace Kalender_Class
             }
             Console.WriteLine("");
         }
-
+        [ExcludeFromCodeCoverage]
         public static void ChooseDay()
         {
             Console_Reset.clear();
@@ -121,6 +122,7 @@ namespace Kalender_Class
             Console.WriteLine("");
         }
 
+        [ExcludeFromCodeCoverage]
         public void Navigation()
         {
             bool retry = true;

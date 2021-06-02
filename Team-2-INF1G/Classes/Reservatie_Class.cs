@@ -115,6 +115,7 @@ namespace Reservatie_Class
 
         //// Json methods
         // Method that is used to write data to the JSON file.
+        [ExcludeFromCodeCoverage]
         public string ToJSON()
         {
             return JsonConvert.SerializeObject(this.TicketsList, Formatting.Indented);

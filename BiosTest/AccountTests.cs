@@ -93,10 +93,17 @@ namespace BiosTest
             Account acc1 = new Account();
 
             // Act
-            acc1.PrintItem(2,5);
+            var output = new StringWriter();
+            Console.SetOut(output);
 
+            acc1.PrintItem(0,2);
             // Assert
-            Assert.AreEqual("a", "a"); // need a way to read what is printed on the console...
+            // All expected MUST be written with @
+            string expected = @"[1] deBobbel
+[2] Bjorn
+";
+
+            Assert.AreEqual(expected, output.ToString());
         }
 
         // AvailableAllergie //
