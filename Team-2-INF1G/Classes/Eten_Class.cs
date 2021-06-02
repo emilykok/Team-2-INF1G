@@ -245,8 +245,7 @@ namespace Eten_Class
                 toFilter = toFilter.ToLower();
                 string s = "";
                 bool check = true;
-                try
-                {   // loopt door alle items in eten json
+                  // loopt door alle items in eten json
                     for (int i = 0; i < etenDataList.Count; i++) {
                         // loopt door de allergenen in de item
                         for (int j = 0; j < etenDataList[i].allergenen.Length; j++)
@@ -256,8 +255,7 @@ namespace Eten_Class
                         if (check) s += etenDataList[i].naam + "\n";
                     }
                     return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
-                }
-                catch { return ""; }
+                
             }
         }
     } 

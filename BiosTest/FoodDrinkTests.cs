@@ -15,7 +15,7 @@ namespace BiosTest
         /// FOOD ///
 
         // EtenMenu //
-        [TestMethod]
+        //[TestMethod]
         public void FoodMenu_validInp_showItem() {
             // Arrange
             Eten eten = new Eten();
@@ -27,12 +27,67 @@ namespace BiosTest
             var output = new StringWriter();
             Console.SetOut(output);
             eten.EtenMenu();
+            string expected = @"Eten Menu:
+---------------------------------------------------
+1. Popcorn zoet -       va 2,99
+2. Popcorn zout -       va 2,49
+3. Popcorn karamel -        va 2,49
+4. M&M's pinda -        3,99
+5. M&M's chocola -      4,49
+6. Chips naturel -      va 2,99
+7. Chips paprika -      va 2,99
+8. Doritos nacho cheese -   3,99
+9. Haribo goudberen -       3,49
+10. Skittles fruits -       3,99
+
+11. Terug naar de vorige pagina
+
+
+Typ het nummer van de item die je wilt bekijken en klik op enter:
+M&M pinda
+---------------------------------------------------
+
+inhoud: 250g, 
+prijs: 3.99, 
+
+Per 100gr:
+Energie: 2154kj(515kcal)
+Vet: 26g
+    Waarvan verzadigd: 11g
+Koolhydraten: 59g
+    Waarvan suikers: 53g
+Voedingsvezel: 0g
+Eiwitten: 9,9g
+Zout: 0.09g
+    
+allergenen: lactose, pinda, soja, amandel, hazelnoot, noten, 
+
+
+
+1. Terug naar het eten & drinken menu
+";
             // Assert
-            // Assert.AreEqual(output.ToString(), $"Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:\nM&M pinda\n---------------------------------------------------\n\ninhoud: 250g, \nprijs: 3.99\n\n{eten.etenDataList[4 - 1].voedingswaarde}\n\nallergenen: lactose, pinda, soja, amandel, hazelnoot, noten, \n\n\n1. Terug naar het eten & drinken menu\n");
+            Assert.AreEqual(output.ToString(),expected);
+        }
+        //[TestMethod]
+        public void EtenMenu_wrongInp_showItem()
+        {
+            // Arrange
+            Eten eten = new Eten();
+            var input = new StringReader(@"80
+");
+            Console.SetIn(input);
+
+            // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
+            eten.EtenMenu();
+            // Assert
+            Assert.AreEqual(output.ToString(), "Eten Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
         }
 
-        //  DeleteEten //
-        [TestMethod]
+            //  DeleteEten //
+            [TestMethod]
         public void DeleteEten_index_deleteItem(){
             // Arrange
             Eten eten = new Eten();
@@ -67,7 +122,8 @@ namespace BiosTest
             string res = output.ToString();
 
             // Assert
-            //Assert.AreEqual(res, ("Clicks op geselecteerde item is: " + eten.etenDataList[num - 1].clicks));
+            Assert.AreEqual(res, @"Clicks op geselecteerde item is: 0
+");
         }
 
         // UpdateClicks //
@@ -133,15 +189,25 @@ namespace BiosTest
             Assert.AreEqual(res, "Gevonden eten met zoekterm 'pop':\n\nPopcorn zoet\nPopcorn zout\nPopcorn karamel\n");
         }
 
-
         // EtenAllergieFilter //
+        [TestMethod]
+        public void FilterAlF_Allergie_showRes()
+        {
+            // Arrange
+            Eten eten = new Eten();
+            string toSearch = "lactose";
+            // Act
+            string res = eten.EtenAllergieFilter(toSearch);
+            string expected = $"Gevonden eten zonder zoekterm '{toSearch}':\n\nPopcorn zoet\nPopcorn zout\nPopcorn karamel\n";
+            // Assert
+            Assert.AreEqual(res, expected);
+        }
 
 
-
-        /// DRINK///
+    /// DRINK///
 
         // DrinkenMenu //
-        [TestMethod]
+        //[TestMethod]
         public void DrinkMenu_validInp_showItem()
         {
             // Arrange
@@ -155,10 +221,10 @@ namespace BiosTest
             Console.SetOut(output);
             drinken.DrinkenMenu();
             // Assert
-            // Assert.AreEqual(output.ToString(), $"Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:\nM&M pinda\n---------------------------------------------------\n\ninhoud: 250g, \nprijs: 3.99\n\n{drinken.ddrinkenDataList[4 - 1].voedingswaarde}\n\nallergenen: lactose, pinda, soja, amandel, hazelnoot, noten, \n\n\n1. Terug naar het eten & drinken menu\n");
+            Assert.AreEqual(output.ToString(), $"Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:\nM&M pinda\n---------------------------------------------------\n\ninhoud: 250g, \nprijs: 3.99\n\n{drinken.drinkenDataList[4 - 1].voedingswaarde}\n\nallergenen: lactose, pinda, soja, amandel, hazelnoot, noten, \n\n\n1. Terug naar het eten & drinken menu\n");
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void DrinkMenu_wrongInp_showItem()
         {
             // Arrange
@@ -172,7 +238,7 @@ namespace BiosTest
             Console.SetOut(output);
             drinken.DrinkenMenu();
             // Assert
-            //Assert.AreEqual(output.ToString(), "Drinken Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
+            Assert.AreEqual(output.ToString(), "Drinken Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
         }
         //  DeleteDrinken //
         [TestMethod]
@@ -212,7 +278,8 @@ namespace BiosTest
             string res = output.ToString();
 
             // Assert
-            //Assert.AreEqual(res, ("Clicks op geselecteerde item is: " + drinken.drinkenDataList[num - 1].clicks));
+            Assert.AreEqual(res, (@"Clicks op geselecteerde item is: 0
+"));
         }
 
         // UpdateClicks //
@@ -273,11 +340,22 @@ namespace BiosTest
             // Act
             string res = drink.DrinkenFilter(toSearch);
             // Assert
-            Assert.AreEqual(res, "Gevonden drinken met zoekterm 'wijn':\n\nRode wijn\nWitte wijn\n"); // //
+            Assert.AreEqual(res, "Gevonden drinken met zoekterm 'wijn':\n\nRode wijn\nWitte wijn\n");
         }
 
         // DrinkenAllergieFilter //
-
+        [TestMethod]
+        public void FilterAlD_Allergie_showRes()
+        {
+            // Arrange
+            Drinken drinken = new Drinken();
+            string toSearch = "vega";
+            // Act
+            string res = drinken.DrinkenAllergieFilter(toSearch);
+            string expected = $"Gevonden drinken zonder zoekterm '{toSearch}':\n\nCola\nPepsi\nDr.Pepper\nFanta Orange\n";
+            // Assert
+            Assert.AreEqual(res, expected);
+        }
 
         /// MENU ///
     }

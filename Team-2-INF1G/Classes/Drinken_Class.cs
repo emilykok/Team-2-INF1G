@@ -199,18 +199,15 @@ namespace Drinken_Class
         // functie die weergeeft welke items de zoekterm bevatten in titel, tags of allergenen
         public string DrinkenFilter(string toFilter)
         {
-            try
-            {
-                // To prevent test failing; console doesnt exist when trying to run test and clearing.
-                Console_Reset.clear();
-            }
-            catch { }
+
+        // To prevent test failing; console doesnt exist when trying to run test and clearing.
+        Console_Reset.clear();
+
         
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;
-            try
-            {   // loopt door alle items in de json
+            // loopt door alle items in de json
                 for (int i = 0; i < drinkenDataList.Count; i++)
                 {
                     add = false;
@@ -229,12 +226,7 @@ namespace Drinken_Class
                     if (add == true) s += drinkenDataList[i].naam + "\n";
                 }
                 return $"Gevonden drinken met zoekterm '{toFilter}':\n\n{s}"; ;
-            }
-
-            catch (Exception)
-            {
-                return "je input was onjuist";
-            }
+            
 
         }
 
@@ -245,8 +237,8 @@ namespace Drinken_Class
             toFilter = toFilter.ToLower();
             string s = "";
             bool check = true;
-            try
-            {   // loopt door alle items in drinken json
+           
+            // loopt door alle items in drinken json
                 for (int i = 0; i < drinkenDataList.Count; i++)
                 {
                     // loopt door de allergenen in de item
@@ -257,11 +249,7 @@ namespace Drinken_Class
                     if (check) s += drinkenDataList[i].naam + "\n";
                 }
                 return $"Gevonden drinken zonder zoekterm '{toFilter}':\n\n{s}";
-            }
-            catch
-            {
-                return "je input was onjuist";
-            }
+            
         }
     }
 }
