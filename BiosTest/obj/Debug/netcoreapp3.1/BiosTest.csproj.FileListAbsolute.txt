@@ -209,3 +209,5 @@ C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcore
 C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.csproj.CoreCompileInputs.cache
 C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.dll
 C:\Users\dvdg1\OneDrive\Documents\GitHub\Team-2-INF1G\BiosTest\obj\Debug\netcoreapp3.1\BiosTest.pdb
+C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\melis\Documents\GitHub\Team-2-INF1G\BiosTest\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.AdapterUtilities.dll

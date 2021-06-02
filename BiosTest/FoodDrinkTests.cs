@@ -16,8 +16,7 @@ namespace BiosTest
 
         // EtenMenu //
         //[TestMethod]
-        public void FoodMenu_validInp_showItem()
-        {
+        public void FoodMenu_validInp_showItem() {
             // Arrange
             Eten eten = new Eten();
             var input = new StringReader(@"4
@@ -68,28 +67,42 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
 1. Terug naar het eten & drinken menu
 ";
             // Assert
-            Assert.AreEqual(output.ToString(), expected);
+            Assert.AreEqual(output.ToString(),expected);
+        }
+        //[TestMethod]
+        public void EtenMenu_wrongInp_showItem()
+        {
+            // Arrange
+            Eten eten = new Eten();
+            var input = new StringReader(@"80
+");
+            Console.SetIn(input);
+
+            // Act
+            var output = new StringWriter();
+            Console.SetOut(output);
+            eten.EtenMenu();
+            // Assert
+            Assert.AreEqual(output.ToString(), "Eten Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
         }
 
-        //  DeleteEten //
-        [TestMethod]
-        public void DeleteEten_index_deleteItem()
-        {
+            //  DeleteEten //
+            [TestMethod]
+        public void DeleteEten_index_deleteItem(){
             // Arrange
             Eten eten = new Eten();
             bool reach = false;
 
             // Act
             eten.DeleteEten(9);
-            try
-            {
+            try { 
                 var a = eten.etenDataList[9].naam;
                 reach = true;
             }
             catch { reach = false; }
-
-
-
+            
+            
+            
             // Assert
             Assert.IsFalse(reach);
 
@@ -97,8 +110,7 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
 
         // ViewClicks //
         [TestMethod]
-        public void ViewClicksF_IntIndex_printClicks()
-        {
+        public void ViewClicksF_IntIndex_printClicks() {
             // Arrange
             Eten eten = new Eten();
             int num = 8;
@@ -117,7 +129,7 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
         // UpdateClicks //
         [TestMethod]
         public void UpdateClicksF_IntIndex_UpdateClicks()
-        {
+        {                
             // Arrange
             int num = 5;
             Eten eten = new Eten();
@@ -192,7 +204,7 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
         }
 
 
-        /// DRINK///
+    /// DRINK///
 
         // DrinkenMenu //
         //[TestMethod]
@@ -321,10 +333,9 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
 
         // DrinkenFilter //
         [TestMethod]
-        public void FilterD_Titel_showRes()
-        {
+        public void FilterD_Titel_showRes() {
             // Arrange
-            Drinken drink = new Drinken();
+            Drinken drink = new Drinken(); 
             string toSearch = "wijn";
             // Act
             string res = drink.DrinkenFilter(toSearch);
