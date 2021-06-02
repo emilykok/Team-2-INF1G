@@ -1,49 +1,5 @@
 [
   {
-    "Name": "deBobbel",
-    "Password": "34bd4f994f97fe925a10999e99b239645015180e89343794f830225492277954",
-    "Age": 14,
-    "Gender": "man",
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": [
-      "amandel"
-    ],
-    "Permission": false
-  },
-  {
-    "Name": "Bjorn",
-    "Password": "f00a787f7492a95e165b470702f4fe9373583fbdc025b2c8bdf0262cc48fcff4",
-    "Age": 19,
-    "Gender": "man",
-    "Email": "bjornkok@outlook.com",
-    "bankingDetails": null,
-    "Allergies": [
-      "tarwe"
-    ],
-    "Permission": true
-  },
-  {
-    "Name": "bjorn1",
-    "Password": "384eb271eb947e6718c67ab7db7a8f35f8287084f712010ce018aec3c231648f",
-    "Age": -1,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": [],
-    "Permission": false
-  },
-  {
-    "Name": "x",
-    "Password": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
-    "Age": -1,
-    "Gender": null,
-    "Email": null,
-    "bankingDetails": null,
-    "Allergies": [],
-    "Permission": false
-  },
-  {
     "Name": "Admin1",
     "Password": "0afb00138d8e73348ec1fe41fd3d3a8fcbd90156b263bfa5791ba0e095f42cfc",
     "Age": -1,
@@ -54,8 +10,18 @@
     "Permission": true
   },
   {
-    "Name": "Bjorn1",
-    "Password": "9a9311f9129f575073c2b1a46f554c2097b91aae9c51a1cfa1cce354ce32fe3c",
+    "Name": "bjorn",
+    "Password": "384eb271eb947e6718c67ab7db7a8f35f8287084f712010ce018aec3c231648f",
+    "Age": 18,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "nathan",
+    "Password": "d2653ff7cbb2d8ff129ac27ef5781ce68b2558c41a74af1f2ddca635cbeef07d",
     "Age": -1,
     "Gender": null,
     "Email": null,
@@ -64,10 +30,1110 @@
     "Permission": false
   },
   {
-    "Name": "jan1",
-    "Password": "dc8b595722d25d4486246747db8cbb59b6fe3c1d76e8576ec63b985b4c936169",
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
     "Age": -1,
     "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "TextCreateUser",
+    "Password": "7c71e2c4d7716ece37f852012e9bfc18d0b30e99531c47c909278ee34c338fbf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testadd",
+    "Password": "84e01d37ea1d3749c1542b2c26f589725ad4b105d8ba959f375da223959eb842",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testremove",
+    "Password": "5133fe0a2dcb1fd6479c9438e629f63924d24b22a21fdf471e59e2ecc71b35cf",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testbank",
+    "Password": "05bd3f578a65635bcca13152ce64b9f2a8a33de29a561827fce9d716d7d15a65",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testemail",
+    "Password": "7d77f636df10b5c23bd162948338099fab351c87e9c8a12bd09234a18ce2b209",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testmale",
+    "Password": "0ba6fc0ff8dc18ea3a99b558cd06e585fe9d06c5ac6648fec44c3a553048a1dc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testage",
+    "Password": "0bf883303aabbbbcbebab0c6651abb8d8a7d81fcfac91f81ebf8366f011ab2b8",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testname",
+    "Password": "d67fdd0c0e917b0c55cc9480fb7257d00ab33cd832cd88e0eefbcf6626265d49",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testww",
+    "Password": "35cd89eda65928aceb85d85028cfe52e88d658390a78bbd98c0785d1595113e4",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdelete",
+    "Password": "c0dbe4ea1c07e1853986a13fa0cbcea76824e0ec5e272f14f63dec410345d4cd",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testdeleteadmin",
+    "Password": "ec167b057dfccd02594557133e0d18f52b9b6855b3fede32a2be42c03f5e5b23",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": "female",
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": "female",
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": "female",
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": "female",
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": "female",
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "testfemale",
+    "Password": "bea796a5becbe95f95fbf8490dd0b1b0a3d88d395e43aaced2cd99e0714a0aca",
+    "Age": -1,
+    "Gender": "female",
     "Email": null,
     "bankingDetails": null,
     "Allergies": [],

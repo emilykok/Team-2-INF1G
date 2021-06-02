@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+using System.Diagnostics.CodeAnalysis;
 
 using Hoofdmenu;
 using Reservatie_Class;
 using Console_Buffer;
+
 
 namespace MovieDetail_Class
 {
@@ -135,6 +137,7 @@ namespace MovieDetail_Class
             return divided;
         }
 
+        [ExcludeFromCodeCoverage]
         public static void FilterNavigation(int user = -1)
         {
             // navigation for the entire filter section //
@@ -275,6 +278,7 @@ namespace MovieDetail_Class
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public static void Navigation(int user = -1)
         {
             // Navigation of the catalog //
