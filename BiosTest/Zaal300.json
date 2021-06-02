@@ -1971,5 +1971,18 @@
       [],
       []
     ]
+  },
+  {
+    "position": "TestSeat",
+    "soort": "Test",
+    "availability": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]

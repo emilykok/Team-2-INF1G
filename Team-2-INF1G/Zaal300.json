@@ -3,7 +3,14 @@
     "position": "A2",
     "soort": "b",
     "availability": [
-      [],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       [],
       [],
       [],
@@ -1797,7 +1804,14 @@
     "position": "I7",
     "soort": "r",
     "availability": [
-      [],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       [],
       [],
       [],

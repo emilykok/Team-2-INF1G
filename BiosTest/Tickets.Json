@@ -1,132 +1,34 @@
 [
   {
-    "filmName": "The Broken Hearts Gallery",
+    "filmName": null,
     "namePerson": null,
     "ticketAmount": 0,
-    "price": 10.0,
+    "price": 0.0,
     "weekday": null,
-    "startTime": "14:00",
-    "filmDuration": 108,
-    "hall": "3",
-    "row": "A",
-    "seat": "4",
-    "reservationNumber": 0
-  },
-  {
-    "filmName": "The Lovebirds",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 86,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 1
-  },
-  {
-    "filmName": "Dora and the Lost City of Gold",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 102,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 2
-  },
-  {
-    "filmName": "The Half of It",
-    "namePerson": "Bjorn1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 104,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 3
-  },
-  {
-    "filmName": "The Kissing Booth 2",
-    "namePerson": "Bjorn1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 130,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 4
-  },
-  {
-    "filmName": "Men in Black: International",
-    "namePerson": "Bjorn1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 115,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 5
+    "startTime": null,
+    "filmDuration": 0,
+    "hall": null,
+    "seatStrings": null,
+    "reservationNumber": 0,
+    "seatIndexes": null
   },
   {
     "filmName": "Titanic",
     "namePerson": "Admin1",
-    "ticketAmount": 3,
+    "ticketAmount": 2,
     "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
+    "weekday": "13:45",
+    "startTime": "Donderdag",
     "filmDuration": 194,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 6
-  },
-  {
-    "filmName": "Dirty Dancing",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 100,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 7
-  },
-  {
-    "filmName": "I Am Mother",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 115,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 8
-  },
-  {
-    "filmName": "Knives Out",
-    "namePerson": "Admin1",
-    "ticketAmount": 3,
-    "price": 20.0,
-    "weekday": "maandag",
-    "startTime": "14:00",
-    "filmDuration": 130,
-    "hall": "Zaal 1",
-    "row": "A",
-    "seat": "35",
-    "reservationNumber": 9
+    "hall": "Zaal 3",
+    "seatStrings": [
+      "A5",
+      "A6"
+    ],
+    "reservationNumber": 1,
+    "seatIndexes": [
+      0,
+      1
+    ]
   }
 ]

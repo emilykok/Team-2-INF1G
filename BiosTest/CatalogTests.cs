@@ -10,7 +10,7 @@ namespace BiosTest
     {
         // ArrToString //
         [TestMethod]
-        public void ArrToString_InputStringArray_ReturnEmptyString()
+        public void ArrToString_InputStringArray_ReturnEmptyString() 
         {
             // Arrange
             string[] arr = new string[0];
@@ -40,7 +40,6 @@ namespace BiosTest
         public void DisplayMovie_InputInt_ReturnsString()
         {
             // Arrange
-            MovieDetail movie = new MovieDetail();
             int index = 1;
 
             // Act
@@ -59,7 +58,6 @@ namespace BiosTest
         public void GetList_InputInt_ReturnsStringArray()
         {
             // Arrange
-            MovieDetail movie = new MovieDetail();
             int page = 1;
             string[] expected = new string[] { "1.\tThe Broken Hearts Gallery", "2.\tWords On The Bathroom Walls", "3.\tValley Girl", "4.\tThe Half of It", "5.\tThe Lovebirds", "6.\tHappiest Season", "7.\tTitanic", "8.\tDirty Dancing", "9.\tThe Kissing Booth 2", "10.\tDeadpool", "vorige pagina", "volgende pagina", "filter films", "terug naar hoofmenu" };
 
@@ -71,20 +69,22 @@ namespace BiosTest
         }
 
         // movieFilter //
-        //[TestMethod]
+        [TestMethod]
         public void movieFilter_InputString_ReturnsJaggedStringArray()
         {
             // Arrange
-            MovieDetail movie = new MovieDetail();
-            string tag = "romantiek";
-            string[] inner = new string[] { "The Broken Hearts Gallery", "Words On The Bathroom Walls", "Valley Girl", "The Half of It", "The Lovebirds", "Happiest Season", "Titanic", "Dirty Dancing", "The Kissing Booth 2", "Deadpool", "vorige pagina", "volgende pagina", "terug naar reguliere catalogus" };
+            string tag = "animatie";
+            string[] inner = new string[] { "Onward", "vorige pagina", "volgende pagina", "terug naar reguliere catalogus" };
             string[][] expected = new string[][] { inner };
 
             // Act
             var result = MovieDetail.movieFilter(tag);
 
             // Assert
-            CollectionAssert.AreEqual(result, expected);
+            for(int i = 0; i < result.Length; i++)
+            {
+                CollectionAssert.AreEqual(result[i], expected[i]);
+            }
         }
 
 

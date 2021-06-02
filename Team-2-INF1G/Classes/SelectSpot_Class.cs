@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonIgnoreAttribute = Newtonsoft.Json.JsonIgnoreAttribute;
+using System.Diagnostics.CodeAnalysis;
 
 using Console_Buffer;
 
@@ -54,6 +55,7 @@ namespace SelectSpot_Class
             this.theater500DataList = JsonConvert.DeserializeObject<List<TheaterData>>(jsonPath500);
         }
 
+        [ExcludeFromCodeCoverage]
         public string ToJSON(int hall)
         {
             List<TheaterData> theaterDataList = WhichTheaterHall(hall);
@@ -199,7 +201,7 @@ namespace SelectSpot_Class
             }
             // invalid input //
             Console.WriteLine("Dit is geen geldige invoerwaarde");
-            return Tuple.Create(-1, ""); ;
+            return Tuple.Create(-1, "");
         }
 
         public static void Zaal150(string film, int day, int hall)
