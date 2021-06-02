@@ -10,7 +10,7 @@ using Food_Drink_Run;
 
 
 
-namespace Drinken_Class 
+namespace Drinken_Class
 {
     public class Drinken
     {
@@ -50,7 +50,7 @@ namespace Drinken_Class
         // drinkendisplay
         public void DrinkenMenu()
         {
-            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11.Terug naar de vorige pagina\n");
+            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11. Terug naar de vorige pagina\n");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
             // leest input command van de console
@@ -69,7 +69,7 @@ namespace Drinken_Class
                     Console.WriteLine($"inhoud: {drinkenDataList[num - 1].inhoud}");
 
                     // print prijs item
-                    Console.WriteLine($"prijs: {drinkenDataList[num - 1].prijs}+\n");
+                    Console.WriteLine($"prijs: {drinkenDataList[num - 1].prijs}\n");
 
                     // print voedingswaarde
                     Console.WriteLine($"{drinkenDataList[num - 1].voedingswaarde}\n");
@@ -86,16 +86,16 @@ namespace Drinken_Class
                     Console.WriteLine("\n1. Terug naar het eten & drinken menu");
                     input = Console.ReadLine();
                     Console_Reset.clear();
-                    if (input == "1" || input == "") DrinkenMenu();                    
+                    if (input == "1" || input == "") DrinkenMenu();
                 }
                 else if (num == 11) FoodDrinkRun.Run();
-            }   
+            }
 
             catch (Exception)
             { // input is niet convertible naar int of input is te hoog nummer
                 Console_Reset.clear();
                 Console.WriteLine("De input is niet juist, probeer het nogeens\n");
-                DrinkenMenu();
+                //DrinkenMenu();
             }
             Console_Reset.clear();
 
@@ -108,9 +108,10 @@ namespace Drinken_Class
         }
 
         // method to view clicks of certain index
-        public void ViewClicks(int num) {
+        public void ViewClicks(int num)
+        {
             Console_Reset.clear();
-            Console.WriteLine("Clicks op geselecteerde item is: " + drinkenDataList[num-1].clicks);
+            Console.WriteLine("Clicks op geselecteerde item is: " + drinkenDataList[num - 1].clicks);
         }
 
         //method to update clicks
@@ -200,33 +201,33 @@ namespace Drinken_Class
         public string DrinkenFilter(string toFilter)
         {
 
-        // To prevent test failing; console doesnt exist when trying to run test and clearing.
-        Console_Reset.clear();
+            // To prevent test failing; console doesnt exist when trying to run test and clearing.
+            Console_Reset.clear();
 
-        
+
             string s = "";
             toFilter = toFilter.ToLower();
             bool add;
             // loopt door alle items in de json
-                for (int i = 0; i < drinkenDataList.Count; i++)
+            for (int i = 0; i < drinkenDataList.Count; i++)
+            {
+                add = false;
+                // zoekt in titel van item
+                if (drinkenDataList[i].naam.ToLower().Contains(toFilter)) add = true;
+                // zoekt in tags
+                for (int j = 0; j < drinkenDataList[i].tags.Length; j++)
                 {
-                    add = false;
-                    // zoekt in titel van item
-                    if (drinkenDataList[i].naam.ToLower().Contains(toFilter)) add = true;
-                    // zoekt in tags
-                    for (int j = 0; j < drinkenDataList[i].tags.Length; j++)
-                    {
-                        if (drinkenDataList[i].tags[j].Contains(toFilter)) add = true;
-                    }
-                    // zoekt in allergenen
-                    for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
-                    {
-                        if (drinkenDataList[i].allergenen[j].Contains(toFilter)) add = true;
-                    }
-                    if (add == true) s += drinkenDataList[i].naam + "\n";
+                    if (drinkenDataList[i].tags[j].Contains(toFilter)) add = true;
                 }
-                return $"Gevonden drinken met zoekterm '{toFilter}':\n\n{s}"; ;
-            
+                // zoekt in allergenen
+                for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
+                {
+                    if (drinkenDataList[i].allergenen[j].Contains(toFilter)) add = true;
+                }
+                if (add == true) s += drinkenDataList[i].naam + "\n";
+            }
+            return $"Gevonden drinken met zoekterm '{toFilter}':\n\n{s}"; ;
+
 
         }
 
@@ -237,19 +238,19 @@ namespace Drinken_Class
             toFilter = toFilter.ToLower();
             string s = "";
             bool check = true;
-           
+
             // loopt door alle items in drinken json
-                for (int i = 0; i < drinkenDataList.Count; i++)
-                {
-                    // loopt door de allergenen in de item
-                    for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
-                    {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
-                        if (drinkenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
-                    }   // als de item het niet bevat wordt hij toegevoegd aan string
-                    if (check) s += drinkenDataList[i].naam + "\n";
-                }
-                return $"Gevonden drinken zonder zoekterm '{toFilter}':\n\n{s}";
-            
+            for (int i = 0; i < drinkenDataList.Count; i++)
+            {
+                // loopt door de allergenen in de item
+                for (int j = 0; j < drinkenDataList[i].allergenen.Length; j++)
+                {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
+                    if (drinkenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
+                }   // als de item het niet bevat wordt hij toegevoegd aan string
+                if (check) s += drinkenDataList[i].naam + "\n";
+            }
+            return $"Gevonden drinken zonder zoekterm '{toFilter}':\n\n{s}";
+
         }
     }
 }

@@ -108,7 +108,7 @@ namespace Eten_Class
             { // input is niet convertible naar int of input is te hoog nummer
                 Console_Reset.clear();
                 Console.WriteLine("De input is niet juist, probeer het nogeens\n");
-                EtenMenu();
+                //EtenMenu();
             }
             Console_Reset.clear();
 
@@ -174,7 +174,8 @@ namespace Eten_Class
         }
 
         // clears click at certain index
-        public void ClearClicks(int n) {
+        public void ClearClicks(int n)
+        {
             int index = n - 1;
             // unloading the struct item at given index
             string Naam = etenDataList[index].naam;
@@ -238,27 +239,28 @@ namespace Eten_Class
             }
         }
 
-            
-            public string EtenAllergieFilter(string toFilter)
-            {// functie die weergeeft welke items de gegeven allergeen niet bevatten
-                Console_Reset.clear();
-                toFilter = toFilter.ToLower();
-                string s = "";
-                bool check = true;
-                  // loopt door alle items in eten json
-                    for (int i = 0; i < etenDataList.Count; i++) {
-                        // loopt door de allergenen in de item
-                        for (int j = 0; j < etenDataList[i].allergenen.Length; j++)
-                        {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
-                            if (etenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
-                        }   // als de item het niet bevat wordt hij toegevoegd aan string
-                        if (check) s += etenDataList[i].naam + "\n";
-                    }
-                    return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
-                
+
+        public string EtenAllergieFilter(string toFilter)
+        {// functie die weergeeft welke items de gegeven allergeen niet bevatten
+            Console_Reset.clear();
+            toFilter = toFilter.ToLower();
+            string s = "";
+            bool check = true;
+            // loopt door alle items in eten json
+            for (int i = 0; i < etenDataList.Count; i++)
+            {
+                // loopt door de allergenen in de item
+                for (int j = 0; j < etenDataList[i].allergenen.Length; j++)
+                {   // kijkt of de item allergeen bevat, zo ja gaat check op false en breekt de loop
+                    if (etenDataList[i].allergenen[j].Contains(toFilter)) { check = false; break; }
+                }   // als de item het niet bevat wordt hij toegevoegd aan string
+                if (check) s += etenDataList[i].naam + "\n";
             }
+            return $"Gevonden eten zonder zoekterm '{toFilter}':\n\n{s}";
+
         }
-    } 
+    }
+}
 
 
 

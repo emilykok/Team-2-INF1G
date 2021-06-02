@@ -3,9 +3,11 @@
 using Eten_Class;
 using Drinken_Class;
 using Console_Buffer;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Food_Drink_Run
 {
+    [ExcludeFromCodeCoverage]
     class FoodDrinkRun
     {
         public static void Run(bool permission = false)
