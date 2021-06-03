@@ -291,12 +291,180 @@ namespace BiosTest
             Assert.AreEqual(expected, result);
         }
 
-        // Zaal150 //
-
-        // Zaal300 //
-
-        // Zaal500 //
-
         // Run //
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Maandag";
+            string zaal = "Zaal 1";
+            var expected = Tuple.Create(2, "A5");
+
+            var input = new StringReader(@"A5
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(2, film, 0, 1);
+        }
+
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple2()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Dinsdag";
+            string zaal = "Zaal 1";
+            var expected = Tuple.Create(0, "A3");
+
+            var input = new StringReader(@"A3
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(0, film, 1, 1);
+        }
+
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple3()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Woensdag";
+            string zaal = "Zaal 1";
+            var expected = Tuple.Create(0, "A3");
+
+            var input = new StringReader(@"A3
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(0, film, 2, 1);
+        }
+
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple4()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Donderdag";
+            string zaal = "Zaal 1";
+            var expected = Tuple.Create(0, "A3");
+
+            var input = new StringReader(@"A3
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(0, film, 3, 1);
+        }
+
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple5()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Vrijdag";
+            string zaal = "Zaal 1";
+            var expected = Tuple.Create(0, "A3");
+
+            var input = new StringReader(@"A3
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(0, film, 4, 1);
+        }
+
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple6()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Zaterdag";
+            string zaal = "Zaal 1";
+            var expected = Tuple.Create(0, "A3");
+
+            var input = new StringReader(@"A3
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(0, film, 5, 1);
+        }
+
+        [TestMethod]
+        public void Run_MultiInput_ReturnsTuple7()
+        {
+            // Arrange
+            string film = "Onward";
+            string dag = "Zondag";
+            string zaal = "Zaal 3";
+            var expected = Tuple.Create(0, "A5");
+
+            var input = new StringReader(@"A5
+
+");
+            Console.SetIn(input);
+
+            // Act
+            var result = Theater.Run(film, dag, zaal);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+
+
+            Theater tet = new Theater();
+            tet.RemoveAvailability(0, film, 6, 3);
+        }
     }
 }

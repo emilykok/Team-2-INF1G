@@ -3,14 +3,7 @@
     "position": "A3",
     "soort": "b",
     "availability": [
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      [],
       [],
       [],
       [],
@@ -23,14 +16,7 @@
     "position": "A4",
     "soort": "b",
     "availability": [
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
+      [],
       [],
       [],
       [],
@@ -1970,19 +1956,6 @@
       [],
       [],
       []
-    ]
-  },
-  {
-    "position": "TestSeat",
-    "soort": "Test",
-    "availability": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
     ]
   }
 ]
