@@ -23,67 +23,48 @@ namespace BiosTest
 ");
             Console.SetIn(input);
 
+            string[] expected = {"Eten Menu:","---------------------------------------------------", "1. Popcorn zoet - ","va 2,99", "2. Popcorn zout - ", "va 2,49", "3. Popcorn karamel - ", "va 2,49", "4. M&M's pinda - ", "3,99", "5. M&M's chocola - ", "4,49", "6. Chips naturel - ", "va 2,99", "7. Chips paprika - ", "va 2,99", "8. Doritos nacho cheese - ", "3,99", "9. Haribo goudberen - ", "3,49", "10. Skittles fruits - ", "3,99", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "M&M pinda", "---------------------------------------------------", "inhoud: 250g, ", "prijs: 3.99, ", "Per 100gr:", "Energie: 2154kj(515kcal)", "Vet: 26g", "   Waarvan verzadigd: 11g", "Koolhydraten: 59g", "   Waarvan suikers: 53g", "Voedingsvezel: 0g", "Eiwitten: 9,9g", "Zout: 0.09g", "allergenen: lactose, pinda, soja, amandel, hazelnoot, noten, ", "1. Terug naar het eten & drinken menu" }; // MELISSA VUL HIER JE DE STRING IS   "Hallo\nWereld" => {"Hallo","Wereld"}
+
             // Act
             var output = new StringWriter();
             Console.SetOut(output);
             eten.EtenMenu();
-            string expected = @"Eten Menu:
----------------------------------------------------
-1. Popcorn zoet -       va 2,99
-2. Popcorn zout -       va 2,49
-3. Popcorn karamel -        va 2,49
-4. M&M's pinda -        3,99
-5. M&M's chocola -      4,49
-6. Chips naturel -      va 2,99
-7. Chips paprika -      va 2,99
-8. Doritos nacho cheese -   3,99
-9. Haribo goudberen -       3,49
-10. Skittles fruits -       3,99
 
-11. Terug naar de vorige pagina
+            string convertString = output.ToString();
+            string[] split = convertString.Split(new Char[] { '\t', '\n', '\r' },
+                                 StringSplitOptions.RemoveEmptyEntries);
 
-
-Typ het nummer van de item die je wilt bekijken en klik op enter:
-M&M pinda
----------------------------------------------------
-
-inhoud: 250g, 
-prijs: 3.99, 
-
-Per 100gr:
-Energie: 2154kj(515kcal)
-Vet: 26g
-    Waarvan verzadigd: 11g
-Koolhydraten: 59g
-    Waarvan suikers: 53g
-Voedingsvezel: 0g
-Eiwitten: 9,9g
-Zout: 0.09g
-    
-allergenen: lactose, pinda, soja, amandel, hazelnoot, noten, 
-
-
-
-1. Terug naar het eten & drinken menu
-";
             // Assert
-            Assert.AreEqual(output.ToString(),expected);
+            for (int i = 0; i < split.Length; i++)
+            {
+                Assert.AreEqual(split[i], expected[i]);
+            }
         }
-        //[TestMethod]
+
+        [TestMethod]
         public void EtenMenu_wrongInp_showItem()
         {
             // Arrange
             Eten eten = new Eten();
-            var input = new StringReader(@"80
+            var input = new StringReader(@"a1bc-
 ");
             Console.SetIn(input);
+            string[] expected = { "Eten Menu:", "---------------------------------------------------", "1. Popcorn zoet - ", "va 2,99", "2. Popcorn zout - ", "va 2,49", "3. Popcorn karamel - ", "va 2,49", "4. M&M's pinda - ", "3,99", "5. M&M's chocola - ", "4,49", "6. Chips naturel - ", "va 2,99", "7. Chips paprika - ", "va 2,99", "8. Doritos nacho cheese - ", "3,99", "9. Haribo goudberen - ", "3,49", "10. Skittles fruits - ", "3,99", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "De input is niet juist, probeer het nogeens" };
 
             // Act
             var output = new StringWriter();
             Console.SetOut(output);
             eten.EtenMenu();
+
+            string convertString = output.ToString();
+            string[] split = convertString.Split(new Char[] { '\t', '\n', '\r' },
+                                 StringSplitOptions.RemoveEmptyEntries);
+
             // Assert
-            Assert.AreEqual(output.ToString(), "Eten Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
+            for (int i = 0; i < split.Length; i++)
+            {
+                Assert.AreEqual(split[i], expected[i]);
+            }
         }
 
             //  DeleteEten //
@@ -207,7 +188,7 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
     /// DRINK///
 
         // DrinkenMenu //
-        //[TestMethod]
+        [TestMethod]
         public void DrinkMenu_validInp_showItem()
         {
             // Arrange
@@ -215,30 +196,46 @@ allergenen: lactose, pinda, soja, amandel, hazelnoot, noten,
             var input = new StringReader(@"4
 ");
             Console.SetIn(input);
+            string[] expected = { "Drinken Menu:", "---------------------------------------------------", "1. Cola - ", "2,99", "2. Pepsi - ", "3,49", "3. Dr.Pepper - ", "2,99", "4. Fanta Orange - ", "2,99", "5. Spa rood - ", "1,99", "6. Spa blauw - ", "1,99", "7. Appelsap - ", "2,49", "8. Rode wijn - ", "6,49", "9. Witte wijn - ", "6,49", "10. Heineken - ", "3,49", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "Fanta Orange" , "---------------------------------------------------", "inhoud: 0,5L", "prijs: 3.49", "Per 100ml:", "Energie: 139kj(33kcal)", "Vet: 0g", "   Waarvan verzadigd: 0g", "Koolhydraten: 7,9g", "   Waarvan suikers: 7,6g", "Eiwitten: 0g", "Zout: 0.01g", "allergenen: vegetarisch, ", "1. Terug naar het eten & drinken menu" };
 
             // Act
             var output = new StringWriter();
             Console.SetOut(output);
             drinken.DrinkenMenu();
+            
+            string convertString = output.ToString();
+            string[] split = convertString.Split(new Char[] { '\t', '\n', '\r' },
+                                 StringSplitOptions.RemoveEmptyEntries);
             // Assert
-            Assert.AreEqual(output.ToString(), $"Eten Menu:\n---------------------------------------------------\n1. Popcorn zoet - \t\tva 2,99\n2. Popcorn zout - \t\tva 2,49\n3. Popcorn karamel - \t\tva 2,49\n4. M&M's pinda - \t\t3,99\n5. M&M's chocola - \t\t4,49\n6. Chips naturel - \t\tva 2,99\n7. Chips paprika - \t\tva 2,99\n8. Doritos nacho cheese - \t3,99\n9. Haribo goudberen - \t\t3,49\n10. Skittles fruits - \t\t3,99\n\n11. Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:\nM&M pinda\n---------------------------------------------------\n\ninhoud: 250g, \nprijs: 3.99\n\n{drinken.drinkenDataList[4 - 1].voedingswaarde}\n\nallergenen: lactose, pinda, soja, amandel, hazelnoot, noten, \n\n\n1. Terug naar het eten & drinken menu\n");
+            for (int i = 0; i < split.Length; i++)
+            {
+                Assert.AreEqual(split[i], expected[i]);
+            }
         }
 
-        //[TestMethod]
+        [TestMethod]
         public void DrinkMenu_wrongInp_showItem()
         {
             // Arrange
             Drinken drinken = new Drinken();
-            var input = new StringReader(@"80
+            var input = new StringReader(@"a
 ");
             Console.SetIn(input);
+            string[] expected = { "Drinken Menu:", "---------------------------------------------------", "1. Cola - ", "2,99", "2. Pepsi - ", "3,49", "3. Dr.Pepper - ", "2,99", "4. Fanta Orange - ", "2,99", "5. Spa rood - ", "1,99", "6. Spa blauw - ", "1,99", "7. Appelsap - ", "2,49", "8. Rode wijn - ", "6,49", "9. Witte wijn - ", "6,49", "10. Heineken - ", "3,49", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "De input is niet juist, probeer het nogeens" };
 
             // Act
             var output = new StringWriter();
             Console.SetOut(output);
             drinken.DrinkenMenu();
+
+            string convertString = output.ToString();
+            string[] split = convertString.Split(new Char[] { '\t', '\n', '\r' },
+                                 StringSplitOptions.RemoveEmptyEntries);
             // Assert
-            Assert.AreEqual(output.ToString(), "Drinken Menu:\n-------------------------------------------------- -\n1.Cola - \t\t2, 99\n2.Pepsi - \t\t3, 49\n3.Dr.Pepper - \t\t2, 99\n4.Fanta Orange - \t2, 99\n5.Spa rood - \t\t1, 99\n6.Spa blauw - \t\t1, 99\n7.Appelsap - \t\t2, 49\n8.Rode wijn - \t\t6, 49\n9.Witte wijn - \t6, 49\n10.Heineken - \t\t3, 49\n\n11.Terug naar de vorige pagina\n\n\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
+            for (int i = 0; i < split.Length; i++)
+            {
+                Assert.AreEqual(split[i], expected[i]);
+            }
         }
         //  DeleteDrinken //
         [TestMethod]

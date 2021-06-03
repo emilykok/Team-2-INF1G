@@ -50,7 +50,7 @@ namespace Drinken_Class
         // drinkendisplay
         public void DrinkenMenu()
         {
-            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11.Terug naar de vorige pagina\n");
+            Console.WriteLine("Drinken Menu:\n---------------------------------------------------\n1. Cola - \t\t2,99\n2. Pepsi - \t\t3,49\n3. Dr.Pepper - \t\t2,99\n4. Fanta Orange - \t2,99\n5. Spa rood - \t\t1,99\n6. Spa blauw - \t\t1,99\n7. Appelsap - \t\t2,49\n8. Rode wijn - \t\t6,49\n9. Witte wijn - \t6,49\n10. Heineken - \t\t3,49\n\n11. Terug naar de vorige pagina\n");
             Console.WriteLine("\nTyp het nummer van de item die je wilt bekijken en klik op enter:");
 
             // leest input command van de console
@@ -69,7 +69,7 @@ namespace Drinken_Class
                     Console.WriteLine($"inhoud: {drinkenDataList[num - 1].inhoud}");
 
                     // print prijs item
-                    Console.WriteLine($"prijs: {drinkenDataList[num - 1].prijs}+\n");
+                    Console.WriteLine($"prijs: {drinkenDataList[num - 1].prijs}\n");
 
                     // print voedingswaarde
                     Console.WriteLine($"{drinkenDataList[num - 1].voedingswaarde}\n");
@@ -95,7 +95,7 @@ namespace Drinken_Class
             { // input is niet convertible naar int of input is te hoog nummer
                 Console_Reset.clear();
                 Console.WriteLine("De input is niet juist, probeer het nogeens\n");
-                DrinkenMenu();
+                //DrinkenMenu();
             }
             Console_Reset.clear();
 

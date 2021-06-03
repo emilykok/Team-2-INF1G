@@ -108,7 +108,7 @@ namespace Eten_Class
             { // input is niet convertible naar int of input is te hoog nummer
                 Console_Reset.clear();
                 Console.WriteLine("De input is niet juist, probeer het nogeens\n");
-                EtenMenu();
+                //EtenMenu();
             }
             Console_Reset.clear();
 
