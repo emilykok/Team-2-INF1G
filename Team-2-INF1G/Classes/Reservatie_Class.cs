@@ -551,9 +551,9 @@ namespace Reservatie_Class
             }
             else
             {
-                foreach (int index in ticket.seatIndexes)
+                for (int i = 0; i < ticket.seatStrings.Length; i++)
                 {
-                    stoelen += ticket.seatStrings[index] + " ";
+                    stoelen += ticket.seatStrings[i] + " ";
                 }
             }
             

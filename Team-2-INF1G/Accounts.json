@@ -8,5 +8,15 @@
     "bankingDetails": null,
     "Allergies": [],
     "Permission": true
+  },
+  {
+    "Name": "lukthet",
+    "Password": "feb667f365705252a34248777cdbb175823db3059a70c02f963a7b354690a476",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
   }
 ]
