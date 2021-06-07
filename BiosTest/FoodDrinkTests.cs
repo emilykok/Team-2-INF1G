@@ -16,15 +16,14 @@ namespace BiosTest
 
         // EtenMenu //
         [TestMethod]
-        public void FoodMenu_validInp_showItem()
-        {
+        public void FoodMenu_validInp_showItem() {
             // Arrange
             Eten eten = new Eten();
             var input = new StringReader(@"4
 ");
             Console.SetIn(input);
 
-            string[] expected = { "Eten Menu:", "---------------------------------------------------", "1. Popcorn zoet - ", "va 2,99", "2. Popcorn zout - ", "va 2,49", "3. Popcorn karamel - ", "va 2,49", "4. M&M's pinda - ", "3,99", "5. M&M's chocola - ", "4,49", "6. Chips naturel - ", "va 2,99", "7. Chips paprika - ", "va 2,99", "8. Doritos nacho cheese - ", "3,99", "9. Haribo goudberen - ", "3,49", "10. Skittles fruits - ", "3,99", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "M&M pinda", "---------------------------------------------------", "inhoud: 250g, ", "prijs: 3.99, ", "Per 100gr:", "Energie: 2154kj(515kcal)", "Vet: 26g", "   Waarvan verzadigd: 11g", "Koolhydraten: 59g", "   Waarvan suikers: 53g", "Voedingsvezel: 0g", "Eiwitten: 9,9g", "Zout: 0.09g", "allergenen: lactose, pinda, soja, amandel, hazelnoot, noten, ", "1. Terug naar het eten & drinken menu" }; // MELISSA VUL HIER JE DE STRING IS   "Hallo\nWereld" => {"Hallo","Wereld"}
+            string[] expected = {"Eten Menu:","---------------------------------------------------", "1. Popcorn zoet - ","va 2,99", "2. Popcorn zout - ", "va 2,49", "3. Popcorn karamel - ", "va 2,49", "4. M&M's pinda - ", "3,99", "5. M&M's chocola - ", "4,49", "6. Chips naturel - ", "va 2,99", "7. Chips paprika - ", "va 2,99", "8. Doritos nacho cheese - ", "3,99", "9. Haribo goudberen - ", "3,49", "10. Skittles fruits - ", "3,99", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "M&M pinda", "---------------------------------------------------", "inhoud: 250g, ", "prijs: 3.99, ", "Per 100gr:", "Energie: 2154kj(515kcal)", "Vet: 26g", "   Waarvan verzadigd: 11g", "Koolhydraten: 59g", "   Waarvan suikers: 53g", "Voedingsvezel: 0g", "Eiwitten: 9,9g", "Zout: 0.09g", "allergenen: lactose, pinda, soja, amandel, hazelnoot, noten, ", "1. Terug naar het eten & drinken menu" }; // MELISSA VUL HIER JE DE STRING IS   "Hallo\nWereld" => {"Hallo","Wereld"}
 
             // Act
             var output = new StringWriter();
@@ -68,25 +67,23 @@ namespace BiosTest
             }
         }
 
-        //  DeleteEten //
-        [TestMethod]
-        public void DeleteEten_index_deleteItem()
-        {
+            //  DeleteEten //
+            [TestMethod]
+        public void DeleteEten_index_deleteItem(){
             // Arrange
             Eten eten = new Eten();
             bool reach = false;
 
             // Act
             eten.DeleteEten(9);
-            try
-            {
+            try { 
                 var a = eten.etenDataList[9].naam;
                 reach = true;
             }
             catch { reach = false; }
-
-
-
+            
+            
+            
             // Assert
             Assert.IsFalse(reach);
 
@@ -94,8 +91,7 @@ namespace BiosTest
 
         // ViewClicks //
         [TestMethod]
-        public void ViewClicksF_IntIndex_printClicks()
-        {
+        public void ViewClicksF_IntIndex_printClicks() {
             // Arrange
             Eten eten = new Eten();
             int num = 8;
@@ -114,7 +110,7 @@ namespace BiosTest
         // UpdateClicks //
         [TestMethod]
         public void UpdateClicksF_IntIndex_UpdateClicks()
-        {
+        {                
             // Arrange
             int num = 5;
             Eten eten = new Eten();
@@ -189,7 +185,7 @@ namespace BiosTest
         }
 
 
-        /// DRINK///
+    /// DRINK///
 
         // DrinkenMenu //
         [TestMethod]
@@ -200,13 +196,13 @@ namespace BiosTest
             var input = new StringReader(@"4
 ");
             Console.SetIn(input);
-            string[] expected = { "Drinken Menu:", "---------------------------------------------------", "1. Cola - ", "2,99", "2. Pepsi - ", "3,49", "3. Dr.Pepper - ", "2,99", "4. Fanta Orange - ", "2,99", "5. Spa rood - ", "1,99", "6. Spa blauw - ", "1,99", "7. Appelsap - ", "2,49", "8. Rode wijn - ", "6,49", "9. Witte wijn - ", "6,49", "10. Heineken - ", "3,49", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "Fanta Orange", "---------------------------------------------------", "inhoud: 0,5L", "prijs: 3.49", "Per 100ml:", "Energie: 139kj(33kcal)", "Vet: 0g", "   Waarvan verzadigd: 0g", "Koolhydraten: 7,9g", "   Waarvan suikers: 7,6g", "Eiwitten: 0g", "Zout: 0.01g", "allergenen: vegetarisch, ", "1. Terug naar het eten & drinken menu" };
+            string[] expected = { "Drinken Menu:", "---------------------------------------------------", "1. Cola - ", "2,99", "2. Pepsi - ", "3,49", "3. Dr.Pepper - ", "2,99", "4. Fanta Orange - ", "2,99", "5. Spa rood - ", "1,99", "6. Spa blauw - ", "1,99", "7. Appelsap - ", "2,49", "8. Rode wijn - ", "6,49", "9. Witte wijn - ", "6,49", "10. Heineken - ", "3,49", "11. Terug naar de vorige pagina", "Typ het nummer van de item die je wilt bekijken en klik op enter:", "Fanta Orange" , "---------------------------------------------------", "inhoud: 0,5L", "prijs: 3.49", "Per 100ml:", "Energie: 139kj(33kcal)", "Vet: 0g", "   Waarvan verzadigd: 0g", "Koolhydraten: 7,9g", "   Waarvan suikers: 7,6g", "Eiwitten: 0g", "Zout: 0.01g", "allergenen: vegetarisch, ", "1. Terug naar het eten & drinken menu" };
 
             // Act
             var output = new StringWriter();
             Console.SetOut(output);
             drinken.DrinkenMenu();
-
+            
             string convertString = output.ToString();
             string[] split = convertString.Split(new Char[] { '\t', '\n', '\r' },
                                  StringSplitOptions.RemoveEmptyEntries);
@@ -334,10 +330,9 @@ namespace BiosTest
 
         // DrinkenFilter //
         [TestMethod]
-        public void FilterD_Titel_showRes()
-        {
+        public void FilterD_Titel_showRes() {
             // Arrange
-            Drinken drink = new Drinken();
+            Drinken drink = new Drinken(); 
             string toSearch = "wijn";
             // Act
             string res = drink.DrinkenFilter(toSearch);
