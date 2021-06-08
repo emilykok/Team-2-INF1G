@@ -284,7 +284,7 @@ namespace Account_Class
                 }
                 else
                 {
-                    Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm account te creeeren toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
+                    Console.WriteLine($"\nGeselecteerde gebruikersnaam: {User_Name} | Geselecteerde wachtwoord: {Password} \nOm account te creëren toets ENTER\nOm opniew te proberen, toets 'r'\nOm terug te gaan, toets 'x'");
                 }
              
                 // Checked if user wants to retry or confirm username //
@@ -853,7 +853,7 @@ namespace Account_Class
                 else // for every other input
                 {
                     if ((userInputItem == "8" && perm == false) || (userInputItem == "9" && perm == true)){
-                        Console.WriteLine("\nOm account te verwijderen, typ VERWIJDER");
+                        Console.WriteLine("\nOm account te verwijderen, type VERWIJDER");
                     }
                     else
                     {

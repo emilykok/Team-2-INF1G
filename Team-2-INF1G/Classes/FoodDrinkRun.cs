@@ -51,6 +51,7 @@ namespace Food_Drink_Run
 
                         else if (fNum == "2")
                         {
+                            Console.WriteLine("U kunt filteren uit [lactose, soja, pinda, amandel, hazelnoot, noten, gluten, tarwe]");
                             Console.WriteLine("Typ hier je zoekterm:");
                             string strInp = Console.ReadLine();
                             Console.WriteLine(eten.EtenAllergieFilter(strInp));
@@ -85,6 +86,7 @@ namespace Food_Drink_Run
                         }
                         else if (fNum == "2")
                         {
+                            Console.WriteLine("U kunt filteren uit [lactose, soja, pinda, amandel, hazelnoot, noten, gluten, tarwe]");
                             Console.WriteLine("Typ hier je zoekterm:");
                             string strInp = Console.ReadLine();
                             Console.WriteLine(drinken.DrinkenAllergieFilter(strInp));

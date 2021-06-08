@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kqdAnXy8s93oe44+VAIu+12VybUFf1AeFAOwr2AOpNPIchNTsjSyrSIfZzyvd2ayzOwhi5tKLYELK39ODGoIgw==",
+  "dgSpecHash": "CHpqUgwSgMfYv4K2H47Nn4wELGl5jwCPf8OKNtkKywFYKkF1zAuenDjilTuTIlNpQ1qh9vpHjZQwtsFrFPFlkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dvdg1\\OneDrive\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
+  "projectFilePath": "C:\\Users\\bjorn\\Documents\\GitHub\\Team-2-INF1G\\Team-2-INF1G\\Team-2-INF1G.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dvdg1\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\bjorn\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

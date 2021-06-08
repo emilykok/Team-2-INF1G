@@ -493,7 +493,7 @@ namespace Reservatie_Class
                         {
                             DisplayReservatie(TicketsList[ReservationNumberIndexer(reservationList[convert])]);
                             state = " ";
-                            Console.WriteLine("\nals u de reservatie wilt verwijderen, typ VERWIJDER. Om terug te gaan, toets 'X'");
+                            Console.WriteLine("\nals u de reservering wilt verwijderen, typ VERWIJDER. Om terug te gaan, toets 'X'");
 
                             string innerUserInput = Console.ReadLine();
                             if (innerUserInput == "x" || innerUserInput == "X")
@@ -558,18 +558,18 @@ namespace Reservatie_Class
             }
             
             Console.WriteLine("===============");
-            Console.WriteLine($"*Reservatie {ticket.filmName}*");
+            Console.WriteLine($"*Reservering {ticket.filmName}*");
             Console.WriteLine("===============\n");
             Console.WriteLine("Gerserveerde film: " + ticket.filmName); 
             Console.WriteLine("Naam: " + ticket.namePerson); 
             Console.WriteLine("Kaartje(s): " + ticket.ticketAmount); 
-            Console.WriteLine("Prijs: " + ticket.price); 
+            Console.WriteLine("Totaal prijs: " + ticket.price); 
             Console.WriteLine("Dag: " + ticket.weekday); 
             Console.WriteLine("Tijd: " + ticket.startTime); 
             Console.WriteLine("Filmduur: " + ticket.filmDuration); 
             Console.WriteLine("Zaal: " + ticket.hall);
             Console.WriteLine($"Stoel(en): {stoelen}");
-            Console.WriteLine("Reservatie nummer: " + ticket.reservationNumber);
+            Console.WriteLine("Reservering nummer: " + ticket.reservationNumber);
         }
 
 
@@ -630,7 +630,7 @@ namespace Reservatie_Class
             newTicket.filmName          = movieDataList[movieIndex].titel;
             newTicket.namePerson        = accountDataList[user].Name;
             newTicket.ticketAmount      = Convert.ToInt32(funcHallArray[0]);
-            newTicket.price             = 20.00; // <-- HARD CODED!!!
+            newTicket.price             = SeatIndexes.Length * 10;
             newTicket.weekday           = funcHallArray[2];
             newTicket.startTime         = funcHallArray[3];
             newTicket.filmDuration      = movieDataList[movieIndex].speeltijd;
