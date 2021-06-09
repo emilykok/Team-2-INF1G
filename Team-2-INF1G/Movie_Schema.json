@@ -1,0 +1,758 @@
+[
+  {
+    "title": "The Witches",
+    "hall": "Zaal 1",
+    "day": "Maandag",
+    "time": "9:00"
+  },
+  {
+    "title": "The Beast",
+    "hall": "Zaal 1",
+    "day": "Maandag",
+    "time": "11:15"
+  },
+  {
+    "title": "Code 8",
+    "hall": "Zaal 1",
+    "day": "Maandag",
+    "time": "13:15"
+  },
+  {
+    "title": "Jumanji: The Next Level",
+    "hall": "Zaal 1",
+    "day": "Maandag",
+    "time": "15:15"
+  },
+  {
+    "title": "The Half of It",
+    "hall": "Zaal 1",
+    "day": "Maandag",
+    "time": "17:45"
+  },
+  {
+    "title": "A Quiet Place Part 2",
+    "hall": "Zaal 1",
+    "day": "Maandag",
+    "time": "20:00"
+  },
+  {
+    "title": "Bad Boys for Life",
+    "hall": "Zaal 2",
+    "day": "Maandag",
+    "time": "9:15"
+  },
+  {
+    "title": "Words on Bathroom Walls",
+    "hall": "Zaal 2",
+    "day": "Maandag",
+    "time": "11:45"
+  },
+  {
+    "title": "Avengers: Endgame",
+    "hall": "Zaal 2",
+    "day": "Maandag",
+    "time": "14:00"
+  },
+  {
+    "title": "Initiation",
+    "hall": "Zaal 2",
+    "day": "Maandag",
+    "time": "17:30"
+  },
+  {
+    "title": "Captain Marvel",
+    "hall": "Zaal 2",
+    "day": "Maandag",
+    "time": "19:30"
+  },
+  {
+    "title": "Host",
+    "hall": "Zaal 2",
+    "day": "Maandag",
+    "time": "22:00"
+  },
+  {
+    "title": "Dolittle",
+    "hall": "Zaal 3",
+    "day": "Maandag",
+    "time": "9:30"
+  },
+  {
+    "title": "Valley Girl",
+    "hall": "Zaal 3",
+    "day": "Maandag",
+    "time": "11:30"
+  },
+  {
+    "title": "Deadpool",
+    "hall": "Zaal 3",
+    "day": "Maandag",
+    "time": "13:15"
+  },
+  {
+    "title": "Onward",
+    "hall": "Zaal 3",
+    "day": "Maandag",
+    "time": "16:00"
+  },
+  {
+    "title": "The Happiest Season",
+    "hall": "Zaal 3",
+    "day": "Maandag",
+    "time": "18:15"
+  },
+  {
+    "title": "Rose: A Love Story",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "20:30"
+  },
+  {
+    "title": "Onward",
+    "hall": "Zaal 1",
+    "day": "Dinsdag",
+    "time": "9:00"
+  },
+  {
+    "title": "Happiest Season",
+    "hall": "Zaal 1",
+    "day": "Dinsdag",
+    "time": "11:15"
+  },
+  {
+    "title": "IO",
+    "hall": "Zaal 1",
+    "day": "Dinsdag",
+    "time": "13:30"
+  },
+  {
+    "title": "Spiderman: Far from Home",
+    "hall": "Zaal 1",
+    "day": "Dinsdag",
+    "time": "15:30"
+  },
+  {
+    "title": "Deadpool",
+    "hall": "Zaal 1",
+    "day": "Dinsdag",
+    "time": "18:00"
+  },
+  {
+    "title": "The Invisible Man",
+    "hall": "Zaal 1",
+    "day": "Dinsdag",
+    "time": "20:15"
+  },
+  {
+    "title": "Borat Subsequent Movie Film",
+    "hall": "Zaal 2",
+    "day": "Dinsdag",
+    "time": "9:15"
+  },
+  {
+    "title": "X-Men: Dark Phoenix",
+    "hall": "Zaal 2",
+    "day": "Dinsdag",
+    "time": "11:15"
+  },
+  {
+    "title": "Star Wars: The Rise of Skywalker",
+    "hall": "Zaal 2",
+    "day": "Dinsdag",
+    "time": "13:30"
+  },
+  {
+    "title": "Alita: Battle Angel",
+    "hall": "Zaal 2",
+    "day": "Dinsdag",
+    "time": "16:15"
+  },
+  {
+    "title": "Men in Black: International",
+    "hall": "Zaal 2",
+    "day": "Dinsdag",
+    "time": "18:45"
+  },
+  {
+    "title": "The Call",
+    "hall": "Zaal 2",
+    "day": "Dinsdag",
+    "time": "21:00"
+  },
+  {
+    "title": "Jumanji: The Next Level",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "9:30"
+  },
+  {
+    "title": "Titanic",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "11:30"
+  },
+  {
+    "title": "The Kissing Booth 2",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "15:15"
+  },
+  {
+    "title": "Vanguard",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "17:45"
+  },
+  {
+    "title": "Code 8",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "20:00"
+  },
+  {
+    "title": "Come True",
+    "hall": "Zaal 3",
+    "day": "Dinsdag",
+    "time": "22:00"
+  },
+  {
+    "title": "Knives Out",
+    "hall": "Zaal 1",
+    "day": "Woensdag",
+    "time": "9:00"
+  },
+  {
+    "title": "Avengers: Endgame",
+    "hall": "Zaal 1",
+    "day": "Woensdag",
+    "time": "11:30"
+  },
+  {
+    "title": "X-Men: Dark Phoenix",
+    "hall": "Zaal 1",
+    "day": "Woensdag",
+    "time": "15:00"
+  },
+  {
+    "title": "Underwater",
+    "hall": "Zaal 1",
+    "day": "Woensdag",
+    "time": "17:15"
+  },
+  {
+    "title": "I Am Mother",
+    "hall": "Zaal 1",
+    "day": "Woensdag",
+    "time": "19:15"
+  },
+  {
+    "title": "The Night House",
+    "hall": "Zaal 1",
+    "day": "Woensdag",
+    "time": "21:30"
+  },
+  {
+    "title": "Men in Black: International",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "9:15"
+  },
+  {
+    "title": "Spiderman: Far from Home",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "11:30"
+  },
+  {
+    "title": "Captain Marvel",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "14:00"
+  },
+  {
+    "title": "Force of Nature",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "16:30"
+  },
+  {
+    "title": "Bad Boys for Life",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "18:30"
+  },
+  {
+    "title": "Host",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "21:00"
+  },
+  {
+    "title": "Dora and the Lost City of Gold",
+    "hall": "Zaal 3",
+    "day": "Woensdag",
+    "time": "9:30"
+  },
+  {
+    "title": "Alita: Battle Angel",
+    "hall": "Zaal 3",
+    "day": "Woensdag",
+    "time": "11:45"
+  },
+  {
+    "title": "Dirty Dancing",
+    "hall": "Zaal 2",
+    "day": "Woensdag",
+    "time": "14:15"
+  },
+  {
+    "title": "Bloodshot",
+    "hall": "Zaal 3",
+    "day": "Woensdag",
+    "time": "16:15"
+  },
+  {
+    "title": "Dolittle",
+    "hall": "Zaal 3",
+    "day": "Woensdag",
+    "time": "18:30"
+  },
+  {
+    "title": "Possessor",
+    "hall": "Zaal 3",
+    "day": "Woensdag",
+    "time": "20:30"
+  },
+  {
+    "title": "IO",
+    "hall": "Zaal 1",
+    "day": "Donderdag",
+    "time": "9:00"
+  },
+  {
+    "title": "Honest Thief",
+    "hall": "Zaal 1",
+    "day": "Donderdag",
+    "time": "11:00"
+  },
+  {
+    "title": "Men in Black: International",
+    "hall": "Zaal 1",
+    "day": "Donderdag",
+    "time": "13:00"
+  },
+  {
+    "title": "Extraction",
+    "hall": "Zaal 1",
+    "day": "Donderdag",
+    "time": "15:15"
+  },
+  {
+    "title": "Onward",
+    "hall": "Zaal 1",
+    "day": "Donderdag",
+    "time": "17:30"
+  },
+  {
+    "title": "Hunter Hunter",
+    "hall": "Zaal 1",
+    "day": "Donderdag",
+    "time": "19:45"
+  },
+  {
+    "title": "Coming 2 America",
+    "hall": "Zaal 2",
+    "day": "Donderdag",
+    "time": "9:15"
+  },
+  {
+    "title": "Survive the Night",
+    "hall": "Zaal 2",
+    "day": "Donderdag",
+    "time": "11:45"
+  },
+  {
+    "title": "Godzilla: King of the Monsters",
+    "hall": "Zaal 2",
+    "day": "Donderdag",
+    "time": "13:45"
+  },
+  {
+    "title": "Survive the Night",
+    "hall": "Zaal 2",
+    "day": "Donderdag",
+    "time": "16:30"
+  },
+  {
+    "title": "Jumanji: The Next Level",
+    "hall": "Zaal 2",
+    "day": "Donderdag",
+    "time": "18:30"
+  },
+  {
+    "title": "Initiation",
+    "hall": "Zaal 2",
+    "day": "Donderdag",
+    "time": "21:00"
+  },
+  {
+    "title": "I Am Mother",
+    "hall": "Zaal 3",
+    "day": "Donderdag",
+    "time": "9:30"
+  },
+  {
+    "title": "The Broken Hearts Gallery",
+    "hall": "Zaal 3",
+    "day": "Donderdag",
+    "time": "11:45"
+  },
+  {
+    "title": "Titanic",
+    "hall": "Zaal 3",
+    "day": "Donderdag",
+    "time": "13:45"
+  },
+  {
+    "title": "Honest Thief",
+    "hall": "Zaal 3",
+    "day": "Donderdag",
+    "time": "17:30"
+  },
+  {
+    "title": "Dora and the Lost City of Gold",
+    "hall": "Zaal 3",
+    "day": "Donderdag",
+    "time": "19:30"
+  },
+  {
+    "title": "A Quiet Place Part 2",
+    "hall": "Zaal 3",
+    "day": "Donderdag",
+    "time": "21:45"
+  },
+  {
+    "title": "Jumanji: The Next Level",
+    "hall": "Zaal 1",
+    "day": "Vrijdag",
+    "time": "9:00"
+  },
+  {
+    "title": "Godzilla: King of the Monsters",
+    "hall": "Zaal 1",
+    "day": "Vrijdag",
+    "time": "11:15"
+  },
+  {
+    "title": "Deadpool",
+    "hall": "Zaal 1",
+    "day": "Vrijdag",
+    "time": "13:45"
+  },
+  {
+    "title": "The Beast",
+    "hall": "Zaal 1",
+    "day": "Vrijdag",
+    "time": "16:00"
+  },
+  {
+    "title": "Extraction",
+    "hall": "Zaal 1",
+    "day": "Vrijdag",
+    "time": "18:00"
+  },
+  {
+    "title": "Rose: A Love Story",
+    "hall": "Zaal 1",
+    "day": "Vrijdag",
+    "time": "20:15"
+  },
+  {
+    "title": "Ad Astra",
+    "hall": "Zaal 2",
+    "day": "Vrijdag",
+    "time": "9:15"
+  },
+  {
+    "title": "Dirty Dancing",
+    "hall": "Zaal 2",
+    "day": "Vrijdag",
+    "time": "11:45"
+  },
+  {
+    "title": "Code 8",
+    "hall": "Zaal 2",
+    "day": "Vrijdag",
+    "time": "13:45"
+  },
+  {
+    "title": "Gisaengchung(Parasite)",
+    "hall": "Zaal 2",
+    "day": "Vrijdag",
+    "time": "15:45"
+  },
+  {
+    "title": "Bloodshot",
+    "hall": "Zaal 2",
+    "day": "Vrijdag",
+    "time": "18:15"
+  },
+  {
+    "title": "The Invisible Man",
+    "hall": "Zaal 2",
+    "day": "Vrijdag",
+    "time": "20:30"
+  },
+  {
+    "title": "The Kissing Booth 2",
+    "hall": "Zaal 3",
+    "day": "Vrijdag",
+    "time": "9:30"
+  },
+  {
+    "title": "Star Wars: The Rise of Skywalker",
+    "hall": "Zaal 3",
+    "day": "Vrijdag",
+    "time": "12:00"
+  },
+  {
+    "title": "Force of Nature",
+    "hall": "Zaal 3",
+    "day": "Vrijdag",
+    "time": "14:45"
+  },
+  {
+    "title": "Coming 2 America",
+    "hall": "Zaal 3",
+    "day": "Vrijdag",
+    "time": "16:45"
+  },
+  {
+    "title": "Underwater",
+    "hall": "Zaal 3",
+    "day": "Vrijdag",
+    "time": "19:00"
+  },
+  {
+    "title": "The Call",
+    "hall": "Zaal 3",
+    "day": "Vrijdag",
+    "time": "21:00"
+  },
+  {
+    "title": "Gisaengchung(Parasite)",
+    "hall": "Zaal 1",
+    "day": "Zaterdag",
+    "time": "9:00"
+  },
+  {
+    "title": "Bloodshot",
+    "hall": "Zaal 1",
+    "day": "Zaterdag",
+    "time": "11:45"
+  },
+  {
+    "title": "Happiest Season",
+    "hall": "Zaal 1",
+    "day": "Zaterdag",
+    "time": "13:45"
+  },
+  {
+    "title": "Knives Out",
+    "hall": "Zaal 1",
+    "day": "Zaterdag",
+    "time": "16:00"
+  },
+  {
+    "title": "Alita: Battle Angel",
+    "hall": "Zaal 1",
+    "day": "Zaterdag",
+    "time": "18:30"
+  },
+  {
+    "title": "Come True",
+    "hall": "Zaal 1",
+    "day": "Zaterdag",
+    "time": "21:00"
+  },
+  {
+    "title": "Captain Marvel",
+    "hall": "Zaal 2",
+    "day": "Zaterdag",
+    "time": "9:15"
+  },
+  {
+    "title": "The Half of It",
+    "hall": "Zaal 2",
+    "day": "Zaterdag",
+    "time": "11:45"
+  },
+  {
+    "title": "The Lovebirds",
+    "hall": "Zaal 2",
+    "day": "Zaterdag",
+    "time": "13:45"
+  },
+  {
+    "title": "Dora and the Lost City of Gold",
+    "hall": "Zaal 2",
+    "day": "Zaterdag",
+    "time": "15:30"
+  },
+  {
+    "title": "Spiderman: Far from Home",
+    "hall": "Zaal 2",
+    "day": "Zaterdag",
+    "time": "17:45"
+  },
+  {
+    "title": "The Night House",
+    "hall": "Zaal 2",
+    "day": "Zaterdag",
+    "time": "20:15"
+  },
+  {
+    "title": "Onward",
+    "hall": "Zaal 3",
+    "day": "Zaterdag",
+    "time": "9:30"
+  },
+  {
+    "title": "Extraction",
+    "hall": "Zaal 3",
+    "day": "Zaterdag",
+    "time": "12:00"
+  },
+  {
+    "title": "The Half of It",
+    "hall": "Zaal 3",
+    "day": "Zaterdag",
+    "time": "14:15"
+  },
+  {
+    "title": "Ad Astra",
+    "hall": "Zaal 3",
+    "day": "Zaterdag",
+    "time": "16:15"
+  },
+  {
+    "title": "Honest Thief",
+    "hall": "Zaal 3",
+    "day": "Zaterdag",
+    "time": "18:45"
+  },
+  {
+    "title": "Host",
+    "hall": "Zaal 3",
+    "day": "Zaterdag",
+    "time": "20:45"
+  },
+  {
+    "title": "The Lovebirds",
+    "hall": "Zaal 1",
+    "day": "Zondag",
+    "time": "9:00"
+  },
+  {
+    "title": "Underwater",
+    "hall": "Zaal 1",
+    "day": "Zondag",
+    "time": "10:45"
+  },
+  {
+    "title": "Valley Girl",
+    "hall": "Zaal 1",
+    "day": "Zondag",
+    "time": "12:45"
+  },
+  {
+    "title": "Bad Boys for Life",
+    "hall": "Zaal 1",
+    "day": "Zondag",
+    "time": "14:45"
+  },
+  {
+    "title": "Coming 2 America",
+    "hall": "Zaal 1",
+    "day": "Zondag",
+    "time": "17:15"
+  },
+  {
+    "title": "Possessor",
+    "hall": "Zaal 1",
+    "day": "Zondag",
+    "time": "19:30"
+  },
+  {
+    "title": "The Witches",
+    "hall": "Zaal 2",
+    "day": "Zondag",
+    "time": "9:15"
+  },
+  {
+    "title": "Vanguard",
+    "hall": "Zaal 2",
+    "day": "Zondag",
+    "time": "11:30"
+  },
+  {
+    "title": "Words on the Bathroom Walls",
+    "hall": "Zaal 2",
+    "day": "Zondag",
+    "time": "13:45"
+  },
+  {
+    "title": "Borat Subsequent Movie Film",
+    "hall": "Zaal 2",
+    "day": "Zondag",
+    "time": "16:00"
+  },
+  {
+    "title": "Ad Astra",
+    "hall": "Zaal 2",
+    "day": "Zondag",
+    "time": "18:00"
+  },
+  {
+    "title": "Hunter Hunter",
+    "hall": "Zaal 2",
+    "day": "Zondag",
+    "time": "20:30"
+  },
+  {
+    "title": "Dolittle",
+    "hall": "Zaal 3",
+    "day": "Zondag",
+    "time": "9:30"
+  },
+  {
+    "title": "Alita: Battle Angel",
+    "hall": "Zaal 3",
+    "day": "Zondag",
+    "time": "11:30"
+  },
+  {
+    "title": "The Broken Hearts gallery",
+    "hall": "Zaal 3",
+    "day": "Zondag",
+    "time": "14:00"
+  },
+  {
+    "title": "I Am Mother",
+    "hall": "Zaal 3",
+    "day": "Zondag",
+    "time": "16:15"
+  },
+  {
+    "title": "X-Men: Dark Phoenix",
+    "hall": "Zaal 3",
+    "day": "Zondag",
+    "time": "18:30"
+  },
+  {
+    "title": "A Quiet Place Part 2",
+    "hall": "Zaal 3",
+    "day": "Zondag",
+    "time": "20:45"
+  }
+]

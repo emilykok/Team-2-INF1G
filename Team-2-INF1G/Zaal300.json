@@ -1,0 +1,3916 @@
+[
+  {
+    "position": "A2",
+    "soort": "b",
+    "availability": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A7",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A8",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A9",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A10",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A11",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A12",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "A17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "B17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "C17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "D17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "E17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "F17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G1",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G4",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G8",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G11",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G15",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "G18",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H1",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H4",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H7",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H8",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H11",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H12",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H15",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "H18",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I1",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I3",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I4",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I7",
+    "soort": "r",
+    "availability": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I8",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I11",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I12",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I15",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I16",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "I18",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J1",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J3",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J4",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J7",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J8",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J11",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J12",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J15",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J16",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "J18",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K1",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K3",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K4",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K7",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K8",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K11",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K12",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K15",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K16",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "K18",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L4",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L8",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L11",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L15",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "L17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M5",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M9",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M10",
+    "soort": "r",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M14",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "M17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N2",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N6",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N13",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "N17",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "O16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P7",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P8",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P9",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P10",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P11",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P12",
+    "soort": "o",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "P16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q3",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q7",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q8",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q9",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q10",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q11",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q12",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "Q16",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R7",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R8",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R9",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R10",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R11",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R12",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "R15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S4",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S5",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S6",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S7",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S8",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S9",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S10",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S11",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S12",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S13",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S14",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "position": "S15",
+    "soort": "b",
+    "availability": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Name": "deBobbel",
+    "Password": "34bd4f994f97fe925a10999e99b239645015180e89343794f830225492277954",
+    "Age": 14,
+    "Gender": "man",
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [
+      "amandel"
+    ],
+    "Permission": false
+  },
+  {
+    "Name": "Bjorn",
+    "Password": "f00a787f7492a95e165b470702f4fe9373583fbdc025b2c8bdf0262cc48fcff4",
+    "Age": 19,
+    "Gender": "man",
+    "Email": "bjornkok@outlook.com",
+    "bankingDetails": null,
+    "Allergies": [
+      "tarwe"
+    ],
+    "Permission": true
+  },
+  {
+    "Name": "bjorn1",
+    "Password": "384eb271eb947e6718c67ab7db7a8f35f8287084f712010ce018aec3c231648f",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "x",
+    "Password": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  },
+  {
+    "Name": "Admin1",
+    "Password": "0afb00138d8e73348ec1fe41fd3d3a8fcbd90156b263bfa5791ba0e095f42cfc",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": true
+  },
+  {
+    "Name": "Bjorn1",
+    "Password": "9a9311f9129f575073c2b1a46f554c2097b91aae9c51a1cfa1cce354ce32fe3c",
+    "Age": -1,
+    "Gender": null,
+    "Email": null,
+    "bankingDetails": null,
+    "Allergies": [],
+    "Permission": false
+  }
+]

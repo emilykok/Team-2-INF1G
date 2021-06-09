@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team-2-INF1G", "Team-2-INF1G\Team-2-INF1G.csproj", "{718C2381-23DD-40ED-8E9A-D618BD5BF07C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiosTest", "BiosTest\BiosTest.csproj", "{67493759-3F40-4171-9114-39DF6407E630}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{718C2381-23DD-40ED-8E9A-D618BD5BF07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718C2381-23DD-40ED-8E9A-D618BD5BF07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718C2381-23DD-40ED-8E9A-D618BD5BF07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718C2381-23DD-40ED-8E9A-D618BD5BF07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67493759-3F40-4171-9114-39DF6407E630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67493759-3F40-4171-9114-39DF6407E630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67493759-3F40-4171-9114-39DF6407E630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67493759-3F40-4171-9114-39DF6407E630}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96DDFAB5-8625-4AC1-960A-E8B830B9BC7A}
+	EndGlobalSection
+EndGlobal

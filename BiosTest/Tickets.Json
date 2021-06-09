@@ -1,0 +1,15 @@
+[
+  {
+    "filmName": null,
+    "namePerson": null,
+    "ticketAmount": 0,
+    "price": 0.0,
+    "weekday": null,
+    "startTime": null,
+    "filmDuration": 0,
+    "hall": null,
+    "seatStrings": null,
+    "reservationNumber": 1,
+    "seatIndexes": null
+  }
+]
